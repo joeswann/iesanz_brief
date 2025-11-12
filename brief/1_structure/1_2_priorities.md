@@ -1,8 +1,10 @@
 # Priorities Framework
 
+> **Source Inputs**: context.md (Success Metrics, Next Steps, Governance themes), plan/priorities.md, plan/phases.md
+
 ## Summary
 - Establishes how initiatives are scored on value, effort, difficulty, and urgency so sequencing decisions remain transparent to the board and future vendors.
-- Highlights the macro themes (platform integrity, member value, brand reach, governance) that drive High/Mid/Low tiers.
+- Highlights the macro themes (platform integrity, member value, brand reach, governance) that drive High/Mid/Low tiers and links directly to the plan workspace.
 
 ## Purpose
 - Provide a consistent decision lens for quarterly and phase planning, ensuring delivery stays aligned with board expectations and BOT commitments.
@@ -36,3 +38,12 @@
 - Apply the scoring model during quarterly/phase planning and record rationale within the plan workspace for traceability.
 - Reassess after major milestones (CMS launch, conference cycle) to rebalance HQ vs chapter effort.
 - Maintain a loop with board portfolios to confirm whether strategic or market shifts warrant reprioritisation.
+
+## Worked Example
+| Initiative | Value | Effort | Difficulty | Urgency | Notes |
+| --- | --- | --- | --- | --- | --- |
+| CMS schema + membership gating | High (revenue + UX) | High | High (legacy data) | High (Phase 1) | Enables 2.x/6.x experiences |
+| CPD tracker MVP | Mid | Mid | Mid | Low | Depends on education backlog stability |
+| Community space pilot | Low | Mid | High | Low | Architect hooks only in current phases |
+
+Use this table as a template inside `plan/priorities.md` so stakeholders can see how scores connect to roadmap choices.

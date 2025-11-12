@@ -1,7 +1,21 @@
 # Table of Contents
 
+> **How to use this chapter**
+> - Maps every brief file so stakeholders can jump straight to the domain they need without inspecting folders.
+> - Clarifies how public experience, backstage operations, and governance streams relate per the July 2024 client brief.
+> - Refer to `plan/README.md` for delivery sequencing and `context.md` for the detailed source interviews.
+
+> **Source Inputs**: context.md (Client Brief, Reverse Brief, Success Metrics), plan/README.md
+
 ## Summary
-Single reference map for every reverse brief chapter grouped into Structure, Frontend, Admin, Super Admin, Integrations, Membership, and Appendix services.
+- Single reference map for all reverse brief chapters grouped into Structure, Frontend, Admin, Super Admin, Integrations, Membership, and Appendix services.
+- Relationship map distinguishes Experience (public storytelling), Operations (admin tooling), and Governance (security/compliance) so readers know where deeper detail lives.
+
+## Relationship Map
+- **Experience (2.x, 6.x)** – public journeys, member hub UX, ecommerce storytelling.
+- **Operations (3.x, 5.x)** – CMS, admin console, automation, integrations.
+- **Governance (4.x, 7.x)** – super admin guardrails, analytics, finance, security, marketing, SEO.
+- Structure (1.x) sits above the stack, pointing to plan artefacts and priorities.
 
 ## Structure
 - **1.1** – [Table of Contents](1_1_contents.md)
@@ -42,3 +56,7 @@ Single reference map for every reverse brief chapter grouped into Structure, Fro
 - **7.5** – [Marketing Strategy](../7_appendix/7_5_marketing.md)
 - **7.6** – [Security & Compliance](../7_appendix/7_6_security.md)
 - **7.7** – [SEO & Optimisation](../7_appendix/7_6_seo.md)
+
+## Navigation Tips
+- Start with Structure when onboarding new stakeholders, then drill into Experience (2.x) or Operations (3.x/5.x) depending on focus.
+- Each chapter now opens with Source Inputs so you can trace requirements back to context.md interviews or Purple Giraffe planning material.
