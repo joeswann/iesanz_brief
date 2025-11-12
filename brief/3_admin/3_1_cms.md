@@ -29,4 +29,4 @@
 - Provide onboarding documentation, quick video guides, and chapter-specific playbooks to satisfy BOT expectations and marketing-guideline consistency.
 - Enforce backups, malware/firewall tooling, monitoring, and regular technical/SEO audits to catch regressions when plugins/integrations change.
 - Keep backend non-public, apply SSO/MFA, least-privilege API keys, and document export procedures to mitigate vendor lock-in concerns noted in context.md.
-- Day-to-day operational usage lives in [[03_admin/03_03_admin_console|Admin Console & Operations]] so this chapter can stay architecture-focused.
+- Day-to-day operational usage lives in [Admin Console & Operations](3_3_admin_console.md) so this chapter can stay architecture-focused.

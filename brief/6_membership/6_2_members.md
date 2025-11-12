@@ -4,7 +4,7 @@
 - Defines personas spanning individuals, corporates, chapters, board observers, and prospects, ensuring each can see relevant value.
 - Outlines the unified member hub experience, self-service tooling, and community features required to modernise perception.
 - Notes dependencies on accurate data syncing, accessibility, and privacy compliance.
-- Shares entry points with [[02_frontend/02_01_experience|Frontend Experience]] so navigation and dashboard modules stay aligned.
+- Shares entry points with [Frontend Experience](../2_frontend/2_1_experience.md) so navigation and dashboard modules stay aligned.
 
 ## Personas & Access Layers
   - Individuals: students, emerging professionals, accredited members, senior fellows seeking CPD, networking, awards participation.

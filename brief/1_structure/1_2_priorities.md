@@ -9,21 +9,21 @@
 - Maintain visibility for handover partners—chapters, contractors, new vendors—so they understand why backlogs are ordered the way they are.
 
 ## Evaluation Criteria
-### 2.3.1 Value
+### Value
 - Measures contribution to membership growth/retention, revenue, advocacy influence, and user experience improvements outlined in context.md.
-### 2.3.2 Effort
+### Effort
 - Considers relative size spanning design, engineering, content, change management, and cross-vendor coordination.
-### 2.3.3 Difficulty
+### Difficulty
 - Captures technical complexity, dependencies on legacy systems (e.g., Monday.com, Approval Max), and regulatory exposure (PCI, privacy).
-### 2.3.4 Urgency
+### Urgency
 - Reflects time pressures such as award cycles, conference deadlines, financial year renewals, or compliance mandates.
 
 ## Priority Bands
-### 2.4.1 High
+### High
 - Foundational platform capabilities (CMS schemas, frontend navigation, admin console), revenue-critical flows (multi-currency payments, store, awards, conferences), governance/security (SSO/MFA, audit trails), and experience wins (member hub, knowledgebase access).
-### 2.4.2 Mid
+### Mid
 - Scaling programs (education depth, CPD roadmap, chapter marketing kits, automation templates) that unlock incremental value once foundations are stable.
-### 2.4.3 Low/Future
+### Low/Future
 - Horizon initiatives (community space, advanced personalization, APAC expansion) that should be architected for but can launch post-BOT commitments.
 
 ## Themes Influencing Priority

@@ -12,9 +12,9 @@
 
 ## Entries & Payments
   - Multi-step/tabbed entry forms with save/resume, eligibility rules tied to member status, and structured data that flows into judging packs.
-  - Secure upload pipelines hand entries into the admin workspace maintained in [[03_admin/03_04_awards_ops|Awards Operations]], keeping media optimized without burdening entrants.
+  - Secure upload pipelines hand entries into the admin workspace maintained in [Awards Operations](../3_admin/3_4_awards.md), keeping media optimized without burdening entrants.
   - Shopping-cart checkout enabling multiple entries, dinner tickets (tables/seats), sponsorship add-ons, and consolidated invoices; allow invoice requests and online payments.
-  - Handle AUD/NZD currencies, AU/NZ GST + GST-free configurations, and purchasing on behalf of others through storefront components governed by [[07_appendix/07_03_finance_payments|Finance & Payments]].
+  - Handle AUD/NZD currencies, AU/NZ GST + GST-free configurations, and purchasing on behalf of others through storefront components governed by [Finance & Payments](../7_appendix/7_3_payments.md).
 
 ## Showcase & Content Delivery
   - CMS-driven gallery pages with carousels, tag-filtered grids (category, chapter, year), media captions, and accessibility compliance.
@@ -22,5 +22,5 @@
   - Archive management for past winners, juror bios, downloadable media kits, and sponsorship recognition placements.
 
 ## Operations & Governance
-  - Administrative tooling for jurors, judges, and sponsorship tracking lives in [[03_admin/03_04_awards_ops|Awards Operations]] so this chapter can stay focused on the public experience.
+  - Administrative tooling for jurors, judges, and sponsorship tracking lives in [Awards Operations](../3_admin/3_4_awards.md) so this chapter can stay focused on the public experience.
   - Integrations, compliance, automation, and reporting guardrails are documented there as well, ensuring a single source of truth for backstage workflows.

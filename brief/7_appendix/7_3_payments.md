@@ -11,8 +11,8 @@
 
 ## Payment Processing
 - Gateways: Stripe (primary), Eventbrite/Shopify for specific products, potential legacy processors; allow expansion as needs evolve.
-- Features: multi-currency (AUD/NZD), multiple tax treatments (GST AU, GST NZ, GST-free), ability to charge location-based rates surfaced through [[02_frontend/02_05_store|Store & Sponsorships]].
-- Support purchasing on behalf, partial payments, refunds, and offline invoice requests, with day-to-day handling inside [[03_admin/03_03_admin_console|Admin Console & Operations]].
+- Features: multi-currency (AUD/NZD), multiple tax treatments (GST AU, GST NZ, GST-free), ability to charge location-based rates surfaced through [Store & Sponsorships](../2_frontend/2_5_store.md).
+- Support purchasing on behalf, partial payments, refunds, and offline invoice requests, with day-to-day handling inside [Admin Console & Operations](../3_admin/3_3_admin_console.md).
 
 ## Invoicing & Accounting
   - Auto-generate invoices (within platform or via Xero), attach account codes, tracking categories, and link to contacts.
@@ -30,6 +30,6 @@
   - Document processes for changes to pricing, tax rules, or payment providers and schedule penetration tests.
 
 ## Dependencies
-- Requires tight coupling with memberships, store, awards, education, and analytics to avoid double entry; see [[02_frontend/02_02_awards|Awards Program]], [[03_admin/03_04_awards_ops|Awards Operations]], [[02_frontend/02_03_conferences|Conferences]], and [[03_admin/03_05_events_ops|Events & Conferences Operations]].
+- Requires tight coupling with memberships, store, awards, education, and analytics to avoid double entry; see [Awards Program](../2_frontend/2_2_awards.md), [Awards Operations](../3_admin/3_4_awards.md), [Conferences](../2_frontend/2_3_conferences.md), and [Events & Conferences Operations](../3_admin/3_5_events.md).
 - Relies on automation platform for transactional emails (receipts, failed payment alerts, renewal reminders).
 - Needs training/runbooks for volunteers handling chapter finances under BOT model.

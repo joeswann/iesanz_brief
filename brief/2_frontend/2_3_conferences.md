@@ -18,7 +18,7 @@
 
 ## Registration & Commerce
   - Offer tiered ticketing (member, non-member, student, corporate, sponsor), multi-currency pricing, GST logic (AU/NZ), and bundles (conference + awards + education add-ons).
-  - Integrate with Stripe/Xero for invoicing, Eventbrite/Shopify for payment/fulfilment, and allow purchase on behalf of others or corporate delegates under policies set in [[07_appendix/07_03_finance_payments|Finance & Payments]].
+  - Integrate with Stripe/Xero for invoicing, Eventbrite/Shopify for payment/fulfilment, and allow purchase on behalf of others or corporate delegates under policies set in [Finance & Payments](../7_appendix/7_3_payments.md).
   - Manage sponsorship packages (exhibitor booths, speaking slots, branded sessions) with deliverable tracking.
 
 ## Marketing & Engagement
@@ -27,5 +27,5 @@
   - Feed leads to CRM for nurturing (membership upsell, education cross-sell) and provide post-event surveys/feedback loops.
 
 ## Operations & Governance
-  - Attendee management, hybrid delivery logistics, contingency planning, and volunteer coordination are governed in [[03_admin/03_05_events_ops|Events & Conferences Operations]].
+  - Attendee management, hybrid delivery logistics, contingency planning, and volunteer coordination are governed in [Events & Conferences Operations](../3_admin/3_5_events.md).
   - That chapter also holds risk registers, vendor playbooks, and SOPs so the public-facing experience stays focused on storytelling and conversion.
