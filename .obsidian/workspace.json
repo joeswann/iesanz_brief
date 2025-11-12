@@ -186,6 +186,7 @@
   },
   "active": "6b23dcec63240d10",
   "lastOpenFiles": [
+    "files/context.md",
     "files/IESANZ_-_New_Website_Specifications_v3.pdf",
     "files/Edu_website_250220_091356.pdf",
     "files/6.1.2_-_Purple_Giraffe_Marketing_Strategy_-_DRAFT.pdf",
@@ -220,7 +221,6 @@
     "brief/6_membership",
     "brief/5_integrations",
     "brief/4_super_admin",
-    "brief/3_admin",
-    "brief/2_frontend"
+    "brief/3_admin"
   ]
 }
