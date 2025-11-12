@@ -1,10 +1,8 @@
 
 ## Objectives
----
 Improvements in branding, typography, layout, responsiveness, and storytelling. Harmonize the informative public experience with the member/admin CRM side noted in IESANZ Spec v3, ensuring users transition smoothly between marketing and transactional flows. Reflect marketing objectives: highlight value propositions, member success stories, testimonials, ESG commitments, and clear CTAs for joining, attending, sponsoring, or learning.
 
 ## Information Architecture
----
 - Core navigation: Memberships, Awards, Chapters, Member Lookup, Education, Conference, Store, Blog/News, Download Portal, Knowledgebase (membership assistance, education assistance, mentorship), Terms/Privacy.
 - Board portfolio hubs (Conferences, Awards, Education, Marketing, Memberships) plus chapter microsites covering events (upcoming/past), awards, news, committee contacts, calendars, galleries, and chapter-specific store listings (context Reverse Brief).
 - Membership Hub entry point surfaces quick actions for members and corporates, with detailed dashboard flows owned by [Members Hub](../2_frontend/2_6_members.md).

@@ -1,5 +1,4 @@
 # Table of Contents
----
 
 ## Relationship Map
 - **Structure** (1.x) sits above the stack, pointing to plan artefacts and priorities.
