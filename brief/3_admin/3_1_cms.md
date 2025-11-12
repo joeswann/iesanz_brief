@@ -29,14 +29,4 @@
 - Provide onboarding documentation, quick video guides, and chapter-specific playbooks to satisfy BOT expectations and marketing-guideline consistency.
 - Enforce backups, malware/firewall tooling, monitoring, and regular technical/SEO audits to catch regressions when plugins/integrations change.
 - Keep backend non-public, apply SSO/MFA, least-privilege API keys, and document export procedures to mitigate vendor lock-in concerns noted in context.md.
-
-## Admin Operations
-- Define the day-to-day operational cockpit spanning memberships, awards, events, store, communications, reporting, and chapter oversight (Spec v3 “Management CRM”).
-- Enforce BOT-ready processes so HQ can delegate execution to chapters while maintaining compliance, financial integrity, and brand standards.
-- Surface live KPIs (failed payments, lapsed members, import errors) with drill-down history aligned to Success Metrics.
-- **Roles & Permissions**: support personas such as secretariat/admin, finance/accounts, chapter coordinators, volunteer coordinators, and board observers with configurable permission sets and audit logs. Allow chapter-managed landing pages while retaining central overrides and approvals.
-- **Legacy Transition**: migrate Monday.com/Approval Max workflows into the new system with data validation, dual-run strategies, and documented cutovers.
-- **Commerce & Finance Ops**: manage product catalogues (memberships, upgrades, tickets, sponsorships, publications) with purchasing-on-behalf, GST routing, and reconciliation tooling tied to Xero.
-- **Program Administration**: configure award/event forms, juror processes, attendee tracking, sponsorship commitments, refunds, and galleries.
-- **Communications & Engagement**: operate bulletin boards, calendars, and transactional messaging in partnership with the Communications stack.
-- **Reporting & Support**: deliver historical snapshots, chapter dashboards, SOPs, training, template libraries, and incident logs for Super Admin review.
+- Day-to-day operational usage lives in [[03_admin/03_03_admin_console|Admin Console & Operations]] so this chapter can stay architecture-focused.

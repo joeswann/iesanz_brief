@@ -16,8 +16,11 @@ Single reference map for every reverse brief chapter grouped into Structure, Fro
 - **02.05** – [Store & Sponsorships](../02_frontend/02_05_store.md)
 
 ## Admin
-- **03.01** – [CMS Architecture & Admin Ops](../03_admin/03_01_cms.md)
+- **03.01** – [CMS Architecture](../03_admin/03_01_cms.md)
 - **03.02** – [Chapter Operations](../03_admin/03_02_chapters.md)
+- **03.03** – [Admin Console & Operations](../03_admin/03_03_admin_console.md)
+- **03.04** – [Awards Operations](../03_admin/03_04_awards_ops.md)
+- **03.05** – [Events & Conferences Operations](../03_admin/03_05_events_ops.md)
 
 ## Super Admin
 - **04.01** – [Super Admin Governance](../04_super_admin/04_01_super_admin.md)

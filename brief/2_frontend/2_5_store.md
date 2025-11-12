@@ -12,24 +12,23 @@
 
 ## Catalog & Pricing
   - Product types: sponsorship packages (events, awards, conferences), advertisements, publications/downloads, merchandise, chapter-specific items, membership add-ons, bundles.
-  - Pricing controls: multi-currency (AUD/NZD), GST variations, member vs non-member rates, tiered sponsorship levels, bulk discounts for corporate accounts.
+  - Pricing controls: multi-currency (AUD/NZD), GST variations, member vs non-member rates, tiered sponsorship levels, bulk discounts for corporate accounts under guardrails from [[07_appendix/07_03_finance_payments|Finance & Payments]].
   - Ability to clone catalogs per financial year and preview upcoming offerings.
 
 ## Commerce Experience
   - Shopping cart that allows mixed items (entries, tickets, sponsorships) and consolidated checkout with invoice request option.
-  - Support purchasing on behalf of others, corporate invoicing, PO numbers, and installment plans for high-value sponsorships.
+  - Support purchasing on behalf of others, corporate invoicing, PO numbers, and installment plans for high-value sponsorships, while handoff to [[07_appendix/07_03_finance_payments|Finance & Payments]] covers reconciliation rules.
   - Deliver digital goods (download links, job ad placement details) via automated fulfillment and track license/usage terms.
 
 ## Integrations & Finance
-  - Sync orders/payments to Xero with account codes, GST treatments, and reconciliation status; handle multiple bank/payment services per Spec v3.
-  - Connect to CMS for product storytelling, to CRM for member discounts/eligibility, and to analytics for revenue reporting.
-  - Support inventory/availability tracking for limited sponsorships or merchandise.
+  - Storefront APIs connect to CMS for storytelling, CRM for eligibility, analytics for performance, and defer all ledger/tax logic to [[07_appendix/07_03_finance_payments|Finance & Payments]] to avoid duplicate documentation.
+  - Inventory/availability tracking for limited sponsorships or merchandise remains surfaced here, but payout mapping and reconciliation cadences are handled in that finance chapter.
 
 ## Chapter Operations
   - Provide chapter-level storefront dashboards showing sales, fulfillment states, and remittance schedules.
   - Ensure approvals for new products, brand consistency (templates), and alignment with national sponsorship tiers.
 
 ## Risks & Controls
-  - Prevent hard-coded tax/pricing rules; maintain configurable engines to adapt to regional changes.
-  - Document workflows for refunds, failed payments, sponsor deliverables, and compliance (advertising standards).
+  - Prevent hard-coded tax/pricing rules; maintain configurable engines to adapt to regional changes and align with [[07_appendix/07_03_finance_payments|Finance & Payments]].
+  - Document workflows for refunds, failed payments, sponsor deliverables, and compliance (advertising standards) while pointing staff to finance SOPs for escalation paths.
   - Monitor storefront performance (speed, conversion) and security (PCI compliance, anti-fraud) as part of ongoing maintenance.

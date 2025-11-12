@@ -18,20 +18,14 @@
 
 ## Registration & Commerce
   - Offer tiered ticketing (member, non-member, student, corporate, sponsor), multi-currency pricing, GST logic (AU/NZ), and bundles (conference + awards + education add-ons).
-  - Integrate with Stripe/Xero for invoicing, Eventbrite/Shopify for payment/fulfilment, and allow purchase on behalf of others or corporate delegates.
+  - Integrate with Stripe/Xero for invoicing, Eventbrite/Shopify for payment/fulfilment, and allow purchase on behalf of others or corporate delegates under policies set in [[07_appendix/07_03_finance_payments|Finance & Payments]].
   - Manage sponsorship packages (exhibitor booths, speaking slots, branded sessions) with deliverable tracking.
-
-## Operations & Logistics
-  - Provide admin dashboards for attendee management, check-in, seating assignments (awards dinner), special requirements, and travel info.
-  - Support hybrid features: livestream scheduling, virtual networking, interactive Q&A/polls, and post-event analytics.
-  - Coordinate with chapters for local conferences/meetups, ensuring brand consistency and shared tooling (templates, email sequences).
 
 ## Marketing & Engagement
   - Align promotional calendar with marketing action plan: early bird campaigns, speaker announcements, social media content, PR coverage.
   - Create microsites/landing pages with agendas, speaker bios, sponsor logos, testimonials, and call-to-action modules.
   - Feed leads to CRM for nurturing (membership upsell, education cross-sell) and provide post-event surveys/feedback loops.
 
-## Risks & Dependencies
-  - Complex logistics across regions/time zones require clear runbooks and vendor coordination (venues, AV providers, livestream platforms).
-  - Need contingency plans for hybrid/virtual pivot (pandemics, travel disruptions) and compliance with venue safety regulations.
-  - Accurate data syncing with memberships/accounts vital for discount eligibility and reporting.
+## Operations & Governance
+  - Attendee management, hybrid delivery logistics, contingency planning, and volunteer coordination are governed in [[03_admin/03_05_events_ops|Events & Conferences Operations]].
+  - That chapter also holds risk registers, vendor playbooks, and SOPs so the public-facing experience stays focused on storytelling and conversion.

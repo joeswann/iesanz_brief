@@ -13,10 +13,10 @@
 ## Information Architecture
   - Core navigation: Memberships, Awards, Chapters, Member Lookup, Education, Conference, Store, Blog/News, Download Portal, Knowledgebase (membership assistance, education assistance, mentorship), Terms/Privacy.
   - Board portfolio hubs (Conferences, Awards, Education, Marketing, Memberships) plus chapter microsites covering events (upcoming/past), awards, news, committee contacts, calendars, galleries, and chapter-specific store listings (context Reverse Brief).
-  - Membership Hub dashboards aggregating actions (sign up, renew, upgrade, enroll in education, manage events/forms, payments, CPD points) and corporate membership workflows.
+  - Membership Hub entry point surfaces quick actions for members and corporates, with detailed dashboard flows owned by [[06_membership/06_02_members|Members Hub]].
 
 ## UI/UX Pillars
-  - Personalized panels for logged-in members showing membership status, invoices, CPD progress (future), awards entries, education enrollments, communications feed, and chapter alerts.
+  - Personalized panels for logged-in members showing membership status, invoices, CPD progress (future), awards entries, education enrollments, communications feed, and chapter alerts surfaced by [[06_membership/06_02_members|Members Hub]].
   - Fast galleries/carousels with tag filtering for awards showcases and events; intuitive search across knowledgebase, member directory, and store.
   - Accessible (WCAG AA) design with cohesive branding, templated chapter assets, social widgets pulling tagged posts, and embedded PR/storytelling modules to address “outdated digital presence” weakness.
 

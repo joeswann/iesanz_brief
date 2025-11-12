@@ -11,22 +11,16 @@
   - Support public promotion, member recognition, juror collaboration, and historical archiving for BOT-style handover.
 
 ## Entries & Payments
-  - Multi-step/tabbed entry forms with save/resume, eligibility rules tied to member status, and structured data for exporting to judging sheets.
-  - File uploads routed to OneDrive folders with metadata for retrieval; include large-asset optimization and cost tracking.
+  - Multi-step/tabbed entry forms with save/resume, eligibility rules tied to member status, and structured data that flows into judging packs.
+  - Secure upload pipelines hand entries into the admin workspace maintained in [[03_admin/03_04_awards_ops|Awards Operations]], keeping media optimized without burdening entrants.
   - Shopping-cart checkout enabling multiple entries, dinner tickets (tables/seats), sponsorship add-ons, and consolidated invoices; allow invoice requests and online payments.
-  - Handle AUD/NZD currencies, AU/NZ GST + GST-free configurations, and purchasing on behalf of others; auto-sync to Stripe/Xero and update accounts post-reconciliation.
-
-## Judging & Administration
-  - Juror empanelment workflows for nominations, selection, onboarding, confidentiality, and conflict management.
-  - Adjudication tooling with stage-based scoring, comments, rankings, and exports to spreadsheets for collation.
-  - Admin consoles for reviewing/approving submissions, tracking payment state, triggering transactional emails, and managing judging panels.
+  - Handle AUD/NZD currencies, AU/NZ GST + GST-free configurations, and purchasing on behalf of others through storefront components governed by [[07_appendix/07_03_finance_payments|Finance & Payments]].
 
 ## Showcase & Content Delivery
   - CMS-driven gallery pages with carousels, tag-filtered grids (category, chapter, year), media captions, and accessibility compliance.
   - Storytelling blocks for case studies, interviews, testimonials, and PR-ready summaries, feeding marketing channels and newsletters.
   - Archive management for past winners, juror bios, downloadable media kits, and sponsorship recognition placements.
 
-## Automation, Integrations & Compliance
-  - Automated reminders for entry deadlines, incomplete submissions, juror tasks, sponsorship deliverables, and award-night logistics.
-  - Integrations: CMS ↔ CRM for eligibility, Stripe/Xero for payments, Eventbrite/Shopify for ticketing, analytics for performance, marketing automation for announcements.
-  - Role-based access ensuring judges only view assigned entries; maintain audit logs for compliance and maintain secure storage prior to public release.
+## Operations & Governance
+  - Administrative tooling for jurors, judges, and sponsorship tracking lives in [[03_admin/03_04_awards_ops|Awards Operations]] so this chapter can stay focused on the public experience.
+  - Integrations, compliance, automation, and reporting guardrails are documented there as well, ensuring a single source of truth for backstage workflows.
