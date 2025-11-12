@@ -2,6 +2,18 @@
 
 Initiatives are grouped by priority tier (High → Mid → Low). Each row references the source brief file and includes qualitative scores for **Value (V)**, **Effort (E)**, **Difficulty (D)**, **Urgency (U)** plus key dependencies.
 
+## Priority Snapshot (What Must Happen First)
+
+1. **Headless CMS & Admin Fabric** – Finalise schemas, workflows, RBAC, monitoring, and the unified operations console spanning memberships, awards, events, and finance ([brief/3_admin/3_1_cms.md](../brief/3_admin/3_1_cms.md)).
+2. **Member Hub & Account UX** – Ship the personalised dashboard, catalog rebuild, upgrade automation, and support tooling that unlock self-service for individuals and corporates ([brief/2_frontend/2_1_experience.md](../brief/2_frontend/2_1_experience.md), [brief/6_membership/6_1_memberships.md](../brief/6_membership/6_1_memberships.md), [brief/6_membership/6_2_members.md](../brief/6_membership/6_2_members.md)).
+3. **Payments, Store & Revenue Flows** – Stand up multi-currency Stripe/Xero stack, mixed-cart checkout, and reconciliation automation so awards, education, and sponsorship sales can scale ([brief/7_appendix/7_3_payments.md](../brief/7_appendix/7_3_payments.md), [brief/2_frontend/2_5_store.md](../brief/2_frontend/2_5_store.md)).
+4. **Awards & Education Program Delivery** – Rebuild entry, judging, catalog/enrollment, CPD tracking, and marketing hooks to protect the FY25 revenue plan ([brief/2_frontend/2_2_awards.md](../brief/2_frontend/2_2_awards.md), [brief/6_membership/6_5_education.md](../brief/6_membership/6_5_education.md)).
+5. **Analytics & Automation Backbone** – Launch the data lake, KPI dashboards, and lifecycle automations so HQ and chapters can see performance and act on it ([brief/7_appendix/7_1_analytics.md](../brief/7_appendix/7_1_analytics.md), [brief/5_integrations/5_1_automation.md](../brief/5_integrations/5_1_automation.md)).
+6. **Marketing, SEO & Communications Reset** – Deliver the rebrand assets, navigation refresh, bulletins/preference center, and SEO baseline to stabilise engagement ahead of launches ([brief/7_appendix/7_5_marketing.md](../brief/7_appendix/7_5_marketing.md), [brief/7_appendix/7_2_communications.md](../brief/7_appendix/7_2_communications.md), [brief/7_appendix/7_6_seo.md](../brief/7_appendix/7_6_seo.md)).
+7. **Security, Identity & Governance** – Enforce SSO/MFA, access governance, fraud controls, and documentation to satisfy BOT and compliance obligations ([brief/7_appendix/7_6_security.md](../brief/7_appendix/7_6_security.md)).
+
+Use this short list for executive status updates, then drill into the matrix below for scoring details and dependency mapping.
+
 ## High Priority
 
 | File | Initiative | V | E | D | U | Key Dependencies |

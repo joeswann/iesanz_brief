@@ -20,6 +20,13 @@
   - Fast galleries/carousels with tag filtering for awards showcases and events; intuitive search across knowledgebase, member directory, and store.
   - Accessible (WCAG AA) design with cohesive branding, templated chapter assets, social widgets pulling tagged posts, and embedded PR/storytelling modules to address “outdated digital presence” weakness.
 
+## Membership Self-Service Journeys
+  - Public storytelling and conversion flows that let prospects join, compare benefits, register interest, or book consults, then hand off seamlessly to authenticated Member Hub actions.
+  - Logged-in dashboard actions for renewing, upgrading/downgrading, cancelling, managing preferences, buying add-ons, and accessing invoices/certificates with a low-click UX.
+  - Future corporate account mode that lets delegates switch between IESANZ-managed and self-managed rosters, managing seats, tickets, sponsorship inclusions, and reporting in one place.
+  - History views (payments, CPD when live, awards participation) surfaced contextually so members can self-serve without raising tickets.
+  - Inline controls for communication and privacy preferences, plus chapter affiliation management to keep directories and alerts accurate.
+
 ## Technical Approach
   - Next.js (or similar) headless frontend consuming APIs from the CMS, CRM/membership system, Shopify/storefront, Stripe, Xero, Eventbrite, Buffer, analytics (GA4, etc.), and marketing automation (Mailchimp/Campaign Monitor).
   - Static generation + incremental revalidation for public/SEO-heavy pages; SSR/ISR hybrids for personalized data; secure API routes for payments and membership updates.

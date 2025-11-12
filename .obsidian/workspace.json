@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "brief/2_frontend/2_1_experience.md",
+                "file": "brief/2_frontend/2_2_awards.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2_1_experience"
+              "title": "2_2_awards"
             }
           }
         ]
@@ -186,8 +186,11 @@
   },
   "active": "d60ea9d4a06ea64e",
   "lastOpenFiles": [
+    "brief/2_frontend/2_1_experience.md",
     "brief/1_structure/1_2_priorities.md",
     "brief/1_structure/1_1_contents.md",
+    "brief/2_frontend/2_2_awards.md",
+    "plan/approach_guidance.md",
     "Untitled.base",
     "brief/3_admin/3_5_events.md",
     "brief/7_appendix/7_6_seo.md",
@@ -210,8 +213,6 @@
     "brief/2_frontend/2_5_store.md",
     "brief/2_frontend/2_4_knowledgebase.md",
     "brief/2_frontend/2_3_conferences.md",
-    "brief/2_frontend/2_2_awards.md",
-    "brief/2_frontend/2_1_experience.md",
     "brief/7_appendix",
     "brief/6_membership",
     "brief/5_integrations",
