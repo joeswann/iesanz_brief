@@ -1,10 +1,3 @@
-# Marketing Strategy
-
-## Summary
-- Aligns Purple Giraffe action plan objectives with membership growth, advocacy, education uptake, and sponsorship revenue.
-- Defines target audiences, messaging pillars, and multi-channel execution tactics to refresh the brand and reach underrepresented cohorts.
-- Details the tooling, KPI tracking, and governance required to keep campaigns compliant and BOT-ready across chapters.
-
 ## Strategic Objectives
 - Increase awareness among lighting professionals, students, academics, corporates, and government influencers.
 - Translate marketing into tangible KPIs: membership acquisition/retention, event registrations, sponsorship and ESG storytelling.
@@ -31,6 +24,14 @@
 - Maintain a living marketing/communications calendar covering awards cycles, education launches, conference promos, membership renewals, advocacy pushes.
 - Deliver on rebrand tasks (logo, copy, imagery, print) and coordinate messaging with board portfolios (Conferences, Awards, Education, Memberships).
 
+### Campaign Calendar Template
+| Quarter | Theme | Primary KPIs | Supporting Chapters |
+| --- | --- | --- | --- |
+| Q1 | Membership renewals + Awards entries | Join/Renewals, entry volume | All chapters |
+| Q2 | Education launches + Conference promo | Enrolments, ticket sales | Host chapter + HQ |
+| Q3 | Advocacy + Sponsorship drives | Media mentions, sponsor pipeline | Marketing portfolio |
+| Q4 | CPD recap + Community features | Engagement, retention | Chapters w/ events |
+
 ## Automation, Tooling & Measurement
 - Integrate CMS with Mailchimp/Campaign Monitor, Buffer, CRM, and analytics for segmentation and automated journeys.
 - Track KPIs: membership growth/retention, social reach/engagement, web traffic, email metrics, sponsorship pipeline health.
@@ -40,3 +41,7 @@
 - Enforce approval workflows and BOT-aligned training to prevent off-brand or non-compliant chapter messaging.
 - Ensure Spam Act/GDPR adherence, consent/suppression management, and accessible, inclusive content design.
 - Highlight ESG commitments (sustainable lighting, diversity/inclusion, transparent governance) within campaign narratives.
+
+## Operational Checklist
+- **Monthly**: Review campaign calendar, refresh asset library, align with analytics KPIs.
+- **Quarterly**: SWOT refresh vs Purple Giraffe insights, update persona targeting, audit chapter compliance.

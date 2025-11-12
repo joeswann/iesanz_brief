@@ -1,13 +1,14 @@
-# Chapters
-
-## Summary
-- Describes the localised chapter experience (content, events, commerce) while preserving national governance and brand consistency.
-- Details permissions, events/calendars, awards/galleries, storefronts, communications, and support expectations for volunteers.
-
 ## Mission & Structure
   - Provide localized experiences for each regional chapter (events, awards, news, committee, calendar, gallery, store) per Reverse Brief.
   - Balance autonomy for volunteers with national oversight on branding, compliance, and integrations.
   - Enable chapters to surface their contributions within board portfolios (conferences, education, marketing, memberships).
+
+| Persona | Responsibilities | Key Tools |
+| --- | --- | --- |
+| Chapter Coordinator | Publish events/news, manage contacts | CMS chapter space, Admin Console |
+| Volunteer Treasurer | Track payments, invoices, remittances | Store dashboards, Xero views (read-only) |
+| Marketing Lead | Run newsletters/social, update galleries | CMS templates, Communications hub |
+| Committee Chair | Approve content, escalate risks | Admin Console approvals, Governance docs |
 
 ## Content & Permissions
   - Chapter admins can manage localized content blocks (news posts, event listings, award spotlights, galleries, committee bios, contact info).
@@ -35,3 +36,7 @@
   - Document SOPs for chapter operations, including onboarding of new volunteers, content approval workflows, and escalation paths.
   - Track metrics per chapter (membership growth, event attendance, content cadence) in analytics dashboards.
   - Ensure training materials, help articles, and toolkit downloads are accessible for chapters during BOT handover.
+
+## Risks & Next Steps
+- Volunteer turnover demands ongoing training—link to `2_4_knowledgebase.md` BOT resources.
+- Misaligned pricing or branding should trigger escalation to [Super Admin Governance](../4_super_admin/4_1_super_admin.md) and [Marketing Strategy](6_5_marketing.md).

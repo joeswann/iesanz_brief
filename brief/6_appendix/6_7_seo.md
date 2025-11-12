@@ -1,9 +1,3 @@
-# SEO
-
-## Summary
-- Sets organic growth objectives across evergreen and campaign content, aligning with Purple Giraffe marketing goals.
-- Details technical foundations, content/keyword strategy, and governance/tooling needs for sustained visibility.
-
 ## Objectives & Scope
   - Outperform peer institutions (e.g., CIBSE) in organic visibility by combining technical excellence with rich storytelling across memberships, awards, education, advocacy, and resources.
   - Support evergreen queries (knowledgebase, policy, download portal, member lookup) and time-sensitive campaigns (awards deadlines, conferences, sponsorship pushes, education launches).
@@ -25,3 +19,8 @@
 - Allocate SEO tooling budget (Search Console, rank tracking, site audits) and schedule periodic technical/content reviews post-release or integration changes.
 - Enforce editorial workflows for metadata, internal linking, canonical/redirect hygiene, schema tagging, and chapter template compliance.
 - Feed SEO KPIs (traffic, rankings, conversions, Core Web Vitals, engagement) into analytics dashboards tied to Success Metrics; share insights with marketing/admin teams for action.
+
+## Escalation & Review Cadence
+- **Monthly**: Crawl health checks, Core Web Vitals review with frontend.
+- **Quarterly**: Content gap analysis with marketing, redirect/canonical audit after major launches.
+- **Annually**: Benchmark vs peers (e.g., CIBSE) and refresh schema strategies based on product/experience changes.

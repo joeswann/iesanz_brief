@@ -1,9 +1,3 @@
-# Automation
-
-## Summary
-- Coordinates workflows across memberships, payments, programs, communications, and analytics to reduce manual steps and enforce governance.
-- Specifies tooling expectations (n8n/Make/Zapier/serverless), credential management, monitoring, and chapter-ready templates.
-
 ## Purpose
   - Coordinate automation across memberships, payments, awards, education, communications, and analytics to reduce manual work and improve reliability (context Planning > Automation).
   - Provide reusable workflows that support BOT handover and chapter autonomy while keeping governance centralized.
@@ -15,6 +9,12 @@
   - Payments/Finance: failed payment alerts, invoice generation, reconciliation notifications, refund workflows, compliance escalations.
   - Communications: transactional emails (welcome, receipts), bulletins scheduling, social media auto-posting (via Buffer), marketing drip campaigns.
   - Analytics: anomaly detection (failed imports, membership drops), report scheduling, KPI threshold alerts.
+
+## Priority Sequence
+1. **Phase 1** – Membership onboarding/renewal, payment failure notifications, CMS publishing alerts.
+2. **Phase 2** – Awards/event journeys, sponsorship fulfilment, communications digests.
+3. **Phase 3** – CPD tracking, corporate account automations, predictive analytics hooks.
+This ordering mirrors plan/phases.md so teams focus on revenue-critical flows first.
 
 ## Tooling & Integration
   - Leverage workflow engines (e.g., n8n, Make, Zapier, custom serverless) tied to CMS, CRM, Stripe, Xero, Eventbrite, Mailchimp, analytics, OneDrive.
@@ -30,3 +30,7 @@
   - Over-automation without oversight could cause false messaging or financial errors; enforce testing/SIT before deployment.
   - Dependency on third-party services requires contingency plans (rate limits, outages, vendor changes).
   - Volunteers/chapters need training to avoid breaking shared automations; enforce sandbox environments for experimentation.
+
+## BOT Playbook Links
+- Training packs and runbooks should be filed inside the knowledgebase (`2_4_knowledgebase.md`) with ownership mapped to Super Admin.
+- Capture change logs and rollback scripts per automation so chapters know how to recover during BOT transition.

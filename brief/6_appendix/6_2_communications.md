@@ -1,10 +1,3 @@
-# Communications
-
-## Summary
-- Defines the internal/member communication stack, separate from outward marketing, covering bulletins, alerts, and transactional notices.
-- Emphasises preference management, automation tooling, embedded delivery within the member hub, and analytics feedback loops.
-- Notes risks around over-communication, incident messaging, and volunteer training for compliance.
-
 ## Purpose
   - Coordinate internal/member communications (bulletins, alerts, newsletters, transactional notices) distinct from external marketing campaigns.
   - Improve usability of communications per Spec v3 by offering structured feeds, preference management, and automation.
@@ -34,3 +27,8 @@
   - Over-communication risk; implement frequency caps and segmentation to keep messages relevant.
   - Need contingency messaging for outages/incidents, coordinated with super-admin/IT.
   - Volunteers require training to avoid off-brand or non-compliant messaging; enforce approval workflows.
+
+## Operational Checklist
+- **Daily**: Review transactional queue health, incident alerts.
+- **Weekly**: Approve scheduled bulletins, validate suppression lists, sync with marketing.
+- **Monthly**: Audit templates for accessibility, refresh preference center logic, train new chapter comms leads.

@@ -1,9 +1,3 @@
-# Events & Conferences Operations
-
-## Summary
-- Provides the operational companion to [Conferences](../2_frontend/2_3_conferences.md), detailing how HQ and chapters run registrations, hybrid delivery, and sponsor fulfilment.
-- Consolidates the SOPs previously scattered across the legacy microsite so BOT-ready teams can execute consistently.
-
 ## Attendee & Venue Operations
 - Maintain admin dashboards for attendee management, check-in, seating assignments (awards dinner), special requirements, and travel info.
 - Coordinate venue logistics, catering, AV, and accessibility considerations with documented runbooks and escalation paths.
@@ -20,4 +14,8 @@
 ## Risk & Contingency Planning
 - Maintain contingency plans for hybrid/virtual pivots (pandemics, travel disruptions) and compliance with venue safety regulations.
 - Keep risk registers for regional/time-zone complexity, ensuring ownership and mitigation steps are reviewed quarterly.
-- Ensure accurate data syncing with memberships/accounts for discount eligibility and revenue reporting, in partnership with [Finance & Payments](../7_appendix/7_3_payments.md).
+- Ensure accurate data syncing with memberships/accounts for discount eligibility and revenue reporting, in partnership with [Finance & Payments](6_3_payments.md).
+
+## Data & Reporting
+- Push attendance, revenue, sponsor delivery, and satisfaction metrics to [Analytics](6_1_analytics.md) and board dashboards.
+- Capture qualitative feedback loops (surveys, incident retros) and surface them inside the admin console for future planning.

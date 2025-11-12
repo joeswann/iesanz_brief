@@ -1,9 +1,3 @@
-# Analytics
-
-## Summary
-- Measures Success Metrics (systems, usability, memberships) plus marketing KPIs, delivering both real-time and historical visibility.
-- Defines data sources, dashboards, architecture, and risk/compliance requirements to support admins, chapters, board, and BOT handover.
-
 ## Objectives & Governance
   - Measure success pillars defined in context.md (systems flexibility/reliability/speed/automation, usability, memberships) plus marketing KPIs from the Purple Giraffe plan.
   - Provide both real-time visibility (site status, payments, automation queues) and historical reporting (month-end membership counts, CPD progress, education uptake).
@@ -33,3 +27,8 @@
   - Enforce privacy/consent tracking, respect opt-outs, anonymize data where required (Spam Act/GDPR).
   - Carefully map multiple bank accounts/payment gateways to analytics dimensions to prevent double counting.
   - Budget for tool licenses, pipeline maintenance, and periodic audits post-release; document data ownership for BOT handover and vendor oversight.
+
+## Operational Checklist
+- **Daily**: Monitor ingestion pipelines, dashboard refresh status, alert queues.
+- **Weekly**: Review anomalies (failed imports, churn spikes), sync with Admin Console teams.
+- **Monthly**: Publish Success Metrics pack for board portfolios, reconcile revenue vs finance reports, audit access logs.

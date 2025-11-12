@@ -1,9 +1,3 @@
-# Integrations
-
-## Summary
-- Outlines the integration layer linking CMS, CRM, finance, awards, events, and marketing to keep workflows automated and auditable.
-- Emphasises middleware approach, canonical data models, security/compliance, and prioritised rollout aligned with BOT handover.
-
 ## Purpose
   - Deliver a cohesive integration layer connecting CMS, membership data, finance, awards, events and marketing tools so workflows stay automated, auditable and low-maintenance (context Planning > Technical > Integrations).
   - Support the BOT model by minimising bespoke code, using proven plugins/connectors, and documenting how data flows for handover to chapters and HQ.
@@ -30,8 +24,19 @@
   - Document runbooks per integration (owner, endpoints, throttling rules, fallback steps) and bundle them into handover materials for chapters/admins.
   - Build regression tests/smoke checks (e.g., heartbeat jobs validating sample records) to catch silent failures before they affect members or finance.
 
+### Roadmap Snapshot
+| Phase | Focus | Dependencies |
+| --- | --- | --- |
+| Phase 1 | Stripe↔Xero, CMS↔CRM, Auth (SSO) | Finance, Membership governance |
+| Phase 2 | Awards/Eventbrite, Shopify/storefront, Mailchimp | Forms framework, automation templates |
+| Phase 3 | CPD tracker, corporate accounts, analytics lake | Education roadmap, Super Admin approvals |
+
 ## Success Metrics
   - Transaction sync accuracy (invoices vs. gateway totals) within agreed tolerances.
   - Time-to-update for member status changes reflected across systems (<15 min target).
   - Reduction in manual reconciliation/CSV uploads for awards, events and campaigns.
   - Uptime and alert-response SLAs for the integration layer, with tracked MTTR.
+
+## BOT Playbook
+- Store runbooks and heartbeat dashboards inside the knowledgebase so chapters know when to escalate.
+- Align integration deployment reviews with [Super Admin Governance](../4_super_admin/4_1_super_admin.md) cadences documented earlier.

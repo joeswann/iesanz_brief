@@ -1,9 +1,3 @@
-# Super Admin Governance
-
-## Summary
-- Defines platform-wide policy, architecture, and compliance guardrails that enable Admin Operations to function safely.
-- Covers identity/security oversight, integration approvals, observability, and vendor/BOT management expectations.
-
 ## Mandate & Governance
 - Own global configuration for branding, navigation, integrations, automation rules, and compliance commitments outlined in context/Spec v3.
 - Approve environment changes, schema updates, vendor selections, and BOT-model outsourcing decisions while coordinating with board portfolio leads.
@@ -43,3 +37,7 @@
 - Guard against region-based pricing errors by keeping configuration-driven rules and documenting governance for expansions.
 - Bake in fraud prevention (duplicate detection, identity verification), plus workflows for special statuses and disciplinary cases referenced in context.
 - Provide training for volunteers/chapters, maintain audit logs, and coordinate privacy/GDPR/Spam Act compliance for directories and communications consent.
+
+## Decision Logs & Handover
+- Record architecture/finance/security approvals in a shared log, linking back to plan/backlog items.
+- Publish quarterly governance reviews summarizing incidents, integration changes, and pricing updates for BOT transparency.

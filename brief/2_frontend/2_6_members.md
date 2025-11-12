@@ -1,16 +1,16 @@
-# Members Hub
-
-## Summary
-- Defines personas spanning individuals, corporates, chapters, board observers, and prospects, ensuring each can see relevant value.
-- Outlines the unified member hub experience, self-service tooling, and community features required to modernise perception.
-- Notes dependencies on accurate data syncing, accessibility, and privacy compliance.
-- Shares entry points with [Frontend Experience](../2_frontend/2_1_experience.md) so navigation and dashboard modules stay aligned.
-
 ## Personas & Access Layers
   - Individuals: students, emerging professionals, accredited members, senior fellows seeking CPD, networking, awards participation.
   - Corporate delegates: organizations purchasing memberships/tickets, managing team rosters, accessing sponsorship benefits (future corporate accounts).
   - Chapters & board: need elevated visibility yet consume member-facing dashboards for situational awareness.
   - Non-members/prospects: browse value (events, education, publications) and convert via clear CTAs.
+- 
+## Membership Self-Service
+- Public storytelling and conversion flows that let prospects join, compare benefits, register interest, then hand off seamlessly to authenticated Member Hub actions.
+- Logged-in dashboard actions for renewing, upgrading/downgrading, cancelling, managing preferences, buying add-ons, and accessing invoices/certificates.
+- History views (payments, CPD when live, awards participation) surfaced contextually so members can self-serve without raising tickets.
+- Inline controls for communication and privacy preferences, plus chapter affiliation management to keep directories and alerts accurate.
+- Future corporate account mode that allows for self-managed groups, managing seats, tickets, and sponsorship inclusions in one place.
+
 
 ## Member Hub Experience
   - Unified dashboard surface: membership status, invoices, payment methods, CPD tracker (future), awards entries, education enrollments, event tickets, sponsorship orders, communications feed.
@@ -32,3 +32,8 @@
   - Data accuracy depends on syncing CRM, CMS, finance (Stripe/Xero), awards, education; implement validation and escalation workflows.
   - Accessibility and low-click journeys are essential for volunteer-heavy audience; continuous UX testing required.
   - Privacy/GDPR/Spam Act compliance for communications and public directory participation; provide granular opt-outs and audit trails.
+
+## Data Contracts
+- Inputs: membership CRM (status, grade, chapter), finance (payments, invoices), awards (entries, results), education (enrolments, CPD), events (tickets), communications preferences.
+- Outputs: dashboard widgets, analytics telemetry, marketing segments, automation triggers.
+- Owners: data stewards defined in [Super Admin Governance](../4_super_admin/4_1_super_admin.md) ensure schemas remain consistent across releases.

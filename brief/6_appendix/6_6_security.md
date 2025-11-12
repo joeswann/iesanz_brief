@@ -1,9 +1,3 @@
-# Security & Compliance
-
-## Summary
-- Protects member data, financial transactions, and proprietary content via headless architecture, RBAC, and compliance programs.
-- Covers posture, privacy, risk management, and training, tying actions to BOT handover expectations.
-
 ## Objectives
   - Protect member data, financial transactions, and proprietary content across CMS, CRM, store, and analytics systems.
   - Reduce attack surface by leveraging headless architecture (non-public CMS, static/frontend separation) as argued in context.md.
@@ -29,3 +23,8 @@
   - Educate staff/volunteers on phishing, social engineering, secure document handling, and incident escalation.
   - Document compliance obligations, schedule drills (disaster recovery, breach response), and track remediation actions.
   - Coordinate with super-admin for periodic security reviews tied to BOT handover milestones and maintenance windows.
+
+## Escalation & Review Cadence
+- **Monthly**: Access reviews for admin portals, credential rotation checks, vulnerability scan report.
+- **Quarterly**: Incident response tabletop, WAF/monitoring tuning, vendor security review.
+- **Annually**: Penetration test, policy refresh aligned with context Next Steps, BOT handover evidence capture.

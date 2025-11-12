@@ -1,9 +1,3 @@
-# Finance & Payments
-
-## Summary
-- Governs payment processing, invoicing, reconciliation, and financial reporting across memberships, events, store, and sponsorships.
-- Covers multi-gateway operations, compliance expectations, security controls, and dependencies on other systems/teams.
-
 ## Mandate
   - Ensure accurate, auditable financial flows for memberships, events, awards, store purchases, sponsorships, and donations.
   - Integrate online payments with accounting (Xero) and support multi-bank, multi-gateway operations across AU/NZ.
@@ -33,3 +27,8 @@
 - Requires tight coupling with memberships, store, awards, education, and analytics to avoid double entry; see [Awards Program](../2_frontend/2_2_awards.md), [Awards Operations](../3_admin/3_4_awards.md), [Conferences](../2_frontend/2_3_conferences.md), and [Events & Conferences Operations](../3_admin/3_5_events.md).
 - Relies on automation platform for transactional emails (receipts, failed payment alerts, renewal reminders).
 - Needs training/runbooks for volunteers handling chapter finances under BOT model.
+
+## Operational Checklist
+- **Daily**: Reconciliation exceptions, failed payment alerts, suspicious activity review.
+- **Weekly**: Gateway settlement checks (Stripe/Eventbrite/Shopify), sponsorship deliverable confirmation with Ops teams.
+- **Monthly**: GST/BAS prep per region, membership revenue vs analytics match, access audit for financial consoles.
