@@ -35,15 +35,15 @@
 - **5.2** – [Integrations](../5_integrations/5_2_integrations.md)
 
 ## Membership & Programs
-- **6.1** – [Memberships](6_1_memberships.md)
-- **6.2** – [Members Hub](2_6_members.md)
-- **6.3** – [Education & CPD](2_7_education.md)
+- **6.1** – [Memberships](../4_super_admin/6_1_memberships.md)
+- **6.2** – [Members Hub](../2_frontend/2_6_members.md)
+- **6.3** – [Education & CPD](../2_frontend/2_7_education.md)
 
 ## Appendix Services
-- **7.1** – [Analytics & Reporting](6_1_analytics.md)
-- **7.2** – [Communications](6_2_communications.md)
-- **7.3** – [Finance & Payments](6_3_payments.md)
-- **7.4** – [Forms Framework](6_4_forms.md)
-- **7.5** – [Marketing Strategy](6_5_marketing.md)
-- **7.6** – [Security & Compliance](6_6_security.md)
-- **7.7** – [SEO & Optimisation](6_7_seo.md)
+- **7.1** – [Analytics & Reporting](../6_appendix/6_1_analytics.md)
+- **7.2** – [Communications](../6_appendix/6_2_communications.md)
+- **7.3** – [Finance & Payments](../6_appendix/6_3_payments.md)
+- **7.4** – [Forms Framework](../6_appendix/6_4_forms.md)
+- **7.5** – [Marketing Strategy](../6_appendix/6_5_marketing.md)
+- **7.6** – [Security & Compliance](../6_appendix/6_6_security.md)
+- **7.7** – [SEO & Optimisation](../6_appendix/6_7_seo.md)

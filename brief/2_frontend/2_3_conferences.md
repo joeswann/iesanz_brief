@@ -11,7 +11,7 @@
 
 ## Registration & Commerce
   - Offer tiered ticketing (member, non-member, student, corporate, sponsor), multi-currency pricing, GST logic (AU/NZ), and bundles (conference + awards + education add-ons).
-  - Integrate with Stripe/Xero for invoicing, Eventbrite/Shopify for payment/fulfilment, and allow purchase on behalf of others or corporate delegates under policies set in [Finance & Payments](6_3_payments.md).
+  - Integrate with Stripe/Xero for invoicing, Eventbrite/Shopify for payment/fulfilment, and allow purchase on behalf of others or corporate delegates under policies set in [Finance & Payments](../6_appendix/6_3_payments.md).
   - Manage sponsorship packages (exhibitor booths, speaking slots, branded sessions) with deliverable tracking.
 
 ## Marketing & Engagement
@@ -24,11 +24,11 @@
 - That chapter also holds risk registers, vendor playbooks, and SOPs so the public-facing experience stays focused on storytelling and conversion.
 
 ## Dependencies & Hand-offs
-- Payments, invoicing, and sponsorship bundles feed into [Finance & Payments](6_3_payments.md) and [Store & Sponsorships](2_5_store.md).
-- Automation (reminders, surveys, post-event nurture) depends on [Automation](../5_integrations/5_1_automation.md) and [Communications](6_2_communications.md).
-- Data capture and analytics route to [Analytics](6_1_analytics.md) and [Education & CPD](2_7_education.md) for long-term engagement tracking.
+- Payments, invoicing, and sponsorship bundles feed into [Finance & Payments](../6_appendix/6_3_payments.md) and [Store & Sponsorships](2_5_store.md).
+- Automation (reminders, surveys, post-event nurture) depends on [Automation](../5_integrations/5_1_automation.md) and [Communications](../6_appendix/6_2_communications.md).
+- Data capture and analytics route to [Analytics](../6_appendix/6_1_analytics.md) and [Education & CPD](../2_frontend/2_7_education.md) for long-term engagement tracking.
 
 ## Risks & Considerations
 - Hybrid delivery adds technical failure risk—mirror the contingency plans in [Events & Conferences Operations](../3_admin/3_5_events.md).
-- Legacy microsite migration must include redirects and SEO hygiene from [SEO](6_7_seo.md).
+- Legacy microsite migration must include redirects and SEO hygiene from [SEO](../6_appendix/6_7_seo.md).
 - Sponsor/delegate data accuracy is critical for cross-selling; align with CRM governance in [Super Admin Governance](../4_super_admin/4_1_super_admin.md).

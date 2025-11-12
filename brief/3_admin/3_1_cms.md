@@ -36,4 +36,4 @@
 
 ## Dependencies & Next Steps
 - Coordinate schema changes with [Super Admin Governance](../4_super_admin/4_1_super_admin.md) approval cycles.
-- Ensure data contracts stay aligned with [Analytics](6_1_analytics.md) and [Integrations](../5_integrations/5_2_integrations.md).
+- Ensure data contracts stay aligned with [Analytics](../6_appendix/6_1_analytics.md) and [Integrations](../5_integrations/5_2_integrations.md).

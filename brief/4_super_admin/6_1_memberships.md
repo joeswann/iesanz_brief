@@ -4,7 +4,7 @@
   - Balance national governance with chapter autonomy and BOT-style handover expectations.
 
 ## Reference Map
-- **Frontend experience**: Membership self-service journeys, low-click dashboards, and corporate modes now live in [Frontend Experience](../2_frontend/2_1_experience.md#membership-self-service-journeys) and [Members Hub](2_6_members.md).
+- **Frontend experience**: Membership self-service journeys, low-click dashboards, and corporate modes now live in [Frontend Experience](../2_frontend/2_1_experience.md#membership-self-service-journeys) and [Members Hub](../2_frontend/2_6_members.md).
 - **Backend/governance**: Catalog, lifecycle, upgrade, automation, integration, and risk controls are captured under [Super Admin Governance](../4_super_admin/4_1_super_admin.md#membership-operations-oversight).
 - **Programs & entitlements**: Education, CPD, awards, and store dependencies are detailed within their respective briefs; ensure membership data contracts remain in sync when those teams iterate.
 

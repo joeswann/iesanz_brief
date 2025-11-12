@@ -11,12 +11,12 @@
 ## Automation, Integrations & Compliance
 - Run automated reminders for entry deadlines, incomplete submissions, juror tasks, sponsorship deliverables, and award-night logistics using the patterns in [Automation](../5_integrations/5_1_automation.md).
 - Integrate CMS ↔ CRM for eligibility, Stripe/Xero for payments, Eventbrite/Shopify for ticketing, analytics for performance, and marketing automation for announcements per [Integrations](../5_integrations/5_2_integrations.md).
-- Apply GST, invoice, and reconciliation controls from [Finance & Payments](6_3_payments.md) and reuse [Forms Framework](6_4_forms.md) standards for intake UX.
+- Apply GST, invoice, and reconciliation controls from [Finance & Payments](../6_appendix/6_3_payments.md) and reuse [Forms Framework](../6_appendix/6_4_forms.md) standards for intake UX.
 
 ## Data & Reporting
-- Feed entry counts, payment status, judging progress, and sponsorship fulfilment into [Analytics](6_1_analytics.md) for Success Metrics reporting.
+- Feed entry counts, payment status, judging progress, and sponsorship fulfilment into [Analytics](../6_appendix/6_1_analytics.md) for Success Metrics reporting.
 - Maintain export templates for board packs and marketing storytelling (winners, testimonials) to keep context alignment.
 
 ## Risks & Next Steps
-- Embargo breaches, juror conflicts, and file mismanagement require strict RBAC and audit trails—coordinate with [Security & Compliance](6_6_security.md).
+- Embargo breaches, juror conflicts, and file mismanagement require strict RBAC and audit trails—coordinate with [Security & Compliance](../6_appendix/6_6_security.md).
 - Plan SIT/UAT cycles ahead of each awards season per plan/phases.md to avoid regressions.

@@ -14,8 +14,8 @@
 ## Risk & Contingency Planning
 - Maintain contingency plans for hybrid/virtual pivots (pandemics, travel disruptions) and compliance with venue safety regulations.
 - Keep risk registers for regional/time-zone complexity, ensuring ownership and mitigation steps are reviewed quarterly.
-- Ensure accurate data syncing with memberships/accounts for discount eligibility and revenue reporting, in partnership with [Finance & Payments](6_3_payments.md).
+- Ensure accurate data syncing with memberships/accounts for discount eligibility and revenue reporting, in partnership with [Finance & Payments](../6_appendix/6_3_payments.md).
 
 ## Data & Reporting
-- Push attendance, revenue, sponsor delivery, and satisfaction metrics to [Analytics](6_1_analytics.md) and board dashboards.
+- Push attendance, revenue, sponsor delivery, and satisfaction metrics to [Analytics](../6_appendix/6_1_analytics.md) and board dashboards.
 - Capture qualitative feedback loops (surveys, incident retros) and surface them inside the admin console for future planning.
