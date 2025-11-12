@@ -25,5 +25,3 @@
 
 ## Considerations
 - Hybrid delivery adds technical failure risk—mirror the contingency plans in [Events & Conferences Operations](../3_admin/3_5_events.md).
-- Legacy microsite migration must include redirects and SEO hygiene from [SEO](../6_appendix/6_7_seo.md).
-- Sponsor/delegate data accuracy is critical for cross-selling; align with CRM governance in [Super Admin Governance](../4_super_admin/4_1_super_admin.md).

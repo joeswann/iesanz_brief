@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "brief/1_structure/1_1_contents.md",
+                "file": "brief/2_frontend/2_5_store.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1_1_contents"
+              "title": "2_5_store"
             }
           }
         ]
@@ -186,6 +186,11 @@
   },
   "active": "d60ea9d4a06ea64e",
   "lastOpenFiles": [
+    "brief/2_frontend/2_4_knowledgebase.md",
+    "brief/2_frontend/2_3_conferences.md",
+    "brief/2_frontend/2_2_awards.md",
+    "brief/2_frontend/2_1_experience.md",
+    "brief/1_structure/1_1_contents.md",
     "Untitled.base",
     "Untitled.canvas",
     "brief/6_appendix/6_4_forms.md",
@@ -196,12 +201,7 @@
     "brief/3_admin/3_4_awards.md",
     "brief/3_admin/3_2_chapters.md",
     "brief/2_frontend/2_6_members.md",
-    "brief/2_frontend/2_3_conferences.md",
     "brief/2_frontend/2_5_store.md",
-    "brief/2_frontend/2_4_knowledgebase.md",
-    "brief/2_frontend/2_2_awards.md",
-    "brief/2_frontend/2_1_experience.md",
-    "brief/1_structure/1_1_contents.md",
     "brief/1_structure/1_2_priorities.md",
     "plan/workstreams.md",
     "files/IESANZ_-_New_Website_Specifications_v3.pdf",
