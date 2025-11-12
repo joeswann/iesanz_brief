@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reverse_brief/admin.md",
+                "file": "brief/15_cms.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "admin"
+              "title": "15_cms"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 227.5
   },
   "right": {
     "id": "98bed66704bdbe64",
@@ -185,16 +185,41 @@
   },
   "active": "d60ea9d4a06ea64e",
   "lastOpenFiles": [
-    "reverse_brief/cms.md",
-    "reverse_brief/priorities.md",
-    "reverse_brief/frontend.md",
-    "reverse_brief/knowledgebase.md",
-    "IESANZ/2025-11-09.md",
-    "IESANZ/Welcome.md",
-    "context.md",
-    "reverse_brief/awards.md",
-    "reverse_brief/conferences.md",
-    "reverse_brief/memberships.md",
-    "reverse_brief/super_admin.md"
+    "brief/10_education.md",
+    "brief/02_priorities.md",
+    "brief/01_table_of_contents.md",
+    "brief/18_automation.md",
+    "brief/12_conferences.md",
+    "brief/08_communications.md",
+    "brief/05_super_admin.md",
+    "brief/07_members.md",
+    "brief/06_memberships.md",
+    "brief/04_admin.md",
+    "brief/03_frontend.md",
+    "brief/23_seo.md",
+    "brief/22_analytics.md",
+    "brief/21_security.md",
+    "brief/20_finance_payments.md",
+    "brief/19_integrations.md",
+    "brief/16_forms.md",
+    "brief/15_cms.md",
+    "brief/14_store.md",
+    "brief/13_chapters.md",
+    "brief/11_knowledgebase.md",
+    "brief/09_awards.md",
+    "brief/17_marketing.md",
+    "brief/11_knowledgebase.md~",
+    "brief/23_seo.md~",
+    "brief/22_analytics.md~",
+    "brief/21_security.md~",
+    "brief/20_finance_payments.md~",
+    "brief/19_integrations.md~",
+    "brief/18_automation.md~",
+    "brief/16_forms.md.tmp",
+    "brief/15_cms.md.tmp",
+    "brief/14_store.md.tmp",
+    "brief/14_frontend.md",
+    "brief/13_store.md",
+    "brief/05_marketing.md"
   ]
 }

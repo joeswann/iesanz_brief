@@ -7,13 +7,13 @@ Initiatives are grouped by priority tier (High → Mid → Low). Each row refere
 | File | Initiative | V | E | D | U | Key Dependencies |
 | --- | --- | --- | --- | --- | --- | --- |
 | [[cms.md]] | Define headless schemas (pages, knowledgebase, events, awards) | H | M | M | H | [[frontend.md]], [[knowledgebase.md]], [[awards.md]] |
-| [[cms.md]] | Role-based editorial workflows (public/chapter/member/admin) | H | M | H | H | [[security.md]], [[chapters.md]], [[admin.md]] |
+| [[cms.md]] | Role-based editorial workflows (public/chapter/member/admin) | H | M | H | H | [[security.md]], [[chapters.md]], [[cms.md]] |
 | [[frontend.md]] | Member hub/dashboard UX with personalized actions | H | H | H | H | [[members.md]], [[memberships.md]], [[analytics.md]] |
 | [[frontend.md]] | Navigation/IA redesign (portfolios, chapters, store) | H | M | M | H | [[cms.md]], [[chapters.md]] |
-| [[admin.md]] | Unified admin console (memberships, awards, payments) | H | H | H | H | [[memberships.md]], [[awards.md]], [[finance_payments.md]] |
-| [[admin.md]] | Monday.com & Approval Max migration plan | H | M | M | H | legacy systems |
-| [[super_admin.md]] | Identity & access governance (SSO/MFA, RBAC) | H | M | M | H | [[security.md]], [[admin.md]] |
-| [[super_admin.md]] | Integration/observability dashboards | H | M | M | H | [[analytics.md]], [[automation.md]] |
+| [[cms.md]] | Unified admin console (memberships, awards, payments) | H | H | H | H | [[memberships.md]], [[awards.md]], [[finance_payments.md]] |
+| [[cms.md]] | Monday.com & Approval Max migration plan | H | M | M | H | legacy systems |
+| [[cms.md]] | Identity & access governance (SSO/MFA, RBAC) | H | M | M | H | [[security.md]], [[cms.md]] |
+| [[cms.md]] | Integration/observability dashboards | H | M | M | H | [[analytics.md]], [[automation.md]] |
 | [[education.md]] | Education catalog + enrollment (courses, webinars) | H | M | M | H | [[store.md]], [[memberships.md]] |
 | [[education.md]] | CPD tracking roadmap | H | M | M | H | [[analytics.md]], [[members.md]] |
 | [[awards.md]] | Entry & payment workflow overhaul (cart, OneDrive) | H | H | M | H | [[store.md]], [[finance_payments.md]] |
@@ -23,10 +23,10 @@ Initiatives are grouped by priority tier (High → Mid → Low). Each row refere
 | [[seo.md]] | Technical SEO baseline (schema, CWV, hreflang) | H | M | M | H | [[frontend.md]], [[analytics.md]] |
 | [[seo.md]] | Content governance for key verticals | H | M | M | H | [[cms.md]], [[knowledgebase.md]] |
 | [[analytics.md]] | Data lake/warehouse foundation | H | H | H | H | [[memberships.md]], [[finance_payments.md]], [[store.md]] |
-| [[analytics.md]] | KPI dashboards (systems/usability/membership) | H | M | M | H | [[frontend.md]], [[admin.md]] |
+| [[analytics.md]] | KPI dashboards (systems/usability/membership) | H | M | M | H | [[frontend.md]], [[cms.md]] |
 | [[automation.md]] | Membership lifecycle automations | H | M | M | H | [[memberships.md]], [[communications.md]] |
 | [[automation.md]] | Payment/finance alerting | H | M | M | H | [[finance_payments.md]] |
-| [[communications.md]] | Bulletin board + preference center rebuild | H | M | M | H | [[members.md]], [[admin.md]] |
+| [[communications.md]] | Bulletin board + preference center rebuild | H | M | M | H | [[members.md]], [[cms.md]] |
 | [[communications.md]] | Transactional messaging framework | H | M | M | H | [[automation.md]], [[finance_payments.md]] |
 | [[store.md]] | Unified ecommerce catalog (sponsorships, ads, publications) | H | H | M | H | [[finance_payments.md]], [[marketing.md]] |
 | [[store.md]] | Mixed-cart checkout with invoice option | H | M | M | H | [[memberships.md]], [[awards.md]] |
@@ -38,13 +38,13 @@ Initiatives are grouped by priority tier (High → Mid → Low). Each row refere
 | [[chapters.md]] | RBAC + self-service tooling for chapter admins | H | M | M | H | [[cms.md]], [[security.md]] |
 | [[knowledgebase.md]] | Taxonomy & search implementation | H | M | M | H | [[cms.md]], [[frontend.md]] |
 | [[knowledgebase.md]] | Controlled download portal | H | M | M | H | [[store.md]], [[security.md]] |
-| [[security.md]] | MFA/SSO rollout & access audits | H | M | M | H | [[admin.md]], [[super_admin.md]] |
+| [[security.md]] | MFA/SSO rollout & access audits | H | M | M | H | [[cms.md]], [[cms.md]] |
 | [[security.md]] | Payment/data protection controls | H | M | M | H | [[finance_payments.md]], [[cms.md]] |
 | [[members.md]] | Unified member portal (profiles, invoices, CPD, awards) | H | H | H | H | [[frontend.md]], [[memberships.md]], [[awards.md]] |
 | [[members.md]] | Member directory with chapter filters/privacy | H | M | M | H | [[chapters.md]], [[security.md]] |
 | [[memberships.md]] | Catalog rebuild incl. special statuses & pro-rata | H | M | M | H | [[finance_payments.md]] |
 | [[memberships.md]] | Upgrade workflow overhaul (9-step process) | H | M | H | H | [[automation.md]], [[analytics.md]] |
-| [[memberships.md]] | Monday.com migration & approval replication | H | M | M | H | [[admin.md]], legacy systems |
+| [[memberships.md]] | Monday.com migration & approval replication | H | M | M | H | [[cms.md]], legacy systems |
 
 ## Mid Priority
 
@@ -54,10 +54,10 @@ Initiatives are grouped by priority tier (High → Mid → Low). Each row refere
 | [[cms.md]] | Training/BOT documentation | M | M | M | M | [[communications.md]], [[knowledgebase.md]] |
 | [[frontend.md]] | Performance & accessibility baseline | M | M | M | M | [[seo.md]], [[security.md]] |
 | [[frontend.md]] | Localization hooks (AU/NZ) | M | M | M | M | [[marketing.md]], [[finance_payments.md]] |
-| [[admin.md]] | Automation of communications & notifications | M | M | M | M | [[communications.md]], [[automation.md]] |
-| [[admin.md]] | Chapter management tooling & overrides | M | M | M | M | [[chapters.md]], [[security.md]] |
-| [[super_admin.md]] | BOT/maintenance governance | M | L | M | M | [[marketing.md]], [[chapters.md]] |
-| [[super_admin.md]] | Incident response & DR runbooks | M | M | M | M | [[security.md]] |
+| [[cms.md]] | Automation of communications & notifications | M | M | M | M | [[communications.md]], [[automation.md]] |
+| [[cms.md]] | Chapter management tooling & overrides | M | M | M | M | [[chapters.md]], [[security.md]] |
+| [[cms.md]] | BOT/maintenance governance | M | L | M | M | [[marketing.md]], [[chapters.md]] |
+| [[cms.md]] | Incident response & DR runbooks | M | M | M | M | [[security.md]] |
 | [[education.md]] | Personalized recommendations | M | M | M | M | [[frontend.md]], [[analytics.md]] |
 | [[education.md]] | Download portal for materials & DRM | M | M | M | M | [[knowledgebase.md]], [[store.md]] |
 | [[awards.md]] | Gallery/showcase rebuild | M | M | M | M | [[frontend.md]], [[seo.md]] |
@@ -72,16 +72,16 @@ Initiatives are grouped by priority tier (High → Mid → Low). Each row refere
 | [[automation.md]] | Analytics anomaly detection | M | M | M | M | [[analytics.md]] |
 | [[communications.md]] | Chapter/localized comms w/ approvals | M | M | M | M | [[chapters.md]], [[marketing.md]] |
 | [[communications.md]] | Engagement analytics/reporting | M | L | M | M | [[analytics.md]] |
-| [[store.md]] | Chapter storefront enablement/reporting | M | M | M | M | [[chapters.md]], [[admin.md]] |
+| [[store.md]] | Chapter storefront enablement/reporting | M | M | M | M | [[chapters.md]], [[cms.md]] |
 | [[store.md]] | Inventory/sponsorship availability tracking | M | M | M | M | [[conferences.md]], [[awards.md]] |
 | [[finance_payments.md]] | Fraud prevention & compliance | M | M | M | M | [[security.md]], [[memberships.md]] |
-| [[finance_payments.md]] | Refund/partial/offline processes | M | M | M | M | [[admin.md]] |
+| [[finance_payments.md]] | Refund/partial/offline processes | M | M | M | M | [[cms.md]] |
 | [[conferences.md]] | Hybrid event tooling | M | M | M | M | vendors |
 | [[conferences.md]] | Post-event content capture | M | L | L | M | [[knowledgebase.md]], [[marketing.md]] |
 | [[chapters.md]] | Chapter storefront operations | M | M | M | M | [[store.md]], [[finance_payments.md]] |
 | [[chapters.md]] | Localized comms/templates | M | L | L | M | [[marketing.md]], [[communications.md]] |
 | [[knowledgebase.md]] | Contribution workflow for chapters/SMEs | M | M | M | M | [[chapters.md]], [[education.md]] |
-| [[knowledgebase.md]] | BOT training/SOP publishing | M | L | L | M | [[admin.md]] |
+| [[knowledgebase.md]] | BOT training/SOP publishing | M | L | L | M | [[cms.md]] |
 | [[security.md]] | Fraud detection (memberships/store) | M | M | M | M | [[memberships.md]], [[store.md]] |
 | [[security.md]] | Incident monitoring tooling | M | M | M | M | [[automation.md]] |
 | [[members.md]] | Preference center & consent management | M | M | M | M | [[communications.md]] |
@@ -94,8 +94,8 @@ Initiatives are grouped by priority tier (High → Mid → Low). Each row refere
 | --- | --- | --- | --- | --- | --- | --- |
 | [[cms.md]] | Localization/multi-region enhancements | L | M | M | L | [[marketing.md]] |
 | [[frontend.md]] | Future community/forum components | L | M | M | L | [[members.md]] |
-| [[admin.md]] | Training/runbooks for BOT handover | L | M | L | L | [[knowledgebase.md]] |
-| [[super_admin.md]] | ESG/brand compliance reporting | L | L | L | L | [[marketing.md]], [[analytics.md]] |
+| [[cms.md]] | Training/runbooks for BOT handover | L | M | L | L | [[knowledgebase.md]] |
+| [[cms.md]] | ESG/brand compliance reporting | L | L | L | L | [[marketing.md]], [[analytics.md]] |
 | [[education.md]] | Legal/accreditation review workflows | L | L | M | L | external advisors |
 | [[awards.md]] | Sponsorship tie-ins & PR packages | L | L | M | L | [[marketing.md]], [[store.md]] |
 | [[marketing.md]] | APAC expansion targeting | L | L | M | L | leadership approval |
