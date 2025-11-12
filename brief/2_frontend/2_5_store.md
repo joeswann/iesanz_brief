@@ -35,7 +35,3 @@
   - Prevent hard-coded tax/pricing rules; maintain configurable engines to adapt to regional changes and align with [Finance & Payments](6_3_payments.md).
   - Document workflows for refunds, failed payments, sponsor deliverables, and compliance (advertising standards) while pointing staff to finance SOPs for escalation paths.
   - Monitor storefront performance (speed, conversion) and security (PCI compliance, anti-fraud) as part of ongoing maintenance.
-
-## Dependencies & Next Steps
-- Coordinate marketing calendar entries with [Marketing Strategy](6_5_marketing.md) and automation reminders via [Automation](../5_integrations/5_1_automation.md).
-- Ensure analytics tagging for product performance routes to [Analytics](6_1_analytics.md).

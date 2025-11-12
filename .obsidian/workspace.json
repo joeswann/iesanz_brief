@@ -20,23 +20,8 @@
               "icon": "lucide-file",
               "title": "6_3_payments"
             }
-          },
-          {
-            "id": "c62788b2dc6371be",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "brief/2_frontend/2_5_store.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "2_5_store"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -199,34 +184,34 @@
       "publish:Publish changes...": false
     }
   },
-  "active": "c62788b2dc6371be",
+  "active": "6b23dcec63240d10",
   "lastOpenFiles": [
-    "brief/2_frontend/2_4_knowledgebase.md",
-    "brief/6_appendix/6_7_seo.md",
-    "brief/6_appendix/6_6_security.md",
+    "plan/supporting_documents.md",
+    "plan/purpose.md",
+    "plan/README.md",
+    "plan/priorities.md",
+    "plan/phases.md",
+    "plan/guiding_principles.md",
+    "plan/backlog.md",
+    "plan/approach_guidance.md",
+    "brief/4_super_admin/4_1_super_admin.md",
     "brief/6_appendix/6_5_marketing.md",
     "brief/6_appendix/6_4_forms.md",
     "brief/6_appendix/6_3_payments.md",
+    "brief/2_frontend/2_5_store.md",
+    "brief/2_frontend/2_4_knowledgebase.md",
+    "brief/6_appendix/6_7_seo.md",
+    "brief/6_appendix/6_6_security.md",
     "brief/6_appendix/6_2_communications.md",
     "brief/6_appendix/6_1_analytics.md",
     "brief/5_integrations/5_2_integrations.md",
     "brief/5_integrations/5_1_automation.md",
     "brief/4_super_admin/6_1_memberships.md",
-    "brief/4_super_admin/4_1_super_admin.md",
     "brief/3_admin/3_5_events.md",
     "brief/3_admin/3_4_awards.md",
     "brief/3_admin/3_3_admin_console.md",
     "brief/3_admin/3_2_chapters.md",
     "brief/2_frontend/2_7_education.md",
-    "brief/3_admin/3_1_cms.md",
-    "brief/2_frontend/2_6_members.md",
-    "brief/2_frontend/2_5_store.md",
-    "brief/2_frontend/2_3_conferences.md",
-    "brief/2_frontend/2_2_awards.md",
-    "brief/2_frontend/2_1_experience.md",
-    "brief/1_structure/1_2_priorities.md",
-    "brief/1_structure/1_1_contents.md",
-    "plan/approach_guidance.md",
     "Untitled.base",
     "brief/6_appendix",
     "brief/6_membership",
