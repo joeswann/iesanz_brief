@@ -17,6 +17,5 @@
 | Renew / Upgrade | Super Admin / Finance | Admin console, automation, finance | `4_1_super_admin.md`, `7_3_payments.md` |
 | Reactivate / Retain | Admin / Marketing | Automation, analytics | `5_1_automation.md`, `7_1_analytics.md` |
 
-## Risks & Next Steps
+## Considerations
 - Regional pricing errors, fraud, and stale data require strict governance plus analytics monitoring.
-- Next milestones: finalize corporate account requirements (context Next Steps) and align CPD roadmap with `6_5_education.md`.

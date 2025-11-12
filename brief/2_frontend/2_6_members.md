@@ -28,7 +28,7 @@
   - Integrate PR/social storytelling to counter perception of outdated organisation and engage younger professionals (Purple Giraffe SWOT).
   - Offer mentorship matching, discussion groups, and future community space hooks per Next Steps > Future.
 
-## Risks & Dependencies
+## Considerations
   - Data accuracy depends on syncing CRM, CMS, finance (Stripe/Xero), awards, education; implement validation and escalation workflows.
   - Accessibility and low-click journeys are essential for volunteer-heavy audience; continuous UX testing required.
   - Privacy/GDPR/Spam Act compliance for communications and public directory participation; provide granular opt-outs and audit trails.

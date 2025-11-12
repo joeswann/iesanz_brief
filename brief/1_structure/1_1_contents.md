@@ -1,6 +1,4 @@
-# Table of Contents
-
-## Relationship Map
+## Table of Contents
 - **Structure** (1.x) sits above the stack, pointing to plan artefacts and priorities.
 - **Experience (2.x, 6.x)** – public journeys, member hub UX, ecommerce storytelling.
 - **Admin (3.x)** – CMS, admin console

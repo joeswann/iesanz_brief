@@ -38,7 +38,7 @@ Home
 - Next.js (or similar) headless frontend consuming APIs from the CMS, CRM/membership system, Shopify/storefront, Stripe, Xero, Eventbrite (or similar), analytics (GA4, etc.), and marketing automation (Mailchimp/Campaign Monitor) etc.
 - Localisation for AU / NZ currency, GST messaging, and chapter content context.
 
-## Risks & Considerations
+## Considerations
 - Core Web Vitals: CDN caching, optimized media, lazy loading, minimized blocking scripts, observability dashboards tying into analytics KPIs.
 - Security: enforce role-based gating (public vs chapter vs member vs admin) client/server side; keep CMS/admin endpoints private, apply WAF/firewall, malware protection, and monitoring.
 - Roadmap: future-proof component library for community space, CPD tracker, corporate portals, coordinating release cadence with BOT handover/training schedules.

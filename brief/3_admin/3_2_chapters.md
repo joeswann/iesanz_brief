@@ -36,7 +36,3 @@
   - Document SOPs for chapter operations, including onboarding of new volunteers, content approval workflows, and escalation paths.
   - Track metrics per chapter (membership growth, event attendance, content cadence) in analytics dashboards.
   - Ensure training materials, help articles, and toolkit downloads are accessible for chapters during BOT handover.
-
-## Risks & Next Steps
-- Volunteer turnover demands ongoing training—link to `2_4_knowledgebase.md` BOT resources.
-- Misaligned pricing or branding should trigger escalation to [Super Admin Governance](../4_super_admin/4_1_super_admin.md) and [Marketing Strategy](../6_appendix/6_5_marketing.md).

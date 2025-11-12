@@ -16,7 +16,3 @@
 ## Data & Reporting
 - Feed entry counts, payment status, judging progress, and sponsorship fulfilment into [Analytics](../6_appendix/6_1_analytics.md) for Success Metrics reporting.
 - Maintain export templates for board packs and marketing storytelling (winners, testimonials) to keep context alignment.
-
-## Risks & Next Steps
-- Embargo breaches, juror conflicts, and file mismanagement require strict RBAC and audit trails—coordinate with [Security & Compliance](../6_appendix/6_6_security.md).
-- Plan SIT/UAT cycles ahead of each awards season per plan/phases.md to avoid regressions.

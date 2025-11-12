@@ -23,12 +23,7 @@
   - Offer digest options, archive search, and accessible formatting (WCAG) with mobile-friendly rendering.
   - Provide analytics on opens, clicks, and engagement to feed marketing/analytics dashboards.
 
-## Risks & Considerations
+## Considerations
   - Over-communication risk; implement frequency caps and segmentation to keep messages relevant.
   - Need contingency messaging for outages/incidents, coordinated with super-admin/IT.
   - Volunteers require training to avoid off-brand or non-compliant messaging; enforce approval workflows.
-
-## Operational Checklist
-- **Daily**: Review transactional queue health, incident alerts.
-- **Weekly**: Approve scheduled bulletins, validate suppression lists, sync with marketing.
-- **Monthly**: Audit templates for accessibility, refresh preference center logic, train new chapter comms leads.

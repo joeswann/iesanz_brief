@@ -33,7 +33,7 @@
   - Provide staging environments for testing new questions, calculations, or integrations before production release; bundle regression checklists with each update.
   - Monitor submission success rates, drop-off points, and error logs; surface insights to UX and automation teams for continuous improvement.
 
-## Risks & Mitigations
+## Considerations
   - Large/complex forms risk abandonment—use progressive disclosure, autosave, and summary steps to reassure users.
   - Inconsistent field mappings create reporting gaps—enforce canonical field libraries and shared ID systems.
   - Chapter-level edits could break compliance—lock critical forms, require change approval, and supply chapter-specific templates instead.

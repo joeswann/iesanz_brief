@@ -22,7 +22,7 @@
 - Offer download portal features (quota management, licensing agreements, payment for premium docs).
 - Provide accessibility support (screen-reader friendly PDFs, transcripts for videos).
 
-## Risks & Considerations
+## Considerations
 - Need regular maintenance to avoid stale guidance; schedule review cadences.
 - Sensitive documents (advocacy/policy drafts) require restricted access and watermarking.
 - Large file hosting must be optimized for performance and cost.

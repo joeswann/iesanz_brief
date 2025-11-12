@@ -26,11 +26,7 @@ This ordering mirrors plan/phases.md so teams focus on revenue-critical flows fi
   - Implement alerting for failures, retries, and manual overrides; provide escalation paths to admins/super-admins.
   - Schedule periodic reviews to retire redundant workflows and ensure vendor credentials remain valid.
 
-## Risks & Mitigations
-  - Over-automation without oversight could cause false messaging or financial errors; enforce testing/SIT before deployment.
+## Considerations
+  - Over-automation without oversight could cause false messaging or financial errors.
   - Dependency on third-party services requires contingency plans (rate limits, outages, vendor changes).
   - Volunteers/chapters need training to avoid breaking shared automations; enforce sandbox environments for experimentation.
-
-## BOT Playbook Links
-- Training packs and runbooks should be filed inside the knowledgebase (`2_4_knowledgebase.md`) with ownership mapped to Super Admin.
-- Capture change logs and rollback scripts per automation so chapters know how to recover during BOT transition.

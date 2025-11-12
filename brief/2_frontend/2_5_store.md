@@ -31,7 +31,7 @@
   - Provide chapter-level storefront dashboards showing sales, fulfillment states, and remittance schedules.
   - Ensure approvals for new products, brand consistency (templates), and alignment with national sponsorship tiers.
 
-## Risks & Controls
+## Considerations
   - Prevent hard-coded tax/pricing rules; maintain configurable engines to adapt to regional changes and align with [Finance & Payments](../6_appendix/6_3_payments.md).
   - Document workflows for refunds, failed payments, sponsor deliverables, and compliance (advertising standards) while pointing staff to finance SOPs for escalation paths.
   - Monitor storefront performance (speed, conversion) and security (PCI compliance, anti-fraud) as part of ongoing maintenance.

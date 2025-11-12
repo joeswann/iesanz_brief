@@ -16,12 +16,7 @@ Deliver an end-to-end awards experience with superior visuals, responsiveness, a
 - Administrative tooling for jurors, judges, and sponsorship tracking lives in [Awards Operations](../3_admin/3_4_awards.md) so this chapter can stay focused on the public experience.
 - Integrations, compliance, automation, and reporting guardrails are documented there as well, ensuring a single source of truth for backstage workflows.
 
-## Dependencies & Hand-offs
-- Form standards: follow [Forms Framework](../6_appendix/6_4_forms.md) for save/resume, accessibility, and schema governance.
-- Payments: align tax, invoices, and reconciliation with [Finance & Payments](../6_appendix/6_3_payments.md) and [Store & Sponsorships](2_5_store.md).
-- Automation: reminders, juror comms, and deliverable alerts rely on [Automation](../5_integrations/5_1_automation.md) and [Integrations](../5_integrations/5_2_integrations.md).
-
-## Risks & Considerations
+## Considerations
 - High stakes for data accuracy and embargoed announcements—require audit logs and restricted access.
 - Large media uploads must be optimized and routed to OneDrive per context requirements to avoid volunteer overhead.
 - Sponsorship deliverables must stay synchronized with finance/storefront catalogues to prevent mis-selling.
