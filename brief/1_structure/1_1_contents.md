@@ -1,10 +1,10 @@
 ## Table of Contents
-- **Structure** (1.x) sits above the stack, pointing to plan artefacts and priorities.
-- **Experience (2.x, 6.x)** – public journeys, member hub UX, ecommerce storytelling.
-- **Admin (3.x)** – CMS, admin console
-- **Super Admin (4.x)** – Super admin structure and purpose
-- **Operations (5.x)** - Integrations and automations
-- **Appendix (7.x)** - Security, marketing, SEO, analytics, finance
+- **Structure** – Sits above the stack, pointing to plan artefacts and priorities.
+- **Experience** – Public journeys, member hub UX, ecommerce storytelling.
+- **Admin** – CMS, admin console
+- **Super Admin** – Super admin structure and purpose
+- **Operations** – Integrations and automations
+- **Appendix** – Security, marketing, SEO, analytics, finance
 
 ## Structure
 - **1.1** – [Table of Contents](1_1_contents.md)

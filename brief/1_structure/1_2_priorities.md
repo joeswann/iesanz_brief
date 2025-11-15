@@ -1,5 +1,5 @@
 ## Purpose
-To provide a consistent decision lens for quarterly and phase planning, ensuring delivery stays aligned with board expectations. Maintain visibility for handover partners—chapters, contractors, new vendors—so they understand why backlogs are ordered the way they are.
+To provide a consistent decision lens for phase planning, ensuring delivery stays aligned with board expectations. Maintain visibility for handover partners — chapters, contractors, new vendors — so they understand why priorities are ordered the way they are.
 
 ## Evaluation Criteria
 ### Value

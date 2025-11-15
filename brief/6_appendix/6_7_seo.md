@@ -1,13 +1,7 @@
-## Objectives & Scope
-  - Outperform peer institutions (e.g., CIBSE) in organic visibility by combining technical excellence with rich storytelling across memberships, awards, education, advocacy, and resources.
-  - Support evergreen queries (knowledgebase, policy, download portal, member lookup) and time-sensitive campaigns (awards deadlines, conferences, sponsorship pushes, education launches).
-  - Tie SEO growth to marketing goals (awareness, engagement, membership conversion) outlined in the Purple Giraffe Marketing Action Plan.
-
 ## Technical Foundations
   - Headless frontend enables semantic markup, structured data (Organization, Event, Course, Article, FAQ, Review), clean URLs, and fast delivery.
   - Core Web Vitals emphasis: optimized galleries, lazy loading, CDN caching, minimal blocking scripts, observability dashboards feeding analytics KPIs.
-  - Multiregional tactics: hreflang for AU/NZ, localized copy/currency/tax messaging, chapter landing pages, and support for potential APAC expansion opportunities noted in marketing plan.
-  - Hardened security (private CMS, WAF, malware protection) prevents plugin-related regressions discussed in context.md.
+  - Multiregional tactics: hreflang for AU/NZ, localized copy/currency/tax messaging, chapter hubs.
 
 ## Content & Keyword Strategy
   - Cover CMS content families (general pages, help articles, events, awards, bulletins, case studies, testimonials, white papers, interviews, blog/news) plus knowledgebase topics (membership/education assistance, mentorship).

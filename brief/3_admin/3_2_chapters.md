@@ -3,12 +3,12 @@
   - Balance autonomy for volunteers with national oversight on branding, compliance, and integrations.
   - Enable chapters to surface their contributions within board portfolios (conferences, education, marketing, memberships).
 
-| Persona | Responsibilities | Key Tools |
-| --- | --- | --- |
-| Chapter Coordinator | Publish events/news, manage contacts | CMS chapter space, Admin Console |
-| Volunteer Treasurer | Track payments, invoices, remittances | Store dashboards, Xero views (read-only) |
-| Marketing Lead | Run newsletters/social, update galleries | CMS templates, Communications hub |
-| Committee Chair | Approve content, escalate risks | Admin Console approvals, Governance docs |
+| Persona             | Responsibilities                         | Key Tools                                |
+| ------------------- | ---------------------------------------- | ---------------------------------------- |
+| Chapter Coordinator | Publish events/news, manage contacts     | CMS chapter space, Admin Console         |
+| Volunteer Treasurer | Track payments, invoices, remittances    | Store dashboards, Xero views (read-only) |
+| Marketing Lead      | Run newsletters/social, update galleries | CMS templates, Communications hub        |
+| Committee Chair     | Approve content, escalate risks          | Admin Console approvals, Governance docs |
 
 ## Content & Permissions
   - Chapter admins can manage localized content blocks (news posts, event listings, award spotlights, galleries, committee bios, contact info).
