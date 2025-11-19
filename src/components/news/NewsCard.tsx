@@ -2,7 +2,7 @@ import { DCI } from "@/types/dci";
 import LofiBox from "@/components/lofi/LofiBox";
 import LofiImage from "@/components/lofi/LofiImage";
 import LofiHeading from "@/components/lofi/LofiHeading";
-import LofiText from "@/components/lofi/LofiText";
+import { TypeBody } from "@/components/type/TypeBody";
 import { NewsItem } from "@/data/data.news";
 import { css } from "@linaria/core";
 
@@ -33,7 +33,7 @@ const NewsCard: DCI<NewsCardProps> = ({ item, className }) => {
                     <div className={cardMeta}>
                         {item.date} • {item.category} {item.chapter ? `(${item.chapter})` : ""}
                     </div>
-                    <LofiText lines={3} />
+                    <TypeBody>{item.summary}</TypeBody>
                 </div>
             </div>
         </LofiBox>

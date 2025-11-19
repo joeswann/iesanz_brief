@@ -3,7 +3,7 @@ import { css } from "@linaria/core";
 import LofiBox from "@/components/lofi/LofiBox";
 import LofiImage from "@/components/lofi/LofiImage";
 import LofiHeading from "@/components/lofi/LofiHeading";
-import LofiText from "@/components/lofi/LofiText";
+import { TypeBody } from "@/components/type/TypeBody";
 import { LofiButton } from "@/components/lofi/LofiButton";
 import { EventItem } from "@/data/data.events";
 import { fontSize } from "@/styles/styling";
@@ -62,7 +62,7 @@ const EventCard: DCI<EventCardProps> = ({ item, className }) => {
           </div>
           <LofiHeading level={4}>{item.title}</LofiHeading>
           <div className={cardSummary}>
-            <LofiText lines={3} />
+            <TypeBody>{item.summary}</TypeBody>
           </div>
           <div className={cardFooter}>
             <div className={cardPrice}>{item.price}</div>

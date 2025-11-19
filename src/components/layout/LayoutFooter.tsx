@@ -85,7 +85,6 @@ const LayoutFooter: DCI = ({ children }) => {
               <a key={label} href={url} target="_blank" rel="noopener noreferrer" className={socialLink}>{label}</a>
             ))}
           </nav>
-          <div className={copyright}>&copy; 2025 IESANZ</div>
         </div>
       </LofiBox>
     </div>

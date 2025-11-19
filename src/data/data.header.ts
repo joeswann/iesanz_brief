@@ -6,6 +6,7 @@ export const links = [
   ["Events", "/events"],
   ["Awards", "/awards"],
   ["Conferences", "/conferences"],
+  ["Chapters", "/chapters"],
   ["Store", "/store"],
 ] as [string, string][];
 

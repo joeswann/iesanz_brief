@@ -2,7 +2,7 @@ import { DCI } from "@/types/dci";
 import { css, cx } from "@linaria/core";
 import LofiImage from "@/components/lofi/LofiImage";
 import LofiHeading from "@/components/lofi/LofiHeading";
-import LofiText from "@/components/lofi/LofiText";
+import { TypeBody } from "@/components/type/TypeBody";
 import { LofiButton } from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
 import { conferences } from "@/data/data.conferences";
@@ -15,7 +15,7 @@ const layoutContainer = css`
   gap: 48rem;
   padding-bottom: 48rem;
 
-  @media (max-width: 768px) {
+  @media(max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -72,7 +72,7 @@ const hero = css`
   gap: 32rem;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media(max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -215,10 +215,13 @@ const ConferencesLayout: DCI = () => {
                         <div className={eventDetails}>
                             {conf.dates} • {conf.location}
                         </div>
+
+
+
                         <div className={eventTheme}>
                             Theme: "{conf.theme}"
                         </div>
-                        <LofiText lines={4} />
+                        <TypeBody>{conf.description}</TypeBody>
                         {conf.status === "Upcoming" && (
                             <div className={registerButtonContainer}>
                                 <LofiButton variant="primary">Register Now</LofiButton>

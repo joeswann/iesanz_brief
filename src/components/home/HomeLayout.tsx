@@ -3,7 +3,7 @@ import { css } from "@linaria/core";
 
 import LofiImage from "@/components/lofi/LofiImage";
 import LofiHeading from "@/components/lofi/LofiHeading";
-import LofiText from "@/components/lofi/LofiText";
+import { TypeBody } from "@/components/type/TypeBody";
 import { LofiButton } from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
 import { newsData } from "@/data/data.news";
@@ -40,11 +40,12 @@ const HomeLayout: DCI = () => {
     return (
         <div className={layoutContainer}>
 
-
             {/* Introduction */}
             <section className={introSection}>
                 <LofiHeading level={1}>Illuminating the Future</LofiHeading>
-                <LofiText lines={4} />
+                <TypeBody variant="large">
+                    The Illuminating Engineering Society of Australia and New Zealand (IESANZ) is a professional organization for lighting designers, engineers, and industry professionals. We are dedicated to promoting the art and science of lighting.
+                </TypeBody>
             </section>
 
             {/* Key CTAs */}

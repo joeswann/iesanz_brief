@@ -3,7 +3,7 @@ import { css, cx } from "@linaria/core";
 import LofiBox from "@/components/lofi/LofiBox";
 import LofiImage from "@/components/lofi/LofiImage";
 import LofiHeading from "@/components/lofi/LofiHeading";
-import LofiText from "@/components/lofi/LofiText";
+import { TypeBody } from "@/components/type/TypeBody";
 import { AwardEntry } from "@/data/data.awards";
 import { fontSize } from "@/styles/styling";
 
@@ -68,7 +68,7 @@ const AwardCard: DCI<AwardCardProps> = ({ item, className }) => {
           </div>
           <LofiHeading level={4}>{item.projectName}</LofiHeading>
           <div className={designer}>by {item.designer}</div>
-          <LofiText lines={3} />
+          <TypeBody>{item.description}</TypeBody>
         </div>
       </div>
     </LofiBox>
