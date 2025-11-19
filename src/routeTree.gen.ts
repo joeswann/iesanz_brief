@@ -9,13 +9,28 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StoreRouteImport } from './routes/store'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as EventsRouteImport } from './routes/events'
+import { Route as ContactsRouteImport } from './routes/contacts'
+import { Route as ConferencesRouteImport } from './routes/conferences'
+import { Route as CartRouteImport } from './routes/cart'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as AwardsRouteImport } from './routes/awards'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiTrpcSplatRouteImport } from './routes/api.trpc.$'
 
+const StoreRoute = StoreRouteImport.update({
+  id: '/store',
+  path: '/store',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewsRoute = NewsRouteImport.update({
   id: '/news',
   path: '/news',
@@ -24,6 +39,21 @@ const NewsRoute = NewsRouteImport.update({
 const EventsRoute = EventsRouteImport.update({
   id: '/events',
   path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactsRoute = ContactsRouteImport.update({
+  id: '/contacts',
+  path: '/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConferencesRoute = ConferencesRouteImport.update({
+  id: '/conferences',
+  path: '/conferences',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CartRoute = CartRouteImport.update({
+  id: '/cart',
+  path: '/cart',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CalendarRoute = CalendarRouteImport.update({
@@ -51,16 +81,26 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/awards': typeof AwardsRoute
   '/calendar': typeof CalendarRoute
+  '/cart': typeof CartRoute
+  '/conferences': typeof ConferencesRoute
+  '/contacts': typeof ContactsRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/store': typeof StoreRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/awards': typeof AwardsRoute
   '/calendar': typeof CalendarRoute
+  '/cart': typeof CartRoute
+  '/conferences': typeof ConferencesRoute
+  '/contacts': typeof ContactsRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/store': typeof StoreRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
 }
 export interface FileRoutesById {
@@ -68,22 +108,54 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/awards': typeof AwardsRoute
   '/calendar': typeof CalendarRoute
+  '/cart': typeof CartRoute
+  '/conferences': typeof ConferencesRoute
+  '/contacts': typeof ContactsRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
+  '/store': typeof StoreRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/awards' | '/calendar' | '/events' | '/news' | '/api/trpc/$'
+  fullPaths:
+    | '/'
+    | '/awards'
+    | '/calendar'
+    | '/cart'
+    | '/conferences'
+    | '/contacts'
+    | '/events'
+    | '/news'
+    | '/privacy-policy'
+    | '/store'
+    | '/api/trpc/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/awards' | '/calendar' | '/events' | '/news' | '/api/trpc/$'
+  to:
+    | '/'
+    | '/awards'
+    | '/calendar'
+    | '/cart'
+    | '/conferences'
+    | '/contacts'
+    | '/events'
+    | '/news'
+    | '/privacy-policy'
+    | '/store'
+    | '/api/trpc/$'
   id:
     | '__root__'
     | '/'
     | '/awards'
     | '/calendar'
+    | '/cart'
+    | '/conferences'
+    | '/contacts'
     | '/events'
     | '/news'
+    | '/privacy-policy'
+    | '/store'
     | '/api/trpc/$'
   fileRoutesById: FileRoutesById
 }
@@ -91,13 +163,32 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AwardsRoute: typeof AwardsRoute
   CalendarRoute: typeof CalendarRoute
+  CartRoute: typeof CartRoute
+  ConferencesRoute: typeof ConferencesRoute
+  ContactsRoute: typeof ContactsRoute
   EventsRoute: typeof EventsRoute
   NewsRoute: typeof NewsRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
+  StoreRoute: typeof StoreRoute
   ApiTrpcSplatRoute: typeof ApiTrpcSplatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/store': {
+      id: '/store'
+      path: '/store'
+      fullPath: '/store'
+      preLoaderRoute: typeof StoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/news': {
       id: '/news'
       path: '/news'
@@ -110,6 +201,27 @@ declare module '@tanstack/react-router' {
       path: '/events'
       fullPath: '/events'
       preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contacts': {
+      id: '/contacts'
+      path: '/contacts'
+      fullPath: '/contacts'
+      preLoaderRoute: typeof ContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conferences': {
+      id: '/conferences'
+      path: '/conferences'
+      fullPath: '/conferences'
+      preLoaderRoute: typeof ConferencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cart': {
+      id: '/cart'
+      path: '/cart'
+      fullPath: '/cart'
+      preLoaderRoute: typeof CartRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/calendar': {
@@ -147,8 +259,13 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AwardsRoute: AwardsRoute,
   CalendarRoute: CalendarRoute,
+  CartRoute: CartRoute,
+  ConferencesRoute: ConferencesRoute,
+  ContactsRoute: ContactsRoute,
   EventsRoute: EventsRoute,
   NewsRoute: NewsRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
+  StoreRoute: StoreRoute,
   ApiTrpcSplatRoute: ApiTrpcSplatRoute,
 }
 export const routeTree = rootRouteImport
