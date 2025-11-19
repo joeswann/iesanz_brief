@@ -1,26 +1,28 @@
 import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
-import LofiBox from "@/components/lofi/LofiBox";
+
 import LofiImage from "@/components/lofi/LofiImage";
 import LofiHeading from "@/components/lofi/LofiHeading";
 import LofiText from "@/components/lofi/LofiText";
 import LofiButton from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
+import { newsData } from "@/data/data.news";
+import NewsCard from "@/components/news/NewsCard";
+
 
 const styles = css`
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  padding-bottom: 48px;
+  gap: 120rem;
+  padding-bottom: 120rem;
 
-  .hero {
-    width: 100%;
-  }
+
 
   .intro {
-    max-width: 800px;
+    max-width: 800rem;
     margin: 0 auto;
     text-align: center;
+    padding-top: 120rem;
   }
 
   .ctas {
@@ -39,10 +41,7 @@ const styles = css`
 const HomeLayout: DCI = () => {
     return (
         <div className={styles}>
-            {/* Hero Section */}
-            <section className="hero">
-                <LofiImage ratio={21 / 9} label="Hero Banner / Carousel" />
-            </section>
+
 
             {/* Introduction */}
             <section className="intro">
@@ -61,33 +60,9 @@ const HomeLayout: DCI = () => {
             <section className="section">
                 <LofiHeading level={2}>Latest News</LofiHeading>
                 <LofiGrid columns={3}>
-                    <LofiBox>
-                        <div style={{ width: "100%" }}>
-                            <LofiImage ratio={16 / 9} label="News Thumb" />
-                            <div style={{ marginTop: 16 }}>
-                                <LofiHeading level={4}>Article Title</LofiHeading>
-                                <LofiText lines={2} />
-                            </div>
-                        </div>
-                    </LofiBox>
-                    <LofiBox>
-                        <div style={{ width: "100%" }}>
-                            <LofiImage ratio={16 / 9} label="News Thumb" />
-                            <div style={{ marginTop: 16 }}>
-                                <LofiHeading level={4}>Article Title</LofiHeading>
-                                <LofiText lines={2} />
-                            </div>
-                        </div>
-                    </LofiBox>
-                    <LofiBox>
-                        <div style={{ width: "100%" }}>
-                            <LofiImage ratio={16 / 9} label="News Thumb" />
-                            <div style={{ marginTop: 16 }}>
-                                <LofiHeading level={4}>Article Title</LofiHeading>
-                                <LofiText lines={2} />
-                            </div>
-                        </div>
-                    </LofiBox>
+                    {newsData.slice(0, 3).map((item) => (
+                        <NewsCard key={item.id} item={item} />
+                    ))}
                 </LofiGrid>
             </section>
 

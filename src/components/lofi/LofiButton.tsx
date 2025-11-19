@@ -1,6 +1,6 @@
 import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
-import { fontSize, rem } from "@/styles/styling";
+import { fontSize } from "@/styles/styling";
 
 interface LofiButtonProps {
   variant?: "primary" | "secondary";
@@ -10,7 +10,7 @@ interface LofiButtonProps {
 
 
 const styles = css`
-  padding: ${rem(12)} ${rem(24)};
+  padding: 12rem 24rem;
   font-family: monospace;
   ${fontSize(1)}
   text-transform: uppercase;

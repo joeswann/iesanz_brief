@@ -1,10 +1,8 @@
 import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
 
-import { rem } from "@/styles/styling";
-
 const styles = css`
-  padding: ${rem(16)};
+  padding: 16rem;
   border: 1px solid var(--foreground);
   display: flex;
   justify-content: space-between;

@@ -2,8 +2,10 @@ import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
 import LofiBox from "../lofi/LofiBox";
 import LofiMenu from "../lofi/LofiMenu";
-import { account, links } from "@/data/data.header";
-import { chapters } from "@/data/data.chapters";
+import { links } from "@/data/data.header";
+import { user } from "@/data/data.user";
+import { cart } from "@/data/data.cart";
+import { fontSize } from "@/styles/styling";
 
 const styles = css`
   .logo {
@@ -11,9 +13,29 @@ const styles = css`
     line-height: 1em;
   }
 
-  .account {
-    text-align: right;
+  .account-menu {
+    display: flex;
+    gap: 16rem;
+    align-items: center;
     margin-left: auto;
+    ${fontSize(0.9)}
+
+    a {
+      text-decoration: none;
+      color: var(--foreground);
+      font-weight: bold;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .separator {
+      width: 1px;
+      height: 1em;
+      background: var(--foreground);
+      opacity: 0.3;
+    }
   }
 
   .menu {
@@ -28,7 +50,14 @@ const LayoutHeader: DCI = ({ children }) => {
       <LofiBox>
         <div className="logo">IESANZ</div>
 
-        <LofiMenu className="account" links={account} />
+        <div className="account-menu">
+          <a href="/account">{user.isLoggedIn ? "My Account" : "Login / Register"}</a>
+          <div className="separator" />
+          <a href="/chapter">{user.chapter.name}</a>
+          <div className="separator" />
+          <a href="/cart">Cart ({cart.count})</a>
+        </div>
+
         <LofiMenu className="menu" links={links} />
       </LofiBox>
     </div>
