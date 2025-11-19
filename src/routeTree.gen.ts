@@ -18,8 +18,22 @@ import { Route as ConferencesRouteImport } from './routes/conferences'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as AwardsRouteImport } from './routes/awards'
+import { Route as AccountRouteImport } from './routes/account'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccountIndexRouteImport } from './routes/account.index'
+import { Route as AccountUpgradeRouteImport } from './routes/account.upgrade'
+import { Route as AccountSubscriptionRouteImport } from './routes/account.subscription'
+import { Route as AccountProfileRouteImport } from './routes/account.profile'
+import { Route as AccountLoginRouteImport } from './routes/account.login'
+import { Route as AccountInvoicesRouteImport } from './routes/account.invoices'
+import { Route as AccountEventsRouteImport } from './routes/account.events'
+import { Route as AccountEducationRouteImport } from './routes/account.education'
+import { Route as AccountAwardsRouteImport } from './routes/account.awards'
+import { Route as AccountEducationIndexRouteImport } from './routes/account.education.index'
 import { Route as ApiTrpcSplatRouteImport } from './routes/api.trpc.$'
+import { Route as AccountEducationWebinarsRouteImport } from './routes/account.education.webinars'
+import { Route as AccountEducationResourcesRouteImport } from './routes/account.education.resources'
+import { Route as AccountEducationCpdRouteImport } from './routes/account.education.cpd'
 
 const StoreRoute = StoreRouteImport.update({
   id: '/store',
@@ -66,19 +80,92 @@ const AwardsRoute = AwardsRouteImport.update({
   path: '/awards',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AccountIndexRoute = AccountIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AccountRoute,
+} as any)
+const AccountUpgradeRoute = AccountUpgradeRouteImport.update({
+  id: '/upgrade',
+  path: '/upgrade',
+  getParentRoute: () => AccountRoute,
+} as any)
+const AccountSubscriptionRoute = AccountSubscriptionRouteImport.update({
+  id: '/subscription',
+  path: '/subscription',
+  getParentRoute: () => AccountRoute,
+} as any)
+const AccountProfileRoute = AccountProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => AccountRoute,
+} as any)
+const AccountLoginRoute = AccountLoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => AccountRoute,
+} as any)
+const AccountInvoicesRoute = AccountInvoicesRouteImport.update({
+  id: '/invoices',
+  path: '/invoices',
+  getParentRoute: () => AccountRoute,
+} as any)
+const AccountEventsRoute = AccountEventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => AccountRoute,
+} as any)
+const AccountEducationRoute = AccountEducationRouteImport.update({
+  id: '/education',
+  path: '/education',
+  getParentRoute: () => AccountRoute,
+} as any)
+const AccountAwardsRoute = AccountAwardsRouteImport.update({
+  id: '/awards',
+  path: '/awards',
+  getParentRoute: () => AccountRoute,
+} as any)
+const AccountEducationIndexRoute = AccountEducationIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AccountEducationRoute,
 } as any)
 const ApiTrpcSplatRoute = ApiTrpcSplatRouteImport.update({
   id: '/api/trpc/$',
   path: '/api/trpc/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountEducationWebinarsRoute =
+  AccountEducationWebinarsRouteImport.update({
+    id: '/webinars',
+    path: '/webinars',
+    getParentRoute: () => AccountEducationRoute,
+  } as any)
+const AccountEducationResourcesRoute =
+  AccountEducationResourcesRouteImport.update({
+    id: '/resources',
+    path: '/resources',
+    getParentRoute: () => AccountEducationRoute,
+  } as any)
+const AccountEducationCpdRoute = AccountEducationCpdRouteImport.update({
+  id: '/cpd',
+  path: '/cpd',
+  getParentRoute: () => AccountEducationRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account': typeof AccountRouteWithChildren
   '/awards': typeof AwardsRoute
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
@@ -88,7 +175,20 @@ export interface FileRoutesByFullPath {
   '/news': typeof NewsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/store': typeof StoreRoute
+  '/account/awards': typeof AccountAwardsRoute
+  '/account/education': typeof AccountEducationRouteWithChildren
+  '/account/events': typeof AccountEventsRoute
+  '/account/invoices': typeof AccountInvoicesRoute
+  '/account/login': typeof AccountLoginRoute
+  '/account/profile': typeof AccountProfileRoute
+  '/account/subscription': typeof AccountSubscriptionRoute
+  '/account/upgrade': typeof AccountUpgradeRoute
+  '/account/': typeof AccountIndexRoute
+  '/account/education/cpd': typeof AccountEducationCpdRoute
+  '/account/education/resources': typeof AccountEducationResourcesRoute
+  '/account/education/webinars': typeof AccountEducationWebinarsRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
+  '/account/education/': typeof AccountEducationIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -101,11 +201,24 @@ export interface FileRoutesByTo {
   '/news': typeof NewsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/store': typeof StoreRoute
+  '/account/awards': typeof AccountAwardsRoute
+  '/account/events': typeof AccountEventsRoute
+  '/account/invoices': typeof AccountInvoicesRoute
+  '/account/login': typeof AccountLoginRoute
+  '/account/profile': typeof AccountProfileRoute
+  '/account/subscription': typeof AccountSubscriptionRoute
+  '/account/upgrade': typeof AccountUpgradeRoute
+  '/account': typeof AccountIndexRoute
+  '/account/education/cpd': typeof AccountEducationCpdRoute
+  '/account/education/resources': typeof AccountEducationResourcesRoute
+  '/account/education/webinars': typeof AccountEducationWebinarsRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
+  '/account/education': typeof AccountEducationIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/account': typeof AccountRouteWithChildren
   '/awards': typeof AwardsRoute
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
@@ -115,12 +228,26 @@ export interface FileRoutesById {
   '/news': typeof NewsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/store': typeof StoreRoute
+  '/account/awards': typeof AccountAwardsRoute
+  '/account/education': typeof AccountEducationRouteWithChildren
+  '/account/events': typeof AccountEventsRoute
+  '/account/invoices': typeof AccountInvoicesRoute
+  '/account/login': typeof AccountLoginRoute
+  '/account/profile': typeof AccountProfileRoute
+  '/account/subscription': typeof AccountSubscriptionRoute
+  '/account/upgrade': typeof AccountUpgradeRoute
+  '/account/': typeof AccountIndexRoute
+  '/account/education/cpd': typeof AccountEducationCpdRoute
+  '/account/education/resources': typeof AccountEducationResourcesRoute
+  '/account/education/webinars': typeof AccountEducationWebinarsRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
+  '/account/education/': typeof AccountEducationIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/account'
     | '/awards'
     | '/calendar'
     | '/cart'
@@ -130,7 +257,20 @@ export interface FileRouteTypes {
     | '/news'
     | '/privacy-policy'
     | '/store'
+    | '/account/awards'
+    | '/account/education'
+    | '/account/events'
+    | '/account/invoices'
+    | '/account/login'
+    | '/account/profile'
+    | '/account/subscription'
+    | '/account/upgrade'
+    | '/account/'
+    | '/account/education/cpd'
+    | '/account/education/resources'
+    | '/account/education/webinars'
     | '/api/trpc/$'
+    | '/account/education/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -143,10 +283,23 @@ export interface FileRouteTypes {
     | '/news'
     | '/privacy-policy'
     | '/store'
+    | '/account/awards'
+    | '/account/events'
+    | '/account/invoices'
+    | '/account/login'
+    | '/account/profile'
+    | '/account/subscription'
+    | '/account/upgrade'
+    | '/account'
+    | '/account/education/cpd'
+    | '/account/education/resources'
+    | '/account/education/webinars'
     | '/api/trpc/$'
+    | '/account/education'
   id:
     | '__root__'
     | '/'
+    | '/account'
     | '/awards'
     | '/calendar'
     | '/cart'
@@ -156,11 +309,25 @@ export interface FileRouteTypes {
     | '/news'
     | '/privacy-policy'
     | '/store'
+    | '/account/awards'
+    | '/account/education'
+    | '/account/events'
+    | '/account/invoices'
+    | '/account/login'
+    | '/account/profile'
+    | '/account/subscription'
+    | '/account/upgrade'
+    | '/account/'
+    | '/account/education/cpd'
+    | '/account/education/resources'
+    | '/account/education/webinars'
     | '/api/trpc/$'
+    | '/account/education/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountRoute: typeof AccountRouteWithChildren
   AwardsRoute: typeof AwardsRoute
   CalendarRoute: typeof CalendarRoute
   CartRoute: typeof CartRoute
@@ -238,12 +405,89 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AwardsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/account/': {
+      id: '/account/'
+      path: '/'
+      fullPath: '/account/'
+      preLoaderRoute: typeof AccountIndexRouteImport
+      parentRoute: typeof AccountRoute
+    }
+    '/account/upgrade': {
+      id: '/account/upgrade'
+      path: '/upgrade'
+      fullPath: '/account/upgrade'
+      preLoaderRoute: typeof AccountUpgradeRouteImport
+      parentRoute: typeof AccountRoute
+    }
+    '/account/subscription': {
+      id: '/account/subscription'
+      path: '/subscription'
+      fullPath: '/account/subscription'
+      preLoaderRoute: typeof AccountSubscriptionRouteImport
+      parentRoute: typeof AccountRoute
+    }
+    '/account/profile': {
+      id: '/account/profile'
+      path: '/profile'
+      fullPath: '/account/profile'
+      preLoaderRoute: typeof AccountProfileRouteImport
+      parentRoute: typeof AccountRoute
+    }
+    '/account/login': {
+      id: '/account/login'
+      path: '/login'
+      fullPath: '/account/login'
+      preLoaderRoute: typeof AccountLoginRouteImport
+      parentRoute: typeof AccountRoute
+    }
+    '/account/invoices': {
+      id: '/account/invoices'
+      path: '/invoices'
+      fullPath: '/account/invoices'
+      preLoaderRoute: typeof AccountInvoicesRouteImport
+      parentRoute: typeof AccountRoute
+    }
+    '/account/events': {
+      id: '/account/events'
+      path: '/events'
+      fullPath: '/account/events'
+      preLoaderRoute: typeof AccountEventsRouteImport
+      parentRoute: typeof AccountRoute
+    }
+    '/account/education': {
+      id: '/account/education'
+      path: '/education'
+      fullPath: '/account/education'
+      preLoaderRoute: typeof AccountEducationRouteImport
+      parentRoute: typeof AccountRoute
+    }
+    '/account/awards': {
+      id: '/account/awards'
+      path: '/awards'
+      fullPath: '/account/awards'
+      preLoaderRoute: typeof AccountAwardsRouteImport
+      parentRoute: typeof AccountRoute
+    }
+    '/account/education/': {
+      id: '/account/education/'
+      path: '/'
+      fullPath: '/account/education/'
+      preLoaderRoute: typeof AccountEducationIndexRouteImport
+      parentRoute: typeof AccountEducationRoute
     }
     '/api/trpc/$': {
       id: '/api/trpc/$'
@@ -252,11 +496,77 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiTrpcSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/account/education/webinars': {
+      id: '/account/education/webinars'
+      path: '/webinars'
+      fullPath: '/account/education/webinars'
+      preLoaderRoute: typeof AccountEducationWebinarsRouteImport
+      parentRoute: typeof AccountEducationRoute
+    }
+    '/account/education/resources': {
+      id: '/account/education/resources'
+      path: '/resources'
+      fullPath: '/account/education/resources'
+      preLoaderRoute: typeof AccountEducationResourcesRouteImport
+      parentRoute: typeof AccountEducationRoute
+    }
+    '/account/education/cpd': {
+      id: '/account/education/cpd'
+      path: '/cpd'
+      fullPath: '/account/education/cpd'
+      preLoaderRoute: typeof AccountEducationCpdRouteImport
+      parentRoute: typeof AccountEducationRoute
+    }
   }
 }
 
+interface AccountEducationRouteChildren {
+  AccountEducationCpdRoute: typeof AccountEducationCpdRoute
+  AccountEducationResourcesRoute: typeof AccountEducationResourcesRoute
+  AccountEducationWebinarsRoute: typeof AccountEducationWebinarsRoute
+  AccountEducationIndexRoute: typeof AccountEducationIndexRoute
+}
+
+const AccountEducationRouteChildren: AccountEducationRouteChildren = {
+  AccountEducationCpdRoute: AccountEducationCpdRoute,
+  AccountEducationResourcesRoute: AccountEducationResourcesRoute,
+  AccountEducationWebinarsRoute: AccountEducationWebinarsRoute,
+  AccountEducationIndexRoute: AccountEducationIndexRoute,
+}
+
+const AccountEducationRouteWithChildren =
+  AccountEducationRoute._addFileChildren(AccountEducationRouteChildren)
+
+interface AccountRouteChildren {
+  AccountAwardsRoute: typeof AccountAwardsRoute
+  AccountEducationRoute: typeof AccountEducationRouteWithChildren
+  AccountEventsRoute: typeof AccountEventsRoute
+  AccountInvoicesRoute: typeof AccountInvoicesRoute
+  AccountLoginRoute: typeof AccountLoginRoute
+  AccountProfileRoute: typeof AccountProfileRoute
+  AccountSubscriptionRoute: typeof AccountSubscriptionRoute
+  AccountUpgradeRoute: typeof AccountUpgradeRoute
+  AccountIndexRoute: typeof AccountIndexRoute
+}
+
+const AccountRouteChildren: AccountRouteChildren = {
+  AccountAwardsRoute: AccountAwardsRoute,
+  AccountEducationRoute: AccountEducationRouteWithChildren,
+  AccountEventsRoute: AccountEventsRoute,
+  AccountInvoicesRoute: AccountInvoicesRoute,
+  AccountLoginRoute: AccountLoginRoute,
+  AccountProfileRoute: AccountProfileRoute,
+  AccountSubscriptionRoute: AccountSubscriptionRoute,
+  AccountUpgradeRoute: AccountUpgradeRoute,
+  AccountIndexRoute: AccountIndexRoute,
+}
+
+const AccountRouteWithChildren =
+  AccountRoute._addFileChildren(AccountRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountRoute: AccountRouteWithChildren,
   AwardsRoute: AwardsRoute,
   CalendarRoute: CalendarRoute,
   CartRoute: CartRoute,

@@ -1,55 +1,37 @@
-# Walkthrough - LayoutFooter Update
+# Account Section Walkthrough
 
-I have updated the `LayoutFooter` component to include standard links using a data-driven approach.
+I have implemented the `/account` section with a distinct header and the following structure:
 
-## Changes
+## Routes Created
 
-### 1. Created `src/data/data.footer.ts`
+- **Layout**: `/account` (wraps all account pages)
+- **Dashboard**: `/account/`
+- **Login**: `/account/login`
+- **Profile**: `/account/profile`
+- **Invoices**: `/account/invoices`
+- **Events**: `/account/events`
+- **Awards**: `/account/awards`
+- **Subscription**: `/account/subscription`
+- **Upgrade**: `/account/upgrade`
+- **Education**:
+  - Overview: `/account/education/`
+  - CPD: `/account/education/cpd`
+  - Resources: `/account/education/resources`
+  - Webinars: `/account/education/webinars`
 
-I created a new data file to hold the footer links, keeping the data separate from the presentation.
+## Components
 
-```typescript
-export const links = [
-  ["Contacts", "/contacts"],
-  ["Privacy Policy", "/privacy-policy"],
-  ["Social Media", "/social-media"],
-] as [string, string][];
-```
+- **AccountHeader**: A distinct header for the account section with a grey background and account-specific navigation.
+- **LayoutDefault**: Modified to conditionally render `AccountHeader` when the path starts with `/account`.
+- **UpgradeForm**: A multi-step form for membership upgrades.
 
-### 2. Updated `src/components/layout/LayoutFooter.tsx`
+## Verification
 
-I updated the footer component to use `LofiMenu` and the new data file.
+I verified the implementation by navigating through the key flows:
+1. **Dashboard**: Checked user welcome and status.
+2. **Subscription**: Verified status display.
+3. **Upgrade**: Stepped through the multi-step upgrade form.
+4. **Education**: Verified overview content.
+5. **Profile**: Verified profile form.
 
-```tsx
-import { DCI } from "@/types/dci";
-import { css } from "@linaria/core";
-import LofiBox from "../lofi/LofiBox";
-import LofiMenu from "../lofi/LofiMenu";
-import { links } from "@/data/data.footer";
-
-const styles = css`
-  width: 100%;
-  margin-top: 10px;
-`;
-
-const LayoutFooter: DCI = ({ children }) => {
-  return (
-    <div className={styles}>
-      <LofiBox className="menu">
-        <LofiMenu links={links} />
-        <div>&copy; 2025</div>
-      </LofiBox>
-    </div>
-  );
-};
-
-export default LayoutFooter;
-```
-
-## Verification results
-
-### Automated Tests
-- Linting passed (fixed missing imports and unused variables).
-
-### Manual Verification
-- The footer should now display the links "Contacts", "Privacy Policy", and "Social Media" above the copyright notice.
+![Account Section Walkthrough](file:///Users/joeswann/.gemini/antigravity/brain/9f8c2528-8d9f-4db3-b044-611be25aa09f/account_section_walkthrough_1763539176863.webp)
