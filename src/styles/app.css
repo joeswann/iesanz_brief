@@ -1,0 +1,83 @@
+@import "./reset.css";
+
+:root {
+  /* Colors */
+  --black: #000000;
+  --white: #ffffff;
+  --off-white: #f7f7f7;
+  --light-grey: #e2e2e2;
+  --grey: #8f8f8f;
+
+  --foreground: var(--black);
+  --background: var(--off-white);
+
+  /* Typography */
+  --font-family-body: var(--font-family-sans);
+  --font-family-sans: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --font-size: 16rem;
+  --line-height: 18rem;
+  --letter-spacing: 0.06em;
+
+  /* Spacing */
+  --spacing-2: 2px;
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-16: 16px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-64: 64px;
+  --spacing-120: 120px;
+  --spacing-200: 200px;
+
+  --page-top: 140px;
+
+  --scroll-inset: 16px;
+  --inset: 18px;
+  --gutter: 16px;
+
+  --columns: 24;
+  --column: calc(
+    (1 / var(--columns)) *
+      (
+        100svw - (var(--inset) * 2) - var(--scroll-inset) -
+          ((var(--columns) - 1) * var(--gutter))
+      ) +
+      var(--gutter)
+  );
+
+  @media (max-width: 920px) {
+    --columns: 6;
+    --inset: 16px;
+    --font-size: 11rem;
+    --line-height: 14rem;
+    --font-size-body-emphasis: 16rem;
+  }
+}
+
+html {
+  font-size: 1px;
+  background-color: var(--background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-smooth: antialiased;
+}
+
+body {
+  color: var(--foreground);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  font-family: var(--font-family-sans);
+
+  ::selection {
+    background: #ffcc00;
+    color: var(--black);
+  }
+}
+
+button {
+  cursor: pointer;
+}
