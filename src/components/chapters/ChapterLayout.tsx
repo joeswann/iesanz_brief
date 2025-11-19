@@ -5,6 +5,7 @@ import { spacing } from "@/styles/styling";
 import ChapterSidebar from "./ChapterSidebar";
 import { TypeHeading } from "@/components/type/TypeHeading";
 import { TypeBody } from "@/components/type/TypeBody";
+import SidebarLayout from "@/components/layout/SidebarLayout";
 
 const container = css`
   padding: ${spacing(4)};
@@ -18,45 +19,27 @@ const header = css`
   border-bottom: 1px solid #eee;
 `;
 
-const contentWrapper = css`
-  display: flex;
-  gap: ${spacing(8)};
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: ${spacing(4)};
-  }
-`;
-
-const mainContent = css`
-  flex-grow: 1;
-  min-width: 0; /* Prevents flex child from overflowing */
-`;
-
 interface ChapterLayoutProps {
-    chapter: {
-        name: string;
-        slug: string;
-    };
-    description: string;
+  chapter: {
+    name: string;
+    slug: string;
+  };
+  description: string;
 }
 
 const ChapterLayout: DCI<ChapterLayoutProps> = ({ chapter, description }) => {
-    return (
-        <div className={container}>
-            <div className={header}>
-                <TypeHeading level={1}>{chapter.name} Chapter</TypeHeading>
-                <TypeBody>{description}</TypeBody>
-            </div>
+  return (
+    <div className={container}>
+      <div className={header}>
+        <TypeHeading level={1}>{chapter.name} Chapter</TypeHeading>
+        <TypeBody>{description}</TypeBody>
+      </div>
 
-            <div className={contentWrapper}>
-                <ChapterSidebar chapterSlug={chapter.slug} />
-                <main className={mainContent}>
-                    <Outlet />
-                </main>
-            </div>
-        </div>
-    );
+      <SidebarLayout sidebar={<ChapterSidebar chapterSlug={chapter.slug} />}>
+        <Outlet />
+      </SidebarLayout>
+    </div>
+  );
 };
 
 export default ChapterLayout;

@@ -63,7 +63,7 @@ const LayoutHeader: DCI = ({ children }) => {
   return (
     <div>
       <LofiBox>
-        <div className={logo}>IESANZ</div>
+        <a href="/" className={logo} style={{ textDecoration: 'none', color: 'inherit' }}>IESANZ</a>
 
         <div className={accountMenu}>
           <a href="/account" className={accountLink}>{user.isLoggedIn ? "My Account" : "Login / Register"}</a>

@@ -1,5 +1,5 @@
 import { DCI } from "@/types/dci";
-import { css, cx } from "@linaria/core";
+import { css } from "@linaria/core";
 import LofiImage from "@/components/lofi/LofiImage";
 import LofiHeading from "@/components/lofi/LofiHeading";
 import { TypeBody } from "@/components/type/TypeBody";
@@ -8,57 +8,8 @@ import LofiGrid from "@/components/lofi/LofiGrid";
 import { conferences } from "@/data/data.conferences";
 import { useState } from "react";
 import { fontSize } from "@/styles/styling";
-
-const layoutContainer = css`
-  display: grid;
-  grid-template-columns: 250rem 1fr;
-  gap: 48rem;
-  padding-bottom: 48rem;
-
-  @media(max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const sidebar = css`
-  display: flex;
-  flex-direction: column;
-  gap: 24rem;
-`;
-
-const confList = css`
-  display: flex;
-  flex-direction: column;
-  gap: 12rem;
-`;
-
-const confButton = css`
-  ${fontSize(1)}
-  text-decoration: none;
-  color: var(--foreground);
-  padding: 8rem 0;
-  border-bottom: 1px solid var(--light-grey);
-  background: none;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  text-align: left;
-  cursor: pointer;
-
-  &:hover {
-    opacity: 0.7;
-    font-weight: bold;
-  }
-`;
-
-const activeConfButton = css`
-  opacity: 0.7;
-  font-weight: bold;
-`;
-
-const spacer24 = css`
-  height: 24rem;
-`;
+import SidebarLayout from "@/components/layout/SidebarLayout";
+import { SidebarContainer, SidebarLink, SidebarSection } from "@/components/layout/Sidebar";
 
 const content = css`
   display: flex;
@@ -167,43 +118,38 @@ const ConferencesLayout: DCI = () => {
     const past = conferences.filter(c => c.status === "Past");
 
     return (
-        <div className={layoutContainer}>
-            <aside className={sidebar}>
-
-                {upcoming.length > 0 && (
-                    <>
-                        <LofiHeading level={3}>Upcoming Events</LofiHeading>
-                        <nav className={confList}>
+        <SidebarLayout
+            sidebar={
+                <SidebarContainer>
+                    {upcoming.length > 0 && (
+                        <SidebarSection title="Upcoming Events">
                             {upcoming.map((c) => (
-                                <button
+                                <SidebarLink
                                     key={c.id}
                                     onClick={() => setSelectedConfId(c.id)}
-                                    className={cx(confButton, selectedConfId === c.id && activeConfButton)}
+                                    isActive={selectedConfId === c.id}
                                 >
                                     {c.year}: {c.location.split(',')[0]}
-                                </button>
+                                </SidebarLink>
                             ))}
-                        </nav>
-                        <div className={spacer24} />
-                    </>
-                )}
+                        </SidebarSection>
+                    )}
 
-                <LofiHeading level={3}>Past Conferences</LofiHeading>
-                <nav className={confList}>
-                    {past.map((c) => (
-                        <button
-                            key={c.id}
-                            onClick={() => setSelectedConfId(c.id)}
-                            className={cx(confButton, selectedConfId === c.id && activeConfButton)}
-                        >
-                            {c.year}: {c.location.split(',')[0]}
-                        </button>
-                    ))}
-                </nav>
-
-            </aside>
-
-            <main className={content}>
+                    <SidebarSection title="Past Conferences">
+                        {past.map((c) => (
+                            <SidebarLink
+                                key={c.id}
+                                onClick={() => setSelectedConfId(c.id)}
+                                isActive={selectedConfId === c.id}
+                            >
+                                {c.year}: {c.location.split(',')[0]}
+                            </SidebarLink>
+                        ))}
+                    </SidebarSection>
+                </SidebarContainer>
+            }
+        >
+            <div className={content}>
                 {/* Hero */}
                 <section className={hero}>
                     <LofiImage ratio={16 / 9} label={conf.imageLabel} />
@@ -215,8 +161,6 @@ const ConferencesLayout: DCI = () => {
                         <div className={eventDetails}>
                             {conf.dates} • {conf.location}
                         </div>
-
-
 
                         <div className={eventTheme}>
                             Theme: "{conf.theme}"
@@ -291,8 +235,8 @@ const ConferencesLayout: DCI = () => {
                         </LofiGrid>
                     </section>
                 )}
-            </main>
-        </div>
+            </div>
+        </SidebarLayout>
     );
 };
 
