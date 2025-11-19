@@ -1,6 +1,7 @@
 import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
 import LofiBox from "../lofi/LofiBox";
+import HeaderSubmenu from "./HeaderSubmenu";
 import { links } from "@/data/data.header";
 import { user } from "@/data/data.user";
 import { cart } from "@/data/data.cart";
@@ -66,9 +67,9 @@ const LayoutHeader: DCI = ({ children }) => {
         <a href="/" className={logo} style={{ textDecoration: 'none', color: 'inherit' }}>IESANZ</a>
 
         <div className={accountMenu}>
-          <a href="/account" className={accountLink}>{user.isLoggedIn ? "My Account" : "Login / Register"}</a>
-          <div className={separator} />
           <a href={`/chapters/${user.chapter.slug}`} className={accountLink}>{user.chapter.name}</a>
+          <div className={separator} />
+          <a href="/account" className={accountLink}>{user.isLoggedIn ? "My Account" : "Login / Register"}</a>
           <div className={separator} />
           <a href="/cart" className={accountLink}>Cart ({cart.items.length})</a>
         </div>
@@ -82,6 +83,7 @@ const LayoutHeader: DCI = ({ children }) => {
           ))}
         </nav>
       </LofiBox>
+      <HeaderSubmenu />
     </div>
   );
 };

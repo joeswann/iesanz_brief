@@ -9,7 +9,7 @@ import { conferences } from "@/data/data.conferences";
 import { useState } from "react";
 import { fontSize } from "@/styles/styling";
 import SidebarLayout from "@/components/layout/SidebarLayout";
-import { SidebarContainer, SidebarLink, SidebarSection } from "@/components/layout/Sidebar";
+import ConferencesSidebar from "./ConferencesSidebar";
 
 const content = css`
   display: flex;
@@ -120,33 +120,10 @@ const ConferencesLayout: DCI = () => {
     return (
         <SidebarLayout
             sidebar={
-                <SidebarContainer>
-                    {upcoming.length > 0 && (
-                        <SidebarSection title="Upcoming Events">
-                            {upcoming.map((c) => (
-                                <SidebarLink
-                                    key={c.id}
-                                    onClick={() => setSelectedConfId(c.id)}
-                                    isActive={selectedConfId === c.id}
-                                >
-                                    {c.year}: {c.location.split(',')[0]}
-                                </SidebarLink>
-                            ))}
-                        </SidebarSection>
-                    )}
-
-                    <SidebarSection title="Past Conferences">
-                        {past.map((c) => (
-                            <SidebarLink
-                                key={c.id}
-                                onClick={() => setSelectedConfId(c.id)}
-                                isActive={selectedConfId === c.id}
-                            >
-                                {c.year}: {c.location.split(',')[0]}
-                            </SidebarLink>
-                        ))}
-                    </SidebarSection>
-                </SidebarContainer>
+                <ConferencesSidebar
+                    selectedConfId={selectedConfId}
+                    onSelectConf={setSelectedConfId}
+                />
             }
         >
             <div className={content}>

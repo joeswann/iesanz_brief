@@ -5,7 +5,7 @@ import LofiGrid from "@/components/lofi/LofiGrid";
 import { newsData, categories } from "@/data/data.news";
 import NewsCard from "@/components/news/NewsCard";
 import SidebarLayout from "@/components/layout/SidebarLayout";
-import { SidebarContainer, SidebarLink, SidebarSection } from "@/components/layout/Sidebar";
+import NewsSidebar from "./NewsSidebar";
 
 const content = css`
   display: flex;
@@ -23,19 +23,7 @@ const filters = css`
 
 const NewsLayout: DCI = () => {
   return (
-    <SidebarLayout
-      sidebar={
-        <SidebarContainer>
-          <SidebarSection title="News & Updates">
-            {categories.map((cat) => (
-              <SidebarLink key={cat} href="#">
-                {cat}
-              </SidebarLink>
-            ))}
-          </SidebarSection>
-        </SidebarContainer>
-      }
-    >
+    <SidebarLayout sidebar={<NewsSidebar />}>
       <div className={content}>
         <div className={filters}>
           <LofiButton variant="primary">Latest</LofiButton>

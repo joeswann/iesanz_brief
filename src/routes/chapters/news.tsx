@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
 import AllChaptersLayout from '@/components/chapters/AllChaptersLayout'
-import AllChaptersFeed from '@/components/chapters/AllChaptersFeed'
+import AllChaptersNews from '@/components/chapters/AllChaptersNews'
 
-export const Route = createFileRoute('/chapters/')({
+export const Route = createFileRoute('/chapters/news')({
     component: () => (
         <AllChaptersLayout>
-            <AllChaptersFeed />
+            <AllChaptersNews />
         </AllChaptersLayout>
     ),
 })

@@ -7,6 +7,8 @@ import { LofiButton } from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
 import { eventsData, eventTypes } from "@/data/data.events";
 import EventCard from "@/components/events/EventCard";
+import SidebarLayout from "@/components/layout/SidebarLayout";
+import EventsSidebar from "./EventsSidebar";
 
 const layoutContainer = css`
   display: flex;
@@ -54,49 +56,51 @@ const eventsGrid = css`
 `;
 
 const EventsLayout: DCI = () => {
-    const featuredEvent = eventsData.find((e) => e.isFeatured) || eventsData[0];
-    const otherEvents = eventsData.filter((e) => e.id !== featuredEvent.id);
+  const featuredEvent = eventsData.find((e) => e.isFeatured) || eventsData[0];
+  const otherEvents = eventsData.filter((e) => e.id !== featuredEvent.id);
 
-    return (
-        <div className={layoutContainer}>
-            {/* Featured Event */}
-            <section className={heroSection}>
-                <LofiImage ratio={16 / 9} label="Featured Event" />
-                <div>
-                    <div className={featuredLabel}>
-                        Featured Event
-                    </div>
-                    <LofiHeading level={1}>{featuredEvent.title}</LofiHeading>
-                    <div className={featuredMeta}>
-                        {featuredEvent.date} • {featuredEvent.location}
-                    </div>
-                    <LofiText lines={4} />
-                    <div className={registerButton}>
-                        <LofiButton variant="primary">Register Now</LofiButton>
-                    </div>
-                </div>
-            </section>
+  return (
+    <SidebarLayout sidebar={<EventsSidebar />}>
+      <div className={layoutContainer}>
+        {/* Featured Event */}
+        <section className={heroSection}>
+          <LofiImage ratio={16 / 9} label="Featured Event" />
+          <div>
+            <div className={featuredLabel}>
+              Featured Event
+            </div>
+            <LofiHeading level={1}>{featuredEvent.title}</LofiHeading>
+            <div className={featuredMeta}>
+              {featuredEvent.date} • {featuredEvent.location}
+            </div>
+            <LofiText lines={4} />
+            <div className={registerButton}>
+              <LofiButton variant="primary">Register Now</LofiButton>
+            </div>
+          </div>
+        </section>
 
-            {/* Events List */}
-            <section>
-                <div className={filters}>
-                    {eventTypes.map((type, i) => (
-                        <LofiButton key={type} variant={i === 0 ? "primary" : "secondary"}>
-                            {type}
-                        </LofiButton>
-                    ))}
-                </div>
+        {/* Events List */}
+        <section>
+          <div className={filters}>
+            {eventTypes.map((type, i) => (
+              <LofiButton key={type} variant={i === 0 ? "primary" : "secondary"}>
+                {type}
+              </LofiButton>
+            ))}
+          </div>
 
-                <div className={eventsGrid}>
-                    <LofiGrid columns={3}>
-                        {otherEvents.map((event) => (
-                            <EventCard key={event.id} item={event} />
-                        ))}
-                    </LofiGrid>
-                </div>
-            </section>
-        </div>
-    );
+          <div className={eventsGrid}>
+            <LofiGrid columns={3}>
+              {otherEvents.map((event) => (
+                <EventCard key={event.id} item={event} />
+              ))}
+            </LofiGrid>
+          </div>
+        </section>
+      </div>
+    </SidebarLayout>
+  );
 };
 
 export default EventsLayout;
