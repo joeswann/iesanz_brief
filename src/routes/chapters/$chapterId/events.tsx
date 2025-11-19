@@ -1,11 +1,6 @@
-import { createFileRoute, useLoaderData } from '@tanstack/react-router'
-import ChapterEvents from '@/components/chapters/ChapterEvents'
+import { createFileRoute } from '@tanstack/react-router'
+import ChapterEventsLayout from '@/components/chapters/ChapterEventsLayout'
 
 export const Route = createFileRoute('/chapters/$chapterId/events')({
-  component: ChapterEventsComponent,
+  component: ChapterEventsLayout,
 })
-
-function ChapterEventsComponent() {
-  const { content } = useLoaderData({ from: '/chapters/$chapterId' })
-  return <ChapterEvents events={content.events} />
-}

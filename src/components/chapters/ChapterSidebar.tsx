@@ -10,10 +10,8 @@ const ChapterSidebar: DCI<ChapterSidebarProps> = ({ chapterSlug }) => {
     { to: `/chapters/${chapterSlug}`, label: "Overview", exact: true },
     { to: `/chapters/${chapterSlug}/news`, label: "News" },
     { to: `/chapters/${chapterSlug}/events`, label: "Events" },
-    { to: `/chapters/${chapterSlug}/committee`, label: "Committee" },
     { to: `/chapters/${chapterSlug}/awards`, label: "Awards" },
     { to: `/chapters/${chapterSlug}/gallery`, label: "Gallery" },
-    { to: `/chapters/${chapterSlug}/store`, label: "Store" },
   ];
 
   return (

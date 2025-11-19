@@ -2,7 +2,8 @@
 
 export const links = [
     ["Contacts", "/contacts"],
-    ["Privacy Policy", "/privacy-policy"],
+    ["Privacy Policy", "/pages/privacy-policy"],
+    ["Terms & Conditions", "/pages/terms"],
     ["Calendar", "/calendar"],
 ] as [string, string][];
 

@@ -1,11 +1,6 @@
-import { createFileRoute, useLoaderData } from '@tanstack/react-router'
-import ChapterNews from '@/components/chapters/ChapterNews'
+import { createFileRoute } from '@tanstack/react-router'
+import ChapterNewsLayout from '@/components/chapters/ChapterNewsLayout'
 
 export const Route = createFileRoute('/chapters/$chapterId/news')({
-    component: ChapterNewsComponent,
+    component: ChapterNewsLayout,
 })
-
-function ChapterNewsComponent() {
-    const { content } = useLoaderData({ from: '/chapters/$chapterId' })
-    return <ChapterNews news={content.news} />
-}

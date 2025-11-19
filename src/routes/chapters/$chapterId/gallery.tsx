@@ -1,11 +1,6 @@
-import { createFileRoute, useLoaderData } from '@tanstack/react-router'
-import ChapterGallery from '@/components/chapters/ChapterGallery'
+import { createFileRoute } from '@tanstack/react-router'
+import ChapterGalleryLayout from '@/components/chapters/ChapterGalleryLayout'
 
 export const Route = createFileRoute('/chapters/$chapterId/gallery')({
-    component: ChapterGalleryComponent,
+    component: ChapterGalleryLayout,
 })
-
-function ChapterGalleryComponent() {
-    const { content } = useLoaderData({ from: '/chapters/$chapterId' })
-    return <ChapterGallery gallery={content.gallery} />
-}

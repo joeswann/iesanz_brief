@@ -1,11 +1,8 @@
 import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
-import { TypeHeading, TypeBody } from "@/components/type/TypeHeading"; // Correct import will be checked
 import { spacing } from "@/styles/styling";
-
-// Fixing imports based on previous context
-import { TypeHeading as Heading } from "@/components/type/TypeHeading";
-import { TypeBody as Body } from "@/components/type/TypeBody";
+import { TypeHeading } from "@/components/type/TypeHeading";
+import { TypeBody } from "@/components/type/TypeBody";
 
 const grid = css`
   display: grid;
@@ -44,7 +41,7 @@ interface ChapterCommitteeProps {
 
 const ChapterCommittee: DCI<ChapterCommitteeProps> = ({ members }) => {
     if (!members || members.length === 0) {
-        return <Body>No committee members listed.</Body>;
+        return <TypeBody>No committee members listed.</TypeBody>;
     }
 
     return (
@@ -52,8 +49,8 @@ const ChapterCommittee: DCI<ChapterCommitteeProps> = ({ members }) => {
             {members.map((member, index) => (
                 <div key={index} className={card}>
                     <img src={member.image} alt={member.name} className={image} />
-                    <Heading level={4}>{member.name}</Heading>
-                    <Body variant="small" color="muted">{member.role}</Body>
+                    <TypeHeading level={4}>{member.name}</TypeHeading>
+                    <TypeBody variant="small" color="muted">{member.role}</TypeBody>
                 </div>
             ))}
         </div>

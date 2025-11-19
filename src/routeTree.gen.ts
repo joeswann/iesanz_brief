@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StoreRouteImport } from './routes/store'
-import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContactsRouteImport } from './routes/contacts'
@@ -22,6 +21,7 @@ import { Route as AccountRouteRouteImport } from './routes/account/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ChaptersIndexRouteImport } from './routes/chapters/index'
 import { Route as AccountIndexRouteImport } from './routes/account/index'
+import { Route as PagesPageIdRouteImport } from './routes/pages/$pageId'
 import { Route as ChaptersChapterIdRouteImport } from './routes/chapters/$chapterId'
 import { Route as AccountUpgradeRouteImport } from './routes/account/upgrade'
 import { Route as AccountSubscriptionRouteImport } from './routes/account/subscription'
@@ -33,11 +33,9 @@ import { Route as AccountAwardsRouteImport } from './routes/account/awards'
 import { Route as AccountEducationRouteRouteImport } from './routes/account/education/route'
 import { Route as ChaptersChapterIdIndexRouteImport } from './routes/chapters/$chapterId/index'
 import { Route as AccountEducationIndexRouteImport } from './routes/account/education/index'
-import { Route as ChaptersChapterIdStoreRouteImport } from './routes/chapters/$chapterId/store'
 import { Route as ChaptersChapterIdNewsRouteImport } from './routes/chapters/$chapterId/news'
 import { Route as ChaptersChapterIdGalleryRouteImport } from './routes/chapters/$chapterId/gallery'
 import { Route as ChaptersChapterIdEventsRouteImport } from './routes/chapters/$chapterId/events'
-import { Route as ChaptersChapterIdCommitteeRouteImport } from './routes/chapters/$chapterId/committee'
 import { Route as ChaptersChapterIdAwardsRouteImport } from './routes/chapters/$chapterId/awards'
 import { Route as ApiTrpcSplatRouteImport } from './routes/api.trpc.$'
 import { Route as AccountEducationWebinarsRouteImport } from './routes/account/education/webinars'
@@ -47,11 +45,6 @@ import { Route as AccountEducationCpdRouteImport } from './routes/account/educat
 const StoreRoute = StoreRouteImport.update({
   id: '/store',
   path: '/store',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
-  id: '/privacy-policy',
-  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const NewsRoute = NewsRouteImport.update({
@@ -109,6 +102,11 @@ const AccountIndexRoute = AccountIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AccountRouteRoute,
 } as any)
+const PagesPageIdRoute = PagesPageIdRouteImport.update({
+  id: '/pages/$pageId',
+  path: '/pages/$pageId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ChaptersChapterIdRoute = ChaptersChapterIdRouteImport.update({
   id: '/chapters/$chapterId',
   path: '/chapters/$chapterId',
@@ -164,11 +162,6 @@ const AccountEducationIndexRoute = AccountEducationIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AccountEducationRouteRoute,
 } as any)
-const ChaptersChapterIdStoreRoute = ChaptersChapterIdStoreRouteImport.update({
-  id: '/store',
-  path: '/store',
-  getParentRoute: () => ChaptersChapterIdRoute,
-} as any)
 const ChaptersChapterIdNewsRoute = ChaptersChapterIdNewsRouteImport.update({
   id: '/news',
   path: '/news',
@@ -185,12 +178,6 @@ const ChaptersChapterIdEventsRoute = ChaptersChapterIdEventsRouteImport.update({
   path: '/events',
   getParentRoute: () => ChaptersChapterIdRoute,
 } as any)
-const ChaptersChapterIdCommitteeRoute =
-  ChaptersChapterIdCommitteeRouteImport.update({
-    id: '/committee',
-    path: '/committee',
-    getParentRoute: () => ChaptersChapterIdRoute,
-  } as any)
 const ChaptersChapterIdAwardsRoute = ChaptersChapterIdAwardsRouteImport.update({
   id: '/awards',
   path: '/awards',
@@ -229,7 +216,6 @@ export interface FileRoutesByFullPath {
   '/contacts': typeof ContactsRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRoute
-  '/privacy-policy': typeof PrivacyPolicyRoute
   '/store': typeof StoreRoute
   '/account/education': typeof AccountEducationRouteRouteWithChildren
   '/account/awards': typeof AccountAwardsRoute
@@ -240,6 +226,7 @@ export interface FileRoutesByFullPath {
   '/account/subscription': typeof AccountSubscriptionRoute
   '/account/upgrade': typeof AccountUpgradeRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdRouteWithChildren
+  '/pages/$pageId': typeof PagesPageIdRoute
   '/account/': typeof AccountIndexRoute
   '/chapters': typeof ChaptersIndexRoute
   '/account/education/cpd': typeof AccountEducationCpdRoute
@@ -247,11 +234,9 @@ export interface FileRoutesByFullPath {
   '/account/education/webinars': typeof AccountEducationWebinarsRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
   '/chapters/$chapterId/awards': typeof ChaptersChapterIdAwardsRoute
-  '/chapters/$chapterId/committee': typeof ChaptersChapterIdCommitteeRoute
   '/chapters/$chapterId/events': typeof ChaptersChapterIdEventsRoute
   '/chapters/$chapterId/gallery': typeof ChaptersChapterIdGalleryRoute
   '/chapters/$chapterId/news': typeof ChaptersChapterIdNewsRoute
-  '/chapters/$chapterId/store': typeof ChaptersChapterIdStoreRoute
   '/account/education/': typeof AccountEducationIndexRoute
   '/chapters/$chapterId/': typeof ChaptersChapterIdIndexRoute
 }
@@ -264,7 +249,6 @@ export interface FileRoutesByTo {
   '/contacts': typeof ContactsRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRoute
-  '/privacy-policy': typeof PrivacyPolicyRoute
   '/store': typeof StoreRoute
   '/account/awards': typeof AccountAwardsRoute
   '/account/events': typeof AccountEventsRoute
@@ -273,6 +257,7 @@ export interface FileRoutesByTo {
   '/account/profile': typeof AccountProfileRoute
   '/account/subscription': typeof AccountSubscriptionRoute
   '/account/upgrade': typeof AccountUpgradeRoute
+  '/pages/$pageId': typeof PagesPageIdRoute
   '/account': typeof AccountIndexRoute
   '/chapters': typeof ChaptersIndexRoute
   '/account/education/cpd': typeof AccountEducationCpdRoute
@@ -280,11 +265,9 @@ export interface FileRoutesByTo {
   '/account/education/webinars': typeof AccountEducationWebinarsRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
   '/chapters/$chapterId/awards': typeof ChaptersChapterIdAwardsRoute
-  '/chapters/$chapterId/committee': typeof ChaptersChapterIdCommitteeRoute
   '/chapters/$chapterId/events': typeof ChaptersChapterIdEventsRoute
   '/chapters/$chapterId/gallery': typeof ChaptersChapterIdGalleryRoute
   '/chapters/$chapterId/news': typeof ChaptersChapterIdNewsRoute
-  '/chapters/$chapterId/store': typeof ChaptersChapterIdStoreRoute
   '/account/education': typeof AccountEducationIndexRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdIndexRoute
 }
@@ -299,7 +282,6 @@ export interface FileRoutesById {
   '/contacts': typeof ContactsRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRoute
-  '/privacy-policy': typeof PrivacyPolicyRoute
   '/store': typeof StoreRoute
   '/account/education': typeof AccountEducationRouteRouteWithChildren
   '/account/awards': typeof AccountAwardsRoute
@@ -310,6 +292,7 @@ export interface FileRoutesById {
   '/account/subscription': typeof AccountSubscriptionRoute
   '/account/upgrade': typeof AccountUpgradeRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdRouteWithChildren
+  '/pages/$pageId': typeof PagesPageIdRoute
   '/account/': typeof AccountIndexRoute
   '/chapters/': typeof ChaptersIndexRoute
   '/account/education/cpd': typeof AccountEducationCpdRoute
@@ -317,11 +300,9 @@ export interface FileRoutesById {
   '/account/education/webinars': typeof AccountEducationWebinarsRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
   '/chapters/$chapterId/awards': typeof ChaptersChapterIdAwardsRoute
-  '/chapters/$chapterId/committee': typeof ChaptersChapterIdCommitteeRoute
   '/chapters/$chapterId/events': typeof ChaptersChapterIdEventsRoute
   '/chapters/$chapterId/gallery': typeof ChaptersChapterIdGalleryRoute
   '/chapters/$chapterId/news': typeof ChaptersChapterIdNewsRoute
-  '/chapters/$chapterId/store': typeof ChaptersChapterIdStoreRoute
   '/account/education/': typeof AccountEducationIndexRoute
   '/chapters/$chapterId/': typeof ChaptersChapterIdIndexRoute
 }
@@ -337,7 +318,6 @@ export interface FileRouteTypes {
     | '/contacts'
     | '/events'
     | '/news'
-    | '/privacy-policy'
     | '/store'
     | '/account/education'
     | '/account/awards'
@@ -348,6 +328,7 @@ export interface FileRouteTypes {
     | '/account/subscription'
     | '/account/upgrade'
     | '/chapters/$chapterId'
+    | '/pages/$pageId'
     | '/account/'
     | '/chapters'
     | '/account/education/cpd'
@@ -355,11 +336,9 @@ export interface FileRouteTypes {
     | '/account/education/webinars'
     | '/api/trpc/$'
     | '/chapters/$chapterId/awards'
-    | '/chapters/$chapterId/committee'
     | '/chapters/$chapterId/events'
     | '/chapters/$chapterId/gallery'
     | '/chapters/$chapterId/news'
-    | '/chapters/$chapterId/store'
     | '/account/education/'
     | '/chapters/$chapterId/'
   fileRoutesByTo: FileRoutesByTo
@@ -372,7 +351,6 @@ export interface FileRouteTypes {
     | '/contacts'
     | '/events'
     | '/news'
-    | '/privacy-policy'
     | '/store'
     | '/account/awards'
     | '/account/events'
@@ -381,6 +359,7 @@ export interface FileRouteTypes {
     | '/account/profile'
     | '/account/subscription'
     | '/account/upgrade'
+    | '/pages/$pageId'
     | '/account'
     | '/chapters'
     | '/account/education/cpd'
@@ -388,11 +367,9 @@ export interface FileRouteTypes {
     | '/account/education/webinars'
     | '/api/trpc/$'
     | '/chapters/$chapterId/awards'
-    | '/chapters/$chapterId/committee'
     | '/chapters/$chapterId/events'
     | '/chapters/$chapterId/gallery'
     | '/chapters/$chapterId/news'
-    | '/chapters/$chapterId/store'
     | '/account/education'
     | '/chapters/$chapterId'
   id:
@@ -406,7 +383,6 @@ export interface FileRouteTypes {
     | '/contacts'
     | '/events'
     | '/news'
-    | '/privacy-policy'
     | '/store'
     | '/account/education'
     | '/account/awards'
@@ -417,6 +393,7 @@ export interface FileRouteTypes {
     | '/account/subscription'
     | '/account/upgrade'
     | '/chapters/$chapterId'
+    | '/pages/$pageId'
     | '/account/'
     | '/chapters/'
     | '/account/education/cpd'
@@ -424,11 +401,9 @@ export interface FileRouteTypes {
     | '/account/education/webinars'
     | '/api/trpc/$'
     | '/chapters/$chapterId/awards'
-    | '/chapters/$chapterId/committee'
     | '/chapters/$chapterId/events'
     | '/chapters/$chapterId/gallery'
     | '/chapters/$chapterId/news'
-    | '/chapters/$chapterId/store'
     | '/account/education/'
     | '/chapters/$chapterId/'
   fileRoutesById: FileRoutesById
@@ -443,9 +418,9 @@ export interface RootRouteChildren {
   ContactsRoute: typeof ContactsRoute
   EventsRoute: typeof EventsRoute
   NewsRoute: typeof NewsRoute
-  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   StoreRoute: typeof StoreRoute
   ChaptersChapterIdRoute: typeof ChaptersChapterIdRouteWithChildren
+  PagesPageIdRoute: typeof PagesPageIdRoute
   ChaptersIndexRoute: typeof ChaptersIndexRoute
   ApiTrpcSplatRoute: typeof ApiTrpcSplatRoute
 }
@@ -457,13 +432,6 @@ declare module '@tanstack/react-router' {
       path: '/store'
       fullPath: '/store'
       preLoaderRoute: typeof StoreRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy-policy': {
-      id: '/privacy-policy'
-      path: '/privacy-policy'
-      fullPath: '/privacy-policy'
-      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/news': {
@@ -543,6 +511,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AccountIndexRouteImport
       parentRoute: typeof AccountRouteRoute
     }
+    '/pages/$pageId': {
+      id: '/pages/$pageId'
+      path: '/pages/$pageId'
+      fullPath: '/pages/$pageId'
+      preLoaderRoute: typeof PagesPageIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/chapters/$chapterId': {
       id: '/chapters/$chapterId'
       path: '/chapters/$chapterId'
@@ -620,13 +595,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AccountEducationIndexRouteImport
       parentRoute: typeof AccountEducationRouteRoute
     }
-    '/chapters/$chapterId/store': {
-      id: '/chapters/$chapterId/store'
-      path: '/store'
-      fullPath: '/chapters/$chapterId/store'
-      preLoaderRoute: typeof ChaptersChapterIdStoreRouteImport
-      parentRoute: typeof ChaptersChapterIdRoute
-    }
     '/chapters/$chapterId/news': {
       id: '/chapters/$chapterId/news'
       path: '/news'
@@ -646,13 +614,6 @@ declare module '@tanstack/react-router' {
       path: '/events'
       fullPath: '/chapters/$chapterId/events'
       preLoaderRoute: typeof ChaptersChapterIdEventsRouteImport
-      parentRoute: typeof ChaptersChapterIdRoute
-    }
-    '/chapters/$chapterId/committee': {
-      id: '/chapters/$chapterId/committee'
-      path: '/committee'
-      fullPath: '/chapters/$chapterId/committee'
-      preLoaderRoute: typeof ChaptersChapterIdCommitteeRouteImport
       parentRoute: typeof ChaptersChapterIdRoute
     }
     '/chapters/$chapterId/awards': {
@@ -742,21 +703,17 @@ const AccountRouteRouteWithChildren = AccountRouteRoute._addFileChildren(
 
 interface ChaptersChapterIdRouteChildren {
   ChaptersChapterIdAwardsRoute: typeof ChaptersChapterIdAwardsRoute
-  ChaptersChapterIdCommitteeRoute: typeof ChaptersChapterIdCommitteeRoute
   ChaptersChapterIdEventsRoute: typeof ChaptersChapterIdEventsRoute
   ChaptersChapterIdGalleryRoute: typeof ChaptersChapterIdGalleryRoute
   ChaptersChapterIdNewsRoute: typeof ChaptersChapterIdNewsRoute
-  ChaptersChapterIdStoreRoute: typeof ChaptersChapterIdStoreRoute
   ChaptersChapterIdIndexRoute: typeof ChaptersChapterIdIndexRoute
 }
 
 const ChaptersChapterIdRouteChildren: ChaptersChapterIdRouteChildren = {
   ChaptersChapterIdAwardsRoute: ChaptersChapterIdAwardsRoute,
-  ChaptersChapterIdCommitteeRoute: ChaptersChapterIdCommitteeRoute,
   ChaptersChapterIdEventsRoute: ChaptersChapterIdEventsRoute,
   ChaptersChapterIdGalleryRoute: ChaptersChapterIdGalleryRoute,
   ChaptersChapterIdNewsRoute: ChaptersChapterIdNewsRoute,
-  ChaptersChapterIdStoreRoute: ChaptersChapterIdStoreRoute,
   ChaptersChapterIdIndexRoute: ChaptersChapterIdIndexRoute,
 }
 
@@ -773,9 +730,9 @@ const rootRouteChildren: RootRouteChildren = {
   ContactsRoute: ContactsRoute,
   EventsRoute: EventsRoute,
   NewsRoute: NewsRoute,
-  PrivacyPolicyRoute: PrivacyPolicyRoute,
   StoreRoute: StoreRoute,
   ChaptersChapterIdRoute: ChaptersChapterIdRouteWithChildren,
+  PagesPageIdRoute: PagesPageIdRoute,
   ChaptersIndexRoute: ChaptersIndexRoute,
   ApiTrpcSplatRoute: ApiTrpcSplatRoute,
 }
