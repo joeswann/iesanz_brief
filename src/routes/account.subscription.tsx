@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import AccountPageLayout from "@/components/account/AccountPageLayout";
+import { user } from "@/data/data.user";
+import { LofiButton } from "@/components/lofi/LofiButton";
+import { LofiCard } from "@/components/lofi/LofiLayouts";
 
 
 export const Route = createFileRoute("/account/subscription")({
@@ -8,13 +11,21 @@ export const Route = createFileRoute("/account/subscription")({
 
 function AccountSubscription() {
     return (
-        <AccountPageLayout>
-            <h1>My Subscription</h1>
-            <p>Current Grade: Member (MIES)</p>
-            <p>Status: Active</p>
-            <p>Renews: 1st July 2025</p>
-            <div style={{ marginTop: "1rem" }}>
-                <a href="/account/upgrade" style={{ padding: "0.5rem 1rem", background: "var(--foreground)", color: "var(--background)", textDecoration: "none", borderRadius: "4px" }}>Upgrade Membership</a>
+        <AccountPageLayout
+            title="My Subscription"
+            description="Manage your membership details and renewal."
+        >
+            <div style={{ maxWidth: "800px" }}>
+                <LofiCard>
+                    <div style={{ display: "grid", gap: "16rem" }}>
+                        <p>Current Grade: <strong>{user.subscription.grade}</strong></p>
+                        <p>Status: <strong>{user.subscription.status}</strong></p>
+                        <p>Renews: <strong>{user.subscription.renews}</strong></p>
+                    </div>
+                    <div style={{ marginTop: "16rem" }}>
+                        <LofiButton href="/account/upgrade" variant="primary">Upgrade Membership</LofiButton>
+                    </div>
+                </LofiCard>
             </div>
         </AccountPageLayout>
     );

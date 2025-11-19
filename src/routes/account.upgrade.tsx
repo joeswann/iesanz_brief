@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import AccountPageLayout from "@/components/account/AccountPageLayout";
 import UpgradeForm from "@/components/account/UpgradeForm";
+import { LofiCard } from "@/components/lofi/LofiLayouts";
 
 export const Route = createFileRoute("/account/upgrade")({
     component: AccountUpgrade,
@@ -8,11 +9,14 @@ export const Route = createFileRoute("/account/upgrade")({
 
 function AccountUpgrade() {
     return (
-        <AccountPageLayout>
-            <h1>Upgrade Membership</h1>
-            <p>Apply to upgrade your membership grade.</p>
-            <div style={{ marginTop: "2rem" }}>
-                <UpgradeForm />
+        <AccountPageLayout
+            title="Upgrade Membership"
+            description="Apply to upgrade your membership grade."
+        >
+            <div style={{ maxWidth: "800px" }}>
+                <LofiCard>
+                    <UpgradeForm />
+                </LofiCard>
             </div>
         </AccountPageLayout>
     );

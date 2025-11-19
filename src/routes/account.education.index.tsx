@@ -1,4 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { user } from "@/data/data.user";
+import { LofiCard } from "@/components/lofi/LofiLayouts";
+import { LofiButton } from "@/components/lofi/LofiButton";
 
 export const Route = createFileRoute('/account/education/')({
   component: AccountEducationIndex,
@@ -7,30 +10,33 @@ export const Route = createFileRoute('/account/education/')({
 function AccountEducationIndex() {
   return (
     <div>
-      <h2>Education Overview</h2>
-      <p>Access your education resources and track your professional development.</p>
+      <LofiCard title="Education Overview">
+        <p>Access your education resources and track your professional development.</p>
+      </LofiCard>
 
-      <div style={{ marginTop: "2rem", display: "grid", gap: "1.5rem" }}>
-        <div style={{ padding: "1rem", border: "1px solid #eee", borderRadius: "8px" }}>
-          <h3>Continue Learning</h3>
-          <div style={{ display: "flex", gap: "1rem", alignItems: "center", marginTop: "0.5rem" }}>
-            <div style={{ width: "60px", height: "60px", background: "#ddd", borderRadius: "4px" }} />
-            <div>
-              <strong>Lighting Design Fundamentals</strong>
-              <p style={{ fontSize: "0.9rem", color: "#666" }}>Module 3: Color Rendering</p>
+      <div style={{ marginTop: "32rem", display: "grid", gap: "24rem" }}>
+        <LofiCard title="Continue Learning">
+          {user.education.continueLearning.map((item) => (
+            <div key={item.id} style={{ display: "flex", gap: "16rem", alignItems: "center", marginTop: "8rem" }}>
+              <div style={{ width: "60px", height: "60px", background: item.image, border: "1px solid #000" }} />
+              <div>
+                <strong>{item.title}</strong>
+                <p style={{ fontSize: "14rem", color: "#666", margin: 0 }}>{item.module}</p>
+              </div>
+              <div style={{ marginLeft: "auto" }}>
+                <LofiButton variant="secondary">Resume</LofiButton>
+              </div>
             </div>
-            <button style={{ marginLeft: "auto", padding: "0.5rem 1rem" }}>Resume</button>
-          </div>
-        </div>
+          ))}
+        </LofiCard>
 
-        <div style={{ padding: "1rem", border: "1px solid #eee", borderRadius: "8px" }}>
-          <h3>Recent Resources</h3>
-          <ul style={{ paddingLeft: "1.5rem", marginTop: "0.5rem" }}>
-            <li><a href="#">Understanding Glare Metrics (PDF)</a></li>
-            <li><a href="#">Sustainable Lighting Practices (Video)</a></li>
-            <li><a href="#">2024 Lighting Standards Update (Article)</a></li>
+        <LofiCard title="Recent Resources">
+          <ul style={{ paddingLeft: "24rem", marginTop: "8rem" }}>
+            {user.education.resources.map((resource, index) => (
+              <li key={index}><a href={resource.link} style={{ color: "inherit" }}>{resource.title}</a></li>
+            ))}
           </ul>
-        </div>
+        </LofiCard>
       </div>
     </div>
   );

@@ -1,56 +1,79 @@
 import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
+import React from "react";
 import { fontSize } from "@/styles/styling";
 
-interface LofiButtonProps {
-  variant?: "primary" | "secondary";
-  onClick?: () => void;
-}
-
-
-
 const styles = css`
-  padding: 12rem 24rem;
-  font-family: monospace;
-  ${fontSize(1)}
-  text-transform: uppercase;
-  font-weight: bold;
+  padding: 10rem 20rem;
+  border-radius: 0;
+  font-weight: 600;
+  ${fontSize(0.95)}
   cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  border: 1px solid #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem;
+  text-decoration: none;
+  background: #fff;
+  color: #000;
+
+  &:hover {
+    background: #f0f0f0;
+  }
+
+  &:active {
+    background: #e0e0e0;
+    transform: translateY(1px);
+  }
 
   &.primary {
-    background: var(--foreground);
-    color: var(--background);
-    border: 1px solid var(--foreground);
+    background: #000;
+    color: #fff;
+    border-color: #000;
+
+    &:hover {
+      background: #333;
+      border-color: #333;
+    }
   }
 
   &.secondary {
-    background: transparent;
-    color: var(--foreground);
-    border: 1px solid var(--foreground);
+    background: #fff;
+    color: #000;
   }
 
-  &:hover {
-    opacity: 0.8;
+  &.ghost {
+    background: transparent;
+    border-color: transparent;
+    
+    &:hover {
+      background: #f5f5f5;
+      text-decoration: underline;
+    }
   }
 `;
 
-const LofiButton: DCI<LofiButtonProps> = ({
-  children,
-  variant = "primary",
-  onClick,
-  className,
-}) => {
+interface LofiButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "primary" | "secondary" | "ghost";
+  href?: string;
+}
+
+export const LofiButton: DCI<LofiButtonProps> = ({ variant = "primary", href, children, className, ...props }) => {
+  const classes = `${styles} ${variant} ${className || ""}`;
+
+  if (href) {
+    return (
+      <a href={href} className={classes}>
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <button
-      className={`${styles} ${variant} ${className || ""}`}
-      onClick={onClick}
-    >
+    <button className={classes} {...props}>
       {children}
     </button>
   );
 };
-
-export default LofiButton;

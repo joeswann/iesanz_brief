@@ -94,8 +94,6 @@ const AccountHeader: DCI = () => {
         <div className="account-menu">
           <span>Welcome, {user.name}</span>
           <div className="separator" />
-          <a href="/chapter">{user.chapter.name}</a>
-          <div className="separator" />
           <a href="/">Return to Site</a>
         </div>
 

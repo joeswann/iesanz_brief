@@ -1,7 +1,7 @@
 import { DCI } from "@/types/dci";
 import { useState } from "react";
 import { css } from "@linaria/core";
-import Button from "../ui/Button";
+import { LofiButton } from "../lofi/LofiButton";
 
 const styles = css`
   .step-indicator {
@@ -151,12 +151,12 @@ const UpgradeForm: DCI = () => {
 
                 <div className="actions">
                     {step > 1 && (
-                        <Button type="button" variant="secondary" onClick={prevStep}>Back</Button>
+                        <LofiButton type="button" variant="secondary" onClick={prevStep}>Back</LofiButton>
                     )}
                     {step < 3 ? (
-                        <Button type="submit" variant="primary">Next Step</Button>
+                        <LofiButton type="submit" variant="primary">Next Step</LofiButton>
                     ) : (
-                        <Button type="submit" variant="primary" onClick={() => alert("Application Submitted!")}>Submit Application</Button>
+                        <LofiButton type="submit" variant="primary" onClick={() => alert("Application Submitted!")}>Submit Application</LofiButton>
                     )}
                 </div>
             </form>

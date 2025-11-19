@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import AccountPageLayout from "@/components/account/AccountPageLayout";
 import { user } from "@/data/data.user";
+import { LofiCard, LofiGrid } from "@/components/lofi/LofiLayouts";
 
 export const Route = createFileRoute("/account/")({
     component: AccountDashboard,
@@ -8,30 +9,34 @@ export const Route = createFileRoute("/account/")({
 
 function AccountDashboard() {
     return (
-        <AccountPageLayout>
-            <h1>Welcome back, {user.name}</h1>
-            <p>Manage your membership, access education resources, and view your account details.</p>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "2rem", marginTop: "2rem" }}>
-                <div style={{ padding: "1.5rem", border: "1px solid #eee", borderRadius: "8px" }}>
-                    <h3>Membership Status</h3>
-                    <p>Current Grade: <strong>Member (MIES)</strong></p>
-                    <p>Status: <strong>Active</strong></p>
-                    <a href="/account/subscription">Manage Subscription</a>
-                </div>
-
-                <div style={{ padding: "1.5rem", border: "1px solid #eee", borderRadius: "8px" }}>
-                    <h3>Upcoming Events</h3>
-                    <p>You have no upcoming events.</p>
-                    <a href="/account/events">View Events</a>
-                </div>
-
-                <div style={{ padding: "1.5rem", border: "1px solid #eee", borderRadius: "8px" }}>
-                    <h3>Recent Education</h3>
-                    <p>Continue where you left off.</p>
-                    <a href="/account/education">Go to Education</a>
-                </div>
-            </div>
+        <AccountPageLayout
+            title={`Welcome back, ${user.name}`}
+            description="Manage your membership, access education resources, and view your account details."
+        >
+            <LofiGrid>
+                <LofiCard title="Membership Status">
+                    <p>Current Grade: <strong>{user.subscription.grade}</strong></p>
+                    <p>Status: <strong>{user.subscription.status}</strong></p>
+                    <p>Renews: <strong>{user.subscription.renews}</strong></p>
+                    <a href="/account/subscription">Manage Subscription →</a>
+                </LofiCard>
+                <LofiCard title="Upcoming Events">
+                    {user.events.upcoming.length > 0 ? (
+                        <>
+                            <p>You have <strong>{user.events.upcoming.length}</strong> upcoming event{user.events.upcoming.length !== 1 ? 's' : ''}.</p>
+                            <p>Next: {user.events.upcoming[0].title}</p>
+                        </>
+                    ) : (
+                        <p>No upcoming events.</p>
+                    )}
+                    <a href="/account/events">View All Events →</a>
+                </LofiCard>
+                <LofiCard title="Education">
+                    <p>CPD Points: <strong>{user.education.cpd.points}</strong> / {user.education.cpd.required}</p>
+                    <p>Current Period: {user.education.cpd.currentPeriod}</p>
+                    <a href="/account/education">Go to Education Portal →</a>
+                </LofiCard>
+            </LofiGrid>
         </AccountPageLayout>
     );
 }
