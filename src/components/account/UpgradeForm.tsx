@@ -1,71 +1,63 @@
 import { DCI } from "@/types/dci";
 import { useState } from "react";
-import { css } from "@linaria/core";
 import { LofiButton } from "../lofi/LofiButton";
+import { LofiFormGroup, LofiInput, LofiTextarea } from "../lofi/LofiForm";
+import { LofiCard } from "../lofi/LofiLayouts";
+import { TypeBody } from "../type/TypeBody";
+import { TypeHeading } from "../type/TypeHeading";
+import { css } from "@linaria/core";
 
-const styles = css`
-  .step-indicator {
+const stepIndicator = css`
     display: flex;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 16rem;
+    margin-bottom: 32rem;
     border-bottom: 1px solid #eee;
-    padding-bottom: 1rem;
-    
-    div {
-      font-weight: bold;
-      color: #ccc;
-      
-      &.active {
-        color: var(--foreground);
-      }
-    }
-  }
+    padding-bottom: 16rem;
+`;
 
-  form {
+const stepContent = css`
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    max-width: 600px;
-  }
+    gap: 24rem;
+`;
 
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
+const stepHeader = css`
+    margin-bottom: 24rem;
+`;
 
-  input, select, textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-
-  .actions {
+const radioLabel = css`
     display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    
-    button {
-      padding: 0.75rem 1.5rem;
-      cursor: pointer;
-      border-radius: 4px;
-      font-weight: bold;
-      
-      &.primary {
-        background: var(--foreground);
-        color: var(--background);
-        border: none;
-      }
-      
-      &.secondary {
-        background: transparent;
-        border: 1px solid var(--foreground);
-        color: var(--foreground);
-      }
-    }
-  }
+    align-items: center;
+    cursor: pointer;
+`;
+
+const radioInput = css`
+    width: auto;
+    margin-right: 12rem;
+    transform: scale(1.2);
+`;
+
+const radioText = css`
+    display: block;
+`;
+
+const reviewGrid = css`
+    display: grid;
+    gap: 12rem;
+`;
+
+const reviewLabel = css`
+    margin-bottom: 4rem;
+`;
+
+const disclaimer = css`
+    margin-top: 24rem;
+`;
+
+const buttonGroup = css`
+    display: flex;
+    gap: 16rem;
+    margin-top: 32rem;
 `;
 
 const UpgradeForm: DCI = () => {
@@ -81,75 +73,94 @@ const UpgradeForm: DCI = () => {
     };
 
     return (
-        <div className={styles}>
-            <div className="step-indicator">
-                <div className={step === 1 ? "active" : ""}>1. Select Grade</div>
-                <div className={step === 2 ? "active" : ""}>2. Details</div>
-                <div className={step === 3 ? "active" : ""}>3. Review & Submit</div>
+        <div>
+            {/* Step Indicator */}
+            <div className={stepIndicator}>
+                <TypeBody weight={step === 1 ? "bold" : "default"} color={step === 1 ? "default" : "muted"}>1. Select Grade</TypeBody>
+                <TypeBody weight={step === 2 ? "bold" : "default"} color={step === 2 ? "default" : "muted"}>2. Details</TypeBody>
+                <TypeBody weight={step === 3 ? "bold" : "default"} color={step === 3 ? "default" : "muted"}>3. Review & Submit</TypeBody>
             </div>
 
             <form onSubmit={nextStep}>
                 {step === 1 && (
-                    <div>
-                        <h2>Select Membership Grade</h2>
-                        <p>Choose the grade you wish to upgrade to.</p>
-
-                        <div style={{ marginTop: "1rem" }}>
-                            <label>
-                                <input type="radio" name="grade" value="fellow" style={{ width: "auto", marginRight: "0.5rem" }} />
-                                Fellow (FIES)
-                            </label>
-                            <p style={{ marginLeft: "1.5rem", fontSize: "0.9rem", color: "#666" }}>For members with significant contributions to the industry.</p>
+                    <div className={stepContent}>
+                        <div>
+                            <TypeHeading level={2} style={{ marginBottom: "8rem" }}>Select Membership Grade</TypeHeading>
+                            <TypeBody color="muted">Choose the grade you wish to upgrade to.</TypeBody>
                         </div>
 
-                        <div style={{ marginTop: "1rem" }}>
-                            <label>
-                                <input type="radio" name="grade" value="senior" style={{ width: "auto", marginRight: "0.5rem" }} />
-                                Senior Member (MIES Senior)
+                        <LofiCard>
+                            <label className={radioLabel}>
+                                <input type="radio" name="grade" value="fellow" className={radioInput} />
+                                <div>
+                                    <TypeBody weight="bold" as="span" className={radioText}>Fellow (FIES)</TypeBody>
+                                    <TypeBody variant="small" color="muted" as="span">For members with significant contributions to the industry.</TypeBody>
+                                </div>
                             </label>
-                            <p style={{ marginLeft: "1.5rem", fontSize: "0.9rem", color: "#666" }}>For experienced professionals.</p>
-                        </div>
+                        </LofiCard>
+
+                        <LofiCard>
+                            <label className={radioLabel}>
+                                <input type="radio" name="grade" value="senior" className={radioInput} />
+                                <div>
+                                    <TypeBody weight="bold" as="span" className={radioText}>Senior Member (MIES Senior)</TypeBody>
+                                    <TypeBody variant="small" color="muted" as="span">For experienced professionals.</TypeBody>
+                                </div>
+                            </label>
+                        </LofiCard>
                     </div>
                 )}
 
                 {step === 2 && (
                     <div>
-                        <h2>Your Details</h2>
-                        <p>Please confirm your current details.</p>
-
-                        <div>
-                            <label>Full Name</label>
-                            <input type="text" defaultValue="Joe Swann" />
+                        <div className={stepHeader}>
+                            <TypeHeading level={2} style={{ marginBottom: "8rem" }}>Your Details</TypeHeading>
+                            <TypeBody color="muted">Please confirm your current details.</TypeBody>
                         </div>
 
-                        <div>
-                            <label>Current Position</label>
-                            <input type="text" placeholder="e.g. Senior Lighting Designer" />
-                        </div>
+                        <LofiFormGroup label="Full Name" htmlFor="fullName">
+                            <LofiInput id="fullName" type="text" defaultValue="Joe Swann" />
+                        </LofiFormGroup>
 
-                        <div>
-                            <label>Statement of Experience</label>
-                            <textarea rows={5} placeholder="Describe your relevant experience..." />
-                        </div>
+                        <LofiFormGroup label="Current Position" htmlFor="position" hint="e.g. Senior Lighting Designer">
+                            <LofiInput id="position" type="text" placeholder="Enter your position" />
+                        </LofiFormGroup>
+
+                        <LofiFormGroup label="Statement of Experience" htmlFor="experience">
+                            <LofiTextarea id="experience" rows={5} placeholder="Describe your relevant experience..." />
+                        </LofiFormGroup>
                     </div>
                 )}
 
                 {step === 3 && (
                     <div>
-                        <h2>Review & Submit</h2>
-                        <p>Please review your application before submitting.</p>
-
-                        <div style={{ background: "#f9f9f9", padding: "1rem", borderRadius: "4px" }}>
-                            <p><strong>Grade:</strong> Fellow (FIES)</p>
-                            <p><strong>Name:</strong> Joe Swann</p>
-                            <p><strong>Position:</strong> Senior Lighting Designer</p>
+                        <div className={stepHeader}>
+                            <TypeHeading level={2} style={{ marginBottom: "8rem" }}>Review & Submit</TypeHeading>
+                            <TypeBody color="muted">Please review your application before submitting.</TypeBody>
                         </div>
 
-                        <p style={{ marginTop: "1rem" }}>By submitting this application, you agree to the terms and conditions.</p>
+                        <LofiCard>
+                            <div className={reviewGrid}>
+                                <div>
+                                    <TypeBody variant="small" color="muted" className={reviewLabel}>Grade</TypeBody>
+                                    <TypeBody weight="bold">Fellow (FIES)</TypeBody>
+                                </div>
+                                <div>
+                                    <TypeBody variant="small" color="muted" className={reviewLabel}>Name</TypeBody>
+                                    <TypeBody weight="bold">Joe Swann</TypeBody>
+                                </div>
+                                <div>
+                                    <TypeBody variant="small" color="muted" className={reviewLabel}>Position</TypeBody>
+                                    <TypeBody weight="bold">Senior Lighting Designer</TypeBody>
+                                </div>
+                            </div>
+                        </LofiCard>
+
+                        <TypeBody variant="small" color="muted" className={disclaimer}>By submitting this application, you agree to the terms and conditions.</TypeBody>
                     </div>
                 )}
 
-                <div className="actions">
+                <div className={buttonGroup}>
                     {step > 1 && (
                         <LofiButton type="button" variant="secondary" onClick={prevStep}>Back</LofiButton>
                     )}

@@ -3,6 +3,7 @@ import AccountPageLayout from "@/components/account/AccountPageLayout";
 import { LofiFormGroup, LofiInput } from "@/components/lofi/LofiForm";
 import { LofiButton } from "@/components/lofi/LofiButton";
 import { LofiCard } from "@/components/lofi/LofiLayouts";
+import { TypeBody } from "@/components/type/TypeBody";
 
 export const Route = createFileRoute("/account/login")({
     component: AccountLogin,
@@ -24,9 +25,9 @@ function AccountLogin() {
 
                         <LofiButton type="submit" variant="primary" style={{ width: "100%", marginTop: "16rem" }}>Login</LofiButton>
                     </form>
-                    <p style={{ marginTop: "1.5rem", textAlign: "center", fontSize: "0.9rem", color: "#666" }}>
+                    <TypeBody variant="small" color="muted" style={{ marginTop: "24rem", textAlign: "center" }}>
                         <a href="/account/register" style={{ color: "inherit", textDecoration: "underline" }}>Don't have an account? Register</a>
-                    </p>
+                    </TypeBody>
                 </LofiCard>
             </div>
         </AccountPageLayout>

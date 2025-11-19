@@ -4,7 +4,7 @@ import LofiCalendar from "@/components/lofi/LofiCalendar";
 import { calendarEvents } from "@/data/data.calendar";
 import LofiHeading from "@/components/lofi/LofiHeading";
 
-const styles = css`
+const layoutContainer = css`
   display: flex;
   flex-direction: column;
   gap: 32rem;
@@ -12,7 +12,7 @@ const styles = css`
 
 const CalendarLayout: DCI = () => {
     return (
-        <div className={styles}>
+        <div className={layoutContainer}>
             <LofiHeading level={1}>Events Calendar</LofiHeading>
             <LofiCalendar events={calendarEvents} />
         </div>

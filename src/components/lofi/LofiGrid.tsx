@@ -1,12 +1,12 @@
 import { DCI } from "@/types/dci";
-import { css } from "@linaria/core";
+import { css, cx } from "@linaria/core";
 
 interface LofiGridProps {
     columns?: number;
     gap?: number;
 }
 
-const styles = css`
+const gridBase = css`
   display: grid;
   width: 100%;
 `;
@@ -19,7 +19,7 @@ const LofiGrid: DCI<LofiGridProps> = ({
 }) => {
     return (
         <div
-            className={`${styles} ${className || ""}`}
+            className={cx(gridBase, className)}
             style={{
                 gridTemplateColumns: `repeat(${columns}, 1fr)`,
                 gap: `${gap}px`,

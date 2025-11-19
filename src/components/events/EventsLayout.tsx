@@ -3,35 +3,54 @@ import { css } from "@linaria/core";
 import LofiImage from "@/components/lofi/LofiImage";
 import LofiHeading from "@/components/lofi/LofiHeading";
 import LofiText from "@/components/lofi/LofiText";
-import LofiButton from "@/components/lofi/LofiButton";
+import { LofiButton } from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
 import { eventsData, eventTypes } from "@/data/data.events";
 import EventCard from "@/components/events/EventCard";
 
-const styles = css`
+const layoutContainer = css`
   display: flex;
   flex-direction: column;
   gap: 48rem;
   padding-bottom: 48rem;
+`;
 
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32rem;
-    align-items: center;
+const heroSection = css`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32rem;
+  align-items: center;
 
-    @media (max-width: 768px) {
-      grid-template-columns: 1fr;
-    }
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
+`;
 
-  .filters {
-    display: flex;
-    gap: 16rem;
-    flex-wrap: wrap;
-    padding-bottom: 24rem;
-    border-bottom: 1px solid var(--foreground);
-  }
+const featuredLabel = css`
+  margin-bottom: 16rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+`;
+
+const featuredMeta = css`
+  margin-bottom: 16rem;
+  opacity: 0.7;
+`;
+
+const registerButton = css`
+  margin-top: 24rem;
+`;
+
+const filters = css`
+  display: flex;
+  gap: 16rem;
+  flex-wrap: wrap;
+  padding-bottom: 24rem;
+  border-bottom: 1px solid var(--foreground);
+`;
+
+const eventsGrid = css`
+  margin-top: 32rem;
 `;
 
 const EventsLayout: DCI = () => {
@@ -39,20 +58,20 @@ const EventsLayout: DCI = () => {
     const otherEvents = eventsData.filter((e) => e.id !== featuredEvent.id);
 
     return (
-        <div className={styles}>
+        <div className={layoutContainer}>
             {/* Featured Event */}
-            <section className="hero">
+            <section className={heroSection}>
                 <LofiImage ratio={16 / 9} label="Featured Event" />
                 <div>
-                    <div style={{ marginBottom: "16rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                    <div className={featuredLabel}>
                         Featured Event
                     </div>
                     <LofiHeading level={1}>{featuredEvent.title}</LofiHeading>
-                    <div style={{ marginBottom: "16rem", opacity: 0.7 }}>
+                    <div className={featuredMeta}>
                         {featuredEvent.date} • {featuredEvent.location}
                     </div>
                     <LofiText lines={4} />
-                    <div style={{ marginTop: "24rem" }}>
+                    <div className={registerButton}>
                         <LofiButton variant="primary">Register Now</LofiButton>
                     </div>
                 </div>
@@ -60,7 +79,7 @@ const EventsLayout: DCI = () => {
 
             {/* Events List */}
             <section>
-                <div className="filters">
+                <div className={filters}>
                     {eventTypes.map((type, i) => (
                         <LofiButton key={type} variant={i === 0 ? "primary" : "secondary"}>
                             {type}
@@ -68,7 +87,7 @@ const EventsLayout: DCI = () => {
                     ))}
                 </div>
 
-                <div style={{ marginTop: "32rem" }}>
+                <div className={eventsGrid}>
                     <LofiGrid columns={3}>
                         {otherEvents.map((event) => (
                             <EventCard key={event.id} item={event} />

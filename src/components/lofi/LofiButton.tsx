@@ -1,9 +1,9 @@
 import { DCI } from "@/types/dci";
-import { css } from "@linaria/core";
+import { css, cx } from "@linaria/core";
 import React from "react";
 import { fontSize } from "@/styles/styling";
 
-const styles = css`
+const buttonBase = css`
   padding: 10rem 20rem;
   border-radius: 0;
   font-weight: 600;
@@ -27,31 +27,31 @@ const styles = css`
     background: #e0e0e0;
     transform: translateY(1px);
   }
+`;
 
-  &.primary {
-    background: #000;
-    color: #fff;
-    border-color: #000;
+const buttonPrimary = css`
+  background: #000;
+  color: #fff;
+  border-color: #000;
 
-    &:hover {
-      background: #333;
-      border-color: #333;
-    }
+  &:hover {
+    background: #333;
+    border-color: #333;
   }
+`;
 
-  &.secondary {
-    background: #fff;
-    color: #000;
-  }
+const buttonSecondary = css`
+  background: #fff;
+  color: #000;
+`;
 
-  &.ghost {
-    background: transparent;
-    border-color: transparent;
-    
-    &:hover {
-      background: #f5f5f5;
-      text-decoration: underline;
-    }
+const buttonGhost = css`
+  background: transparent;
+  border-color: transparent;
+  
+  &:hover {
+    background: #f5f5f5;
+    text-decoration: underline;
   }
 `;
 
@@ -61,7 +61,8 @@ interface LofiButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
 }
 
 export const LofiButton: DCI<LofiButtonProps> = ({ variant = "primary", href, children, className, ...props }) => {
-  const classes = `${styles} ${variant} ${className || ""}`;
+  const variantClass = variant === "primary" ? buttonPrimary : variant === "secondary" ? buttonSecondary : buttonGhost;
+  const classes = cx(buttonBase, variantClass, className);
 
   if (href) {
     return (

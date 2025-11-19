@@ -1,9 +1,44 @@
 import { createFileRoute, Outlet, Link } from "@tanstack/react-router";
 import AccountPageLayout from "@/components/account/AccountPageLayout";
+import { css } from "@linaria/core";
 
 export const Route = createFileRoute("/account/education")({
   component: EducationLayout,
 });
+
+const educationContainer = css`
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 32rem;
+  margin-top: 32rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const educationNav = css`
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+`;
+
+const navLink = css`
+  padding: 12rem 16rem;
+  border-radius: 0;
+  text-decoration: none;
+  color: var(--foreground);
+  border: 2px solid transparent;
+
+  &:hover {
+    background: #f5f5f5;
+  }
+`;
+
+const activeLink = {
+  background: "#eee",
+  fontWeight: "bold",
+};
 
 function EducationLayout() {
   return (
@@ -11,34 +46,34 @@ function EducationLayout() {
       title="Education & Training"
       description="Access your CPD tracker, resources, and webinars."
     >
-      <div style={{ display: "grid", gridTemplateColumns: "250px 1fr", gap: "32rem", marginTop: "32rem" }}>
-        <nav style={{ display: "flex", flexDirection: "column", gap: "8rem" }}>
+      <div className={educationContainer}>
+        <nav className={educationNav}>
           <Link
             to="/account/education"
-            activeProps={{ style: { background: "#eee", fontWeight: "bold" } }}
+            activeProps={{ style: activeLink }}
             activeOptions={{ exact: true }}
-            style={{ padding: "12rem 16rem", borderRadius: "4px", textDecoration: "none", color: "var(--foreground)", border: "1px solid transparent" }}
+            className={navLink}
           >
             Overview
           </Link>
           <Link
             to="/account/education/cpd"
-            activeProps={{ style: { background: "#eee", fontWeight: "bold" } }}
-            style={{ padding: "12rem 16rem", borderRadius: "4px", textDecoration: "none", color: "var(--foreground)", border: "1px solid transparent" }}
+            activeProps={{ style: activeLink }}
+            className={navLink}
           >
             CPD Tracker
           </Link>
           <Link
             to="/account/education/resources"
-            activeProps={{ style: { background: "#eee", fontWeight: "bold" } }}
-            style={{ padding: "12rem 16rem", borderRadius: "4px", textDecoration: "none", color: "var(--foreground)", border: "1px solid transparent" }}
+            activeProps={{ style: activeLink }}
+            className={navLink}
           >
             Resources
           </Link>
           <Link
             to="/account/education/webinars"
-            activeProps={{ style: { background: "#eee", fontWeight: "bold" } }}
-            style={{ padding: "12rem 16rem", borderRadius: "4px", textDecoration: "none", color: "var(--foreground)", border: "1px solid transparent" }}
+            activeProps={{ style: activeLink }}
+            className={navLink}
           >
             Webinars
           </Link>

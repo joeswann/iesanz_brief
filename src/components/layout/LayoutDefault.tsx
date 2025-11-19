@@ -5,15 +5,18 @@ import LayoutFooter from "./LayoutFooter";
 import { useLocation } from "@tanstack/react-router";
 import AccountHeader from "../account/AccountHeader";
 
-const styles = css`
+const layoutContainer = css`
   min-height: 100svh;
   display: flex;
   flex-direction: column;
+`;
 
-  .content {
-    flex-grow: 1;
-    padding: 16px;
-  }
+const content = css`
+  flex-grow: 1;
+  padding: var(--content-padding-top) 16rem;
+  width: 100%;
+  max-width: 1400rem;
+  margin: 0 auto;
 `;
 
 const LayoutDefault: DCI = ({ children }) => {
@@ -21,9 +24,9 @@ const LayoutDefault: DCI = ({ children }) => {
   const isAccount = location.pathname.startsWith("/account");
 
   return (
-    <div className={styles}>
+    <div className={layoutContainer}>
       {isAccount ? <AccountHeader /> : <LayoutHeader />}
-      <div className="content">{children}</div>
+      <div className={content}>{children}</div>
       <LayoutFooter />
     </div>
   );

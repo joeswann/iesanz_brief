@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import AccountPageLayout from "@/components/account/AccountPageLayout";
 import { user } from "@/data/data.user";
 import { LofiCard, LofiGrid } from "@/components/lofi/LofiLayouts";
+import { TypeBody } from "@/components/type/TypeBody";
 
 export const Route = createFileRoute("/account/")({
     component: AccountDashboard,
@@ -15,25 +16,25 @@ function AccountDashboard() {
         >
             <LofiGrid>
                 <LofiCard title="Membership Status">
-                    <p>Current Grade: <strong>{user.subscription.grade}</strong></p>
-                    <p>Status: <strong>{user.subscription.status}</strong></p>
-                    <p>Renews: <strong>{user.subscription.renews}</strong></p>
+                    <TypeBody>Current Grade: <strong>{user.subscription.grade}</strong></TypeBody>
+                    <TypeBody>Status: <strong>{user.subscription.status}</strong></TypeBody>
+                    <TypeBody>Renews: <strong>{user.subscription.renews}</strong></TypeBody>
                     <a href="/account/subscription">Manage Subscription →</a>
                 </LofiCard>
                 <LofiCard title="Upcoming Events">
                     {user.events.upcoming.length > 0 ? (
                         <>
-                            <p>You have <strong>{user.events.upcoming.length}</strong> upcoming event{user.events.upcoming.length !== 1 ? 's' : ''}.</p>
-                            <p>Next: {user.events.upcoming[0].title}</p>
+                            <TypeBody>You have <strong>{user.events.upcoming.length}</strong> upcoming event{user.events.upcoming.length !== 1 ? 's' : ''}.</TypeBody>
+                            <TypeBody>Next: {user.events.upcoming[0].title}</TypeBody>
                         </>
                     ) : (
-                        <p>No upcoming events.</p>
+                        <TypeBody>No upcoming events.</TypeBody>
                     )}
                     <a href="/account/events">View All Events →</a>
                 </LofiCard>
                 <LofiCard title="Education">
-                    <p>CPD Points: <strong>{user.education.cpd.points}</strong> / {user.education.cpd.required}</p>
-                    <p>Current Period: {user.education.cpd.currentPeriod}</p>
+                    <TypeBody>CPD Points: <strong>{user.education.cpd.points}</strong> / {user.education.cpd.required}</TypeBody>
+                    <TypeBody>Current Period: {user.education.cpd.currentPeriod}</TypeBody>
                     <a href="/account/education">Go to Education Portal →</a>
                 </LofiCard>
             </LofiGrid>

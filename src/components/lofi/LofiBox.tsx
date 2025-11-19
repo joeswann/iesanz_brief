@@ -1,7 +1,7 @@
 import { DCI } from "@/types/dci";
-import { css } from "@linaria/core";
+import { css, cx } from "@linaria/core";
 
-const styles = css`
+const boxBase = css`
   padding: 16rem;
   border: 1px solid var(--foreground);
   display: flex;
@@ -10,7 +10,7 @@ const styles = css`
 `;
 
 const LofiBox: DCI = ({ children, className }) => {
-  return <div className={styles + " " + className}>{children}</div>;
+  return <div className={cx(boxBase, className)}>{children}</div>;
 };
 
 export default LofiBox;

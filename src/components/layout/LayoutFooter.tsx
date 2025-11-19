@@ -5,87 +5,87 @@ import { links, socialLinks } from "@/data/data.footer";
 
 import { fontSize } from "@/styles/styling";
 
-const styles = css`
+const footerContainer = css`
   width: 100%;
   margin-top: 10rem;
+`;
 
-  .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+const footerContent = css`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const footerMenu = css`
+  display: flex;
+  gap: 16rem;
+  align-items: center;
+  ${fontSize(0.875)}
+`;
+
+const footerLink = css`
+  text-decoration: none;
+  color: var(--foreground);
+  
+  &:hover {
+    text-decoration: underline;
   }
+`;
 
-  .footer-menu {
-    display: flex;
-    gap: 16rem;
-    align-items: center;
-    ${fontSize(0.875)}
+const separator = css`
+  width: 1px;
+  height: 1em;
+  background: var(--foreground);
+  opacity: 0.3;
+`;
 
-    a {
-      text-decoration: none;
-      color: var(--foreground);
-      
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+const rightSection = css`
+  display: flex;
+  gap: 24rem;
+  align-items: center;
+`;
 
-    .separator {
-      width: 1px;
-      height: 1em;
-      background: var(--foreground);
-      opacity: 0.3;
-    }
+const socialLinksContainer = css`
+  display: flex;
+  gap: 12rem;
+  ${fontSize(0.875)}
+`;
+
+const socialLink = css`
+  text-decoration: none;
+  color: var(--foreground);
+  font-weight: bold;
+  
+  &:hover {
+    opacity: 0.7;
   }
+`;
 
-  .right-section {
-    display: flex;
-    gap: 24rem;
-    align-items: center;
-  }
-
-  .social-links {
-    display: flex;
-    gap: 12rem;
-    ${fontSize(0.875)}
-    
-    a {
-      text-decoration: none;
-      color: var(--foreground);
-      font-weight: bold;
-      
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-  }
-
-  .copyright {
-    ${fontSize(0.875)}
-    opacity: 0.5;
-  }
+const copyright = css`
+  ${fontSize(0.875)}
+  opacity: 0.5;
 `;
 
 const LayoutFooter: DCI = ({ children }) => {
   return (
-    <div className={styles}>
-      <LofiBox className="footer-content">
-        <nav className="footer-menu">
+    <div className={footerContainer}>
+      <LofiBox className={footerContent}>
+        <nav className={footerMenu}>
           {links.map(([label, url], i) => (
             <div key={url} style={{ display: "contents" }}>
-              <a href={url}>{label}</a>
-              {i < links.length - 1 && <div className="separator" />}
+              <a href={url} className={footerLink}>{label}</a>
+              {i < links.length - 1 && <div className={separator} />}
             </div>
           ))}
         </nav>
 
-        <div className="right-section">
-          <nav className="social-links">
+        <div className={rightSection}>
+          <nav className={socialLinksContainer}>
             {socialLinks.map(([label, url]) => (
-              <a key={label} href={url} target="_blank" rel="noopener noreferrer">{label}</a>
+              <a key={label} href={url} target="_blank" rel="noopener noreferrer" className={socialLink}>{label}</a>
             ))}
           </nav>
-          <div className="copyright">&copy; 2025 IESANZ</div>
+          <div className={copyright}>&copy; 2025 IESANZ</div>
         </div>
       </LofiBox>
     </div>

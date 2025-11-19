@@ -3,6 +3,7 @@ import AccountPageLayout from "@/components/account/AccountPageLayout";
 import { user } from "@/data/data.user";
 import { LofiButton } from "@/components/lofi/LofiButton";
 import { LofiCard } from "@/components/lofi/LofiLayouts";
+import { TypeBody } from "@/components/type/TypeBody";
 
 
 export const Route = createFileRoute("/account/subscription")({
@@ -18,9 +19,9 @@ function AccountSubscription() {
             <div style={{ maxWidth: "800px" }}>
                 <LofiCard>
                     <div style={{ display: "grid", gap: "16rem" }}>
-                        <p>Current Grade: <strong>{user.subscription.grade}</strong></p>
-                        <p>Status: <strong>{user.subscription.status}</strong></p>
-                        <p>Renews: <strong>{user.subscription.renews}</strong></p>
+                        <TypeBody>Current Grade: <strong>{user.subscription.grade}</strong></TypeBody>
+                        <TypeBody>Status: <strong>{user.subscription.status}</strong></TypeBody>
+                        <TypeBody>Renews: <strong>{user.subscription.renews}</strong></TypeBody>
                     </div>
                     <div style={{ marginTop: "16rem" }}>
                         <LofiButton href="/account/upgrade" variant="primary">Upgrade Membership</LofiButton>

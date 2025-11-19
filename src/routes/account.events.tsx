@@ -2,11 +2,39 @@ import { createFileRoute } from "@tanstack/react-router";
 import AccountPageLayout from "@/components/account/AccountPageLayout";
 import { user } from "@/data/data.user";
 import { LofiCard, LofiGrid } from "@/components/lofi/LofiLayouts";
-
+import { TypeBody } from "@/components/type/TypeBody";
+import { TypeHeading } from "@/components/type/TypeHeading";
+import { css } from "@linaria/core";
 
 export const Route = createFileRoute("/account/events")({
     component: AccountEvents,
 });
+
+const eventList = css`
+    display: grid;
+    gap: 16rem;
+`;
+
+const eventItem = css`
+    padding: 16rem;
+    border: 2px solid #000;
+    border-radius: 0;
+`;
+
+const pastEventItem = css`
+    padding: 16rem;
+    border: 2px solid #000;
+    border-radius: 0;
+    background: #f9f9f9;
+`;
+
+const eventAction = css`
+    margin-top: 8rem;
+`;
+
+const actionLink = css`
+    text-decoration: underline;
+`;
 
 function AccountEvents() {
     return (
@@ -17,39 +45,39 @@ function AccountEvents() {
             <LofiGrid>
                 <LofiCard title="Upcoming Events">
                     {user.events.upcoming.length > 0 ? (
-                        <div style={{ display: "grid", gap: "16rem" }}>
+                        <div className={eventList}>
                             {user.events.upcoming.map((event) => (
-                                <div key={event.id} style={{ padding: "16rem", border: "1px solid #eee", borderRadius: "4px" }}>
-                                    <h4 style={{ margin: "0 0 8rem 0" }}>{event.title}</h4>
-                                    <p style={{ margin: 0, color: "#666", fontSize: "14rem" }}>Date: {event.date}</p>
-                                    <p style={{ margin: 0, color: "#666", fontSize: "14rem" }}>Location: {event.location}</p>
-                                    <div style={{ marginTop: "8rem" }}>
-                                        <a href={event.link} style={{ textDecoration: "underline" }}>{event.action}</a>
+                                <div key={event.id} className={eventItem}>
+                                    <TypeHeading level={4} style={{ marginBottom: "8rem" }}>{event.title}</TypeHeading>
+                                    <TypeBody variant="small" color="muted">Date: {event.date}</TypeBody>
+                                    <TypeBody variant="small" color="muted">Location: {event.location}</TypeBody>
+                                    <div className={eventAction}>
+                                        <a href={event.link} className={actionLink}>{event.action}</a>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <p>You have not registered for any upcoming events.</p>
+                        <TypeBody>You have not registered for any upcoming events.</TypeBody>
                     )}
                 </LofiCard>
 
                 <LofiCard title="Past Events">
                     {user.events.past.length > 0 ? (
-                        <div style={{ display: "grid", gap: "16rem" }}>
+                        <div className={eventList}>
                             {user.events.past.map((event) => (
-                                <div key={event.id} style={{ padding: "16rem", border: "1px solid #eee", borderRadius: "4px", background: "#f9f9f9" }}>
-                                    <h4 style={{ margin: "0 0 8rem 0" }}>{event.title}</h4>
-                                    <p style={{ margin: 0, color: "#666", fontSize: "14rem" }}>Date: {event.date}</p>
-                                    <p style={{ margin: 0, color: "#666", fontSize: "14rem" }}>Location: {event.location}</p>
-                                    <div style={{ marginTop: "8rem" }}>
-                                        <a href={event.link} style={{ textDecoration: "underline" }}>{event.action}</a>
+                                <div key={event.id} className={pastEventItem}>
+                                    <TypeHeading level={4} style={{ marginBottom: "8rem" }}>{event.title}</TypeHeading>
+                                    <TypeBody variant="small" color="muted">Date: {event.date}</TypeBody>
+                                    <TypeBody variant="small" color="muted">Location: {event.location}</TypeBody>
+                                    <div className={eventAction}>
+                                        <a href={event.link} className={actionLink}>{event.action}</a>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <p>No past events found.</p>
+                        <TypeBody>No past events found.</TypeBody>
                     )}
                 </LofiCard>
             </LofiGrid>

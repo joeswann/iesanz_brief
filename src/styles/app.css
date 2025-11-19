@@ -36,6 +36,7 @@
   --scroll-inset: 16px;
   --inset: 18px;
   --gutter: 16px;
+  --content-padding-top: 32rem;
 
   --columns: 24;
   --column: calc((1 / var(--columns)) * (100svw - (var(--inset) * 2) - var(--scroll-inset) - ((var(--columns) - 1) * var(--gutter))) + var(--gutter));

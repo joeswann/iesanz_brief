@@ -1,9 +1,9 @@
 import { DCI } from "@/types/dci";
-import { css } from "@linaria/core";
+import { css, cx } from "@linaria/core";
 import LofiImage from "@/components/lofi/LofiImage";
 import LofiHeading from "@/components/lofi/LofiHeading";
 import LofiText from "@/components/lofi/LofiText";
-import LofiButton from "@/components/lofi/LofiButton";
+import { LofiButton } from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
 import LofiBox from "@/components/lofi/LofiBox";
 import { storeProducts, productCategories, Product } from "@/data/data.store";
@@ -11,7 +11,7 @@ import { useState } from "react";
 import { fontSize } from "@/styles/styling";
 import { user } from "@/data/data.user";
 
-const styles = css`
+const layoutContainer = css`
   display: grid;
   grid-template-columns: 250rem 1fr;
   gap: 48rem;
@@ -20,80 +20,91 @@ const styles = css`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
+`;
 
-  .sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 24rem;
+const sidebar = css`
+  display: flex;
+  flex-direction: column;
+  gap: 24rem;
+`;
+
+const categoryList = css`
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+`;
+
+const categoryButton = css`
+  ${fontSize(1)}
+  text-decoration: none;
+  color: var(--foreground);
+  padding: 8rem 0;
+  border-bottom: 1px solid var(--light-grey);
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+    font-weight: bold;
   }
+`;
 
-  .category-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12rem;
+const activeCategoryButton = css`
+  opacity: 0.7;
+  font-weight: bold;
+`;
 
-    button {
-      ${fontSize(1)}
-      text-decoration: none;
-      color: var(--foreground);
-      padding: 8rem 0;
-      border-bottom: 1px solid var(--light-grey);
-      background: none;
-      border-left: none;
-      border-right: none;
-      border-top: none;
-      text-align: left;
-      cursor: pointer;
+const productCard = css`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
 
-      &:hover, &.active {
-        opacity: 0.7;
-        font-weight: bold;
-      }
-    }
-  }
+const productContent = css`
+  margin-top: 16rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 8rem;
+`;
 
-  .product-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    
-    .content {
-        margin-top: 16rem;
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        gap: 8rem;
-    }
+const productPrice = css`
+  ${fontSize(1.125)}
+  font-weight: bold;
+  margin-top: auto;
+  padding-top: 16rem;
+`;
 
-    .price {
-        ${fontSize(1.125)}
-        font-weight: bold;
-        margin-top: auto;
-        padding-top: 16rem;
-    }
-    
-    .member-price {
-        color: #d4af37;
-        ${fontSize(0.875)}
-    }
-  }
+const memberPrice = css`
+  color: #d4af37;
+  ${fontSize(0.875)}
+`;
+
+const mainHeader = css`
+  margin-bottom: 32rem;
+  border-bottom: 1px solid var(--foreground);
+  padding-bottom: 16rem;
 `;
 
 const ProductCard: DCI<{ product: Product }> = ({ product }) => {
     return (
-        <LofiBox className="product-card">
+        <LofiBox className={productCard}>
             <LofiImage ratio={1} label={product.imageLabel} />
-            <div className="content">
+            <div className={productContent}>
                 <div style={{ opacity: 0.6, fontSize: "12rem", textTransform: "uppercase" }}>
                     {product.category}
                 </div>
                 <LofiHeading level={4}>{product.name}</LofiHeading>
                 <p>{product.description}</p>
 
-                <div className="price">
+                <div className={productPrice}>
                     ${product.price}
                     {product.memberPrice !== undefined && (
-                        <div className="member-price">
+                        <div className={memberPrice}>
                             Member Price: ${product.memberPrice === 0 ? "FREE" : product.memberPrice}
                         </div>
                     )}
@@ -113,15 +124,15 @@ const StoreLayout: DCI = () => {
         : storeProducts.filter(p => p.category === selectedCategory);
 
     return (
-        <div className={styles}>
-            <aside className="sidebar">
+        <div className={layoutContainer}>
+            <aside className={sidebar}>
                 <LofiHeading level={3}>Store Categories</LofiHeading>
-                <nav className="category-list">
+                <nav className={categoryList}>
                     {productCategories.map((cat) => (
                         <button
                             key={cat}
                             onClick={() => setSelectedCategory(cat)}
-                            className={selectedCategory === cat ? "active" : ""}
+                            className={cx(categoryButton, selectedCategory === cat && activeCategoryButton)}
                         >
                             {cat}
                         </button>
@@ -138,7 +149,7 @@ const StoreLayout: DCI = () => {
             </aside>
 
             <main>
-                <div style={{ marginBottom: "32rem", borderBottom: "1px solid var(--foreground)", paddingBottom: "16rem" }}>
+                <div className={mainHeader}>
                     <LofiHeading level={1}>{selectedCategory}</LofiHeading>
                 </div>
 

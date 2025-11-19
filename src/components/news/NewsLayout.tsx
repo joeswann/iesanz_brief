@@ -1,14 +1,13 @@
 import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
-import LofiBox from "@/components/lofi/LofiBox";
-
 import LofiHeading from "@/components/lofi/LofiHeading";
-import LofiText from "@/components/lofi/LofiText";
-import LofiButton from "@/components/lofi/LofiButton";
+import { LofiButton } from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
 import { fontSize } from "@/styles/styling";
+import { newsData, categories } from "@/data/data.news";
+import NewsCard from "@/components/news/NewsCard";
 
-const styles = css`
+const layoutContainer = css`
   display: grid;
   grid-template-columns: 250rem 1fr;
   gap: 48rem;
@@ -17,79 +16,76 @@ const styles = css`
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
+`;
 
-  .sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 24rem;
-  }
+const sidebar = css`
+  display: flex;
+  flex-direction: column;
+  gap: 24rem;
+`;
 
-  .categories {
-    display: flex;
-    flex-direction: column;
-    gap: 12rem;
+const categoryList = css`
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+`;
 
-    a {
-      ${fontSize(1)}
-      text-decoration: none;
-      color: var(--foreground);
-      padding: 8rem 0;
-      border-bottom: 1px solid var(--light-grey);
+const categoryLink = css`
+  ${fontSize(1)}
+  text-decoration: none;
+  color: var(--foreground);
+  padding: 8rem 0;
+  border-bottom: 1px solid var(--light-grey);
 
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-  }
-
-  .content {
-    display: flex;
-    flex-direction: column;
-    gap: 32rem;
-  }
-
-  .filters {
-    display: flex;
-    gap: 16rem;
-    padding-bottom: 16rem;
-    border-bottom: 1px solid var(--foreground);
-    flex-wrap: wrap;
+  &:hover {
+    opacity: 0.7;
   }
 `;
 
-import { newsData, categories } from "@/data/data.news";
-import NewsCard from "@/components/news/NewsCard";
+const content = css`
+  display: flex;
+  flex-direction: column;
+  gap: 32rem;
+`;
+
+const filters = css`
+  display: flex;
+  gap: 16rem;
+  padding-bottom: 16rem;
+  border-bottom: 1px solid var(--foreground);
+  flex-wrap: wrap;
+`;
 
 const NewsLayout: DCI = () => {
-    return (
-        <div className={styles}>
-            <aside className="sidebar">
-                <LofiHeading level={3}>News & Updates</LofiHeading>
-                <nav className="categories">
-                    {categories.map((cat) => (
-                        <a key={cat} href="#">
-                            {cat}
-                        </a>
-                    ))}
-                </nav>
+  return (
+    <div className={layoutContainer}>
+      <aside className={sidebar}>
+        <LofiHeading level={3}>News & Updates</LofiHeading>
+        <nav className={categoryList}>
+          {categories.map((cat) => (
+            <a key={cat} href="#" className={categoryLink}>
+              {cat}
+            </a>
+          ))}
+        </nav>
 
-            </aside>
+      </aside>
 
-            <main className="content">
-                <div className="filters">
-                    <LofiButton variant="primary">Latest</LofiButton>
-                    <LofiButton variant="secondary">Popular</LofiButton>
-                    <LofiButton variant="secondary">Archived</LofiButton>
-                </div>
-
-                <LofiGrid columns={3}>
-                    {newsData.map((item) => (
-                        <NewsCard key={item.id} item={item} />
-                    ))}
-                </LofiGrid>
-            </main>
+      <main className={content}>
+        <div className={filters}>
+          <LofiButton variant="primary">Latest</LofiButton>
+          <LofiButton variant="secondary">Popular</LofiButton>
+          <LofiButton variant="secondary">Archived</LofiButton>
         </div>
-    );
+
+        <LofiGrid columns={3}>
+          {newsData.map((item) => (
+            <NewsCard key={item.id} item={item} />
+          ))}
+        </LofiGrid>
+      </main>
+    </div>
+  );
 };
 
 export default NewsLayout;

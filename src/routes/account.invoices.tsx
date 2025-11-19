@@ -2,11 +2,36 @@ import { createFileRoute } from "@tanstack/react-router";
 import AccountPageLayout from "@/components/account/AccountPageLayout";
 import { user } from "@/data/data.user";
 import { LofiCard, LofiGrid } from "@/components/lofi/LofiLayouts";
-
+import { TypeBody } from "@/components/type/TypeBody";
+import { TypeHeading } from "@/components/type/TypeHeading";
+import { css } from "@linaria/core";
 
 export const Route = createFileRoute("/account/invoices")({
     component: AccountInvoices,
 });
+
+const invoiceList = css`
+    display: grid;
+    gap: 16rem;
+`;
+
+const invoiceItem = css`
+    padding: 16rem;
+    border: 2px solid #000;
+    border-radius: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+
+const invoiceRight = css`
+    text-align: right;
+`;
+
+const downloadLink = css`
+    font-size: 14rem;
+    text-decoration: underline;
+`;
 
 function AccountInvoices() {
     return (
@@ -17,22 +42,22 @@ function AccountInvoices() {
             <LofiGrid>
                 <LofiCard title="Invoice History">
                     {user.invoices.length > 0 ? (
-                        <div style={{ display: "grid", gap: "16rem" }}>
+                        <div className={invoiceList}>
                             {user.invoices.map((invoice) => (
-                                <div key={invoice.id} style={{ padding: "16rem", border: "1px solid #eee", borderRadius: "4px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                <div key={invoice.id} className={invoiceItem}>
                                     <div>
-                                        <h4 style={{ margin: "0 0 4rem 0" }}>{invoice.description}</h4>
-                                        <p style={{ margin: 0, color: "#666", fontSize: "14rem" }}>{invoice.date} • {invoice.id}</p>
+                                        <TypeHeading level={4} style={{ marginBottom: "4rem" }}>{invoice.description}</TypeHeading>
+                                        <TypeBody variant="small" color="muted">{invoice.date} • {invoice.id}</TypeBody>
                                     </div>
-                                    <div style={{ textAlign: "right" }}>
-                                        <p style={{ margin: "0 0 4rem 0", fontWeight: "bold" }}>{invoice.amount}</p>
-                                        <a href={invoice.link} style={{ fontSize: "14rem", textDecoration: "underline" }}>Download PDF</a>
+                                    <div className={invoiceRight}>
+                                        <TypeBody weight="bold" style={{ marginBottom: "4rem" }}>{invoice.amount}</TypeBody>
+                                        <a href={invoice.link} className={downloadLink}>Download PDF</a>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <p>No invoices found.</p>
+                        <TypeBody>No invoices found.</TypeBody>
                     )}
                 </LofiCard>
             </LofiGrid>

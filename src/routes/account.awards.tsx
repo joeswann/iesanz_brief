@@ -2,11 +2,39 @@ import { createFileRoute } from "@tanstack/react-router";
 import AccountPageLayout from "@/components/account/AccountPageLayout";
 import { user } from "@/data/data.user";
 import { LofiCard, LofiGrid } from "@/components/lofi/LofiLayouts";
-
+import { TypeBody } from "@/components/type/TypeBody";
+import { TypeHeading } from "@/components/type/TypeHeading";
+import { css } from "@linaria/core";
 
 export const Route = createFileRoute("/account/awards")({
     component: AccountAwards,
 });
+
+const awardList = css`
+    display: grid;
+    gap: 16rem;
+`;
+
+const awardItem = css`
+    padding: 16rem;
+    border: 2px solid #000;
+    border-radius: 0;
+`;
+
+const pastAwardItem = css`
+    padding: 16rem;
+    border: 2px solid #000;
+    border-radius: 0;
+    background: #f9f9f9;
+`;
+
+const awardAction = css`
+    margin-top: 8rem;
+`;
+
+const actionLink = css`
+    text-decoration: underline;
+`;
 
 function AccountAwards() {
     return (
@@ -17,39 +45,39 @@ function AccountAwards() {
             <LofiGrid>
                 <LofiCard title="Active Entries">
                     {user.awards.active.length > 0 ? (
-                        <div style={{ display: "grid", gap: "16rem" }}>
+                        <div className={awardList}>
                             {user.awards.active.map((award) => (
-                                <div key={award.id} style={{ padding: "16rem", border: "1px solid #eee", borderRadius: "4px" }}>
-                                    <h4 style={{ margin: "0 0 8rem 0" }}>{award.title}</h4>
-                                    <p style={{ margin: 0, color: "#666", fontSize: "14rem" }}>Project: {award.project}</p>
-                                    <p style={{ margin: 0, color: "#666", fontSize: "14rem" }}>Status: <strong>{award.status}</strong></p>
-                                    <div style={{ marginTop: "8rem" }}>
-                                        <a href={award.link} style={{ textDecoration: "underline" }}>{award.action}</a>
+                                <div key={award.id} className={awardItem}>
+                                    <TypeHeading level={4} style={{ marginBottom: "8rem" }}>{award.title}</TypeHeading>
+                                    <TypeBody variant="small" color="muted">Project: {award.project}</TypeBody>
+                                    <TypeBody variant="small" color="muted">Status: <strong>{award.status}</strong></TypeBody>
+                                    <div className={awardAction}>
+                                        <a href={award.link} className={actionLink}>{award.action}</a>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <p>No active award entries.</p>
+                        <TypeBody>No active award entries.</TypeBody>
                     )}
                 </LofiCard>
 
                 <LofiCard title="Past Entries">
                     {user.awards.past.length > 0 ? (
-                        <div style={{ display: "grid", gap: "16rem" }}>
+                        <div className={awardList}>
                             {user.awards.past.map((award) => (
-                                <div key={award.id} style={{ padding: "16rem", border: "1px solid #eee", borderRadius: "4px", background: "#f9f9f9" }}>
-                                    <h4 style={{ margin: "0 0 8rem 0" }}>{award.title}</h4>
-                                    <p style={{ margin: 0, color: "#666", fontSize: "14rem" }}>Project: {award.project}</p>
-                                    <p style={{ margin: 0, color: "#666", fontSize: "14rem" }}>Status: <strong>{award.status}</strong></p>
-                                    <div style={{ marginTop: "8rem" }}>
-                                        <a href={award.link} style={{ textDecoration: "underline" }}>{award.action}</a>
+                                <div key={award.id} className={pastAwardItem}>
+                                    <TypeHeading level={4} style={{ marginBottom: "8rem" }}>{award.title}</TypeHeading>
+                                    <TypeBody variant="small" color="muted">Project: {award.project}</TypeBody>
+                                    <TypeBody variant="small" color="muted">Status: <strong>{award.status}</strong></TypeBody>
+                                    <div className={awardAction}>
+                                        <a href={award.link} className={actionLink}>{award.action}</a>
                                     </div>
                                 </div>
                             ))}
                         </div>
                     ) : (
-                        <p>No past award entries.</p>
+                        <TypeBody>No past award entries.</TypeBody>
                     )}
                 </LofiCard>
             </LofiGrid>

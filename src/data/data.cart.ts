@@ -1,7 +1,16 @@
+export interface CartItem {
+    id: string;
+    name: string;
+    variant: string;
+    price: number;
+    quantity: number;
+}
+
+export const cartItems: CartItem[] = [
+    { id: "1", name: "IESANZ Branded Hoodie", variant: "Size L", price: 85, quantity: 1 },
+    { id: "2", name: "Lighting Design Guide 2025", variant: "Digital Download", price: 150, quantity: 1 },
+];
+
 export const cart = {
-    count: 2,
-    items: [
-        { id: 1, name: "IESANZ Membership Renewal", price: 150 },
-        { id: 2, name: "Lighting Design Awards Ticket", price: 200 },
-    ],
+    items: cartItems
 };
