@@ -1,5 +1,5 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
-import ChapterHubLayout from '@/components/chapters/ChapterHubLayout'
+import ChapterLayout from '@/components/chapters/ChapterLayout'
 import { chapters } from '@/data/data.chapters'
 import { chapterContent } from '@/data/data.chapters.content'
 
@@ -14,10 +14,10 @@ export const Route = createFileRoute('/chapters/$chapterId')({
 
         return { chapter, content }
     },
-    component: ChapterHubComponent,
+    component: ChapterLayoutComponent,
 })
 
-function ChapterHubComponent() {
+function ChapterLayoutComponent() {
     const { chapter, content } = Route.useLoaderData()
-    return <ChapterHubLayout chapter={chapter} content={content} />
+    return <ChapterLayout chapter={chapter} description={content.description} />
 }

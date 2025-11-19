@@ -68,7 +68,7 @@ const LayoutHeader: DCI = ({ children }) => {
         <div className={accountMenu}>
           <a href="/account" className={accountLink}>{user.isLoggedIn ? "My Account" : "Login / Register"}</a>
           <div className={separator} />
-          <a href="/chapter" className={accountLink}>{user.chapter.name}</a>
+          <a href={`/chapters/${user.chapter.slug}`} className={accountLink}>{user.chapter.name}</a>
           <div className={separator} />
           <a href="/cart" className={accountLink}>Cart ({cart.items.length})</a>
         </div>
