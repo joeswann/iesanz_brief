@@ -1,0 +1,108 @@
+import { DCI } from "@/types/dci";
+import { css } from "@linaria/core";
+import LofiBox from "@/components/lofi/LofiBox";
+import LofiImage from "@/components/lofi/LofiImage";
+import LofiHeading from "@/components/lofi/LofiHeading";
+import LofiText from "@/components/lofi/LofiText";
+import LofiButton from "@/components/lofi/LofiButton";
+import LofiGrid from "@/components/lofi/LofiGrid";
+
+const styles = css`
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-bottom: 48px;
+
+  .hero {
+    width: 100%;
+  }
+
+  .intro {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .ctas {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+`;
+
+const HomeLayout: DCI = () => {
+    return (
+        <div className={styles}>
+            {/* Hero Section */}
+            <section className="hero">
+                <LofiImage ratio={21 / 9} label="Hero Banner / Carousel" />
+            </section>
+
+            {/* Introduction */}
+            <section className="intro">
+                <LofiHeading level={1}>Illuminating the Future</LofiHeading>
+                <LofiText lines={4} />
+            </section>
+
+            {/* Key CTAs */}
+            <section className="ctas">
+                <LofiButton variant="primary">Join IESANZ</LofiButton>
+                <LofiButton variant="secondary">Member Login</LofiButton>
+                <LofiButton variant="secondary">Enter Awards</LofiButton>
+            </section>
+
+            {/* News / Blog Feed */}
+            <section className="section">
+                <LofiHeading level={2}>Latest News</LofiHeading>
+                <LofiGrid columns={3}>
+                    <LofiBox>
+                        <div style={{ width: "100%" }}>
+                            <LofiImage ratio={16 / 9} label="News Thumb" />
+                            <div style={{ marginTop: 16 }}>
+                                <LofiHeading level={4}>Article Title</LofiHeading>
+                                <LofiText lines={2} />
+                            </div>
+                        </div>
+                    </LofiBox>
+                    <LofiBox>
+                        <div style={{ width: "100%" }}>
+                            <LofiImage ratio={16 / 9} label="News Thumb" />
+                            <div style={{ marginTop: 16 }}>
+                                <LofiHeading level={4}>Article Title</LofiHeading>
+                                <LofiText lines={2} />
+                            </div>
+                        </div>
+                    </LofiBox>
+                    <LofiBox>
+                        <div style={{ width: "100%" }}>
+                            <LofiImage ratio={16 / 9} label="News Thumb" />
+                            <div style={{ marginTop: 16 }}>
+                                <LofiHeading level={4}>Article Title</LofiHeading>
+                                <LofiText lines={2} />
+                            </div>
+                        </div>
+                    </LofiBox>
+                </LofiGrid>
+            </section>
+
+            {/* Gallery / Showcase */}
+            <section className="section">
+                <LofiHeading level={2}>Awards Showcase</LofiHeading>
+                <LofiGrid columns={4} gap={16}>
+                    <LofiImage ratio={1} label="Award 1" />
+                    <LofiImage ratio={1} label="Award 2" />
+                    <LofiImage ratio={1} label="Award 3" />
+                    <LofiImage ratio={1} label="Award 4" />
+                </LofiGrid>
+            </section>
+        </div>
+    );
+};
+
+export default HomeLayout;
