@@ -36,11 +36,7 @@ import { Route as StudioCollectionsRouteImport } from './routes/studio/collectio
 import { Route as StudioAwardsRouteImport } from './routes/studio/awards'
 import { Route as ResourcesResourceIdRouteImport } from './routes/resources/$resourceId'
 import { Route as PagesPageIdRouteImport } from './routes/pages/$pageId'
-import { Route as DocsStudioRouteImport } from './routes/docs/studio'
 import { Route as DocsProcessRouteImport } from './routes/docs/process'
-import { Route as DocsArchitectureRouteImport } from './routes/docs/architecture'
-import { Route as DocsAppendixRouteImport } from './routes/docs/appendix'
-import { Route as DocsAdminRouteImport } from './routes/docs/admin'
 import { Route as ChaptersNewsRouteImport } from './routes/chapters/news'
 import { Route as ChaptersEventsRouteImport } from './routes/chapters/events'
 import { Route as ChaptersChapterIdRouteImport } from './routes/chapters/$chapterId'
@@ -63,6 +59,11 @@ import { Route as AccountEventsRouteImport } from './routes/account/events'
 import { Route as AccountAwardsRouteImport } from './routes/account/awards'
 import { Route as AccountEducationRouteRouteImport } from './routes/account/education/route'
 import { Route as DocsVendorIndexRouteImport } from './routes/docs/vendor/index'
+import { Route as DocsStudioIndexRouteImport } from './routes/docs/studio/index'
+import { Route as DocsGuidanceIndexRouteImport } from './routes/docs/guidance/index'
+import { Route as DocsArchitectureIndexRouteImport } from './routes/docs/architecture/index'
+import { Route as DocsAppendixIndexRouteImport } from './routes/docs/appendix/index'
+import { Route as DocsAdminIndexRouteImport } from './routes/docs/admin/index'
 import { Route as ChaptersChapterIdIndexRouteImport } from './routes/chapters/$chapterId/index'
 import { Route as AccountEducationIndexRouteImport } from './routes/account/education/index'
 import { Route as DocsVendorBriefRouteImport } from './routes/docs/vendor/brief'
@@ -75,8 +76,9 @@ import { Route as DocsStudioCustomersRouteImport } from './routes/docs/studio/cu
 import { Route as DocsStudioCollectionsRouteImport } from './routes/docs/studio/collections'
 import { Route as DocsStudioAwardsRouteImport } from './routes/docs/studio/awards'
 import { Route as DocsOverviewReverseBriefRouteImport } from './routes/docs/overview/reverse-brief'
+import { Route as DocsGuidancePrioritiesRouteImport } from './routes/docs/guidance/priorities'
+import { Route as DocsGuidancePhasesRouteImport } from './routes/docs/guidance/phases'
 import { Route as DocsArchitectureSitemapRouteImport } from './routes/docs/architecture/sitemap'
-import { Route as DocsArchitectureServicesRouteImport } from './routes/docs/architecture/services'
 import { Route as DocsAppendixWordpressRouteImport } from './routes/docs/appendix/wordpress'
 import { Route as DocsAdminSupportRouteImport } from './routes/docs/admin/support'
 import { Route as DocsAdminSubmissionsRouteImport } from './routes/docs/admin/submissions'
@@ -97,6 +99,7 @@ import { Route as ApiTrpcSplatRouteImport } from './routes/api.trpc.$'
 import { Route as AccountEducationWebinarsRouteImport } from './routes/account/education/webinars'
 import { Route as AccountEducationResourcesRouteImport } from './routes/account/education/resources'
 import { Route as AccountEducationCpdRouteImport } from './routes/account/education/cpd'
+import { Route as DocsArchitectureServicesIndexRouteImport } from './routes/docs/architecture/services/index'
 import { Route as DocsArchitectureServicesShopifyRouteImport } from './routes/docs/architecture/services/shopify'
 import { Route as DocsArchitectureServicesSanityRouteImport } from './routes/docs/architecture/services/sanity'
 import { Route as DocsArchitectureServicesKlaviyoRouteImport } from './routes/docs/architecture/services/klaviyo'
@@ -238,29 +241,9 @@ const PagesPageIdRoute = PagesPageIdRouteImport.update({
   path: '/pages/$pageId',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DocsStudioRoute = DocsStudioRouteImport.update({
-  id: '/docs/studio',
-  path: '/docs/studio',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const DocsProcessRoute = DocsProcessRouteImport.update({
   id: '/docs/process',
   path: '/docs/process',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsArchitectureRoute = DocsArchitectureRouteImport.update({
-  id: '/docs/architecture',
-  path: '/docs/architecture',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsAppendixRoute = DocsAppendixRouteImport.update({
-  id: '/docs/appendix',
-  path: '/docs/appendix',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const DocsAdminRoute = DocsAdminRouteImport.update({
-  id: '/docs/admin',
-  path: '/docs/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ChaptersNewsRoute = ChaptersNewsRouteImport.update({
@@ -373,6 +356,31 @@ const DocsVendorIndexRoute = DocsVendorIndexRouteImport.update({
   path: '/docs/vendor/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocsStudioIndexRoute = DocsStudioIndexRouteImport.update({
+  id: '/docs/studio/',
+  path: '/docs/studio/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsGuidanceIndexRoute = DocsGuidanceIndexRouteImport.update({
+  id: '/docs/guidance/',
+  path: '/docs/guidance/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsArchitectureIndexRoute = DocsArchitectureIndexRouteImport.update({
+  id: '/docs/architecture/',
+  path: '/docs/architecture/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsAppendixIndexRoute = DocsAppendixIndexRouteImport.update({
+  id: '/docs/appendix/',
+  path: '/docs/appendix/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsAdminIndexRoute = DocsAdminIndexRouteImport.update({
+  id: '/docs/admin/',
+  path: '/docs/admin/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ChaptersChapterIdIndexRoute = ChaptersChapterIdIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -434,17 +442,21 @@ const DocsOverviewReverseBriefRoute =
     path: '/docs/overview/reverse-brief',
     getParentRoute: () => rootRouteImport,
   } as any)
+const DocsGuidancePrioritiesRoute = DocsGuidancePrioritiesRouteImport.update({
+  id: '/docs/guidance/priorities',
+  path: '/docs/guidance/priorities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsGuidancePhasesRoute = DocsGuidancePhasesRouteImport.update({
+  id: '/docs/guidance/phases',
+  path: '/docs/guidance/phases',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DocsArchitectureSitemapRoute = DocsArchitectureSitemapRouteImport.update({
   id: '/sitemap',
   path: '/sitemap',
   getParentRoute: () => DocsArchitectureRoute,
 } as any)
-const DocsArchitectureServicesRoute =
-  DocsArchitectureServicesRouteImport.update({
-    id: '/services',
-    path: '/services',
-    getParentRoute: () => DocsArchitectureRoute,
-  } as any)
 const DocsAppendixWordpressRoute = DocsAppendixWordpressRouteImport.update({
   id: '/wordpress',
   path: '/wordpress',
@@ -548,6 +560,12 @@ const AccountEducationCpdRoute = AccountEducationCpdRouteImport.update({
   path: '/cpd',
   getParentRoute: () => AccountEducationRouteRoute,
 } as any)
+const DocsArchitectureServicesIndexRoute =
+  DocsArchitectureServicesIndexRouteImport.update({
+    id: '/docs/architecture/services/',
+    path: '/docs/architecture/services/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DocsArchitectureServicesShopifyRoute =
   DocsArchitectureServicesShopifyRouteImport.update({
     id: '/shopify',
@@ -612,11 +630,7 @@ export interface FileRoutesByFullPath {
   '/chapters/$chapterId': typeof ChaptersChapterIdRouteWithChildren
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
-  '/docs/admin': typeof DocsAdminRouteWithChildren
-  '/docs/appendix': typeof DocsAppendixRouteWithChildren
-  '/docs/architecture': typeof DocsArchitectureRouteWithChildren
   '/docs/process': typeof DocsProcessRoute
-  '/docs/studio': typeof DocsStudioRouteWithChildren
   '/pages/$pageId': typeof PagesPageIdRoute
   '/resources/$resourceId': typeof ResourcesResourceIdRoute
   '/studio/awards': typeof StudioAwardsRoute
@@ -653,8 +667,9 @@ export interface FileRoutesByFullPath {
   '/docs/admin/submissions': typeof DocsAdminSubmissionsRoute
   '/docs/admin/support': typeof DocsAdminSupportRoute
   '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
-  '/docs/architecture/services': typeof DocsArchitectureServicesRouteWithChildren
   '/docs/architecture/sitemap': typeof DocsArchitectureSitemapRoute
+  '/docs/guidance/phases': typeof DocsGuidancePhasesRoute
+  '/docs/guidance/priorities': typeof DocsGuidancePrioritiesRoute
   '/docs/overview/reverse-brief': typeof DocsOverviewReverseBriefRoute
   '/docs/studio/awards': typeof DocsStudioAwardsRoute
   '/docs/studio/collections': typeof DocsStudioCollectionsRoute
@@ -667,12 +682,18 @@ export interface FileRoutesByFullPath {
   '/docs/vendor/brief': typeof DocsVendorBriefRoute
   '/account/education/': typeof AccountEducationIndexRoute
   '/chapters/$chapterId/': typeof ChaptersChapterIdIndexRoute
+  '/docs/admin': typeof DocsAdminIndexRoute
+  '/docs/appendix': typeof DocsAppendixIndexRoute
+  '/docs/architecture': typeof DocsArchitectureIndexRoute
+  '/docs/guidance': typeof DocsGuidanceIndexRoute
+  '/docs/studio': typeof DocsStudioIndexRoute
   '/docs/vendor': typeof DocsVendorIndexRoute
   '/docs/architecture/services/algolia': typeof DocsArchitectureServicesAlgoliaRoute
   '/docs/architecture/services/auth0': typeof DocsArchitectureServicesAuth0Route
   '/docs/architecture/services/klaviyo': typeof DocsArchitectureServicesKlaviyoRoute
   '/docs/architecture/services/sanity': typeof DocsArchitectureServicesSanityRoute
   '/docs/architecture/services/shopify': typeof DocsArchitectureServicesShopifyRoute
+  '/docs/architecture/services': typeof DocsArchitectureServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -703,11 +724,7 @@ export interface FileRoutesByTo {
   '/admin/support': typeof AdminSupportRoute
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
-  '/docs/admin': typeof DocsAdminRouteWithChildren
-  '/docs/appendix': typeof DocsAppendixRouteWithChildren
-  '/docs/architecture': typeof DocsArchitectureRouteWithChildren
   '/docs/process': typeof DocsProcessRoute
-  '/docs/studio': typeof DocsStudioRouteWithChildren
   '/pages/$pageId': typeof PagesPageIdRoute
   '/resources/$resourceId': typeof ResourcesResourceIdRoute
   '/studio/awards': typeof StudioAwardsRoute
@@ -744,8 +761,9 @@ export interface FileRoutesByTo {
   '/docs/admin/submissions': typeof DocsAdminSubmissionsRoute
   '/docs/admin/support': typeof DocsAdminSupportRoute
   '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
-  '/docs/architecture/services': typeof DocsArchitectureServicesRouteWithChildren
   '/docs/architecture/sitemap': typeof DocsArchitectureSitemapRoute
+  '/docs/guidance/phases': typeof DocsGuidancePhasesRoute
+  '/docs/guidance/priorities': typeof DocsGuidancePrioritiesRoute
   '/docs/overview/reverse-brief': typeof DocsOverviewReverseBriefRoute
   '/docs/studio/awards': typeof DocsStudioAwardsRoute
   '/docs/studio/collections': typeof DocsStudioCollectionsRoute
@@ -758,12 +776,18 @@ export interface FileRoutesByTo {
   '/docs/vendor/brief': typeof DocsVendorBriefRoute
   '/account/education': typeof AccountEducationIndexRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdIndexRoute
+  '/docs/admin': typeof DocsAdminIndexRoute
+  '/docs/appendix': typeof DocsAppendixIndexRoute
+  '/docs/architecture': typeof DocsArchitectureIndexRoute
+  '/docs/guidance': typeof DocsGuidanceIndexRoute
+  '/docs/studio': typeof DocsStudioIndexRoute
   '/docs/vendor': typeof DocsVendorIndexRoute
   '/docs/architecture/services/algolia': typeof DocsArchitectureServicesAlgoliaRoute
   '/docs/architecture/services/auth0': typeof DocsArchitectureServicesAuth0Route
   '/docs/architecture/services/klaviyo': typeof DocsArchitectureServicesKlaviyoRoute
   '/docs/architecture/services/sanity': typeof DocsArchitectureServicesSanityRoute
   '/docs/architecture/services/shopify': typeof DocsArchitectureServicesShopifyRoute
+  '/docs/architecture/services': typeof DocsArchitectureServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -799,11 +823,7 @@ export interface FileRoutesById {
   '/chapters/$chapterId': typeof ChaptersChapterIdRouteWithChildren
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
-  '/docs/admin': typeof DocsAdminRouteWithChildren
-  '/docs/appendix': typeof DocsAppendixRouteWithChildren
-  '/docs/architecture': typeof DocsArchitectureRouteWithChildren
   '/docs/process': typeof DocsProcessRoute
-  '/docs/studio': typeof DocsStudioRouteWithChildren
   '/pages/$pageId': typeof PagesPageIdRoute
   '/resources/$resourceId': typeof ResourcesResourceIdRoute
   '/studio/awards': typeof StudioAwardsRoute
@@ -840,8 +860,9 @@ export interface FileRoutesById {
   '/docs/admin/submissions': typeof DocsAdminSubmissionsRoute
   '/docs/admin/support': typeof DocsAdminSupportRoute
   '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
-  '/docs/architecture/services': typeof DocsArchitectureServicesRouteWithChildren
   '/docs/architecture/sitemap': typeof DocsArchitectureSitemapRoute
+  '/docs/guidance/phases': typeof DocsGuidancePhasesRoute
+  '/docs/guidance/priorities': typeof DocsGuidancePrioritiesRoute
   '/docs/overview/reverse-brief': typeof DocsOverviewReverseBriefRoute
   '/docs/studio/awards': typeof DocsStudioAwardsRoute
   '/docs/studio/collections': typeof DocsStudioCollectionsRoute
@@ -854,12 +875,18 @@ export interface FileRoutesById {
   '/docs/vendor/brief': typeof DocsVendorBriefRoute
   '/account/education/': typeof AccountEducationIndexRoute
   '/chapters/$chapterId/': typeof ChaptersChapterIdIndexRoute
+  '/docs/admin/': typeof DocsAdminIndexRoute
+  '/docs/appendix/': typeof DocsAppendixIndexRoute
+  '/docs/architecture/': typeof DocsArchitectureIndexRoute
+  '/docs/guidance/': typeof DocsGuidanceIndexRoute
+  '/docs/studio/': typeof DocsStudioIndexRoute
   '/docs/vendor/': typeof DocsVendorIndexRoute
   '/docs/architecture/services/algolia': typeof DocsArchitectureServicesAlgoliaRoute
   '/docs/architecture/services/auth0': typeof DocsArchitectureServicesAuth0Route
   '/docs/architecture/services/klaviyo': typeof DocsArchitectureServicesKlaviyoRoute
   '/docs/architecture/services/sanity': typeof DocsArchitectureServicesSanityRoute
   '/docs/architecture/services/shopify': typeof DocsArchitectureServicesShopifyRoute
+  '/docs/architecture/services/': typeof DocsArchitectureServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -896,11 +923,7 @@ export interface FileRouteTypes {
     | '/chapters/$chapterId'
     | '/chapters/events'
     | '/chapters/news'
-    | '/docs/admin'
-    | '/docs/appendix'
-    | '/docs/architecture'
     | '/docs/process'
-    | '/docs/studio'
     | '/pages/$pageId'
     | '/resources/$resourceId'
     | '/studio/awards'
@@ -937,8 +960,9 @@ export interface FileRouteTypes {
     | '/docs/admin/submissions'
     | '/docs/admin/support'
     | '/docs/appendix/wordpress'
-    | '/docs/architecture/services'
     | '/docs/architecture/sitemap'
+    | '/docs/guidance/phases'
+    | '/docs/guidance/priorities'
     | '/docs/overview/reverse-brief'
     | '/docs/studio/awards'
     | '/docs/studio/collections'
@@ -951,12 +975,18 @@ export interface FileRouteTypes {
     | '/docs/vendor/brief'
     | '/account/education/'
     | '/chapters/$chapterId/'
+    | '/docs/admin'
+    | '/docs/appendix'
+    | '/docs/architecture'
+    | '/docs/guidance'
+    | '/docs/studio'
     | '/docs/vendor'
     | '/docs/architecture/services/algolia'
     | '/docs/architecture/services/auth0'
     | '/docs/architecture/services/klaviyo'
     | '/docs/architecture/services/sanity'
     | '/docs/architecture/services/shopify'
+    | '/docs/architecture/services'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -987,11 +1017,7 @@ export interface FileRouteTypes {
     | '/admin/support'
     | '/chapters/events'
     | '/chapters/news'
-    | '/docs/admin'
-    | '/docs/appendix'
-    | '/docs/architecture'
     | '/docs/process'
-    | '/docs/studio'
     | '/pages/$pageId'
     | '/resources/$resourceId'
     | '/studio/awards'
@@ -1028,8 +1054,9 @@ export interface FileRouteTypes {
     | '/docs/admin/submissions'
     | '/docs/admin/support'
     | '/docs/appendix/wordpress'
-    | '/docs/architecture/services'
     | '/docs/architecture/sitemap'
+    | '/docs/guidance/phases'
+    | '/docs/guidance/priorities'
     | '/docs/overview/reverse-brief'
     | '/docs/studio/awards'
     | '/docs/studio/collections'
@@ -1042,12 +1069,18 @@ export interface FileRouteTypes {
     | '/docs/vendor/brief'
     | '/account/education'
     | '/chapters/$chapterId'
+    | '/docs/admin'
+    | '/docs/appendix'
+    | '/docs/architecture'
+    | '/docs/guidance'
+    | '/docs/studio'
     | '/docs/vendor'
     | '/docs/architecture/services/algolia'
     | '/docs/architecture/services/auth0'
     | '/docs/architecture/services/klaviyo'
     | '/docs/architecture/services/sanity'
     | '/docs/architecture/services/shopify'
+    | '/docs/architecture/services'
   id:
     | '__root__'
     | '/'
@@ -1082,11 +1115,7 @@ export interface FileRouteTypes {
     | '/chapters/$chapterId'
     | '/chapters/events'
     | '/chapters/news'
-    | '/docs/admin'
-    | '/docs/appendix'
-    | '/docs/architecture'
     | '/docs/process'
-    | '/docs/studio'
     | '/pages/$pageId'
     | '/resources/$resourceId'
     | '/studio/awards'
@@ -1123,8 +1152,9 @@ export interface FileRouteTypes {
     | '/docs/admin/submissions'
     | '/docs/admin/support'
     | '/docs/appendix/wordpress'
-    | '/docs/architecture/services'
     | '/docs/architecture/sitemap'
+    | '/docs/guidance/phases'
+    | '/docs/guidance/priorities'
     | '/docs/overview/reverse-brief'
     | '/docs/studio/awards'
     | '/docs/studio/collections'
@@ -1137,12 +1167,18 @@ export interface FileRouteTypes {
     | '/docs/vendor/brief'
     | '/account/education/'
     | '/chapters/$chapterId/'
+    | '/docs/admin/'
+    | '/docs/appendix/'
+    | '/docs/architecture/'
+    | '/docs/guidance/'
+    | '/docs/studio/'
     | '/docs/vendor/'
     | '/docs/architecture/services/algolia'
     | '/docs/architecture/services/auth0'
     | '/docs/architecture/services/klaviyo'
     | '/docs/architecture/services/sanity'
     | '/docs/architecture/services/shopify'
+    | '/docs/architecture/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1170,11 +1206,7 @@ export interface RootRouteChildren {
   ChaptersChapterIdRoute: typeof ChaptersChapterIdRouteWithChildren
   ChaptersEventsRoute: typeof ChaptersEventsRoute
   ChaptersNewsRoute: typeof ChaptersNewsRoute
-  DocsAdminRoute: typeof DocsAdminRouteWithChildren
-  DocsAppendixRoute: typeof DocsAppendixRouteWithChildren
-  DocsArchitectureRoute: typeof DocsArchitectureRouteWithChildren
   DocsProcessRoute: typeof DocsProcessRoute
-  DocsStudioRoute: typeof DocsStudioRouteWithChildren
   PagesPageIdRoute: typeof PagesPageIdRoute
   StudioAwardsRoute: typeof StudioAwardsRoute
   StudioCollectionsRoute: typeof StudioCollectionsRoute
@@ -1189,9 +1221,17 @@ export interface RootRouteChildren {
   DocsIndexRoute: typeof DocsIndexRoute
   StudioIndexRoute: typeof StudioIndexRoute
   ApiTrpcSplatRoute: typeof ApiTrpcSplatRoute
+  DocsGuidancePhasesRoute: typeof DocsGuidancePhasesRoute
+  DocsGuidancePrioritiesRoute: typeof DocsGuidancePrioritiesRoute
   DocsOverviewReverseBriefRoute: typeof DocsOverviewReverseBriefRoute
   DocsVendorBriefRoute: typeof DocsVendorBriefRoute
+  DocsAdminIndexRoute: typeof DocsAdminIndexRoute
+  DocsAppendixIndexRoute: typeof DocsAppendixIndexRoute
+  DocsArchitectureIndexRoute: typeof DocsArchitectureIndexRoute
+  DocsGuidanceIndexRoute: typeof DocsGuidanceIndexRoute
+  DocsStudioIndexRoute: typeof DocsStudioIndexRoute
   DocsVendorIndexRoute: typeof DocsVendorIndexRoute
+  DocsArchitectureServicesIndexRoute: typeof DocsArchitectureServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1385,39 +1425,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PagesPageIdRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/docs/studio': {
-      id: '/docs/studio'
-      path: '/docs/studio'
-      fullPath: '/docs/studio'
-      preLoaderRoute: typeof DocsStudioRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/docs/process': {
       id: '/docs/process'
       path: '/docs/process'
       fullPath: '/docs/process'
       preLoaderRoute: typeof DocsProcessRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/architecture': {
-      id: '/docs/architecture'
-      path: '/docs/architecture'
-      fullPath: '/docs/architecture'
-      preLoaderRoute: typeof DocsArchitectureRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/appendix': {
-      id: '/docs/appendix'
-      path: '/docs/appendix'
-      fullPath: '/docs/appendix'
-      preLoaderRoute: typeof DocsAppendixRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/docs/admin': {
-      id: '/docs/admin'
-      path: '/docs/admin'
-      fullPath: '/docs/admin'
-      preLoaderRoute: typeof DocsAdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/chapters/news': {
@@ -1574,6 +1586,41 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsVendorIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docs/studio/': {
+      id: '/docs/studio/'
+      path: '/docs/studio'
+      fullPath: '/docs/studio'
+      preLoaderRoute: typeof DocsStudioIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/guidance/': {
+      id: '/docs/guidance/'
+      path: '/docs/guidance'
+      fullPath: '/docs/guidance'
+      preLoaderRoute: typeof DocsGuidanceIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/architecture/': {
+      id: '/docs/architecture/'
+      path: '/docs/architecture'
+      fullPath: '/docs/architecture'
+      preLoaderRoute: typeof DocsArchitectureIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/appendix/': {
+      id: '/docs/appendix/'
+      path: '/docs/appendix'
+      fullPath: '/docs/appendix'
+      preLoaderRoute: typeof DocsAppendixIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/admin/': {
+      id: '/docs/admin/'
+      path: '/docs/admin'
+      fullPath: '/docs/admin'
+      preLoaderRoute: typeof DocsAdminIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/chapters/$chapterId/': {
       id: '/chapters/$chapterId/'
       path: '/'
@@ -1658,18 +1705,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsOverviewReverseBriefRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docs/guidance/priorities': {
+      id: '/docs/guidance/priorities'
+      path: '/docs/guidance/priorities'
+      fullPath: '/docs/guidance/priorities'
+      preLoaderRoute: typeof DocsGuidancePrioritiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/guidance/phases': {
+      id: '/docs/guidance/phases'
+      path: '/docs/guidance/phases'
+      fullPath: '/docs/guidance/phases'
+      preLoaderRoute: typeof DocsGuidancePhasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs/architecture/sitemap': {
       id: '/docs/architecture/sitemap'
       path: '/sitemap'
       fullPath: '/docs/architecture/sitemap'
       preLoaderRoute: typeof DocsArchitectureSitemapRouteImport
-      parentRoute: typeof DocsArchitectureRoute
-    }
-    '/docs/architecture/services': {
-      id: '/docs/architecture/services'
-      path: '/services'
-      fullPath: '/docs/architecture/services'
-      preLoaderRoute: typeof DocsArchitectureServicesRouteImport
       parentRoute: typeof DocsArchitectureRoute
     }
     '/docs/appendix/wordpress': {
@@ -1812,6 +1866,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AccountEducationCpdRouteImport
       parentRoute: typeof AccountEducationRouteRoute
     }
+    '/docs/architecture/services/': {
+      id: '/docs/architecture/services/'
+      path: '/docs/architecture/services'
+      fullPath: '/docs/architecture/services'
+      preLoaderRoute: typeof DocsArchitectureServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/docs/architecture/services/shopify': {
       id: '/docs/architecture/services/shopify'
       path: '/shopify'
@@ -1930,111 +1991,6 @@ const ChaptersChapterIdRouteChildren: ChaptersChapterIdRouteChildren = {
 const ChaptersChapterIdRouteWithChildren =
   ChaptersChapterIdRoute._addFileChildren(ChaptersChapterIdRouteChildren)
 
-interface DocsAdminRouteChildren {
-  DocsAdminAwardsRoute: typeof DocsAdminAwardsRoute
-  DocsAdminContentRoute: typeof DocsAdminContentRoute
-  DocsAdminDashboardRoute: typeof DocsAdminDashboardRoute
-  DocsAdminEventsRoute: typeof DocsAdminEventsRoute
-  DocsAdminMembersRoute: typeof DocsAdminMembersRoute
-  DocsAdminMembershipsRoute: typeof DocsAdminMembershipsRoute
-  DocsAdminPaymentsRoute: typeof DocsAdminPaymentsRoute
-  DocsAdminReportsRoute: typeof DocsAdminReportsRoute
-  DocsAdminSettingsRoute: typeof DocsAdminSettingsRoute
-  DocsAdminSubmissionsRoute: typeof DocsAdminSubmissionsRoute
-  DocsAdminSupportRoute: typeof DocsAdminSupportRoute
-}
-
-const DocsAdminRouteChildren: DocsAdminRouteChildren = {
-  DocsAdminAwardsRoute: DocsAdminAwardsRoute,
-  DocsAdminContentRoute: DocsAdminContentRoute,
-  DocsAdminDashboardRoute: DocsAdminDashboardRoute,
-  DocsAdminEventsRoute: DocsAdminEventsRoute,
-  DocsAdminMembersRoute: DocsAdminMembersRoute,
-  DocsAdminMembershipsRoute: DocsAdminMembershipsRoute,
-  DocsAdminPaymentsRoute: DocsAdminPaymentsRoute,
-  DocsAdminReportsRoute: DocsAdminReportsRoute,
-  DocsAdminSettingsRoute: DocsAdminSettingsRoute,
-  DocsAdminSubmissionsRoute: DocsAdminSubmissionsRoute,
-  DocsAdminSupportRoute: DocsAdminSupportRoute,
-}
-
-const DocsAdminRouteWithChildren = DocsAdminRoute._addFileChildren(
-  DocsAdminRouteChildren,
-)
-
-interface DocsAppendixRouteChildren {
-  DocsAppendixWordpressRoute: typeof DocsAppendixWordpressRoute
-}
-
-const DocsAppendixRouteChildren: DocsAppendixRouteChildren = {
-  DocsAppendixWordpressRoute: DocsAppendixWordpressRoute,
-}
-
-const DocsAppendixRouteWithChildren = DocsAppendixRoute._addFileChildren(
-  DocsAppendixRouteChildren,
-)
-
-interface DocsArchitectureServicesRouteChildren {
-  DocsArchitectureServicesAlgoliaRoute: typeof DocsArchitectureServicesAlgoliaRoute
-  DocsArchitectureServicesAuth0Route: typeof DocsArchitectureServicesAuth0Route
-  DocsArchitectureServicesKlaviyoRoute: typeof DocsArchitectureServicesKlaviyoRoute
-  DocsArchitectureServicesSanityRoute: typeof DocsArchitectureServicesSanityRoute
-  DocsArchitectureServicesShopifyRoute: typeof DocsArchitectureServicesShopifyRoute
-}
-
-const DocsArchitectureServicesRouteChildren: DocsArchitectureServicesRouteChildren =
-  {
-    DocsArchitectureServicesAlgoliaRoute: DocsArchitectureServicesAlgoliaRoute,
-    DocsArchitectureServicesAuth0Route: DocsArchitectureServicesAuth0Route,
-    DocsArchitectureServicesKlaviyoRoute: DocsArchitectureServicesKlaviyoRoute,
-    DocsArchitectureServicesSanityRoute: DocsArchitectureServicesSanityRoute,
-    DocsArchitectureServicesShopifyRoute: DocsArchitectureServicesShopifyRoute,
-  }
-
-const DocsArchitectureServicesRouteWithChildren =
-  DocsArchitectureServicesRoute._addFileChildren(
-    DocsArchitectureServicesRouteChildren,
-  )
-
-interface DocsArchitectureRouteChildren {
-  DocsArchitectureServicesRoute: typeof DocsArchitectureServicesRouteWithChildren
-  DocsArchitectureSitemapRoute: typeof DocsArchitectureSitemapRoute
-}
-
-const DocsArchitectureRouteChildren: DocsArchitectureRouteChildren = {
-  DocsArchitectureServicesRoute: DocsArchitectureServicesRouteWithChildren,
-  DocsArchitectureSitemapRoute: DocsArchitectureSitemapRoute,
-}
-
-const DocsArchitectureRouteWithChildren =
-  DocsArchitectureRoute._addFileChildren(DocsArchitectureRouteChildren)
-
-interface DocsStudioRouteChildren {
-  DocsStudioAwardsRoute: typeof DocsStudioAwardsRoute
-  DocsStudioCollectionsRoute: typeof DocsStudioCollectionsRoute
-  DocsStudioCustomersRoute: typeof DocsStudioCustomersRoute
-  DocsStudioEventsRoute: typeof DocsStudioEventsRoute
-  DocsStudioNewsRoute: typeof DocsStudioNewsRoute
-  DocsStudioOrdersRoute: typeof DocsStudioOrdersRoute
-  DocsStudioPagesRoute: typeof DocsStudioPagesRoute
-  DocsStudioProductsRoute: typeof DocsStudioProductsRoute
-}
-
-const DocsStudioRouteChildren: DocsStudioRouteChildren = {
-  DocsStudioAwardsRoute: DocsStudioAwardsRoute,
-  DocsStudioCollectionsRoute: DocsStudioCollectionsRoute,
-  DocsStudioCustomersRoute: DocsStudioCustomersRoute,
-  DocsStudioEventsRoute: DocsStudioEventsRoute,
-  DocsStudioNewsRoute: DocsStudioNewsRoute,
-  DocsStudioOrdersRoute: DocsStudioOrdersRoute,
-  DocsStudioPagesRoute: DocsStudioPagesRoute,
-  DocsStudioProductsRoute: DocsStudioProductsRoute,
-}
-
-const DocsStudioRouteWithChildren = DocsStudioRoute._addFileChildren(
-  DocsStudioRouteChildren,
-)
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccountRouteRoute: AccountRouteRouteWithChildren,
@@ -2060,11 +2016,7 @@ const rootRouteChildren: RootRouteChildren = {
   ChaptersChapterIdRoute: ChaptersChapterIdRouteWithChildren,
   ChaptersEventsRoute: ChaptersEventsRoute,
   ChaptersNewsRoute: ChaptersNewsRoute,
-  DocsAdminRoute: DocsAdminRouteWithChildren,
-  DocsAppendixRoute: DocsAppendixRouteWithChildren,
-  DocsArchitectureRoute: DocsArchitectureRouteWithChildren,
   DocsProcessRoute: DocsProcessRoute,
-  DocsStudioRoute: DocsStudioRouteWithChildren,
   PagesPageIdRoute: PagesPageIdRoute,
   StudioAwardsRoute: StudioAwardsRoute,
   StudioCollectionsRoute: StudioCollectionsRoute,
@@ -2079,9 +2031,17 @@ const rootRouteChildren: RootRouteChildren = {
   DocsIndexRoute: DocsIndexRoute,
   StudioIndexRoute: StudioIndexRoute,
   ApiTrpcSplatRoute: ApiTrpcSplatRoute,
+  DocsGuidancePhasesRoute: DocsGuidancePhasesRoute,
+  DocsGuidancePrioritiesRoute: DocsGuidancePrioritiesRoute,
   DocsOverviewReverseBriefRoute: DocsOverviewReverseBriefRoute,
   DocsVendorBriefRoute: DocsVendorBriefRoute,
+  DocsAdminIndexRoute: DocsAdminIndexRoute,
+  DocsAppendixIndexRoute: DocsAppendixIndexRoute,
+  DocsArchitectureIndexRoute: DocsArchitectureIndexRoute,
+  DocsGuidanceIndexRoute: DocsGuidanceIndexRoute,
+  DocsStudioIndexRoute: DocsStudioIndexRoute,
   DocsVendorIndexRoute: DocsVendorIndexRoute,
+  DocsArchitectureServicesIndexRoute: DocsArchitectureServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

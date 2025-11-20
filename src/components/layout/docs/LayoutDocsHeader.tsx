@@ -103,6 +103,9 @@ export default function LayoutDocsHeader() {
             <SubMenuLink to="/docs/appendix" activeProps={{ className: 'active' }}>
               Appendix
             </SubMenuLink>
+            <SubMenuLink to="/docs/guidance" activeProps={{ className: 'active' }}>
+              Guidance
+            </SubMenuLink>
           </SubMenuScrollArea>
         </Container>
       </SubMenuHeader>

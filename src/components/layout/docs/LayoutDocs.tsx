@@ -17,6 +17,9 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 0 ${spacing(4)};
   width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 `
 
 const PageContent = styled.div`
@@ -117,6 +120,7 @@ export default function LayoutDocs({ children }: { children?: React.ReactNode })
   const isAdmin = pathname.startsWith('/docs/admin')
   const isStudio = pathname.startsWith('/docs/studio')
   const isAppendix = pathname.startsWith('/docs/appendix')
+  const isGuidance = pathname.startsWith('/docs/guidance')
 
   return (
     <LayoutContainer>
@@ -140,6 +144,13 @@ export default function LayoutDocs({ children }: { children?: React.ReactNode })
                   <SidebarLink to="/docs/architecture">Technical Architecture</SidebarLink>
                   <SidebarLink to="/docs/architecture/sitemap">Sitemap</SidebarLink>
                   <SidebarLink to="/docs/architecture/services">Services</SidebarLink>
+                  <div style={{ paddingLeft: '12px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <SidebarLink to="/docs/architecture/services/sanity">Sanity CMS</SidebarLink>
+                    <SidebarLink to="/docs/architecture/services/shopify">Shopify</SidebarLink>
+                    <SidebarLink to="/docs/architecture/services/auth0">Auth0</SidebarLink>
+                    <SidebarLink to="/docs/architecture/services/algolia">Algolia</SidebarLink>
+                    <SidebarLink to="/docs/architecture/services/klaviyo">Klaviyo</SidebarLink>
+                  </div>
                 </SidebarSection>
               )}
 
@@ -183,6 +194,13 @@ export default function LayoutDocs({ children }: { children?: React.ReactNode })
                 <SidebarSection title="Appendix">
                   <SidebarLink to="/docs/appendix">Overview</SidebarLink>
                   <SidebarLink to="/docs/appendix/wordpress">Wordpress vs Headless</SidebarLink>
+                </SidebarSection>
+              )}
+
+              {isGuidance && (
+                <SidebarSection title="Guidance">
+                  <SidebarLink to="/docs/guidance/priorities">Priorities</SidebarLink>
+                  <SidebarLink to="/docs/guidance/phases">Phases</SidebarLink>
                 </SidebarSection>
               )}
 

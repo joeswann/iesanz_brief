@@ -1,16 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { DocsContent } from '../../components/docs/DocsContent'
 import LayoutDocs from '../../components/layout/docs/LayoutDocs'
-import { docsAdmin } from '@/data/data.docs'
+import { docsAppendix } from '@/data/data.docs'
 
-export const Route = createFileRoute('/docs/admin')({
-  component: DocsAdmin,
+export const Route = createFileRoute('/docs/appendix/')({
+  component: DocsAppendix,
 })
 
-function DocsAdmin() {
+function DocsAppendix() {
   return (
     <LayoutDocs>
-      <DocsContent data={docsAdmin} />
+      <DocsContent data={docsAppendix} />
     </LayoutDocs>
   )
 }

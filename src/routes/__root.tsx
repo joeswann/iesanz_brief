@@ -15,6 +15,7 @@ import type { QueryClient } from "@tanstack/react-query";
 import type { TRPCRouter } from "@/integrations/trpc/router";
 import type { TRPCOptionsProxy } from "@trpc/tanstack-react-query";
 import LayoutDefault from "@/components/layout/LayoutDefault";
+import { SiteSwitcher } from "@/components/layout/SiteSwitcher";
 
 interface MyRouterContext {
   queryClient: QueryClient;
@@ -55,6 +56,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <LayoutDefault>{children}</LayoutDefault>
+        <SiteSwitcher />
         {/* <TanStackDevtools */}
         {/*   config={{ */}
         {/*     position: "bottom-right", */}

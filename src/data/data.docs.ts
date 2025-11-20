@@ -53,6 +53,7 @@ export const docsOverview: DocPageData = {
                         "<strong>Vendor:</strong> Tender information and project brief for vendors.",
                         "<strong>Admin:</strong> Documentation for the administrative dashboard and tools.",
                         "<strong>Studio:</strong> Guides for managing content and commerce via the Studio.",
+                        "<strong>Guidance:</strong> Recommended priorities and project phases.",
                         "<strong>Appendix:</strong> Supplementary information."
                     ]
                 },
@@ -798,26 +799,13 @@ export const docsAdminReports: DocPageData = {
 };
 
 export const docsAdminAwards: DocPageData = {
-    title: "Awards Administration",
+    title: "Awards Management",
     sections: [
         {
             title: "Overview",
             blocks: [
                 {
-                    content: "Centralized management for the IESANZ Awards program."
-                }
-            ]
-        },
-        {
-            title: "Capabilities",
-            blocks: [
-                {
-                    list: [
-                        "<strong>Submission Management:</strong> View, approve, or reject award entries.",
-                        "<strong>Judging Portal:</strong> Assign judges to categories and monitor scoring progress.",
-                        "<strong>Winner Selection:</strong> Tools to aggregate scores and determine finalists and winners.",
-                        "<strong>Gala Management:</strong> Manage ticket sales and seating for the awards gala."
-                    ]
+                    content: "Tools for managing the awards program, including submissions, judging, and winner announcements."
                 }
             ]
         }
@@ -825,26 +813,13 @@ export const docsAdminAwards: DocPageData = {
 };
 
 export const docsAdminEvents: DocPageData = {
-    title: "Events Administration",
+    title: "Event Management",
     sections: [
         {
             title: "Overview",
             blocks: [
                 {
-                    content: "Tools for managing the full lifecycle of events, from creation to post-event reporting."
-                }
-            ]
-        },
-        {
-            title: "Features",
-            blocks: [
-                {
-                    list: [
-                        "<strong>Event Creation:</strong> Set up new events with details, images, and ticketing options.",
-                        "<strong>Attendee Management:</strong> View guest lists, manage check-ins, and print badges.",
-                        "<strong>Waitlist Management:</strong> Handle overbooked events with automated waitlist processing.",
-                        "<strong>Communication:</strong> Send email updates to registered attendees."
-                    ]
+                    content: "Tools for creating and managing events, including ticketing, attendee lists, and venue details."
                 }
             ]
         }
@@ -852,25 +827,13 @@ export const docsAdminEvents: DocPageData = {
 };
 
 export const docsAdminMemberships: DocPageData = {
-    title: "Membership Products",
+    title: "Membership Management",
     sections: [
         {
             title: "Overview",
             blocks: [
                 {
-                    content: "Configuration of the membership tiers and their associated benefits."
-                }
-            ]
-        },
-        {
-            title: "Features",
-            blocks: [
-                {
-                    list: [
-                        "<strong>Tier Configuration:</strong> Define pricing, duration, and renewal rules for each membership level.",
-                        "<strong>Benefit Management:</strong> Assign specific benefits (e.g., store discounts, content access) to tiers.",
-                        "<strong>Discount Codes:</strong> Create and manage promotional codes for membership sign-ups."
-                    ]
+                    content: "Tools for managing membership tiers, benefits, and pricing."
                 }
             ]
         }
@@ -878,25 +841,13 @@ export const docsAdminMemberships: DocPageData = {
 };
 
 export const docsAdminSubmissions: DocPageData = {
-    title: "Form Submissions",
+    title: "Submissions Management",
     sections: [
         {
             title: "Overview",
             blocks: [
                 {
-                    content: "A centralized inbox for all form submissions across the website."
-                }
-            ]
-        },
-        {
-            title: "Functionality",
-            blocks: [
-                {
-                    list: [
-                        "<strong>Unified Inbox:</strong> View submissions from Contact Us, Expression of Interest, and other forms in one place.",
-                        "<strong>Status Tracking:</strong> Mark submissions as 'New', 'In Progress', or 'Resolved'.",
-                        "<strong>Assignment:</strong> Assign submissions to specific admin users for follow-up."
-                    ]
+                    content: "Tools for managing submissions for awards, conferences, and other programs."
                 }
             ]
         }
@@ -904,25 +855,13 @@ export const docsAdminSubmissions: DocPageData = {
 };
 
 export const docsAdminSupport: DocPageData = {
-    title: "Support Tickets",
+    title: "Support Management",
     sections: [
         {
             title: "Overview",
             blocks: [
                 {
-                    content: "A helpdesk system for managing member inquiries and technical issues."
-                }
-            ]
-        },
-        {
-            title: "Features",
-            blocks: [
-                {
-                    list: [
-                        "<strong>Ticket Management:</strong> View, reply to, and close support tickets.",
-                        "<strong>Knowledgebase Integration:</strong> Quickly link to help articles in responses.",
-                        "<strong>SLA Tracking:</strong> Monitor response times to ensure timely support."
-                    ]
+                    content: "Tools for managing support tickets and user inquiries."
                 }
             ]
         }
@@ -933,10 +872,10 @@ export const docsAppendix: DocPageData = {
     title: "Appendix",
     sections: [
         {
-            title: "Overview",
+            title: "Glossary",
             blocks: [
                 {
-                    content: "This section contains supplementary information and detailed comparisons to support the architectural decisions made for the IESANZ platform."
+                    content: "Definitions of key terms and acronyms used throughout this documentation."
                 }
             ]
         }
@@ -944,33 +883,64 @@ export const docsAppendix: DocPageData = {
 };
 
 export const docsAppendixWordpress: DocPageData = {
-    title: "Wordpress vs Headless Architecture",
+    title: "Wordpress vs Headless",
     sections: [
         {
-            title: "Top Line Issues with Wordpress Plugin Stack",
+            title: "Comparison",
+            blocks: [
+                {
+                    content: "A detailed comparison between the traditional Wordpress approach and the modern Headless architecture adopted for this project."
+                }
+            ]
+        }
+    ]
+};
+
+export const docsGuidancePriorities: DocPageData = {
+    title: "Priorities",
+    sections: [
+        {
+            title: "Recommended Priorities",
+            blocks: [
+                {
+                    content: "This section outlines the recommended priorities for the website functionality based on a cost/benefit/urgency analysis."
+                }
+            ]
+        },
+        {
+            title: "High Priority (Must Have)",
             blocks: [
                 {
                     list: [
-                        "<strong>High Maintenance & Security Risks:</strong> Reliance on a stack of 7+ major plugins (Paid Memberships Pro, LearnDash, etc.) increases vulnerability. History of security breaches in these plugins requires constant patching.",
-                        "<strong>Performance Bottlenecks:</strong> Wordpress is not optimized for high-performance logged-in user traffic. Heavy database queries from multiple plugins can slow down the site.",
-                        "<strong>Plugin Conflicts:</strong> Plugins are not designed to work seamlessly together, leading to fragmented user experiences and potential breakages during updates.",
-                        "<strong>Customization Limitations:</strong> Fixed templates and workflows limit deep functional customizations without risky hacks.",
-                        "<strong>Long-Term Costs:</strong> Licensing fees for multiple premium plugins and increased hosting costs add up. Vendor lock-in is a significant risk."
+                        "<strong>Public Content Pages:</strong> Essential for marketing and information dissemination (Home, About, Contact).",
+                        "<strong>Membership Information:</strong> Clear details on benefits and how to join.",
+                        "<strong>Basic Member Portal:</strong> Allow members to log in and view their status.",
+                        "<strong>Events Listing:</strong> Display upcoming events to drive engagement."
                     ]
                 }
             ]
         },
         {
-            title: "Why Headless is the Smarter Investment",
+            title: "Medium Priority (Should Have)",
             blocks: [
                 {
-                    content: "A headless CMS + Next.js architecture avoids these issues by separating the front-end from the back-end, using modern APIs instead of a plugin-based system.",
                     list: [
-                        "<strong>Security & Stability:</strong> No reliance on vulnerable plugins; a statically generated front-end with locked-down APIs reduces the risk of hacking.",
-                        "<strong>Performance & Scalability:</strong> Faster page loads, better handling of traffic spikes, and reduced server load.",
-                        "<strong>Full Design & Functional Flexibility:</strong> Every part of the site can be custom-designed without plugin limitations.",
-                        "<strong>Seamless Integrations:</strong> Direct API connections to services like Xero, Shopify, and Sanity ensure smooth data flow.",
-                        "<strong>Lower Long-Term Costs:</strong> Eliminates ongoing plugin fees and reduces maintenance overhead."
+                        "<strong>Online Membership Application:</strong> Streamline the joining process.",
+                        "<strong>Event Registration:</strong> Allow users to register for events online.",
+                        "<strong>News & Articles:</strong> Keep the site dynamic with regular updates.",
+                        "<strong>Awards Gallery:</strong> Showcase past winners."
+                    ]
+                }
+            ]
+        },
+        {
+            title: "Low Priority (Nice to Have)",
+            blocks: [
+                {
+                    list: [
+                        "<strong>E-commerce Store:</strong> Selling merchandise and publications.",
+                        "<strong>Advanced Member Features:</strong> CPD tracking, invoice history.",
+                        "<strong>Integration with External Systems:</strong> Deep integration with webinars/ticketing platforms."
                     ]
                 }
             ]
@@ -978,39 +948,44 @@ export const docsAppendixWordpress: DocPageData = {
     ]
 };
 
-// Backward compatibility object if needed, though we should migrate away from it
-export const docsData = {
-    overview: docsOverview,
-    architecture: docsArchitecture,
-    process: docsProcess,
-    architectureSitemap: docsArchitectureSitemap,
-    architectureServices: docsArchitectureServices,
-    servicesSanity: docsServicesSanity,
-    servicesShopify: docsServicesShopify,
-    servicesAuth0: docsServicesAuth0,
-    servicesKlaviyo: docsServicesKlaviyo,
-    servicesAlgolia: docsServicesAlgolia,
-    studio: docsStudio,
-    studioNews: docsStudioNews,
-    studioEvents: docsStudioEvents,
-    studioProducts: docsStudioProducts,
-    studioOrders: docsStudioOrders,
-    studioCustomers: docsStudioCustomers,
-    studioCollections: docsStudioCollections,
-    studioAwards: docsStudioAwards,
-    studioPages: docsStudioPages,
-    admin: docsAdmin,
-    adminDashboard: docsAdminDashboard,
-    adminMembers: docsAdminMembers,
-    adminContent: docsAdminContent,
-    adminSettings: docsAdminSettings,
-    adminPayments: docsAdminPayments,
-    adminReports: docsAdminReports,
-    adminAwards: docsAdminAwards,
-    adminEvents: docsAdminEvents,
-    adminMemberships: docsAdminMemberships,
-    adminSubmissions: docsAdminSubmissions,
-    adminSupport: docsAdminSupport,
-    appendix: docsAppendix,
-    appendixWordpress: docsAppendixWordpress
+export const docsGuidancePhases: DocPageData = {
+    title: "Phases",
+    sections: [
+        {
+            title: "Project Phases",
+            blocks: [
+                {
+                    content: "The project will be delivered in phases to ensure a timely launch of essential features while allowing for the development of more complex functionality."
+                }
+            ]
+        },
+        {
+            title: "Phase 1: Essentials",
+            blocks: [
+                {
+                    content: "The goal of Phase 1 is to get the website live with critical content and basic member systems. This establishes the digital presence and allows for basic member interaction.",
+                    list: [
+                        "<strong>Content:</strong> All public marketing pages, news, and basic event listings.",
+                        "<strong>Membership:</strong> Information pages and a basic login for members to view their profile.",
+                        "<strong>Awards:</strong> Information and gallery.",
+                        "<strong>No Payment Integrations:</strong> Payments for membership or events will be handled offline or via simple forms initially."
+                    ]
+                }
+            ]
+        },
+        {
+            title: "Phase 2: Advanced Features",
+            blocks: [
+                {
+                    content: "Phase 2 focuses on deepening the functionality, particularly around financial transactions and system integrations.",
+                    list: [
+                        "<strong>Financial System:</strong> Full integration with payment gateways for membership renewals and event tickets.",
+                        "<strong>Deep Integrations:</strong> Automated syncing with webinar platforms, ticketing systems, and accounting software.",
+                        "<strong>E-commerce:</strong> Full online store for physical and digital goods.",
+                        "<strong>Advanced Member Portal:</strong> CPD tracking, invoice history, and self-service profile management."
+                    ]
+                }
+            ]
+        }
+    ]
 };
