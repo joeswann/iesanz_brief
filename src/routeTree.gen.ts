@@ -62,8 +62,10 @@ import { Route as AccountInvoicesRouteImport } from './routes/account/invoices'
 import { Route as AccountEventsRouteImport } from './routes/account/events'
 import { Route as AccountAwardsRouteImport } from './routes/account/awards'
 import { Route as AccountEducationRouteRouteImport } from './routes/account/education/route'
+import { Route as DocsVendorIndexRouteImport } from './routes/docs/vendor/index'
 import { Route as ChaptersChapterIdIndexRouteImport } from './routes/chapters/$chapterId/index'
 import { Route as AccountEducationIndexRouteImport } from './routes/account/education/index'
+import { Route as DocsVendorBriefRouteImport } from './routes/docs/vendor/brief'
 import { Route as DocsStudioProductsRouteImport } from './routes/docs/studio/products'
 import { Route as DocsStudioPagesRouteImport } from './routes/docs/studio/pages'
 import { Route as DocsStudioOrdersRouteImport } from './routes/docs/studio/orders'
@@ -72,6 +74,7 @@ import { Route as DocsStudioEventsRouteImport } from './routes/docs/studio/event
 import { Route as DocsStudioCustomersRouteImport } from './routes/docs/studio/customers'
 import { Route as DocsStudioCollectionsRouteImport } from './routes/docs/studio/collections'
 import { Route as DocsStudioAwardsRouteImport } from './routes/docs/studio/awards'
+import { Route as DocsOverviewReverseBriefRouteImport } from './routes/docs/overview/reverse-brief'
 import { Route as DocsArchitectureSitemapRouteImport } from './routes/docs/architecture/sitemap'
 import { Route as DocsArchitectureServicesRouteImport } from './routes/docs/architecture/services'
 import { Route as DocsAppendixWordpressRouteImport } from './routes/docs/appendix/wordpress'
@@ -365,6 +368,11 @@ const AccountEducationRouteRoute = AccountEducationRouteRouteImport.update({
   path: '/education',
   getParentRoute: () => AccountRouteRoute,
 } as any)
+const DocsVendorIndexRoute = DocsVendorIndexRouteImport.update({
+  id: '/docs/vendor/',
+  path: '/docs/vendor/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ChaptersChapterIdIndexRoute = ChaptersChapterIdIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -374,6 +382,11 @@ const AccountEducationIndexRoute = AccountEducationIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AccountEducationRouteRoute,
+} as any)
+const DocsVendorBriefRoute = DocsVendorBriefRouteImport.update({
+  id: '/docs/vendor/brief',
+  path: '/docs/vendor/brief',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const DocsStudioProductsRoute = DocsStudioProductsRouteImport.update({
   id: '/products',
@@ -415,6 +428,12 @@ const DocsStudioAwardsRoute = DocsStudioAwardsRouteImport.update({
   path: '/awards',
   getParentRoute: () => DocsStudioRoute,
 } as any)
+const DocsOverviewReverseBriefRoute =
+  DocsOverviewReverseBriefRouteImport.update({
+    id: '/docs/overview/reverse-brief',
+    path: '/docs/overview/reverse-brief',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const DocsArchitectureSitemapRoute = DocsArchitectureSitemapRouteImport.update({
   id: '/sitemap',
   path: '/sitemap',
@@ -636,6 +655,7 @@ export interface FileRoutesByFullPath {
   '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
   '/docs/architecture/services': typeof DocsArchitectureServicesRouteWithChildren
   '/docs/architecture/sitemap': typeof DocsArchitectureSitemapRoute
+  '/docs/overview/reverse-brief': typeof DocsOverviewReverseBriefRoute
   '/docs/studio/awards': typeof DocsStudioAwardsRoute
   '/docs/studio/collections': typeof DocsStudioCollectionsRoute
   '/docs/studio/customers': typeof DocsStudioCustomersRoute
@@ -644,8 +664,10 @@ export interface FileRoutesByFullPath {
   '/docs/studio/orders': typeof DocsStudioOrdersRoute
   '/docs/studio/pages': typeof DocsStudioPagesRoute
   '/docs/studio/products': typeof DocsStudioProductsRoute
+  '/docs/vendor/brief': typeof DocsVendorBriefRoute
   '/account/education/': typeof AccountEducationIndexRoute
   '/chapters/$chapterId/': typeof ChaptersChapterIdIndexRoute
+  '/docs/vendor': typeof DocsVendorIndexRoute
   '/docs/architecture/services/algolia': typeof DocsArchitectureServicesAlgoliaRoute
   '/docs/architecture/services/auth0': typeof DocsArchitectureServicesAuth0Route
   '/docs/architecture/services/klaviyo': typeof DocsArchitectureServicesKlaviyoRoute
@@ -724,6 +746,7 @@ export interface FileRoutesByTo {
   '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
   '/docs/architecture/services': typeof DocsArchitectureServicesRouteWithChildren
   '/docs/architecture/sitemap': typeof DocsArchitectureSitemapRoute
+  '/docs/overview/reverse-brief': typeof DocsOverviewReverseBriefRoute
   '/docs/studio/awards': typeof DocsStudioAwardsRoute
   '/docs/studio/collections': typeof DocsStudioCollectionsRoute
   '/docs/studio/customers': typeof DocsStudioCustomersRoute
@@ -732,8 +755,10 @@ export interface FileRoutesByTo {
   '/docs/studio/orders': typeof DocsStudioOrdersRoute
   '/docs/studio/pages': typeof DocsStudioPagesRoute
   '/docs/studio/products': typeof DocsStudioProductsRoute
+  '/docs/vendor/brief': typeof DocsVendorBriefRoute
   '/account/education': typeof AccountEducationIndexRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdIndexRoute
+  '/docs/vendor': typeof DocsVendorIndexRoute
   '/docs/architecture/services/algolia': typeof DocsArchitectureServicesAlgoliaRoute
   '/docs/architecture/services/auth0': typeof DocsArchitectureServicesAuth0Route
   '/docs/architecture/services/klaviyo': typeof DocsArchitectureServicesKlaviyoRoute
@@ -817,6 +842,7 @@ export interface FileRoutesById {
   '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
   '/docs/architecture/services': typeof DocsArchitectureServicesRouteWithChildren
   '/docs/architecture/sitemap': typeof DocsArchitectureSitemapRoute
+  '/docs/overview/reverse-brief': typeof DocsOverviewReverseBriefRoute
   '/docs/studio/awards': typeof DocsStudioAwardsRoute
   '/docs/studio/collections': typeof DocsStudioCollectionsRoute
   '/docs/studio/customers': typeof DocsStudioCustomersRoute
@@ -825,8 +851,10 @@ export interface FileRoutesById {
   '/docs/studio/orders': typeof DocsStudioOrdersRoute
   '/docs/studio/pages': typeof DocsStudioPagesRoute
   '/docs/studio/products': typeof DocsStudioProductsRoute
+  '/docs/vendor/brief': typeof DocsVendorBriefRoute
   '/account/education/': typeof AccountEducationIndexRoute
   '/chapters/$chapterId/': typeof ChaptersChapterIdIndexRoute
+  '/docs/vendor/': typeof DocsVendorIndexRoute
   '/docs/architecture/services/algolia': typeof DocsArchitectureServicesAlgoliaRoute
   '/docs/architecture/services/auth0': typeof DocsArchitectureServicesAuth0Route
   '/docs/architecture/services/klaviyo': typeof DocsArchitectureServicesKlaviyoRoute
@@ -911,6 +939,7 @@ export interface FileRouteTypes {
     | '/docs/appendix/wordpress'
     | '/docs/architecture/services'
     | '/docs/architecture/sitemap'
+    | '/docs/overview/reverse-brief'
     | '/docs/studio/awards'
     | '/docs/studio/collections'
     | '/docs/studio/customers'
@@ -919,8 +948,10 @@ export interface FileRouteTypes {
     | '/docs/studio/orders'
     | '/docs/studio/pages'
     | '/docs/studio/products'
+    | '/docs/vendor/brief'
     | '/account/education/'
     | '/chapters/$chapterId/'
+    | '/docs/vendor'
     | '/docs/architecture/services/algolia'
     | '/docs/architecture/services/auth0'
     | '/docs/architecture/services/klaviyo'
@@ -999,6 +1030,7 @@ export interface FileRouteTypes {
     | '/docs/appendix/wordpress'
     | '/docs/architecture/services'
     | '/docs/architecture/sitemap'
+    | '/docs/overview/reverse-brief'
     | '/docs/studio/awards'
     | '/docs/studio/collections'
     | '/docs/studio/customers'
@@ -1007,8 +1039,10 @@ export interface FileRouteTypes {
     | '/docs/studio/orders'
     | '/docs/studio/pages'
     | '/docs/studio/products'
+    | '/docs/vendor/brief'
     | '/account/education'
     | '/chapters/$chapterId'
+    | '/docs/vendor'
     | '/docs/architecture/services/algolia'
     | '/docs/architecture/services/auth0'
     | '/docs/architecture/services/klaviyo'
@@ -1091,6 +1125,7 @@ export interface FileRouteTypes {
     | '/docs/appendix/wordpress'
     | '/docs/architecture/services'
     | '/docs/architecture/sitemap'
+    | '/docs/overview/reverse-brief'
     | '/docs/studio/awards'
     | '/docs/studio/collections'
     | '/docs/studio/customers'
@@ -1099,8 +1134,10 @@ export interface FileRouteTypes {
     | '/docs/studio/orders'
     | '/docs/studio/pages'
     | '/docs/studio/products'
+    | '/docs/vendor/brief'
     | '/account/education/'
     | '/chapters/$chapterId/'
+    | '/docs/vendor/'
     | '/docs/architecture/services/algolia'
     | '/docs/architecture/services/auth0'
     | '/docs/architecture/services/klaviyo'
@@ -1152,6 +1189,9 @@ export interface RootRouteChildren {
   DocsIndexRoute: typeof DocsIndexRoute
   StudioIndexRoute: typeof StudioIndexRoute
   ApiTrpcSplatRoute: typeof ApiTrpcSplatRoute
+  DocsOverviewReverseBriefRoute: typeof DocsOverviewReverseBriefRoute
+  DocsVendorBriefRoute: typeof DocsVendorBriefRoute
+  DocsVendorIndexRoute: typeof DocsVendorIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -1527,6 +1567,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AccountEducationRouteRouteImport
       parentRoute: typeof AccountRouteRoute
     }
+    '/docs/vendor/': {
+      id: '/docs/vendor/'
+      path: '/docs/vendor'
+      fullPath: '/docs/vendor'
+      preLoaderRoute: typeof DocsVendorIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/chapters/$chapterId/': {
       id: '/chapters/$chapterId/'
       path: '/'
@@ -1540,6 +1587,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/account/education/'
       preLoaderRoute: typeof AccountEducationIndexRouteImport
       parentRoute: typeof AccountEducationRouteRoute
+    }
+    '/docs/vendor/brief': {
+      id: '/docs/vendor/brief'
+      path: '/docs/vendor/brief'
+      fullPath: '/docs/vendor/brief'
+      preLoaderRoute: typeof DocsVendorBriefRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/docs/studio/products': {
       id: '/docs/studio/products'
@@ -1596,6 +1650,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/docs/studio/awards'
       preLoaderRoute: typeof DocsStudioAwardsRouteImport
       parentRoute: typeof DocsStudioRoute
+    }
+    '/docs/overview/reverse-brief': {
+      id: '/docs/overview/reverse-brief'
+      path: '/docs/overview/reverse-brief'
+      fullPath: '/docs/overview/reverse-brief'
+      preLoaderRoute: typeof DocsOverviewReverseBriefRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/docs/architecture/sitemap': {
       id: '/docs/architecture/sitemap'
@@ -2018,6 +2079,9 @@ const rootRouteChildren: RootRouteChildren = {
   DocsIndexRoute: DocsIndexRoute,
   StudioIndexRoute: StudioIndexRoute,
   ApiTrpcSplatRoute: ApiTrpcSplatRoute,
+  DocsOverviewReverseBriefRoute: DocsOverviewReverseBriefRoute,
+  DocsVendorBriefRoute: DocsVendorBriefRoute,
+  DocsVendorIndexRoute: DocsVendorIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

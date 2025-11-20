@@ -2,13 +2,16 @@ import { styled } from '@linaria/react'
 import { DocPageData } from '@/data/data.docs'
 import { TypeHeading } from '@/components/type/TypeHeading'
 import { TypeBody } from '@/components/type/TypeBody'
+import { spacing } from '@/styles/styling'
 
 const PageTitle = styled.div`
-    margin-bottom: 12rem;
+    margin-bottom: ${spacing(12)};
+    padding-bottom: ${spacing(8)};
+    border-bottom: 1px solid var(--border);
 `
 
 const Section = styled.div`
-    margin-bottom: 8rem;
+    margin-bottom: ${spacing(16)};
     
     &:last-child {
         margin-bottom: 0;
@@ -16,11 +19,11 @@ const Section = styled.div`
 `
 
 const SectionTitle = styled.div`
-    margin-bottom: 4rem;
+    margin-bottom: ${spacing(6)};
 `
 
 const Block = styled.div`
-    margin-bottom: 5rem;
+    margin-bottom: ${spacing(8)};
 
     &:last-child {
         margin-bottom: 0;
@@ -28,16 +31,16 @@ const Block = styled.div`
 `
 
 const BlockTitle = styled.div`
-    margin-bottom: 2rem;
+    margin-bottom: ${spacing(3)};
 `
 
 const BlockContent = styled.div`
-    margin-bottom: 2rem;
+    margin-bottom: ${spacing(4)};
     
     p {
-        margin-bottom: 2rem;
+        margin-bottom: ${spacing(4)};
         line-height: 1.6;
-        color: var(--color-text-secondary);
+        color: var(--foreground-muted);
         
         &:last-child {
             margin-bottom: 0;
@@ -46,15 +49,15 @@ const BlockContent = styled.div`
 `
 
 const List = styled.ul`
-    margin: 2rem 0 2rem 0;
-    padding-left: 2rem;
+    margin: ${spacing(4)} 0;
+    padding-left: ${spacing(6)};
     list-style-type: disc;
-    color: var(--color-text-secondary);
+    color: var(--foreground-muted);
 
     li {
-        margin-bottom: 1rem;
+        margin-bottom: ${spacing(2)};
         line-height: 1.6;
-        padding-left: 0.5rem;
+        padding-left: ${spacing(2)};
         
         &:last-child {
             margin-bottom: 0;
@@ -63,15 +66,15 @@ const List = styled.ul`
 `
 
 const OrderedList = styled.ol`
-    margin: 2rem 0 2rem 0;
-    padding-left: 2rem;
+    margin: ${spacing(4)} 0;
+    padding-left: ${spacing(6)};
     list-style-type: decimal;
-    color: var(--color-text-secondary);
+    color: var(--foreground-muted);
 
     li {
-        margin-bottom: 1rem;
+        margin-bottom: ${spacing(2)};
         line-height: 1.6;
-        padding-left: 0.5rem;
+        padding-left: ${spacing(2)};
         
         &:last-child {
             margin-bottom: 0;

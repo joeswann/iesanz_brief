@@ -43,43 +43,6 @@ export const docsOverview: DocPageData = {
             ]
         },
         {
-            title: "Reverse Brief",
-            blocks: [
-                {
-                    title: "Public Website",
-                    content: "The public website serves as the primary entry point, providing accessible information about the organisation, chapters, and activities. Key content includes case studies, news, awards info, and general pages (Objectives, FAQ). It supports marketing and member acquisition."
-                },
-                {
-                    title: "Chapters",
-                    content: "Chapters can publish and manage content tailored to their region (events, news, committee info). Each chapter maintains a hub for local activities. Chapter Coordinators use the CMS to manage this content."
-                },
-                {
-                    title: "Member Area",
-                    content: "Provides deeper access to resources (gated educational material, technical papers). Members can register for events, access tickets, and view a unified dashboard of their status, invoices, and CPD tracking."
-                },
-                {
-                    title: "Accounts & Membership",
-                    content: "Members manage contact info and preferences. The system supports the full membership lifecycle (join, renew, upgrade) with multi-step forms. Different grades (corporate, student, etc.) are supported."
-                },
-                {
-                    title: "Events & Conferences",
-                    content: "A central calendar displays all events. The system handles ticketing (free/paid, member/non-member pricing) and registration. Conferences have dedicated sub-sections with program details and speaker bios."
-                },
-                {
-                    title: "Awards",
-                    content: "The Awards program (LiDA) is fully digitized. Entrants submit projects online, and judges review them via a dedicated portal. The system manages categories, entry fees, and winner showcases."
-                },
-                {
-                    title: "Education (Course/CPD)",
-                    content: "The Course is a major revenue stream. The platform handles enrollment, payment, and access to course materials. CPD points are tracked automatically where possible."
-                },
-                {
-                    title: "Shop",
-                    content: "An e-commerce section for selling physical and digital goods (guides, standards, merchandise). It integrates with the inventory and payment systems."
-                }
-            ]
-        },
-        {
             title: "Documentation Navigation",
             blocks: [
                 {
@@ -87,6 +50,7 @@ export const docsOverview: DocPageData = {
                     list: [
                         "<strong>Overview:</strong> General project information, process, and the reverse brief.",
                         "<strong>Architecture:</strong> Technical details, services, and sitemap.",
+                        "<strong>Vendor:</strong> Tender information and project brief for vendors.",
                         "<strong>Admin:</strong> Documentation for the administrative dashboard and tools.",
                         "<strong>Studio:</strong> Guides for managing content and commerce via the Studio.",
                         "<strong>Appendix:</strong> Supplementary information."
@@ -94,6 +58,144 @@ export const docsOverview: DocPageData = {
                 },
                 {
                     content: "The sidebar on the left provides context-specific navigation for the currently selected section."
+                }
+            ]
+        }
+    ]
+};
+
+export const docsOverviewReverseBrief: DocPageData = {
+    title: "Reverse Brief",
+    sections: [
+        {
+            title: "Public Website",
+            blocks: [
+                {
+                    content: "The public website serves as the primary entry point, providing accessible information about the organisation, chapters, and activities. Key content includes case studies, news, awards info, and general pages (Objectives, FAQ). It supports marketing and member acquisition."
+                }
+            ]
+        },
+        {
+            title: "Chapters",
+            blocks: [
+                {
+                    content: "Chapters can publish and manage content tailored to their region (events, news, committee info). Each chapter maintains a hub for local activities. Chapter Coordinators use the CMS to manage this content."
+                }
+            ]
+        },
+        {
+            title: "Member Area",
+            blocks: [
+                {
+                    content: "Provides deeper access to resources (gated educational material, technical papers). Members can register for events, access tickets, and view a unified dashboard of their status, invoices, and CPD tracking."
+                }
+            ]
+        },
+        {
+            title: "Accounts & Membership",
+            blocks: [
+                {
+                    content: "Members manage contact info and preferences. The system supports the full membership lifecycle (join, renew, upgrade) with multi-step forms. Different grades (corporate, student, etc.) are supported."
+                }
+            ]
+        },
+        {
+            title: "Events & Conferences",
+            blocks: [
+                {
+                    content: "A central calendar displays all events. The system handles ticketing (free/paid, member/non-member pricing) and registration. Conferences have dedicated sub-sections with program details and speaker bios."
+                }
+            ]
+        },
+        {
+            title: "Awards",
+            blocks: [
+                {
+                    content: "The Awards program (LiDA) is fully digitized. Entrants submit projects online, and judges review them via a dedicated portal. The system manages categories, entry fees, and winner showcases."
+                }
+            ]
+        },
+        {
+            title: "Education (Course/CPD)",
+            blocks: [
+                {
+                    content: "The Course is a major revenue stream. The platform handles enrollment, payment, and access to course materials. CPD points are tracked automatically where possible."
+                }
+            ]
+        },
+        {
+            title: "Shop",
+            blocks: [
+                {
+                    content: "An e-commerce section for selling physical and digital goods (guides, standards, merchandise). It integrates with the inventory and payment systems."
+                }
+            ]
+        }
+    ]
+};
+
+export const docsVendor: DocPageData = {
+    title: "Vendor Information",
+    sections: [
+        {
+            title: "Overview",
+            blocks: [
+                {
+                    content: "This section contains information for vendors wishing to tender for the IESANZ digital platform project. It outlines the project scope, technical requirements, and the process for submitting a proposal."
+                }
+            ]
+        }
+    ]
+};
+
+export const docsVendorBrief: DocPageData = {
+    title: "Project Brief & Tender",
+    sections: [
+        {
+            title: "Project Scope",
+            blocks: [
+                {
+                    content: "IESANZ is seeking a partner to deliver a comprehensive digital platform renewal. The project involves building a headless frontend (Next.js), configuring a headless CMS (Sanity), and integrating with Shopify and other third-party services."
+                }
+            ]
+        },
+        {
+            title: "Key Deliverables",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Public Website:</strong> A modern, responsive marketing site.",
+                        "<strong>Member Portal:</strong> A secure area for members to manage their profile, renewals, and CPD.",
+                        "<strong>Events & Ticketing:</strong> A robust system for event management and registration.",
+                        "<strong>Awards Platform:</strong> A digital submission and judging system.",
+                        "<strong>E-commerce Store:</strong> A shop for physical and digital products.",
+                        "<strong>Migration:</strong> Migration of existing member and content data."
+                    ]
+                }
+            ]
+        },
+        {
+            title: "Technical Requirements",
+            blocks: [
+                {
+                    content: "The solution must strictly adhere to the proposed architecture: Next.js for the frontend, Sanity for content, and Shopify for commerce. The vendor must demonstrate expertise in these technologies."
+                }
+            ]
+        },
+        {
+            title: "Communication & Process",
+            blocks: [
+                {
+                    title: "Clarifications",
+                    content: "All questions regarding this brief should be submitted via email to the project manager. Responses will be shared with all tendering parties to ensure fairness."
+                },
+                {
+                    title: "Quoting",
+                    content: "Proposals should provide a detailed breakdown of costs, including design, development, migration, and ongoing support. Please separate one-off costs from recurring license fees."
+                },
+                {
+                    title: "Timeline",
+                    content: "Please provide an estimated timeline for delivery, including key milestones for discovery, design, development, and UAT."
                 }
             ]
         }
@@ -507,6 +609,8 @@ export const docsStudioPages: DocPageData = {
     ]
 };
 
+
+
 export const docsAdmin: DocPageData = {
     title: "Admin & Super Admin",
     sections: [
@@ -536,7 +640,20 @@ export const docsAdminDashboard: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "The central hub for administrators, providing a high-level view of system status, recent activity, and key metrics."
+                    content: "The Admin Dashboard serves as the landing page for administrators, providing a high-level overview of the system's health and recent activity."
+                }
+            ]
+        },
+        {
+            title: "Key Features",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Quick Stats:</strong> Real-time counters for total members, active subscriptions, recent orders, and pending support tickets.",
+                        "<strong>Recent Activity Feed:</strong> A log of recent system actions, such as new member registrations, content updates, and error logs.",
+                        "<strong>System Status:</strong> Indicators for the health of connected services (Sanity, Shopify, Auth0, etc.).",
+                        "<strong>Quick Actions:</strong> Shortcuts to common tasks like 'Add New Member', 'Create Event', or 'Publish News'."
+                    ]
                 }
             ]
         }
@@ -550,7 +667,21 @@ export const docsAdminMembers: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "Manage member accounts, view membership status, update contact info, and handle renewals or upgrades."
+                    content: "The Member Management section is the core CRM component of the admin panel, allowing detailed management of the IESANZ membership base."
+                }
+            ]
+        },
+        {
+            title: "Functionality",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Member Search & Filtering:</strong> Advanced search capabilities to find members by name, email, chapter, membership type, or status.",
+                        "<strong>Profile Management:</strong> View and edit member details, including contact info, professional details, and communication preferences.",
+                        "<strong>Subscription Management:</strong> View current membership status, history, and manually adjust renewal dates or status.",
+                        "<strong>Role Assignment:</strong> Assign system roles (e.g., Chapter Admin, Board Member) to users.",
+                        "<strong>Export Data:</strong> Export member lists to CSV for external reporting or marketing purposes."
+                    ]
                 }
             ]
         }
@@ -564,7 +695,20 @@ export const docsAdminContent: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "Access tools for managing website content, including the Knowledgebase, educational resources, and marketing assets."
+                    content: "While most content is managed via the Sanity Studio, this section provides specific tools for managing structured content within the application context."
+                }
+            ]
+        },
+        {
+            title: "Features",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Knowledgebase Management:</strong> Organize and curate technical resources, assigning them to specific member tiers or chapters.",
+                        "<strong>Educational Resources:</strong> Manage course listings, CPD point allocations, and resource availability.",
+                        "<strong>Featured Content:</strong> Select specific articles or events to be highlighted on the homepage or chapter pages.",
+                        "<strong>Menu Management:</strong> Configure the main navigation and footer links."
+                    ]
                 }
             ]
         }
@@ -578,7 +722,21 @@ export const docsAdminSettings: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "Configure global system settings, including site metadata, navigation menus, and integration parameters."
+                    content: "Global configuration for the IESANZ platform, accessible only to Super Admins."
+                }
+            ]
+        },
+        {
+            title: "Configuration Options",
+            blocks: [
+                {
+                    list: [
+                        "<strong>General Settings:</strong> Site title, description, and SEO defaults.",
+                        "<strong>Integration Keys:</strong> Manage API keys for third-party services (Auth0, Stripe, Shopify, etc.).",
+                        "<strong>Notification Settings:</strong> Configure email templates and triggers for system notifications.",
+                        "<strong>Access Control:</strong> Define roles and permissions for admin users.",
+                        "<strong>Redirects:</strong> Manage URL redirects to maintain SEO equity during migrations."
+                    ]
                 }
             ]
         }
@@ -592,7 +750,20 @@ export const docsAdminPayments: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "View a log of all financial transactions, including membership fees, event tickets, and store purchases."
+                    content: "A comprehensive log of all financial transactions processed through the platform."
+                }
+            ]
+        },
+        {
+            title: "Features",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Transaction Log:</strong> View all successful and failed payments with details (User, Amount, Date, Reference).",
+                        "<strong>Invoice Generation:</strong> View and download PDF invoices for any transaction.",
+                        "<strong>Refund Processing:</strong> Initiate partial or full refunds for eligible transactions.",
+                        "<strong>Reconciliation:</strong> Tools to help reconcile platform payments with bank deposits."
+                    ]
                 }
             ]
         }
@@ -606,7 +777,20 @@ export const docsAdminReports: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "Generate reports on membership growth, financial performance, event attendance, and website analytics."
+                    content: "Data visualization and reporting tools to track the performance of the organization."
+                }
+            ]
+        },
+        {
+            title: "Available Reports",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Membership Growth:</strong> Track new sign-ups, renewals, and churn rates over time.",
+                        "<strong>Financial Performance:</strong> Revenue breakdown by stream (Membership, Events, Store).",
+                        "<strong>Event Analytics:</strong> Attendance numbers, ticket sales, and revenue per event.",
+                        "<strong>Website Engagement:</strong> Key metrics on site traffic, popular content, and user engagement."
+                    ]
                 }
             ]
         }
@@ -620,7 +804,20 @@ export const docsAdminAwards: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "Oversee the awards process, including managing submissions, assigning judges, and publishing winners."
+                    content: "Centralized management for the IESANZ Awards program."
+                }
+            ]
+        },
+        {
+            title: "Capabilities",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Submission Management:</strong> View, approve, or reject award entries.",
+                        "<strong>Judging Portal:</strong> Assign judges to categories and monitor scoring progress.",
+                        "<strong>Winner Selection:</strong> Tools to aggregate scores and determine finalists and winners.",
+                        "<strong>Gala Management:</strong> Manage ticket sales and seating for the awards gala."
+                    ]
                 }
             ]
         }
@@ -634,7 +831,20 @@ export const docsAdminEvents: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "Administrative tools for managing the events calendar, registrations, and attendee lists."
+                    content: "Tools for managing the full lifecycle of events, from creation to post-event reporting."
+                }
+            ]
+        },
+        {
+            title: "Features",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Event Creation:</strong> Set up new events with details, images, and ticketing options.",
+                        "<strong>Attendee Management:</strong> View guest lists, manage check-ins, and print badges.",
+                        "<strong>Waitlist Management:</strong> Handle overbooked events with automated waitlist processing.",
+                        "<strong>Communication:</strong> Send email updates to registered attendees."
+                    ]
                 }
             ]
         }
@@ -648,7 +858,19 @@ export const docsAdminMemberships: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "Configure membership tiers, pricing, benefits, and renewal rules."
+                    content: "Configuration of the membership tiers and their associated benefits."
+                }
+            ]
+        },
+        {
+            title: "Features",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Tier Configuration:</strong> Define pricing, duration, and renewal rules for each membership level.",
+                        "<strong>Benefit Management:</strong> Assign specific benefits (e.g., store discounts, content access) to tiers.",
+                        "<strong>Discount Codes:</strong> Create and manage promotional codes for membership sign-ups."
+                    ]
                 }
             ]
         }
@@ -662,7 +884,19 @@ export const docsAdminSubmissions: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "View and manage submissions from various forms across the site, such as contact inquiries or expressions of interest."
+                    content: "A centralized inbox for all form submissions across the website."
+                }
+            ]
+        },
+        {
+            title: "Functionality",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Unified Inbox:</strong> View submissions from Contact Us, Expression of Interest, and other forms in one place.",
+                        "<strong>Status Tracking:</strong> Mark submissions as 'New', 'In Progress', or 'Resolved'.",
+                        "<strong>Assignment:</strong> Assign submissions to specific admin users for follow-up."
+                    ]
                 }
             ]
         }
@@ -676,7 +910,19 @@ export const docsAdminSupport: DocPageData = {
             title: "Overview",
             blocks: [
                 {
-                    content: "Track and resolve member support requests and technical issues."
+                    content: "A helpdesk system for managing member inquiries and technical issues."
+                }
+            ]
+        },
+        {
+            title: "Features",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Ticket Management:</strong> View, reply to, and close support tickets.",
+                        "<strong>Knowledgebase Integration:</strong> Quickly link to help articles in responses.",
+                        "<strong>SLA Tracking:</strong> Monitor response times to ensure timely support."
+                    ]
                 }
             ]
         }
