@@ -1,53 +1,38 @@
 import { DCI } from "@/types/dci";
 import { SidebarContainer, SidebarLink, SidebarSection } from "@/components/layout/Sidebar";
-import { submenus } from "@/data/data.header";
-import { conferences } from "@/data/data.conferences";
+import { Conference } from "@/data/data.conferences";
 
 interface ConferencesSidebarProps {
-    selectedConfId: number;
-    onSelectConf: (id: number) => void;
+    selectedConf: Conference;
 }
 
-const ConferencesSidebar: DCI<ConferencesSidebarProps> = ({ selectedConfId, onSelectConf }) => {
-    const links = submenus["/conferences"] || [];
-    const upcoming = conferences.filter(c => c.status === "Upcoming");
-    const past = conferences.filter(c => c.status === "Past");
+const ConferencesSidebar: DCI<ConferencesSidebarProps> = ({ selectedConf }) => {
+    const isUpcoming = selectedConf.status === "Upcoming";
 
     return (
         <SidebarContainer>
-            <SidebarSection title="Conferences">
-                {links.map(([label, url]) => (
-                    <SidebarLink key={url} to={url}>
-                        {label}
-                    </SidebarLink>
-                ))}
+            <SidebarSection title={selectedConf.year.toString()}>
+                <SidebarLink to={`/conferences/${selectedConf.id}`} exact>Overview</SidebarLink>
+                {selectedConf.program.length > 0 && (
+                    <SidebarLink to={`/conferences/${selectedConf.id}/program`}>Program</SidebarLink>
+                )}
+                {selectedConf.speakers.length > 0 && (
+                    <SidebarLink to={`/conferences/${selectedConf.id}/speakers`}>Speakers</SidebarLink>
+                )}
+                {selectedConf.sponsors.length > 0 && (
+                    <SidebarLink to={`/conferences/${selectedConf.id}/sponsors`}>Sponsors</SidebarLink>
+                )}
             </SidebarSection>
 
-            {upcoming.length > 0 && (
-                <SidebarSection title="Upcoming Events">
-                    {upcoming.map((c) => (
-                        <SidebarLink
-                            key={c.id}
-                            onClick={() => onSelectConf(c.id)}
-                            isActive={selectedConfId === c.id}
-                        >
-                            {c.year}: {c.location.split(',')[0]}
-                        </SidebarLink>
-                    ))}
+            {isUpcoming ? (
+                <SidebarSection title="Registration">
+                    <SidebarLink to={`/conferences/${selectedConf.id}/tickets`}>Buy Tickets</SidebarLink>
+                </SidebarSection>
+            ) : (
+                <SidebarSection title="Media">
+                    <SidebarLink to={`/conferences/${selectedConf.id}/gallery`}>Photo Gallery</SidebarLink>
                 </SidebarSection>
             )}
-
-            <SidebarSection title="Past Conferences">
-                {past.map((c) => (
-                    <SidebarLink
-                        key={c.id}
-                        onClick={() => onSelectConf(c.id)}
-                        isActive={selectedConfId === c.id}
-                    >
-                        {c.year}: {c.location.split(',')[0]}
-                    </SidebarLink>
-                ))}
-            </SidebarSection>
         </SidebarContainer>
     );
 };

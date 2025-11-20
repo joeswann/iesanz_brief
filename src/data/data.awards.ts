@@ -11,6 +11,7 @@ export interface AwardEntry {
 export interface AwardCategory {
     id: string;
     title: string;
+    description?: string;
     entries: AwardEntry[];
 }
 
@@ -18,6 +19,7 @@ export interface AwardsEvent {
     id: string;
     title: string;
     year: number;
+    description?: string;
     categories: AwardCategory[];
 }
 
@@ -30,6 +32,7 @@ export const awardsEvents: AwardsEvent[] = [
             {
                 id: "cat-excellence",
                 title: "Excellence in Lighting",
+                description: "Recognizing outstanding lighting design that demonstrates excellence in aesthetic achievement, technical performance, and integration.",
                 entries: [
                     {
                         id: "1",
@@ -56,6 +59,7 @@ export const awardsEvents: AwardsEvent[] = [
             {
                 id: "cat-luminaire",
                 title: "Luminaire Design",
+                description: "Celebrating innovation in the design and manufacture of lighting fixtures and systems.",
                 entries: [
                     {
                         id: "5",
@@ -72,6 +76,7 @@ export const awardsEvents: AwardsEvent[] = [
             {
                 id: "cat-public",
                 title: "Public Spaces",
+                description: "Honoring lighting design that enhances the public realm, creating safe, inviting, and inspiring environments.",
                 entries: [
                     {
                         id: "3",
@@ -95,6 +100,7 @@ export const awardsEvents: AwardsEvent[] = [
             {
                 id: "cat-2024-workplace",
                 title: "Workplace Lighting",
+                description: "Acknowledging lighting design that improves the quality of the workplace environment and promotes well-being.",
                 entries: [
                     {
                         id: "4",
@@ -111,6 +117,7 @@ export const awardsEvents: AwardsEvent[] = [
             {
                 id: "cat-2024-infrastructure",
                 title: "Infrastructure",
+                description: "Recognizing lighting design for infrastructure projects such as bridges, tunnels, and transport hubs.",
                 entries: [
                     {
                         id: "6",
@@ -130,10 +137,36 @@ export const awardsEvents: AwardsEvent[] = [
         id: "evt-2026",
         title: "2026 IESANZ Lighting Design Awards",
         year: 2026,
+        description: "The 2026 IESANZ Lighting Design Awards celebrate excellence in lighting design across Australia and New Zealand. Join us as we recognize the most innovative and inspiring projects of the year.",
         categories: [
             {
-                id: "cat-2026-open",
-                title: "Open Category",
+                id: "cat-2026-excellence",
+                title: "Excellence in Lighting",
+                description: "Recognizing outstanding lighting design that demonstrates excellence in aesthetic achievement, technical performance, and integration.",
+                entries: [],
+            },
+            {
+                id: "cat-2026-luminaire",
+                title: "Luminaire Design",
+                description: "Celebrating innovation in the design and manufacture of lighting fixtures and systems.",
+                entries: [],
+            },
+            {
+                id: "cat-2026-public",
+                title: "Public Spaces",
+                description: "Honoring lighting design that enhances the public realm, creating safe, inviting, and inspiring environments.",
+                entries: [],
+            },
+            {
+                id: "cat-2026-workplace",
+                title: "Workplace Lighting",
+                description: "Acknowledging lighting design that improves the quality of the workplace environment and promotes well-being.",
+                entries: [],
+            },
+            {
+                id: "cat-2026-infrastructure",
+                title: "Infrastructure",
+                description: "Recognizing lighting design for infrastructure projects such as bridges, tunnels, and transport hubs.",
                 entries: [],
             }
         ],

@@ -1,6 +1,7 @@
 import { chapters } from "./data.chapters";
 
 import { awardsEvents } from "./data.awards";
+import { conferences } from "./data.conferences";
 
 export const links = [
   ["Home", "/"],
@@ -39,10 +40,13 @@ export const submenus: Record<string, [string, string][]> = {
       .map((evt) => [evt.year.toString(), `/awards?year=${evt.year}`] as [string, string]),
   ],
   "/conferences": [
-    ["Conferences Home", "/conferences"],
-    ["Program", "/conferences/program"],
-    ["Speakers", "/conferences/speakers"],
-    ["Registration", "/conferences/registration"],
+    ...conferences
+      .filter((c) => c.status === "Upcoming")
+      .map((c) => [c.title, `/conferences/${c.id}`] as [string, string]),
+    ...conferences
+      .filter((c) => c.status === "Past")
+      .sort((a, b) => b.year - a.year)
+      .map((c) => [c.year.toString(), `/conferences/${c.id}`] as [string, string]),
   ],
   "/chapters": [
     ["All Chapters", "/chapters"],

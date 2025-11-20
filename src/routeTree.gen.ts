@@ -13,7 +13,6 @@ import { Route as StoreRouteImport } from './routes/store'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as ConferencesRouteImport } from './routes/conferences'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as CalendarRouteImport } from './routes/calendar'
 import { Route as AwardsRouteImport } from './routes/awards'
@@ -23,6 +22,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as StudioIndexRouteImport } from './routes/studio/index'
 import { Route as ResourcesIndexRouteImport } from './routes/resources/index'
 import { Route as DocsIndexRouteImport } from './routes/docs/index'
+import { Route as ConferencesIndexRouteImport } from './routes/conferences/index'
 import { Route as ChaptersIndexRouteImport } from './routes/chapters/index'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AccountIndexRouteImport } from './routes/account/index'
@@ -38,6 +38,8 @@ import { Route as ResourcesResourceIdRouteImport } from './routes/resources/$res
 import { Route as PagesPageIdRouteImport } from './routes/pages/$pageId'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as DocsProcessRouteImport } from './routes/docs/process'
+import { Route as DocsContentsRouteImport } from './routes/docs/contents'
+import { Route as ConferencesConferenceIdRouteImport } from './routes/conferences/$conferenceId'
 import { Route as ChaptersNewsRouteImport } from './routes/chapters/news'
 import { Route as ChaptersEventsRouteImport } from './routes/chapters/events'
 import { Route as ChaptersChapterIdRouteImport } from './routes/chapters/$chapterId'
@@ -65,6 +67,7 @@ import { Route as DocsGuidanceIndexRouteImport } from './routes/docs/guidance/in
 import { Route as DocsArchitectureIndexRouteImport } from './routes/docs/architecture/index'
 import { Route as DocsAppendixIndexRouteImport } from './routes/docs/appendix/index'
 import { Route as DocsAdminIndexRouteImport } from './routes/docs/admin/index'
+import { Route as ConferencesConferenceIdIndexRouteImport } from './routes/conferences/$conferenceId/index'
 import { Route as ChaptersChapterIdIndexRouteImport } from './routes/chapters/$chapterId/index'
 import { Route as AccountEducationIndexRouteImport } from './routes/account/education/index'
 import { Route as DocsVendorBriefRouteImport } from './routes/docs/vendor/brief'
@@ -92,6 +95,11 @@ import { Route as DocsAdminEventsRouteImport } from './routes/docs/admin/events'
 import { Route as DocsAdminDashboardRouteImport } from './routes/docs/admin/dashboard'
 import { Route as DocsAdminContentRouteImport } from './routes/docs/admin/content'
 import { Route as DocsAdminAwardsRouteImport } from './routes/docs/admin/awards'
+import { Route as ConferencesConferenceIdTicketsRouteImport } from './routes/conferences/$conferenceId/tickets'
+import { Route as ConferencesConferenceIdSponsorsRouteImport } from './routes/conferences/$conferenceId/sponsors'
+import { Route as ConferencesConferenceIdSpeakersRouteImport } from './routes/conferences/$conferenceId/speakers'
+import { Route as ConferencesConferenceIdProgramRouteImport } from './routes/conferences/$conferenceId/program'
+import { Route as ConferencesConferenceIdGalleryRouteImport } from './routes/conferences/$conferenceId/gallery'
 import { Route as ChaptersChapterIdNewsRouteImport } from './routes/chapters/$chapterId/news'
 import { Route as ChaptersChapterIdGalleryRouteImport } from './routes/chapters/$chapterId/gallery'
 import { Route as ChaptersChapterIdEventsRouteImport } from './routes/chapters/$chapterId/events'
@@ -125,11 +133,6 @@ const EventsRoute = EventsRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ConferencesRoute = ConferencesRouteImport.update({
-  id: '/conferences',
-  path: '/conferences',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CartRoute = CartRouteImport.update({
@@ -175,6 +178,11 @@ const ResourcesIndexRoute = ResourcesIndexRouteImport.update({
 const DocsIndexRoute = DocsIndexRouteImport.update({
   id: '/docs/',
   path: '/docs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConferencesIndexRoute = ConferencesIndexRouteImport.update({
+  id: '/conferences/',
+  path: '/conferences/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ChaptersIndexRoute = ChaptersIndexRouteImport.update({
@@ -250,6 +258,16 @@ const NewsSlugRoute = NewsSlugRouteImport.update({
 const DocsProcessRoute = DocsProcessRouteImport.update({
   id: '/docs/process',
   path: '/docs/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsContentsRoute = DocsContentsRouteImport.update({
+  id: '/docs/contents',
+  path: '/docs/contents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConferencesConferenceIdRoute = ConferencesConferenceIdRouteImport.update({
+  id: '/conferences/$conferenceId',
+  path: '/conferences/$conferenceId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ChaptersNewsRoute = ChaptersNewsRouteImport.update({
@@ -387,6 +405,12 @@ const DocsAdminIndexRoute = DocsAdminIndexRouteImport.update({
   path: '/docs/admin/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConferencesConferenceIdIndexRoute =
+  ConferencesConferenceIdIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => ConferencesConferenceIdRoute,
+  } as any)
 const ChaptersChapterIdIndexRoute = ChaptersChapterIdIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -523,6 +547,36 @@ const DocsAdminAwardsRoute = DocsAdminAwardsRouteImport.update({
   path: '/docs/admin/awards',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConferencesConferenceIdTicketsRoute =
+  ConferencesConferenceIdTicketsRouteImport.update({
+    id: '/tickets',
+    path: '/tickets',
+    getParentRoute: () => ConferencesConferenceIdRoute,
+  } as any)
+const ConferencesConferenceIdSponsorsRoute =
+  ConferencesConferenceIdSponsorsRouteImport.update({
+    id: '/sponsors',
+    path: '/sponsors',
+    getParentRoute: () => ConferencesConferenceIdRoute,
+  } as any)
+const ConferencesConferenceIdSpeakersRoute =
+  ConferencesConferenceIdSpeakersRouteImport.update({
+    id: '/speakers',
+    path: '/speakers',
+    getParentRoute: () => ConferencesConferenceIdRoute,
+  } as any)
+const ConferencesConferenceIdProgramRoute =
+  ConferencesConferenceIdProgramRouteImport.update({
+    id: '/program',
+    path: '/program',
+    getParentRoute: () => ConferencesConferenceIdRoute,
+  } as any)
+const ConferencesConferenceIdGalleryRoute =
+  ConferencesConferenceIdGalleryRouteImport.update({
+    id: '/gallery',
+    path: '/gallery',
+    getParentRoute: () => ConferencesConferenceIdRoute,
+  } as any)
 const ChaptersChapterIdNewsRoute = ChaptersChapterIdNewsRouteImport.update({
   id: '/news',
   path: '/news',
@@ -610,7 +664,6 @@ export interface FileRoutesByFullPath {
   '/awards': typeof AwardsRoute
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
-  '/conferences': typeof ConferencesRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRouteWithChildren
@@ -636,6 +689,8 @@ export interface FileRoutesByFullPath {
   '/chapters/$chapterId': typeof ChaptersChapterIdRouteWithChildren
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
+  '/conferences/$conferenceId': typeof ConferencesConferenceIdRouteWithChildren
+  '/docs/contents': typeof DocsContentsRoute
   '/docs/process': typeof DocsProcessRoute
   '/news/$slug': typeof NewsSlugRoute
   '/pages/$pageId': typeof PagesPageIdRoute
@@ -651,6 +706,7 @@ export interface FileRoutesByFullPath {
   '/account/': typeof AccountIndexRoute
   '/admin': typeof AdminIndexRoute
   '/chapters': typeof ChaptersIndexRoute
+  '/conferences': typeof ConferencesIndexRoute
   '/docs': typeof DocsIndexRoute
   '/resources/': typeof ResourcesIndexRoute
   '/studio': typeof StudioIndexRoute
@@ -662,6 +718,11 @@ export interface FileRoutesByFullPath {
   '/chapters/$chapterId/events': typeof ChaptersChapterIdEventsRoute
   '/chapters/$chapterId/gallery': typeof ChaptersChapterIdGalleryRoute
   '/chapters/$chapterId/news': typeof ChaptersChapterIdNewsRoute
+  '/conferences/$conferenceId/gallery': typeof ConferencesConferenceIdGalleryRoute
+  '/conferences/$conferenceId/program': typeof ConferencesConferenceIdProgramRoute
+  '/conferences/$conferenceId/speakers': typeof ConferencesConferenceIdSpeakersRoute
+  '/conferences/$conferenceId/sponsors': typeof ConferencesConferenceIdSponsorsRoute
+  '/conferences/$conferenceId/tickets': typeof ConferencesConferenceIdTicketsRoute
   '/docs/admin/awards': typeof DocsAdminAwardsRoute
   '/docs/admin/content': typeof DocsAdminContentRoute
   '/docs/admin/dashboard': typeof DocsAdminDashboardRoute
@@ -689,6 +750,7 @@ export interface FileRoutesByFullPath {
   '/docs/vendor/brief': typeof DocsVendorBriefRoute
   '/account/education/': typeof AccountEducationIndexRoute
   '/chapters/$chapterId/': typeof ChaptersChapterIdIndexRoute
+  '/conferences/$conferenceId/': typeof ConferencesConferenceIdIndexRoute
   '/docs/admin': typeof DocsAdminIndexRoute
   '/docs/appendix': typeof DocsAppendixIndexRoute
   '/docs/architecture': typeof DocsArchitectureIndexRoute
@@ -707,7 +769,6 @@ export interface FileRoutesByTo {
   '/awards': typeof AwardsRoute
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
-  '/conferences': typeof ConferencesRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRouteWithChildren
@@ -731,6 +792,7 @@ export interface FileRoutesByTo {
   '/admin/support': typeof AdminSupportRoute
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
+  '/docs/contents': typeof DocsContentsRoute
   '/docs/process': typeof DocsProcessRoute
   '/news/$slug': typeof NewsSlugRoute
   '/pages/$pageId': typeof PagesPageIdRoute
@@ -746,6 +808,7 @@ export interface FileRoutesByTo {
   '/account': typeof AccountIndexRoute
   '/admin': typeof AdminIndexRoute
   '/chapters': typeof ChaptersIndexRoute
+  '/conferences': typeof ConferencesIndexRoute
   '/docs': typeof DocsIndexRoute
   '/resources': typeof ResourcesIndexRoute
   '/studio': typeof StudioIndexRoute
@@ -757,6 +820,11 @@ export interface FileRoutesByTo {
   '/chapters/$chapterId/events': typeof ChaptersChapterIdEventsRoute
   '/chapters/$chapterId/gallery': typeof ChaptersChapterIdGalleryRoute
   '/chapters/$chapterId/news': typeof ChaptersChapterIdNewsRoute
+  '/conferences/$conferenceId/gallery': typeof ConferencesConferenceIdGalleryRoute
+  '/conferences/$conferenceId/program': typeof ConferencesConferenceIdProgramRoute
+  '/conferences/$conferenceId/speakers': typeof ConferencesConferenceIdSpeakersRoute
+  '/conferences/$conferenceId/sponsors': typeof ConferencesConferenceIdSponsorsRoute
+  '/conferences/$conferenceId/tickets': typeof ConferencesConferenceIdTicketsRoute
   '/docs/admin/awards': typeof DocsAdminAwardsRoute
   '/docs/admin/content': typeof DocsAdminContentRoute
   '/docs/admin/dashboard': typeof DocsAdminDashboardRoute
@@ -784,6 +852,7 @@ export interface FileRoutesByTo {
   '/docs/vendor/brief': typeof DocsVendorBriefRoute
   '/account/education': typeof AccountEducationIndexRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdIndexRoute
+  '/conferences/$conferenceId': typeof ConferencesConferenceIdIndexRoute
   '/docs/admin': typeof DocsAdminIndexRoute
   '/docs/appendix': typeof DocsAppendixIndexRoute
   '/docs/architecture': typeof DocsArchitectureIndexRoute
@@ -805,7 +874,6 @@ export interface FileRoutesById {
   '/awards': typeof AwardsRoute
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
-  '/conferences': typeof ConferencesRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRouteWithChildren
@@ -831,6 +899,8 @@ export interface FileRoutesById {
   '/chapters/$chapterId': typeof ChaptersChapterIdRouteWithChildren
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
+  '/conferences/$conferenceId': typeof ConferencesConferenceIdRouteWithChildren
+  '/docs/contents': typeof DocsContentsRoute
   '/docs/process': typeof DocsProcessRoute
   '/news/$slug': typeof NewsSlugRoute
   '/pages/$pageId': typeof PagesPageIdRoute
@@ -846,6 +916,7 @@ export interface FileRoutesById {
   '/account/': typeof AccountIndexRoute
   '/admin/': typeof AdminIndexRoute
   '/chapters/': typeof ChaptersIndexRoute
+  '/conferences/': typeof ConferencesIndexRoute
   '/docs/': typeof DocsIndexRoute
   '/resources/': typeof ResourcesIndexRoute
   '/studio/': typeof StudioIndexRoute
@@ -857,6 +928,11 @@ export interface FileRoutesById {
   '/chapters/$chapterId/events': typeof ChaptersChapterIdEventsRoute
   '/chapters/$chapterId/gallery': typeof ChaptersChapterIdGalleryRoute
   '/chapters/$chapterId/news': typeof ChaptersChapterIdNewsRoute
+  '/conferences/$conferenceId/gallery': typeof ConferencesConferenceIdGalleryRoute
+  '/conferences/$conferenceId/program': typeof ConferencesConferenceIdProgramRoute
+  '/conferences/$conferenceId/speakers': typeof ConferencesConferenceIdSpeakersRoute
+  '/conferences/$conferenceId/sponsors': typeof ConferencesConferenceIdSponsorsRoute
+  '/conferences/$conferenceId/tickets': typeof ConferencesConferenceIdTicketsRoute
   '/docs/admin/awards': typeof DocsAdminAwardsRoute
   '/docs/admin/content': typeof DocsAdminContentRoute
   '/docs/admin/dashboard': typeof DocsAdminDashboardRoute
@@ -884,6 +960,7 @@ export interface FileRoutesById {
   '/docs/vendor/brief': typeof DocsVendorBriefRoute
   '/account/education/': typeof AccountEducationIndexRoute
   '/chapters/$chapterId/': typeof ChaptersChapterIdIndexRoute
+  '/conferences/$conferenceId/': typeof ConferencesConferenceIdIndexRoute
   '/docs/admin/': typeof DocsAdminIndexRoute
   '/docs/appendix/': typeof DocsAppendixIndexRoute
   '/docs/architecture/': typeof DocsArchitectureIndexRoute
@@ -906,7 +983,6 @@ export interface FileRouteTypes {
     | '/awards'
     | '/calendar'
     | '/cart'
-    | '/conferences'
     | '/contact'
     | '/events'
     | '/news'
@@ -932,6 +1008,8 @@ export interface FileRouteTypes {
     | '/chapters/$chapterId'
     | '/chapters/events'
     | '/chapters/news'
+    | '/conferences/$conferenceId'
+    | '/docs/contents'
     | '/docs/process'
     | '/news/$slug'
     | '/pages/$pageId'
@@ -947,6 +1025,7 @@ export interface FileRouteTypes {
     | '/account/'
     | '/admin'
     | '/chapters'
+    | '/conferences'
     | '/docs'
     | '/resources/'
     | '/studio'
@@ -958,6 +1037,11 @@ export interface FileRouteTypes {
     | '/chapters/$chapterId/events'
     | '/chapters/$chapterId/gallery'
     | '/chapters/$chapterId/news'
+    | '/conferences/$conferenceId/gallery'
+    | '/conferences/$conferenceId/program'
+    | '/conferences/$conferenceId/speakers'
+    | '/conferences/$conferenceId/sponsors'
+    | '/conferences/$conferenceId/tickets'
     | '/docs/admin/awards'
     | '/docs/admin/content'
     | '/docs/admin/dashboard'
@@ -985,6 +1069,7 @@ export interface FileRouteTypes {
     | '/docs/vendor/brief'
     | '/account/education/'
     | '/chapters/$chapterId/'
+    | '/conferences/$conferenceId/'
     | '/docs/admin'
     | '/docs/appendix'
     | '/docs/architecture'
@@ -1003,7 +1088,6 @@ export interface FileRouteTypes {
     | '/awards'
     | '/calendar'
     | '/cart'
-    | '/conferences'
     | '/contact'
     | '/events'
     | '/news'
@@ -1027,6 +1111,7 @@ export interface FileRouteTypes {
     | '/admin/support'
     | '/chapters/events'
     | '/chapters/news'
+    | '/docs/contents'
     | '/docs/process'
     | '/news/$slug'
     | '/pages/$pageId'
@@ -1042,6 +1127,7 @@ export interface FileRouteTypes {
     | '/account'
     | '/admin'
     | '/chapters'
+    | '/conferences'
     | '/docs'
     | '/resources'
     | '/studio'
@@ -1053,6 +1139,11 @@ export interface FileRouteTypes {
     | '/chapters/$chapterId/events'
     | '/chapters/$chapterId/gallery'
     | '/chapters/$chapterId/news'
+    | '/conferences/$conferenceId/gallery'
+    | '/conferences/$conferenceId/program'
+    | '/conferences/$conferenceId/speakers'
+    | '/conferences/$conferenceId/sponsors'
+    | '/conferences/$conferenceId/tickets'
     | '/docs/admin/awards'
     | '/docs/admin/content'
     | '/docs/admin/dashboard'
@@ -1080,6 +1171,7 @@ export interface FileRouteTypes {
     | '/docs/vendor/brief'
     | '/account/education'
     | '/chapters/$chapterId'
+    | '/conferences/$conferenceId'
     | '/docs/admin'
     | '/docs/appendix'
     | '/docs/architecture'
@@ -1100,7 +1192,6 @@ export interface FileRouteTypes {
     | '/awards'
     | '/calendar'
     | '/cart'
-    | '/conferences'
     | '/contact'
     | '/events'
     | '/news'
@@ -1126,6 +1217,8 @@ export interface FileRouteTypes {
     | '/chapters/$chapterId'
     | '/chapters/events'
     | '/chapters/news'
+    | '/conferences/$conferenceId'
+    | '/docs/contents'
     | '/docs/process'
     | '/news/$slug'
     | '/pages/$pageId'
@@ -1141,6 +1234,7 @@ export interface FileRouteTypes {
     | '/account/'
     | '/admin/'
     | '/chapters/'
+    | '/conferences/'
     | '/docs/'
     | '/resources/'
     | '/studio/'
@@ -1152,6 +1246,11 @@ export interface FileRouteTypes {
     | '/chapters/$chapterId/events'
     | '/chapters/$chapterId/gallery'
     | '/chapters/$chapterId/news'
+    | '/conferences/$conferenceId/gallery'
+    | '/conferences/$conferenceId/program'
+    | '/conferences/$conferenceId/speakers'
+    | '/conferences/$conferenceId/sponsors'
+    | '/conferences/$conferenceId/tickets'
     | '/docs/admin/awards'
     | '/docs/admin/content'
     | '/docs/admin/dashboard'
@@ -1179,6 +1278,7 @@ export interface FileRouteTypes {
     | '/docs/vendor/brief'
     | '/account/education/'
     | '/chapters/$chapterId/'
+    | '/conferences/$conferenceId/'
     | '/docs/admin/'
     | '/docs/appendix/'
     | '/docs/architecture/'
@@ -1200,7 +1300,6 @@ export interface RootRouteChildren {
   AwardsRoute: typeof AwardsRoute
   CalendarRoute: typeof CalendarRoute
   CartRoute: typeof CartRoute
-  ConferencesRoute: typeof ConferencesRoute
   ContactRoute: typeof ContactRoute
   EventsRoute: typeof EventsRoute
   NewsRoute: typeof NewsRouteWithChildren
@@ -1218,6 +1317,8 @@ export interface RootRouteChildren {
   ChaptersChapterIdRoute: typeof ChaptersChapterIdRouteWithChildren
   ChaptersEventsRoute: typeof ChaptersEventsRoute
   ChaptersNewsRoute: typeof ChaptersNewsRoute
+  ConferencesConferenceIdRoute: typeof ConferencesConferenceIdRouteWithChildren
+  DocsContentsRoute: typeof DocsContentsRoute
   DocsProcessRoute: typeof DocsProcessRoute
   PagesPageIdRoute: typeof PagesPageIdRoute
   StudioAwardsRoute: typeof StudioAwardsRoute
@@ -1230,6 +1331,7 @@ export interface RootRouteChildren {
   StudioProductsRoute: typeof StudioProductsRoute
   AdminIndexRoute: typeof AdminIndexRoute
   ChaptersIndexRoute: typeof ChaptersIndexRoute
+  ConferencesIndexRoute: typeof ConferencesIndexRoute
   DocsIndexRoute: typeof DocsIndexRoute
   StudioIndexRoute: typeof StudioIndexRoute
   ApiTrpcSplatRoute: typeof ApiTrpcSplatRoute
@@ -1302,13 +1404,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/conferences': {
-      id: '/conferences'
-      path: '/conferences'
-      fullPath: '/conferences'
-      preLoaderRoute: typeof ConferencesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/cart': {
       id: '/cart'
       path: '/cart'
@@ -1370,6 +1465,13 @@ declare module '@tanstack/react-router' {
       path: '/docs'
       fullPath: '/docs'
       preLoaderRoute: typeof DocsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conferences/': {
+      id: '/conferences/'
+      path: '/conferences'
+      fullPath: '/conferences'
+      preLoaderRoute: typeof ConferencesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/chapters/': {
@@ -1475,6 +1577,20 @@ declare module '@tanstack/react-router' {
       path: '/docs/process'
       fullPath: '/docs/process'
       preLoaderRoute: typeof DocsProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/contents': {
+      id: '/docs/contents'
+      path: '/docs/contents'
+      fullPath: '/docs/contents'
+      preLoaderRoute: typeof DocsContentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/conferences/$conferenceId': {
+      id: '/conferences/$conferenceId'
+      path: '/conferences/$conferenceId'
+      fullPath: '/conferences/$conferenceId'
+      preLoaderRoute: typeof ConferencesConferenceIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/chapters/news': {
@@ -1666,6 +1782,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsAdminIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/conferences/$conferenceId/': {
+      id: '/conferences/$conferenceId/'
+      path: '/'
+      fullPath: '/conferences/$conferenceId/'
+      preLoaderRoute: typeof ConferencesConferenceIdIndexRouteImport
+      parentRoute: typeof ConferencesConferenceIdRoute
+    }
     '/chapters/$chapterId/': {
       id: '/chapters/$chapterId/'
       path: '/'
@@ -1854,6 +1977,41 @@ declare module '@tanstack/react-router' {
       fullPath: '/docs/admin/awards'
       preLoaderRoute: typeof DocsAdminAwardsRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/conferences/$conferenceId/tickets': {
+      id: '/conferences/$conferenceId/tickets'
+      path: '/tickets'
+      fullPath: '/conferences/$conferenceId/tickets'
+      preLoaderRoute: typeof ConferencesConferenceIdTicketsRouteImport
+      parentRoute: typeof ConferencesConferenceIdRoute
+    }
+    '/conferences/$conferenceId/sponsors': {
+      id: '/conferences/$conferenceId/sponsors'
+      path: '/sponsors'
+      fullPath: '/conferences/$conferenceId/sponsors'
+      preLoaderRoute: typeof ConferencesConferenceIdSponsorsRouteImport
+      parentRoute: typeof ConferencesConferenceIdRoute
+    }
+    '/conferences/$conferenceId/speakers': {
+      id: '/conferences/$conferenceId/speakers'
+      path: '/speakers'
+      fullPath: '/conferences/$conferenceId/speakers'
+      preLoaderRoute: typeof ConferencesConferenceIdSpeakersRouteImport
+      parentRoute: typeof ConferencesConferenceIdRoute
+    }
+    '/conferences/$conferenceId/program': {
+      id: '/conferences/$conferenceId/program'
+      path: '/program'
+      fullPath: '/conferences/$conferenceId/program'
+      preLoaderRoute: typeof ConferencesConferenceIdProgramRouteImport
+      parentRoute: typeof ConferencesConferenceIdRoute
+    }
+    '/conferences/$conferenceId/gallery': {
+      id: '/conferences/$conferenceId/gallery'
+      path: '/gallery'
+      fullPath: '/conferences/$conferenceId/gallery'
+      preLoaderRoute: typeof ConferencesConferenceIdGalleryRouteImport
+      parentRoute: typeof ConferencesConferenceIdRoute
     }
     '/chapters/$chapterId/news': {
       id: '/chapters/$chapterId/news'
@@ -2046,6 +2204,30 @@ const ChaptersChapterIdRouteChildren: ChaptersChapterIdRouteChildren = {
 const ChaptersChapterIdRouteWithChildren =
   ChaptersChapterIdRoute._addFileChildren(ChaptersChapterIdRouteChildren)
 
+interface ConferencesConferenceIdRouteChildren {
+  ConferencesConferenceIdGalleryRoute: typeof ConferencesConferenceIdGalleryRoute
+  ConferencesConferenceIdProgramRoute: typeof ConferencesConferenceIdProgramRoute
+  ConferencesConferenceIdSpeakersRoute: typeof ConferencesConferenceIdSpeakersRoute
+  ConferencesConferenceIdSponsorsRoute: typeof ConferencesConferenceIdSponsorsRoute
+  ConferencesConferenceIdTicketsRoute: typeof ConferencesConferenceIdTicketsRoute
+  ConferencesConferenceIdIndexRoute: typeof ConferencesConferenceIdIndexRoute
+}
+
+const ConferencesConferenceIdRouteChildren: ConferencesConferenceIdRouteChildren =
+  {
+    ConferencesConferenceIdGalleryRoute: ConferencesConferenceIdGalleryRoute,
+    ConferencesConferenceIdProgramRoute: ConferencesConferenceIdProgramRoute,
+    ConferencesConferenceIdSpeakersRoute: ConferencesConferenceIdSpeakersRoute,
+    ConferencesConferenceIdSponsorsRoute: ConferencesConferenceIdSponsorsRoute,
+    ConferencesConferenceIdTicketsRoute: ConferencesConferenceIdTicketsRoute,
+    ConferencesConferenceIdIndexRoute: ConferencesConferenceIdIndexRoute,
+  }
+
+const ConferencesConferenceIdRouteWithChildren =
+  ConferencesConferenceIdRoute._addFileChildren(
+    ConferencesConferenceIdRouteChildren,
+  )
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccountRouteRoute: AccountRouteRouteWithChildren,
@@ -2053,7 +2235,6 @@ const rootRouteChildren: RootRouteChildren = {
   AwardsRoute: AwardsRoute,
   CalendarRoute: CalendarRoute,
   CartRoute: CartRoute,
-  ConferencesRoute: ConferencesRoute,
   ContactRoute: ContactRoute,
   EventsRoute: EventsRoute,
   NewsRoute: NewsRouteWithChildren,
@@ -2071,6 +2252,8 @@ const rootRouteChildren: RootRouteChildren = {
   ChaptersChapterIdRoute: ChaptersChapterIdRouteWithChildren,
   ChaptersEventsRoute: ChaptersEventsRoute,
   ChaptersNewsRoute: ChaptersNewsRoute,
+  ConferencesConferenceIdRoute: ConferencesConferenceIdRouteWithChildren,
+  DocsContentsRoute: DocsContentsRoute,
   DocsProcessRoute: DocsProcessRoute,
   PagesPageIdRoute: PagesPageIdRoute,
   StudioAwardsRoute: StudioAwardsRoute,
@@ -2083,6 +2266,7 @@ const rootRouteChildren: RootRouteChildren = {
   StudioProductsRoute: StudioProductsRoute,
   AdminIndexRoute: AdminIndexRoute,
   ChaptersIndexRoute: ChaptersIndexRoute,
+  ConferencesIndexRoute: ConferencesIndexRoute,
   DocsIndexRoute: DocsIndexRoute,
   StudioIndexRoute: StudioIndexRoute,
   ApiTrpcSplatRoute: ApiTrpcSplatRoute,

@@ -114,7 +114,7 @@ export default function LayoutDocs({ children }: { children?: React.ReactNode })
   const location = useLocation()
   const pathname = location.pathname
 
-  const isOverview = pathname === '/docs' || pathname.startsWith('/docs/overview') || pathname === '/docs/process'
+  const isOverview = pathname === '/docs' || pathname.startsWith('/docs/overview') || pathname === '/docs/process' || pathname === '/docs/contents'
   const isArchitecture = pathname.startsWith('/docs/architecture')
   const isVendor = pathname.startsWith('/docs/vendor')
   const isAdmin = pathname.startsWith('/docs/admin')
@@ -134,6 +134,7 @@ export default function LayoutDocs({ children }: { children?: React.ReactNode })
               {isOverview && (
                 <SidebarSection title="Overview">
                   <SidebarLink to="/docs">Project Overview</SidebarLink>
+                  <SidebarLink to="/docs/contents">Contents</SidebarLink>
                   <SidebarLink to="/docs/overview/reverse-brief">Reverse Brief</SidebarLink>
                   <SidebarLink to="/docs/process">Process</SidebarLink>
                 </SidebarSection>

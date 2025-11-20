@@ -42,6 +42,12 @@ export const docsOverview: DocPageData = {
                 }
             ]
         },
+    ]
+};
+
+export const docsContents: DocPageData = {
+    title: "Contents",
+    sections: [
         {
             title: "Documentation Navigation",
             blocks: [
@@ -896,8 +902,8 @@ export const docsAppendixWordpress: DocPageData = {
     ]
 };
 
-export const docsGuidancePriorities: DocPageData = {
-    title: "Priorities",
+export const docsGuidancePhases: DocPageData = {
+    title: "Phases",
     sections: [
         {
             title: "Recommended Priorities",
@@ -908,39 +914,41 @@ export const docsGuidancePriorities: DocPageData = {
             ]
         },
         {
-            title: "High Priority (Must Have)",
+            title: "Phase 1 (Must Have)",
             blocks: [
                 {
                     list: [
-                        "<strong>Public Content Pages:</strong> Essential for marketing and information dissemination (Home, About, Contact).",
-                        "<strong>Membership Information:</strong> Clear details on benefits and how to join.",
-                        "<strong>Basic Member Portal:</strong> Allow members to log in and view their status.",
-                        "<strong>Events Listing:</strong> Display upcoming events to drive engagement."
-                    ]
-                }
-            ]
-        },
-        {
-            title: "Medium Priority (Should Have)",
-            blocks: [
-                {
-                    list: [
-                        "<strong>Online Membership Application:</strong> Streamline the joining process.",
-                        "<strong>Event Registration:</strong> Allow users to register for events online.",
+                        "<strong>Public Content:</strong> Essential for marketing and information dissemination (Home, About, Contact).",
+                        "<strong>Chapter Content:</strong> Dedicated pages for each chapter to showcase local news and events.",
+                        "<strong>Member Area:</strong> Allow members to log in and view their status.",
+                        "<strong>Events Listing:</strong> Display upcoming events to drive engagement.",
                         "<strong>News & Articles:</strong> Keep the site dynamic with regular updates.",
-                        "<strong>Awards Gallery:</strong> Showcase past winners."
+                        "<strong>Membership Application:</strong> Streamline the joining process.",
+                        "<strong>External Service Linking:</strong> Linking out to external services for critical actions (e.g. buying tickets) where native integration is not yet ready."
                     ]
                 }
             ]
         },
         {
-            title: "Low Priority (Nice to Have)",
+            title: "Phase 2 (Should Have)",
+            blocks: [
+                {
+                    list: [
+                        "<strong>Membership Upgrade Application:</strong> Allow members to apply for a higher grade. This process involves a form submission, admin review, and potential payment adjustment.",
+                        "<strong>Event Registration:</strong> Allow users to register for events online."
+                    ]
+                }
+            ]
+        },
+        {
+            title: "Phase 3 (Nice to Have)",
             blocks: [
                 {
                     list: [
                         "<strong>E-commerce Store:</strong> Selling merchandise and publications.",
                         "<strong>Advanced Member Features:</strong> CPD tracking, invoice history.",
-                        "<strong>Integration with External Systems:</strong> Deep integration with webinars/ticketing platforms."
+                        "<strong>Membership Payments:</strong> Full online payment processing for new memberships and renewals.",
+                        "<strong>Integration with External Systems:</strong> Deep integration with external platforms (e.g. webinars/ticketing platforms)."
                     ]
                 }
             ]
@@ -948,44 +956,139 @@ export const docsGuidancePriorities: DocPageData = {
     ]
 };
 
-export const docsGuidancePhases: DocPageData = {
-    title: "Phases",
+export const docsGuidancePriorities: DocPageData = {
+    title: "Feature Priorities",
     sections: [
         {
-            title: "Project Phases",
+            title: "User Experience & Content",
             blocks: [
                 {
-                    content: "The project will be delivered in phases to ensure a timely launch of essential features while allowing for the development of more complex functionality."
-                }
-            ]
-        },
-        {
-            title: "Phase 1: Essentials",
-            blocks: [
-                {
-                    content: "The goal of Phase 1 is to get the website live with critical content and basic member systems. This establishes the digital presence and allows for basic member interaction.",
+                    title: "High Priority",
                     list: [
-                        "<strong>Content:</strong> All public marketing pages, news, and basic event listings.",
-                        "<strong>Membership:</strong> Information pages and a basic login for members to view their profile.",
-                        "<strong>Awards:</strong> Information and gallery.",
-                        "<strong>No Payment Integrations:</strong> Payments for membership or events will be handled offline or via simple forms initially."
+                        "<strong>Responsive Design:</strong> Fully responsive layout for mobile, tablet, and desktop.",
+                        "<strong>Global Navigation:</strong> Clear, consistent header and footer navigation.",
+                        "<strong>Search Functionality:</strong> Site-wide search powered by Algolia.",
+                        "<strong>News Listing:</strong> Paginated list of news articles with filtering by category/chapter.",
+                        "<strong>News Detail:</strong> Individual article pages with related content.",
+                        "<strong>Static Pages:</strong> About Us, Contact, Privacy Policy, Terms of Service.",
+                        "<strong>Chapter Pages:</strong> Dedicated landing pages for each chapter with local news and events."
+                    ]
+                },
+                {
+                    title: "Medium Priority",
+                    list: [
+                        "<strong>Breadcrumbs:</strong> Navigation aid for deep content hierarchy.",
+                        "<strong>Social Sharing:</strong> Buttons to share content on social media.",
+                        "<strong>Related Content:</strong> Automated suggestions for related articles or events."
                     ]
                 }
             ]
         },
         {
-            title: "Phase 2: Advanced Features",
+            title: "Membership & Accounts",
             blocks: [
                 {
-                    content: "Phase 2 focuses on deepening the functionality, particularly around financial transactions and system integrations.",
+                    title: "High Priority",
                     list: [
-                        "<strong>Financial System:</strong> Full integration with payment gateways for membership renewals and event tickets.",
-                        "<strong>Deep Integrations:</strong> Automated syncing with webinar platforms, ticketing systems, and accounting software.",
-                        "<strong>E-commerce:</strong> Full online store for physical and digital goods.",
-                        "<strong>Advanced Member Portal:</strong> CPD tracking, invoice history, and self-service profile management."
+                        "<strong>Authentication:</strong> Secure login and registration via Auth0.",
+                        "<strong>Password Reset:</strong> Self-service password recovery flow.",
+                        "<strong>Member Dashboard:</strong> Overview of membership status and quick links.",
+                        "<strong>Profile Management:</strong> Edit personal details and contact information.",
+                        "<strong>Join Flow:</strong> Multi-step form for new member registration (initially offline payment)."
+                    ]
+                },
+                {
+                    title: "Medium Priority",
+                    list: [
+                        "<strong>Online Renewals:</strong> Integrated payment flow for membership renewals.",
+                        "<strong>Upgrade Flow:</strong> Process to apply for membership grade upgrades.",
+                        "<strong>Member Directory:</strong> Searchable directory of members (opt-in)."
+                    ]
+                },
+                {
+                    title: "Low Priority",
+                    list: [
+                        "<strong>CPD Tracking:</strong> Log and view Continuing Professional Development points.",
+                        "<strong>Invoice History:</strong> View and download past invoices."
+                    ]
+                }
+            ]
+        },
+        {
+            title: "Events & Conferences",
+            blocks: [
+                {
+                    title: "High Priority",
+                    list: [
+                        "<strong>Event Calendar:</strong> Monthly/Weekly view of upcoming events.",
+                        "<strong>Event List:</strong> Filterable list of events by type and location.",
+                        "<strong>Event Detail:</strong> Comprehensive event information page.",
+                        "<strong>Registration (Basic):</strong> Simple form or external link for registration."
+                    ]
+                },
+                {
+                    title: "Medium Priority",
+                    list: [
+                        "<strong>Online Ticketing:</strong> Integrated purchase of event tickets.",
+                        "<strong>Member Pricing:</strong> Automatic discount application for logged-in members.",
+                        "<strong>Waitlists:</strong> Automated waitlist management for sold-out events."
+                    ]
+                },
+                {
+                    title: "Low Priority",
+                    list: [
+                        "<strong>Speaker Management:</strong> dedicated profiles for event speakers.",
+                        "<strong>Conference Microsites:</strong> Specialized sub-sections for major conferences."
+                    ]
+                }
+            ]
+        },
+        {
+            title: "Awards (LiDA)",
+            blocks: [
+                {
+                    title: "High Priority",
+                    list: [
+                        "<strong>Awards Information:</strong> Rules, categories, and entry guidelines.",
+                        "<strong>Winners Gallery:</strong> Showcase of past award winners with images."
+                    ]
+                },
+                {
+                    title: "Medium Priority",
+                    list: [
+                        "<strong>Online Entry:</strong> Digital submission form for award entries.",
+                        "<strong>Entry Payment:</strong> Integrated payment for entry fees."
+                    ]
+                },
+                {
+                    title: "Low Priority",
+                    list: [
+                        "<strong>Judging Portal:</strong> Secure area for judges to review and score entries."
+                    ]
+                }
+            ]
+        },
+        {
+            title: "Commerce (Shop)",
+            blocks: [
+                {
+                    title: "Medium Priority",
+                    list: [
+                        "<strong>Product Catalog:</strong> Browsable list of products (publications, merchandise).",
+                        "<strong>Shopping Cart:</strong> Add/remove items and view totals.",
+                        "<strong>Checkout:</strong> Secure checkout process via Shopify."
+                    ]
+                },
+                {
+                    title: "Low Priority",
+                    list: [
+                        "<strong>Digital Downloads:</strong> Automated delivery of digital products after purchase.",
+                        "<strong>Order History:</strong> Customer view of past orders and status."
                     ]
                 }
             ]
         }
     ]
 };
+
+
