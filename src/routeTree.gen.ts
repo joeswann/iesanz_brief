@@ -83,7 +83,9 @@ import { Route as DocsOverviewReverseBriefRouteImport } from './routes/docs/over
 import { Route as DocsGuidancePrioritiesRouteImport } from './routes/docs/guidance/priorities'
 import { Route as DocsGuidancePhasesRouteImport } from './routes/docs/guidance/phases'
 import { Route as DocsArchitectureSitemapRouteImport } from './routes/docs/architecture/sitemap'
-import { Route as DocsAppendixWordpressRouteImport } from './routes/docs/appendix/wordpress'
+import { Route as DocsArchitectureMembershipsRouteImport } from './routes/docs/architecture/memberships'
+import { Route as DocsAppendixPlatformComparisonRouteImport } from './routes/docs/appendix/platform-comparison'
+import { Route as DocsAppendixGlossaryRouteImport } from './routes/docs/appendix/glossary'
 import { Route as DocsAdminSupportRouteImport } from './routes/docs/admin/support'
 import { Route as DocsAdminSubmissionsRouteImport } from './routes/docs/admin/submissions'
 import { Route as DocsAdminSettingsRouteImport } from './routes/docs/admin/settings'
@@ -487,9 +489,21 @@ const DocsArchitectureSitemapRoute = DocsArchitectureSitemapRouteImport.update({
   path: '/docs/architecture/sitemap',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DocsAppendixWordpressRoute = DocsAppendixWordpressRouteImport.update({
-  id: '/docs/appendix/wordpress',
-  path: '/docs/appendix/wordpress',
+const DocsArchitectureMembershipsRoute =
+  DocsArchitectureMembershipsRouteImport.update({
+    id: '/docs/architecture/memberships',
+    path: '/docs/architecture/memberships',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DocsAppendixPlatformComparisonRoute =
+  DocsAppendixPlatformComparisonRouteImport.update({
+    id: '/docs/appendix/platform-comparison',
+    path: '/docs/appendix/platform-comparison',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const DocsAppendixGlossaryRoute = DocsAppendixGlossaryRouteImport.update({
+  id: '/docs/appendix/glossary',
+  path: '/docs/appendix/glossary',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsAdminSupportRoute = DocsAdminSupportRouteImport.update({
@@ -734,7 +748,9 @@ export interface FileRoutesByFullPath {
   '/docs/admin/settings': typeof DocsAdminSettingsRoute
   '/docs/admin/submissions': typeof DocsAdminSubmissionsRoute
   '/docs/admin/support': typeof DocsAdminSupportRoute
-  '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
+  '/docs/appendix/glossary': typeof DocsAppendixGlossaryRoute
+  '/docs/appendix/platform-comparison': typeof DocsAppendixPlatformComparisonRoute
+  '/docs/architecture/memberships': typeof DocsArchitectureMembershipsRoute
   '/docs/architecture/sitemap': typeof DocsArchitectureSitemapRoute
   '/docs/guidance/phases': typeof DocsGuidancePhasesRoute
   '/docs/guidance/priorities': typeof DocsGuidancePrioritiesRoute
@@ -836,7 +852,9 @@ export interface FileRoutesByTo {
   '/docs/admin/settings': typeof DocsAdminSettingsRoute
   '/docs/admin/submissions': typeof DocsAdminSubmissionsRoute
   '/docs/admin/support': typeof DocsAdminSupportRoute
-  '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
+  '/docs/appendix/glossary': typeof DocsAppendixGlossaryRoute
+  '/docs/appendix/platform-comparison': typeof DocsAppendixPlatformComparisonRoute
+  '/docs/architecture/memberships': typeof DocsArchitectureMembershipsRoute
   '/docs/architecture/sitemap': typeof DocsArchitectureSitemapRoute
   '/docs/guidance/phases': typeof DocsGuidancePhasesRoute
   '/docs/guidance/priorities': typeof DocsGuidancePrioritiesRoute
@@ -944,7 +962,9 @@ export interface FileRoutesById {
   '/docs/admin/settings': typeof DocsAdminSettingsRoute
   '/docs/admin/submissions': typeof DocsAdminSubmissionsRoute
   '/docs/admin/support': typeof DocsAdminSupportRoute
-  '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
+  '/docs/appendix/glossary': typeof DocsAppendixGlossaryRoute
+  '/docs/appendix/platform-comparison': typeof DocsAppendixPlatformComparisonRoute
+  '/docs/architecture/memberships': typeof DocsArchitectureMembershipsRoute
   '/docs/architecture/sitemap': typeof DocsArchitectureSitemapRoute
   '/docs/guidance/phases': typeof DocsGuidancePhasesRoute
   '/docs/guidance/priorities': typeof DocsGuidancePrioritiesRoute
@@ -1053,7 +1073,9 @@ export interface FileRouteTypes {
     | '/docs/admin/settings'
     | '/docs/admin/submissions'
     | '/docs/admin/support'
-    | '/docs/appendix/wordpress'
+    | '/docs/appendix/glossary'
+    | '/docs/appendix/platform-comparison'
+    | '/docs/architecture/memberships'
     | '/docs/architecture/sitemap'
     | '/docs/guidance/phases'
     | '/docs/guidance/priorities'
@@ -1155,7 +1177,9 @@ export interface FileRouteTypes {
     | '/docs/admin/settings'
     | '/docs/admin/submissions'
     | '/docs/admin/support'
-    | '/docs/appendix/wordpress'
+    | '/docs/appendix/glossary'
+    | '/docs/appendix/platform-comparison'
+    | '/docs/architecture/memberships'
     | '/docs/architecture/sitemap'
     | '/docs/guidance/phases'
     | '/docs/guidance/priorities'
@@ -1262,7 +1286,9 @@ export interface FileRouteTypes {
     | '/docs/admin/settings'
     | '/docs/admin/submissions'
     | '/docs/admin/support'
-    | '/docs/appendix/wordpress'
+    | '/docs/appendix/glossary'
+    | '/docs/appendix/platform-comparison'
+    | '/docs/architecture/memberships'
     | '/docs/architecture/sitemap'
     | '/docs/guidance/phases'
     | '/docs/guidance/priorities'
@@ -1345,7 +1371,9 @@ export interface RootRouteChildren {
   DocsAdminSettingsRoute: typeof DocsAdminSettingsRoute
   DocsAdminSubmissionsRoute: typeof DocsAdminSubmissionsRoute
   DocsAdminSupportRoute: typeof DocsAdminSupportRoute
-  DocsAppendixWordpressRoute: typeof DocsAppendixWordpressRoute
+  DocsAppendixGlossaryRoute: typeof DocsAppendixGlossaryRoute
+  DocsAppendixPlatformComparisonRoute: typeof DocsAppendixPlatformComparisonRoute
+  DocsArchitectureMembershipsRoute: typeof DocsArchitectureMembershipsRoute
   DocsArchitectureSitemapRoute: typeof DocsArchitectureSitemapRoute
   DocsGuidancePhasesRoute: typeof DocsGuidancePhasesRoute
   DocsGuidancePrioritiesRoute: typeof DocsGuidancePrioritiesRoute
@@ -1893,11 +1921,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsArchitectureSitemapRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/docs/appendix/wordpress': {
-      id: '/docs/appendix/wordpress'
-      path: '/docs/appendix/wordpress'
-      fullPath: '/docs/appendix/wordpress'
-      preLoaderRoute: typeof DocsAppendixWordpressRouteImport
+    '/docs/architecture/memberships': {
+      id: '/docs/architecture/memberships'
+      path: '/docs/architecture/memberships'
+      fullPath: '/docs/architecture/memberships'
+      preLoaderRoute: typeof DocsArchitectureMembershipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/appendix/platform-comparison': {
+      id: '/docs/appendix/platform-comparison'
+      path: '/docs/appendix/platform-comparison'
+      fullPath: '/docs/appendix/platform-comparison'
+      preLoaderRoute: typeof DocsAppendixPlatformComparisonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/appendix/glossary': {
+      id: '/docs/appendix/glossary'
+      path: '/docs/appendix/glossary'
+      fullPath: '/docs/appendix/glossary'
+      preLoaderRoute: typeof DocsAppendixGlossaryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/admin/support': {
@@ -2290,7 +2332,9 @@ const rootRouteChildren: RootRouteChildren = {
   DocsAdminSettingsRoute: DocsAdminSettingsRoute,
   DocsAdminSubmissionsRoute: DocsAdminSubmissionsRoute,
   DocsAdminSupportRoute: DocsAdminSupportRoute,
-  DocsAppendixWordpressRoute: DocsAppendixWordpressRoute,
+  DocsAppendixGlossaryRoute: DocsAppendixGlossaryRoute,
+  DocsAppendixPlatformComparisonRoute: DocsAppendixPlatformComparisonRoute,
+  DocsArchitectureMembershipsRoute: DocsArchitectureMembershipsRoute,
   DocsArchitectureSitemapRoute: DocsArchitectureSitemapRoute,
   DocsGuidancePhasesRoute: DocsGuidancePhasesRoute,
   DocsGuidancePrioritiesRoute: DocsGuidancePrioritiesRoute,

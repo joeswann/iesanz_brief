@@ -142,14 +142,13 @@ export default function LayoutDocs({ children }: { children?: React.ReactNode })
 
               {isArchitecture && (
                 <SidebarSection title="Architecture">
-                  <SidebarLink to="/docs/architecture">Technical Architecture</SidebarLink>
                   <SidebarLink to="/docs/architecture/sitemap">Sitemap</SidebarLink>
+                  <SidebarLink to="/docs/architecture">Systems</SidebarLink>
+                  <SidebarLink to="/docs/architecture/memberships">Memberships</SidebarLink>
                   <SidebarLink to="/docs/architecture/services">Services</SidebarLink>
                   <div style={{ paddingLeft: '12px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <SidebarLink to="/docs/architecture/services/sanity">Sanity CMS</SidebarLink>
                     <SidebarLink to="/docs/architecture/services/shopify">Shopify</SidebarLink>
-                    <SidebarLink to="/docs/architecture/services/auth0">Auth0</SidebarLink>
-                    <SidebarLink to="/docs/architecture/services/algolia">Algolia</SidebarLink>
                     <SidebarLink to="/docs/architecture/services/klaviyo">Klaviyo</SidebarLink>
                   </div>
                 </SidebarSection>
@@ -194,7 +193,8 @@ export default function LayoutDocs({ children }: { children?: React.ReactNode })
               {isAppendix && (
                 <SidebarSection title="Appendix">
                   <SidebarLink to="/docs/appendix">Overview</SidebarLink>
-                  <SidebarLink to="/docs/appendix/wordpress">Wordpress vs Headless</SidebarLink>
+                  <SidebarLink to="/docs/appendix/glossary">Glossary</SidebarLink>
+                  <SidebarLink to="/docs/appendix/platform-comparison">Platform Comparison</SidebarLink>
                 </SidebarSection>
               )}
 

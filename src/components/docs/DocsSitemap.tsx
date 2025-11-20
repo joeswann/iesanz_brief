@@ -1,12 +1,6 @@
-import { createFileRoute } from '@tanstack/react-router'
-import LayoutDocs from '@/components/layout/docs/LayoutDocs'
-import { docsArchitectureSitemap } from '@/data/data.docs'
 import { styled } from '@linaria/react'
 import { spacing } from '@/styles/styling'
-
-export const Route = createFileRoute('/docs/architecture/sitemap')({
-  component: DocsArchitectureSitemap,
-})
+import { docsArchitectureSitemap } from '@/data/data.docs'
 
 const PageTitle = styled.h1`
   font-size: 32px;
@@ -91,9 +85,9 @@ const LinkItem = styled.li`
   }
 `
 
-function DocsArchitectureSitemap() {
+export default function DocsSitemap() {
   return (
-    <LayoutDocs>
+    <>
       <PageTitle>{docsArchitectureSitemap.title}</PageTitle>
 
       {docsArchitectureSitemap.sections.map((section, i) => (
@@ -115,6 +109,6 @@ function DocsArchitectureSitemap() {
           </Grid>
         </Section>
       ))}
-    </LayoutDocs>
+    </>
   )
 }
