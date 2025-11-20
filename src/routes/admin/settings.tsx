@@ -1,21 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-// Force HMR update
-import LayoutAdmin from '@/components/layout/admin/LayoutAdmin'
-import LofiHeading from '@/components/lofi/LofiHeading'
-import LofiBox from '@/components/lofi/LofiBox'
+import AdminSettingsLayout from '@/components/admin/settings/AdminSettingsLayout'
 
 export const Route = createFileRoute('/admin/settings')({
-    component: AdminSettings,
+    component: AdminSettingsLayout,
 })
-
-function AdminSettings() {
-    return (
-        <LayoutAdmin>
-            <LofiHeading level={1} style={{ marginBottom: '24rem' }}>Settings</LofiHeading>
-            <LofiBox>
-                <p>Global settings placeholder...</p>
-                {/* TODO: Implement settings forms */}
-            </LofiBox>
-        </LayoutAdmin>
-    )
-}

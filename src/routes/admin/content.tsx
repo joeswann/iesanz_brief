@@ -1,20 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import LayoutAdmin from '@/components/layout/admin/LayoutAdmin'
-import LofiHeading from '@/components/lofi/LofiHeading'
-import LofiBox from '@/components/lofi/LofiBox'
+import AdminContentLayout from '@/components/admin/content/AdminContentLayout'
 
 export const Route = createFileRoute('/admin/content')({
-  component: AdminContent,
+  component: AdminContentLayout,
 })
-
-function AdminContent() {
-  return (
-    <LayoutAdmin>
-      <LofiHeading level={1}>Content Management</LofiHeading>
-      <LofiBox>
-        <p>Content management has moved to the Studio.</p>
-        <a href="/studio">Go to Studio</a>
-      </LofiBox>
-    </LayoutAdmin>
-  )
-}

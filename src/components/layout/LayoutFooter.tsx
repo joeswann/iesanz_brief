@@ -58,11 +58,6 @@ const socialLink = css`
   }
 `;
 
-const copyright = css`
-  ${fontSize(0.875)}
-  opacity: 0.5;
-`;
-
 const footerWrapper = css`
   width: 100%;
   margin-top: 10rem;
@@ -70,7 +65,7 @@ const footerWrapper = css`
   padding: 16rem;
 `;
 
-const LayoutFooter: DCI = ({ children }) => {
+const LayoutFooter: DCI = () => {
   return (
     <footer className={footerWrapper}>
       <div className={footerContent}>

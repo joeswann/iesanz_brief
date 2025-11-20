@@ -12,7 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as StoreRouteImport } from './routes/store'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as EventsRouteImport } from './routes/events'
-import { Route as ContactsRouteImport } from './routes/contacts'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ConferencesRouteImport } from './routes/conferences'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as CalendarRouteImport } from './routes/calendar'
@@ -26,12 +26,22 @@ import { Route as DocsIndexRouteImport } from './routes/docs/index'
 import { Route as ChaptersIndexRouteImport } from './routes/chapters/index'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AccountIndexRouteImport } from './routes/account/index'
+import { Route as StudioProductsRouteImport } from './routes/studio/products'
+import { Route as StudioPagesRouteImport } from './routes/studio/pages'
+import { Route as StudioOrdersRouteImport } from './routes/studio/orders'
+import { Route as StudioNewsRouteImport } from './routes/studio/news'
+import { Route as StudioEventsRouteImport } from './routes/studio/events'
+import { Route as StudioCustomersRouteImport } from './routes/studio/customers'
+import { Route as StudioCollectionsRouteImport } from './routes/studio/collections'
+import { Route as StudioAwardsRouteImport } from './routes/studio/awards'
 import { Route as ResourcesResourceIdRouteImport } from './routes/resources/$resourceId'
 import { Route as PagesPageIdRouteImport } from './routes/pages/$pageId'
 import { Route as DocsStudioRouteImport } from './routes/docs/studio'
-import { Route as DocsStructureRouteImport } from './routes/docs/structure'
-import { Route as DocsIntegrationsRouteImport } from './routes/docs/integrations'
-import { Route as DocsFrontendRouteImport } from './routes/docs/frontend'
+import { Route as DocsSitemapRouteImport } from './routes/docs/sitemap'
+import { Route as DocsServicesRouteImport } from './routes/docs/services'
+import { Route as DocsProcessRouteImport } from './routes/docs/process'
+import { Route as DocsBriefRouteImport } from './routes/docs/brief'
+import { Route as DocsArchitectureRouteImport } from './routes/docs/architecture'
 import { Route as DocsAppendixRouteImport } from './routes/docs/appendix'
 import { Route as DocsAdminRouteImport } from './routes/docs/admin'
 import { Route as ChaptersNewsRouteImport } from './routes/chapters/news'
@@ -57,6 +67,7 @@ import { Route as AccountAwardsRouteImport } from './routes/account/awards'
 import { Route as AccountEducationRouteRouteImport } from './routes/account/education/route'
 import { Route as ChaptersChapterIdIndexRouteImport } from './routes/chapters/$chapterId/index'
 import { Route as AccountEducationIndexRouteImport } from './routes/account/education/index'
+import { Route as DocsAppendixWordpressRouteImport } from './routes/docs/appendix/wordpress'
 import { Route as ChaptersChapterIdNewsRouteImport } from './routes/chapters/$chapterId/news'
 import { Route as ChaptersChapterIdGalleryRouteImport } from './routes/chapters/$chapterId/gallery'
 import { Route as ChaptersChapterIdEventsRouteImport } from './routes/chapters/$chapterId/events'
@@ -81,9 +92,9 @@ const EventsRoute = EventsRouteImport.update({
   path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ContactsRoute = ContactsRouteImport.update({
-  id: '/contacts',
-  path: '/contacts',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConferencesRoute = ConferencesRouteImport.update({
@@ -151,6 +162,46 @@ const AccountIndexRoute = AccountIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AccountRouteRoute,
 } as any)
+const StudioProductsRoute = StudioProductsRouteImport.update({
+  id: '/studio/products',
+  path: '/studio/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioPagesRoute = StudioPagesRouteImport.update({
+  id: '/studio/pages',
+  path: '/studio/pages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioOrdersRoute = StudioOrdersRouteImport.update({
+  id: '/studio/orders',
+  path: '/studio/orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioNewsRoute = StudioNewsRouteImport.update({
+  id: '/studio/news',
+  path: '/studio/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioEventsRoute = StudioEventsRouteImport.update({
+  id: '/studio/events',
+  path: '/studio/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioCustomersRoute = StudioCustomersRouteImport.update({
+  id: '/studio/customers',
+  path: '/studio/customers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioCollectionsRoute = StudioCollectionsRouteImport.update({
+  id: '/studio/collections',
+  path: '/studio/collections',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioAwardsRoute = StudioAwardsRouteImport.update({
+  id: '/studio/awards',
+  path: '/studio/awards',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResourcesResourceIdRoute = ResourcesResourceIdRouteImport.update({
   id: '/$resourceId',
   path: '/$resourceId',
@@ -166,19 +217,29 @@ const DocsStudioRoute = DocsStudioRouteImport.update({
   path: '/docs/studio',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DocsStructureRoute = DocsStructureRouteImport.update({
-  id: '/docs/structure',
-  path: '/docs/structure',
+const DocsSitemapRoute = DocsSitemapRouteImport.update({
+  id: '/docs/sitemap',
+  path: '/docs/sitemap',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DocsIntegrationsRoute = DocsIntegrationsRouteImport.update({
-  id: '/docs/integrations',
-  path: '/docs/integrations',
+const DocsServicesRoute = DocsServicesRouteImport.update({
+  id: '/docs/services',
+  path: '/docs/services',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DocsFrontendRoute = DocsFrontendRouteImport.update({
-  id: '/docs/frontend',
-  path: '/docs/frontend',
+const DocsProcessRoute = DocsProcessRouteImport.update({
+  id: '/docs/process',
+  path: '/docs/process',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsBriefRoute = DocsBriefRouteImport.update({
+  id: '/docs/brief',
+  path: '/docs/brief',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsArchitectureRoute = DocsArchitectureRouteImport.update({
+  id: '/docs/architecture',
+  path: '/docs/architecture',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DocsAppendixRoute = DocsAppendixRouteImport.update({
@@ -306,6 +367,11 @@ const AccountEducationIndexRoute = AccountEducationIndexRouteImport.update({
   path: '/',
   getParentRoute: () => AccountEducationRouteRoute,
 } as any)
+const DocsAppendixWordpressRoute = DocsAppendixWordpressRouteImport.update({
+  id: '/wordpress',
+  path: '/wordpress',
+  getParentRoute: () => DocsAppendixRoute,
+} as any)
 const ChaptersChapterIdNewsRoute = ChaptersChapterIdNewsRouteImport.update({
   id: '/news',
   path: '/news',
@@ -358,7 +424,7 @@ export interface FileRoutesByFullPath {
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
   '/conferences': typeof ConferencesRoute
-  '/contacts': typeof ContactsRoute
+  '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRoute
   '/store': typeof StoreRoute
@@ -384,13 +450,23 @@ export interface FileRoutesByFullPath {
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
   '/docs/admin': typeof DocsAdminRoute
-  '/docs/appendix': typeof DocsAppendixRoute
-  '/docs/frontend': typeof DocsFrontendRoute
-  '/docs/integrations': typeof DocsIntegrationsRoute
-  '/docs/structure': typeof DocsStructureRoute
+  '/docs/appendix': typeof DocsAppendixRouteWithChildren
+  '/docs/architecture': typeof DocsArchitectureRoute
+  '/docs/brief': typeof DocsBriefRoute
+  '/docs/process': typeof DocsProcessRoute
+  '/docs/services': typeof DocsServicesRoute
+  '/docs/sitemap': typeof DocsSitemapRoute
   '/docs/studio': typeof DocsStudioRoute
   '/pages/$pageId': typeof PagesPageIdRoute
   '/resources/$resourceId': typeof ResourcesResourceIdRoute
+  '/studio/awards': typeof StudioAwardsRoute
+  '/studio/collections': typeof StudioCollectionsRoute
+  '/studio/customers': typeof StudioCustomersRoute
+  '/studio/events': typeof StudioEventsRoute
+  '/studio/news': typeof StudioNewsRoute
+  '/studio/orders': typeof StudioOrdersRoute
+  '/studio/pages': typeof StudioPagesRoute
+  '/studio/products': typeof StudioProductsRoute
   '/account/': typeof AccountIndexRoute
   '/admin': typeof AdminIndexRoute
   '/chapters': typeof ChaptersIndexRoute
@@ -405,6 +481,7 @@ export interface FileRoutesByFullPath {
   '/chapters/$chapterId/events': typeof ChaptersChapterIdEventsRoute
   '/chapters/$chapterId/gallery': typeof ChaptersChapterIdGalleryRoute
   '/chapters/$chapterId/news': typeof ChaptersChapterIdNewsRoute
+  '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
   '/account/education/': typeof AccountEducationIndexRoute
   '/chapters/$chapterId/': typeof ChaptersChapterIdIndexRoute
 }
@@ -414,7 +491,7 @@ export interface FileRoutesByTo {
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
   '/conferences': typeof ConferencesRoute
-  '/contacts': typeof ContactsRoute
+  '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRoute
   '/store': typeof StoreRoute
@@ -438,13 +515,23 @@ export interface FileRoutesByTo {
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
   '/docs/admin': typeof DocsAdminRoute
-  '/docs/appendix': typeof DocsAppendixRoute
-  '/docs/frontend': typeof DocsFrontendRoute
-  '/docs/integrations': typeof DocsIntegrationsRoute
-  '/docs/structure': typeof DocsStructureRoute
+  '/docs/appendix': typeof DocsAppendixRouteWithChildren
+  '/docs/architecture': typeof DocsArchitectureRoute
+  '/docs/brief': typeof DocsBriefRoute
+  '/docs/process': typeof DocsProcessRoute
+  '/docs/services': typeof DocsServicesRoute
+  '/docs/sitemap': typeof DocsSitemapRoute
   '/docs/studio': typeof DocsStudioRoute
   '/pages/$pageId': typeof PagesPageIdRoute
   '/resources/$resourceId': typeof ResourcesResourceIdRoute
+  '/studio/awards': typeof StudioAwardsRoute
+  '/studio/collections': typeof StudioCollectionsRoute
+  '/studio/customers': typeof StudioCustomersRoute
+  '/studio/events': typeof StudioEventsRoute
+  '/studio/news': typeof StudioNewsRoute
+  '/studio/orders': typeof StudioOrdersRoute
+  '/studio/pages': typeof StudioPagesRoute
+  '/studio/products': typeof StudioProductsRoute
   '/account': typeof AccountIndexRoute
   '/admin': typeof AdminIndexRoute
   '/chapters': typeof ChaptersIndexRoute
@@ -459,6 +546,7 @@ export interface FileRoutesByTo {
   '/chapters/$chapterId/events': typeof ChaptersChapterIdEventsRoute
   '/chapters/$chapterId/gallery': typeof ChaptersChapterIdGalleryRoute
   '/chapters/$chapterId/news': typeof ChaptersChapterIdNewsRoute
+  '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
   '/account/education': typeof AccountEducationIndexRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdIndexRoute
 }
@@ -471,7 +559,7 @@ export interface FileRoutesById {
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
   '/conferences': typeof ConferencesRoute
-  '/contacts': typeof ContactsRoute
+  '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
   '/news': typeof NewsRoute
   '/store': typeof StoreRoute
@@ -497,13 +585,23 @@ export interface FileRoutesById {
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
   '/docs/admin': typeof DocsAdminRoute
-  '/docs/appendix': typeof DocsAppendixRoute
-  '/docs/frontend': typeof DocsFrontendRoute
-  '/docs/integrations': typeof DocsIntegrationsRoute
-  '/docs/structure': typeof DocsStructureRoute
+  '/docs/appendix': typeof DocsAppendixRouteWithChildren
+  '/docs/architecture': typeof DocsArchitectureRoute
+  '/docs/brief': typeof DocsBriefRoute
+  '/docs/process': typeof DocsProcessRoute
+  '/docs/services': typeof DocsServicesRoute
+  '/docs/sitemap': typeof DocsSitemapRoute
   '/docs/studio': typeof DocsStudioRoute
   '/pages/$pageId': typeof PagesPageIdRoute
   '/resources/$resourceId': typeof ResourcesResourceIdRoute
+  '/studio/awards': typeof StudioAwardsRoute
+  '/studio/collections': typeof StudioCollectionsRoute
+  '/studio/customers': typeof StudioCustomersRoute
+  '/studio/events': typeof StudioEventsRoute
+  '/studio/news': typeof StudioNewsRoute
+  '/studio/orders': typeof StudioOrdersRoute
+  '/studio/pages': typeof StudioPagesRoute
+  '/studio/products': typeof StudioProductsRoute
   '/account/': typeof AccountIndexRoute
   '/admin/': typeof AdminIndexRoute
   '/chapters/': typeof ChaptersIndexRoute
@@ -518,6 +616,7 @@ export interface FileRoutesById {
   '/chapters/$chapterId/events': typeof ChaptersChapterIdEventsRoute
   '/chapters/$chapterId/gallery': typeof ChaptersChapterIdGalleryRoute
   '/chapters/$chapterId/news': typeof ChaptersChapterIdNewsRoute
+  '/docs/appendix/wordpress': typeof DocsAppendixWordpressRoute
   '/account/education/': typeof AccountEducationIndexRoute
   '/chapters/$chapterId/': typeof ChaptersChapterIdIndexRoute
 }
@@ -531,7 +630,7 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/cart'
     | '/conferences'
-    | '/contacts'
+    | '/contact'
     | '/events'
     | '/news'
     | '/store'
@@ -558,12 +657,22 @@ export interface FileRouteTypes {
     | '/chapters/news'
     | '/docs/admin'
     | '/docs/appendix'
-    | '/docs/frontend'
-    | '/docs/integrations'
-    | '/docs/structure'
+    | '/docs/architecture'
+    | '/docs/brief'
+    | '/docs/process'
+    | '/docs/services'
+    | '/docs/sitemap'
     | '/docs/studio'
     | '/pages/$pageId'
     | '/resources/$resourceId'
+    | '/studio/awards'
+    | '/studio/collections'
+    | '/studio/customers'
+    | '/studio/events'
+    | '/studio/news'
+    | '/studio/orders'
+    | '/studio/pages'
+    | '/studio/products'
     | '/account/'
     | '/admin'
     | '/chapters'
@@ -578,6 +687,7 @@ export interface FileRouteTypes {
     | '/chapters/$chapterId/events'
     | '/chapters/$chapterId/gallery'
     | '/chapters/$chapterId/news'
+    | '/docs/appendix/wordpress'
     | '/account/education/'
     | '/chapters/$chapterId/'
   fileRoutesByTo: FileRoutesByTo
@@ -587,7 +697,7 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/cart'
     | '/conferences'
-    | '/contacts'
+    | '/contact'
     | '/events'
     | '/news'
     | '/store'
@@ -612,12 +722,22 @@ export interface FileRouteTypes {
     | '/chapters/news'
     | '/docs/admin'
     | '/docs/appendix'
-    | '/docs/frontend'
-    | '/docs/integrations'
-    | '/docs/structure'
+    | '/docs/architecture'
+    | '/docs/brief'
+    | '/docs/process'
+    | '/docs/services'
+    | '/docs/sitemap'
     | '/docs/studio'
     | '/pages/$pageId'
     | '/resources/$resourceId'
+    | '/studio/awards'
+    | '/studio/collections'
+    | '/studio/customers'
+    | '/studio/events'
+    | '/studio/news'
+    | '/studio/orders'
+    | '/studio/pages'
+    | '/studio/products'
     | '/account'
     | '/admin'
     | '/chapters'
@@ -632,6 +752,7 @@ export interface FileRouteTypes {
     | '/chapters/$chapterId/events'
     | '/chapters/$chapterId/gallery'
     | '/chapters/$chapterId/news'
+    | '/docs/appendix/wordpress'
     | '/account/education'
     | '/chapters/$chapterId'
   id:
@@ -643,7 +764,7 @@ export interface FileRouteTypes {
     | '/calendar'
     | '/cart'
     | '/conferences'
-    | '/contacts'
+    | '/contact'
     | '/events'
     | '/news'
     | '/store'
@@ -670,12 +791,22 @@ export interface FileRouteTypes {
     | '/chapters/news'
     | '/docs/admin'
     | '/docs/appendix'
-    | '/docs/frontend'
-    | '/docs/integrations'
-    | '/docs/structure'
+    | '/docs/architecture'
+    | '/docs/brief'
+    | '/docs/process'
+    | '/docs/services'
+    | '/docs/sitemap'
     | '/docs/studio'
     | '/pages/$pageId'
     | '/resources/$resourceId'
+    | '/studio/awards'
+    | '/studio/collections'
+    | '/studio/customers'
+    | '/studio/events'
+    | '/studio/news'
+    | '/studio/orders'
+    | '/studio/pages'
+    | '/studio/products'
     | '/account/'
     | '/admin/'
     | '/chapters/'
@@ -690,6 +821,7 @@ export interface FileRouteTypes {
     | '/chapters/$chapterId/events'
     | '/chapters/$chapterId/gallery'
     | '/chapters/$chapterId/news'
+    | '/docs/appendix/wordpress'
     | '/account/education/'
     | '/chapters/$chapterId/'
   fileRoutesById: FileRoutesById
@@ -702,7 +834,7 @@ export interface RootRouteChildren {
   CalendarRoute: typeof CalendarRoute
   CartRoute: typeof CartRoute
   ConferencesRoute: typeof ConferencesRoute
-  ContactsRoute: typeof ContactsRoute
+  ContactRoute: typeof ContactRoute
   EventsRoute: typeof EventsRoute
   NewsRoute: typeof NewsRoute
   StoreRoute: typeof StoreRoute
@@ -720,12 +852,22 @@ export interface RootRouteChildren {
   ChaptersEventsRoute: typeof ChaptersEventsRoute
   ChaptersNewsRoute: typeof ChaptersNewsRoute
   DocsAdminRoute: typeof DocsAdminRoute
-  DocsAppendixRoute: typeof DocsAppendixRoute
-  DocsFrontendRoute: typeof DocsFrontendRoute
-  DocsIntegrationsRoute: typeof DocsIntegrationsRoute
-  DocsStructureRoute: typeof DocsStructureRoute
+  DocsAppendixRoute: typeof DocsAppendixRouteWithChildren
+  DocsArchitectureRoute: typeof DocsArchitectureRoute
+  DocsBriefRoute: typeof DocsBriefRoute
+  DocsProcessRoute: typeof DocsProcessRoute
+  DocsServicesRoute: typeof DocsServicesRoute
+  DocsSitemapRoute: typeof DocsSitemapRoute
   DocsStudioRoute: typeof DocsStudioRoute
   PagesPageIdRoute: typeof PagesPageIdRoute
+  StudioAwardsRoute: typeof StudioAwardsRoute
+  StudioCollectionsRoute: typeof StudioCollectionsRoute
+  StudioCustomersRoute: typeof StudioCustomersRoute
+  StudioEventsRoute: typeof StudioEventsRoute
+  StudioNewsRoute: typeof StudioNewsRoute
+  StudioOrdersRoute: typeof StudioOrdersRoute
+  StudioPagesRoute: typeof StudioPagesRoute
+  StudioProductsRoute: typeof StudioProductsRoute
   AdminIndexRoute: typeof AdminIndexRoute
   ChaptersIndexRoute: typeof ChaptersIndexRoute
   DocsIndexRoute: typeof DocsIndexRoute
@@ -756,11 +898,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contacts': {
-      id: '/contacts'
-      path: '/contacts'
-      fullPath: '/contacts'
-      preLoaderRoute: typeof ContactsRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/conferences': {
@@ -854,6 +996,62 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AccountIndexRouteImport
       parentRoute: typeof AccountRouteRoute
     }
+    '/studio/products': {
+      id: '/studio/products'
+      path: '/studio/products'
+      fullPath: '/studio/products'
+      preLoaderRoute: typeof StudioProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio/pages': {
+      id: '/studio/pages'
+      path: '/studio/pages'
+      fullPath: '/studio/pages'
+      preLoaderRoute: typeof StudioPagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio/orders': {
+      id: '/studio/orders'
+      path: '/studio/orders'
+      fullPath: '/studio/orders'
+      preLoaderRoute: typeof StudioOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio/news': {
+      id: '/studio/news'
+      path: '/studio/news'
+      fullPath: '/studio/news'
+      preLoaderRoute: typeof StudioNewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio/events': {
+      id: '/studio/events'
+      path: '/studio/events'
+      fullPath: '/studio/events'
+      preLoaderRoute: typeof StudioEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio/customers': {
+      id: '/studio/customers'
+      path: '/studio/customers'
+      fullPath: '/studio/customers'
+      preLoaderRoute: typeof StudioCustomersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio/collections': {
+      id: '/studio/collections'
+      path: '/studio/collections'
+      fullPath: '/studio/collections'
+      preLoaderRoute: typeof StudioCollectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio/awards': {
+      id: '/studio/awards'
+      path: '/studio/awards'
+      fullPath: '/studio/awards'
+      preLoaderRoute: typeof StudioAwardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/resources/$resourceId': {
       id: '/resources/$resourceId'
       path: '/$resourceId'
@@ -875,25 +1073,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DocsStudioRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/docs/structure': {
-      id: '/docs/structure'
-      path: '/docs/structure'
-      fullPath: '/docs/structure'
-      preLoaderRoute: typeof DocsStructureRouteImport
+    '/docs/sitemap': {
+      id: '/docs/sitemap'
+      path: '/docs/sitemap'
+      fullPath: '/docs/sitemap'
+      preLoaderRoute: typeof DocsSitemapRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/docs/integrations': {
-      id: '/docs/integrations'
-      path: '/docs/integrations'
-      fullPath: '/docs/integrations'
-      preLoaderRoute: typeof DocsIntegrationsRouteImport
+    '/docs/services': {
+      id: '/docs/services'
+      path: '/docs/services'
+      fullPath: '/docs/services'
+      preLoaderRoute: typeof DocsServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/docs/frontend': {
-      id: '/docs/frontend'
-      path: '/docs/frontend'
-      fullPath: '/docs/frontend'
-      preLoaderRoute: typeof DocsFrontendRouteImport
+    '/docs/process': {
+      id: '/docs/process'
+      path: '/docs/process'
+      fullPath: '/docs/process'
+      preLoaderRoute: typeof DocsProcessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/brief': {
+      id: '/docs/brief'
+      path: '/docs/brief'
+      fullPath: '/docs/brief'
+      preLoaderRoute: typeof DocsBriefRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/architecture': {
+      id: '/docs/architecture'
+      path: '/docs/architecture'
+      fullPath: '/docs/architecture'
+      preLoaderRoute: typeof DocsArchitectureRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/docs/appendix': {
@@ -1071,6 +1283,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AccountEducationIndexRouteImport
       parentRoute: typeof AccountEducationRouteRoute
     }
+    '/docs/appendix/wordpress': {
+      id: '/docs/appendix/wordpress'
+      path: '/wordpress'
+      fullPath: '/docs/appendix/wordpress'
+      preLoaderRoute: typeof DocsAppendixWordpressRouteImport
+      parentRoute: typeof DocsAppendixRoute
+    }
     '/chapters/$chapterId/news': {
       id: '/chapters/$chapterId/news'
       path: '/news'
@@ -1210,6 +1429,18 @@ const ChaptersChapterIdRouteChildren: ChaptersChapterIdRouteChildren = {
 const ChaptersChapterIdRouteWithChildren =
   ChaptersChapterIdRoute._addFileChildren(ChaptersChapterIdRouteChildren)
 
+interface DocsAppendixRouteChildren {
+  DocsAppendixWordpressRoute: typeof DocsAppendixWordpressRoute
+}
+
+const DocsAppendixRouteChildren: DocsAppendixRouteChildren = {
+  DocsAppendixWordpressRoute: DocsAppendixWordpressRoute,
+}
+
+const DocsAppendixRouteWithChildren = DocsAppendixRoute._addFileChildren(
+  DocsAppendixRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccountRouteRoute: AccountRouteRouteWithChildren,
@@ -1218,7 +1449,7 @@ const rootRouteChildren: RootRouteChildren = {
   CalendarRoute: CalendarRoute,
   CartRoute: CartRoute,
   ConferencesRoute: ConferencesRoute,
-  ContactsRoute: ContactsRoute,
+  ContactRoute: ContactRoute,
   EventsRoute: EventsRoute,
   NewsRoute: NewsRoute,
   StoreRoute: StoreRoute,
@@ -1236,12 +1467,22 @@ const rootRouteChildren: RootRouteChildren = {
   ChaptersEventsRoute: ChaptersEventsRoute,
   ChaptersNewsRoute: ChaptersNewsRoute,
   DocsAdminRoute: DocsAdminRoute,
-  DocsAppendixRoute: DocsAppendixRoute,
-  DocsFrontendRoute: DocsFrontendRoute,
-  DocsIntegrationsRoute: DocsIntegrationsRoute,
-  DocsStructureRoute: DocsStructureRoute,
+  DocsAppendixRoute: DocsAppendixRouteWithChildren,
+  DocsArchitectureRoute: DocsArchitectureRoute,
+  DocsBriefRoute: DocsBriefRoute,
+  DocsProcessRoute: DocsProcessRoute,
+  DocsServicesRoute: DocsServicesRoute,
+  DocsSitemapRoute: DocsSitemapRoute,
   DocsStudioRoute: DocsStudioRoute,
   PagesPageIdRoute: PagesPageIdRoute,
+  StudioAwardsRoute: StudioAwardsRoute,
+  StudioCollectionsRoute: StudioCollectionsRoute,
+  StudioCustomersRoute: StudioCustomersRoute,
+  StudioEventsRoute: StudioEventsRoute,
+  StudioNewsRoute: StudioNewsRoute,
+  StudioOrdersRoute: StudioOrdersRoute,
+  StudioPagesRoute: StudioPagesRoute,
+  StudioProductsRoute: StudioProductsRoute,
   AdminIndexRoute: AdminIndexRoute,
   ChaptersIndexRoute: ChaptersIndexRoute,
   DocsIndexRoute: DocsIndexRoute,

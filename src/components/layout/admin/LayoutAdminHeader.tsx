@@ -26,16 +26,19 @@ const userSection = css`
   ${fontSize(0.9)}
 `;
 
-const LayoutAdminHeader: DCI<{ title?: string }> = ({ title = "IESANZ Admin" }) => {
+const LayoutAdminHeader: DCI<{ title?: string; subMenu?: React.ReactNode }> = ({ title = "IESANZ Admin", subMenu }) => {
   return (
-    <header className={header}>
-      <a href="/admin" className={logo}>{title}</a>
-      <div className={userSection}>
-        <span>{user.name}</span>
-        <span>|</span>
-        <a href="/" style={{ color: 'inherit' }}>Back to Site</a>
-      </div>
-    </header>
+    <>
+      <header className={header}>
+        <a href="/admin" className={logo}>{title}</a>
+        <div className={userSection}>
+          <span>{user.name}</span>
+          <span>|</span>
+          <a href="/" style={{ color: 'inherit' }}>Back to Site</a>
+        </div>
+      </header>
+      {subMenu}
+    </>
   );
 };
 

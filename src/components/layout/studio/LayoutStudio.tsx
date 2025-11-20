@@ -24,8 +24,25 @@ const StudioSidebar: DCI = () => {
         <SidebarContainer>
             <SidebarSection title="Studio Menu">
                 <SidebarLink to="/studio">Overview</SidebarLink>
-                <SidebarLink href="https://sanity.io" target="_blank">Sanity CMS</SidebarLink>
-                <SidebarLink href="https://shopify.com" target="_blank">Shopify Store</SidebarLink>
+            </SidebarSection>
+
+            <SidebarSection title="Content (CMS)">
+                <SidebarLink to="/studio/news">News</SidebarLink>
+                <SidebarLink to="/studio/events">Events</SidebarLink>
+                <SidebarLink to="/studio/awards">Awards</SidebarLink>
+                <SidebarLink to="/studio/pages">Pages</SidebarLink>
+            </SidebarSection>
+
+            <SidebarSection title="Store (Shopify)">
+                <SidebarLink to="/studio/products">Products</SidebarLink>
+                <SidebarLink to="/studio/collections">Collections</SidebarLink>
+                <SidebarLink to="/studio/orders">Orders</SidebarLink>
+                <SidebarLink to="/studio/customers">Customers</SidebarLink>
+            </SidebarSection>
+
+            <SidebarSection title="External Tools">
+                <SidebarLink href="https://sanity.io" target="_blank">Sanity Dashboard</SidebarLink>
+                <SidebarLink href="https://shopify.com" target="_blank">Shopify Admin</SidebarLink>
             </SidebarSection>
         </SidebarContainer>
     );
