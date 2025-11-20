@@ -1,5 +1,4 @@
 import { useLocation, Link } from "@tanstack/react-router";
-import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
 import LofiImage from "@/components/lofi/LofiImage";
 import LofiHeading from "@/components/lofi/LofiHeading";
@@ -105,11 +104,16 @@ const overviewCard = css`
   }
 `;
 
-const AwardsLayout: DCI = () => {
+interface AwardsLayoutProps {
+  year?: string;
+  category?: string;
+}
+
+const AwardsLayout: React.FC<AwardsLayoutProps> = ({ year, category }) => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const yearParam = searchParams.get("year");
-  const categoryParam = searchParams.get("category");
+  const yearParam = year || searchParams.get("year");
+  const categoryParam = category || searchParams.get("category");
 
   const selectedEvent = yearParam
     ? awardsEvents.find(e => e.year.toString() === yearParam) || awardsEvents[0]
@@ -144,8 +148,9 @@ const AwardsLayout: DCI = () => {
               {selectedEvent.categories.map(category => (
                 <Link
                   key={category.id}
-                  to="/awards"
-                  search={{ year: selectedEvent.year, category: category.id }}
+                  to="/awards/$year"
+                  params={{ year: selectedEvent.year.toString() }}
+                  search={{ category: category.id }}
                   className={overviewCard}
                 >
                   <LofiHeading level={3}>{category.title}</LofiHeading>

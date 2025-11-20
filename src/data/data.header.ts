@@ -1,4 +1,5 @@
 import { chapters } from "./data.chapters";
+import { user } from "./data.user";
 
 import { awardsEvents } from "./data.awards";
 import { conferences } from "./data.conferences";
@@ -9,9 +10,9 @@ export const links = [
   ["Events", "/events"],
   ["Conferences", "/conferences/conf-2026"],
   ["Awards", "/awards"],
-  ["Chapters", "/chapters"],
-  ["Store", "/store"],
+  ["Chapters", `/chapters/${user.chapter.slug}`],
   ["Resources", "/resources"],
+  ["Store", "/store"],
 ] as [string, string][];
 
 export const account = [
@@ -33,11 +34,11 @@ export const submenus: Record<string, [string, string][]> = {
   "/awards": [
     ...awardsEvents
       .filter((evt) => evt.year === 2026)
-      .map((evt) => [evt.title, `/awards?year=${evt.year}`] as [string, string]),
+      .map((evt) => [evt.title, `/awards/${evt.year}`] as [string, string]),
     ...awardsEvents
       .filter((evt) => evt.year !== 2026)
       .sort((a, b) => b.year - a.year)
-      .map((evt) => [evt.year.toString(), `/awards?year=${evt.year}`] as [string, string]),
+      .map((evt) => [evt.year.toString(), `/awards/${evt.year}`] as [string, string]),
   ],
   "/conferences/conf-2026": [
     ...conferences
@@ -49,7 +50,6 @@ export const submenus: Record<string, [string, string][]> = {
       .map((c) => [c.year.toString(), `/conferences/${c.id}`] as [string, string]),
   ],
   "/chapters": [
-    ["All Chapters", "/chapters"],
     ...chapters.map((c) => [c.name, `/chapters/${c.slug}`] as [string, string]),
   ],
   "/store": [

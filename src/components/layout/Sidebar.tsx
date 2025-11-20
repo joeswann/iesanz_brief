@@ -75,14 +75,16 @@ interface SidebarLinkProps {
     exact?: boolean;
     target?: string;
     search?: Record<string, any>;
+    params?: Record<string, any>;
 }
 
-export const SidebarLink: DCI<SidebarLinkProps> = ({ to, href, onClick, isActive, children, exact, target, search }) => {
+export const SidebarLink: DCI<SidebarLinkProps> = ({ to, href, onClick, isActive, children, exact, target, search, params }) => {
     if (to) {
         return (
             <Link
                 to={to}
                 search={search}
+                params={params}
                 className={cx(linkStyles, isActive && activeLink)}
                 activeProps={{ className: activeLink }}
                 activeOptions={exact ? { exact: true } : undefined}

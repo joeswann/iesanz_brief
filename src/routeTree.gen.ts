@@ -23,7 +23,6 @@ import { Route as StudioIndexRouteImport } from './routes/studio/index'
 import { Route as ResourcesIndexRouteImport } from './routes/resources/index'
 import { Route as DocsIndexRouteImport } from './routes/docs/index'
 import { Route as ConferencesIndexRouteImport } from './routes/conferences/index'
-import { Route as ChaptersIndexRouteImport } from './routes/chapters/index'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AccountIndexRouteImport } from './routes/account/index'
 import { Route as StudioProductsRouteImport } from './routes/studio/products'
@@ -43,6 +42,7 @@ import { Route as ConferencesConferenceIdRouteImport } from './routes/conference
 import { Route as ChaptersNewsRouteImport } from './routes/chapters/news'
 import { Route as ChaptersEventsRouteImport } from './routes/chapters/events'
 import { Route as ChaptersChapterIdRouteImport } from './routes/chapters/$chapterId'
+import { Route as AwardsYearRouteImport } from './routes/awards/$year'
 import { Route as AdminSupportRouteImport } from './routes/admin/support'
 import { Route as AdminSubmissionsRouteImport } from './routes/admin/submissions'
 import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
@@ -185,11 +185,6 @@ const ConferencesIndexRoute = ConferencesIndexRouteImport.update({
   path: '/conferences/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ChaptersIndexRoute = ChaptersIndexRouteImport.update({
-  id: '/chapters/',
-  path: '/chapters/',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AdminIndexRoute = AdminIndexRouteImport.update({
   id: '/admin/',
   path: '/admin/',
@@ -284,6 +279,11 @@ const ChaptersChapterIdRoute = ChaptersChapterIdRouteImport.update({
   id: '/chapters/$chapterId',
   path: '/chapters/$chapterId',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AwardsYearRoute = AwardsYearRouteImport.update({
+  id: '/$year',
+  path: '/$year',
+  getParentRoute: () => AwardsRoute,
 } as any)
 const AdminSupportRoute = AdminSupportRouteImport.update({
   id: '/admin/support',
@@ -661,7 +661,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/account': typeof AccountRouteRouteWithChildren
   '/resources': typeof ResourcesRouteRouteWithChildren
-  '/awards': typeof AwardsRoute
+  '/awards': typeof AwardsRouteWithChildren
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
@@ -686,6 +686,7 @@ export interface FileRoutesByFullPath {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/submissions': typeof AdminSubmissionsRoute
   '/admin/support': typeof AdminSupportRoute
+  '/awards/$year': typeof AwardsYearRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdRouteWithChildren
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
@@ -705,7 +706,6 @@ export interface FileRoutesByFullPath {
   '/studio/products': typeof StudioProductsRoute
   '/account/': typeof AccountIndexRoute
   '/admin': typeof AdminIndexRoute
-  '/chapters': typeof ChaptersIndexRoute
   '/conferences': typeof ConferencesIndexRoute
   '/docs': typeof DocsIndexRoute
   '/resources/': typeof ResourcesIndexRoute
@@ -766,7 +766,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/awards': typeof AwardsRoute
+  '/awards': typeof AwardsRouteWithChildren
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
@@ -790,6 +790,7 @@ export interface FileRoutesByTo {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/submissions': typeof AdminSubmissionsRoute
   '/admin/support': typeof AdminSupportRoute
+  '/awards/$year': typeof AwardsYearRoute
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
   '/docs/contents': typeof DocsContentsRoute
@@ -807,7 +808,6 @@ export interface FileRoutesByTo {
   '/studio/products': typeof StudioProductsRoute
   '/account': typeof AccountIndexRoute
   '/admin': typeof AdminIndexRoute
-  '/chapters': typeof ChaptersIndexRoute
   '/conferences': typeof ConferencesIndexRoute
   '/docs': typeof DocsIndexRoute
   '/resources': typeof ResourcesIndexRoute
@@ -871,7 +871,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/account': typeof AccountRouteRouteWithChildren
   '/resources': typeof ResourcesRouteRouteWithChildren
-  '/awards': typeof AwardsRoute
+  '/awards': typeof AwardsRouteWithChildren
   '/calendar': typeof CalendarRoute
   '/cart': typeof CartRoute
   '/contact': typeof ContactRoute
@@ -896,6 +896,7 @@ export interface FileRoutesById {
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/submissions': typeof AdminSubmissionsRoute
   '/admin/support': typeof AdminSupportRoute
+  '/awards/$year': typeof AwardsYearRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdRouteWithChildren
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
@@ -915,7 +916,6 @@ export interface FileRoutesById {
   '/studio/products': typeof StudioProductsRoute
   '/account/': typeof AccountIndexRoute
   '/admin/': typeof AdminIndexRoute
-  '/chapters/': typeof ChaptersIndexRoute
   '/conferences/': typeof ConferencesIndexRoute
   '/docs/': typeof DocsIndexRoute
   '/resources/': typeof ResourcesIndexRoute
@@ -1005,6 +1005,7 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/submissions'
     | '/admin/support'
+    | '/awards/$year'
     | '/chapters/$chapterId'
     | '/chapters/events'
     | '/chapters/news'
@@ -1024,7 +1025,6 @@ export interface FileRouteTypes {
     | '/studio/products'
     | '/account/'
     | '/admin'
-    | '/chapters'
     | '/conferences'
     | '/docs'
     | '/resources/'
@@ -1109,6 +1109,7 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/submissions'
     | '/admin/support'
+    | '/awards/$year'
     | '/chapters/events'
     | '/chapters/news'
     | '/docs/contents'
@@ -1126,7 +1127,6 @@ export interface FileRouteTypes {
     | '/studio/products'
     | '/account'
     | '/admin'
-    | '/chapters'
     | '/conferences'
     | '/docs'
     | '/resources'
@@ -1214,6 +1214,7 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/admin/submissions'
     | '/admin/support'
+    | '/awards/$year'
     | '/chapters/$chapterId'
     | '/chapters/events'
     | '/chapters/news'
@@ -1233,7 +1234,6 @@ export interface FileRouteTypes {
     | '/studio/products'
     | '/account/'
     | '/admin/'
-    | '/chapters/'
     | '/conferences/'
     | '/docs/'
     | '/resources/'
@@ -1297,7 +1297,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AccountRouteRoute: typeof AccountRouteRouteWithChildren
   ResourcesRouteRoute: typeof ResourcesRouteRouteWithChildren
-  AwardsRoute: typeof AwardsRoute
+  AwardsRoute: typeof AwardsRouteWithChildren
   CalendarRoute: typeof CalendarRoute
   CartRoute: typeof CartRoute
   ContactRoute: typeof ContactRoute
@@ -1330,7 +1330,6 @@ export interface RootRouteChildren {
   StudioPagesRoute: typeof StudioPagesRoute
   StudioProductsRoute: typeof StudioProductsRoute
   AdminIndexRoute: typeof AdminIndexRoute
-  ChaptersIndexRoute: typeof ChaptersIndexRoute
   ConferencesIndexRoute: typeof ConferencesIndexRoute
   DocsIndexRoute: typeof DocsIndexRoute
   StudioIndexRoute: typeof StudioIndexRoute
@@ -1474,13 +1473,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConferencesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/chapters/': {
-      id: '/chapters/'
-      path: '/chapters'
-      fullPath: '/chapters'
-      preLoaderRoute: typeof ChaptersIndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/admin/': {
       id: '/admin/'
       path: '/admin'
@@ -1613,6 +1605,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/chapters/$chapterId'
       preLoaderRoute: typeof ChaptersChapterIdRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/awards/$year': {
+      id: '/awards/$year'
+      path: '/$year'
+      fullPath: '/awards/$year'
+      preLoaderRoute: typeof AwardsYearRouteImport
+      parentRoute: typeof AwardsRoute
     }
     '/admin/support': {
       id: '/admin/support'
@@ -2175,6 +2174,17 @@ const ResourcesRouteRouteWithChildren = ResourcesRouteRoute._addFileChildren(
   ResourcesRouteRouteChildren,
 )
 
+interface AwardsRouteChildren {
+  AwardsYearRoute: typeof AwardsYearRoute
+}
+
+const AwardsRouteChildren: AwardsRouteChildren = {
+  AwardsYearRoute: AwardsYearRoute,
+}
+
+const AwardsRouteWithChildren =
+  AwardsRoute._addFileChildren(AwardsRouteChildren)
+
 interface NewsRouteChildren {
   NewsSlugRoute: typeof NewsSlugRoute
 }
@@ -2232,7 +2242,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AccountRouteRoute: AccountRouteRouteWithChildren,
   ResourcesRouteRoute: ResourcesRouteRouteWithChildren,
-  AwardsRoute: AwardsRoute,
+  AwardsRoute: AwardsRouteWithChildren,
   CalendarRoute: CalendarRoute,
   CartRoute: CartRoute,
   ContactRoute: ContactRoute,
@@ -2265,7 +2275,6 @@ const rootRouteChildren: RootRouteChildren = {
   StudioPagesRoute: StudioPagesRoute,
   StudioProductsRoute: StudioProductsRoute,
   AdminIndexRoute: AdminIndexRoute,
-  ChaptersIndexRoute: ChaptersIndexRoute,
   ConferencesIndexRoute: ConferencesIndexRoute,
   DocsIndexRoute: DocsIndexRoute,
   StudioIndexRoute: StudioIndexRoute,

@@ -14,9 +14,9 @@ const AwardsSidebar: DCI<AwardsSidebarProps> = ({ selectedEvent }) => {
     return (
         <SidebarContainer>
             <SidebarSection title="Categories">
-                <SidebarLink href={`/awards?year=${selectedEvent.year}`}>Overview</SidebarLink>
+                <SidebarLink to="/awards/$year" params={{ year: selectedEvent.year.toString() }}>Overview</SidebarLink>
                 {selectedEvent.categories.map((category) => (
-                    <SidebarLink key={category.id} href={`/awards?year=${selectedEvent.year}&category=${category.id}`}>
+                    <SidebarLink key={category.id} to="/awards/$year" params={{ year: selectedEvent.year.toString() }} search={{ category: category.id }}>
                         {category.title}
                     </SidebarLink>
                 ))}

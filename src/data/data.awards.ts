@@ -28,6 +28,7 @@ export const awardsEvents: AwardsEvent[] = [
         id: "evt-2025",
         title: "2025 IESANZ Lighting Design Awards",
         year: 2025,
+        description: "The 2025 IESANZ Lighting Design Awards recognize and celebrate the incredible talent within our lighting community. This year's entries showcase a diverse range of innovative and sustainable lighting solutions that enhance our built environment.",
         categories: [
             {
                 id: "cat-excellence",
