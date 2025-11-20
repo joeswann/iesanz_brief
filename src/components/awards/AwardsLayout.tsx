@@ -1,3 +1,4 @@
+import { useLocation } from "@tanstack/react-router";
 import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
 import LofiImage from "@/components/lofi/LofiImage";
@@ -7,7 +8,6 @@ import { LofiButton } from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
 import { awardsEvents } from "@/data/data.awards";
 import AwardCard from "@/components/awards/AwardCard";
-import { useState } from "react";
 import SidebarLayout from "@/components/layout/SidebarLayout";
 import AwardsSidebar from "./AwardsSidebar";
 
@@ -66,15 +66,19 @@ const viewProjectButton = css`
 `;
 
 const AwardsLayout: DCI = () => {
-  const [selectedEventId, setSelectedEventId] = useState(awardsEvents[0].id);
-  const selectedEvent = awardsEvents.find(e => e.id === selectedEventId) || awardsEvents[0];
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const yearParam = searchParams.get("year");
+
+  const selectedEvent = yearParam
+    ? awardsEvents.find(e => e.year.toString() === yearParam) || awardsEvents[0]
+    : awardsEvents[0];
 
   return (
     <SidebarLayout
       sidebar={
         <AwardsSidebar
-          selectedEventId={selectedEventId}
-          onSelectEvent={setSelectedEventId}
+          selectedEvent={selectedEvent}
         />
       }
     >
@@ -88,13 +92,13 @@ const AwardsLayout: DCI = () => {
           const others = category.entries.filter(e => e.status !== "Winner");
 
           return (
-            <section key={category.id} className={categorySection}>
+            <section key={category.id} id={category.id} className={categorySection}>
               <div className={categoryHeader}>
                 <LofiHeading level={2}>{category.title}</LofiHeading>
               </div>
 
               {winner && (
-                <div className={winnerShowcase}>
+                <div id={winner.id} className={winnerShowcase}>
                   <LofiImage ratio={16 / 9} label="Winner" />
                   <div>
                     <div className={winnerLabel}>

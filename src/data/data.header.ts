@@ -1,5 +1,7 @@
 import { chapters } from "./data.chapters";
 
+import { awardsEvents } from "./data.awards";
+
 export const links = [
   ["Home", "/"],
   ["News", "/news"],
@@ -19,19 +21,22 @@ export const account = [
 export const submenus: Record<string, [string, string][]> = {
   "/news": [
     ["Latest News", "/news"],
-    ["Press Releases", "/news/press"],
-    ["Industry Updates", "/news/industry"],
+    ["Featured News", "/news/featured"],
+    ["Archived News", "/news/archived"],
   ],
   "/events": [
     ["Upcoming Events", "/events"],
+    ["Past Events", "/events/past"],
     ["Calendar", "/calendar"],
-    ["Webinars", "/events/webinars"],
   ],
   "/awards": [
-    ["Awards Home", "/awards"],
-    ["Submit Entry", "/awards/submit"],
-    ["Past Winners", "/awards/winners"],
-    ["Gala Dinner", "/awards/gala"],
+    ...awardsEvents
+      .filter((evt) => evt.year === 2026)
+      .map((evt) => [evt.title, `/awards?year=${evt.year}`] as [string, string]),
+    ...awardsEvents
+      .filter((evt) => evt.year !== 2026)
+      .sort((a, b) => b.year - a.year)
+      .map((evt) => [evt.year.toString(), `/awards?year=${evt.year}`] as [string, string]),
   ],
   "/conferences": [
     ["Conferences Home", "/conferences"],

@@ -126,4 +126,16 @@ export const awardsEvents: AwardsEvent[] = [
             },
         ],
     },
+    {
+        id: "evt-2026",
+        title: "2026 IESANZ Lighting Design Awards",
+        year: 2026,
+        categories: [
+            {
+                id: "cat-2026-open",
+                title: "Open Category",
+                entries: [],
+            }
+        ],
+    },
 ];

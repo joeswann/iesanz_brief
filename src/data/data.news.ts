@@ -6,7 +6,7 @@ export interface NewsItem {
     chapter?: string;
     summary: string;
     imageLabel: string;
-    isPopular?: boolean;
+    isFeatured?: boolean;
     isArchived?: boolean;
 }
 
@@ -28,7 +28,7 @@ export const newsData: NewsItem[] = [
         summary:
             "The Illuminating Engineering Society of Australia and New Zealand is proud to announce the winners of the 2025 Lighting Design Awards.",
         imageLabel: "Awards Night",
-        isPopular: true,
+        isFeatured: true,
     },
     {
         id: "2",
@@ -49,7 +49,7 @@ export const newsData: NewsItem[] = [
         summary:
             "Join us for a hands-on workshop exploring the latest in sustainable lighting design and technology.",
         imageLabel: "Workshop",
-        isPopular: true,
+        isFeatured: true,
     },
     {
         id: "4",
@@ -107,6 +107,6 @@ export const newsData: NewsItem[] = [
         summary:
             "Important updates regarding membership tiers and benefits for the upcoming year.",
         imageLabel: "Membership",
-        isPopular: true,
+        isFeatured: true,
     },
 ];

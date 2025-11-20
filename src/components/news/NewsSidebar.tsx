@@ -1,16 +1,15 @@
 import { DCI } from "@/types/dci";
 import { SidebarContainer, SidebarLink, SidebarSection } from "@/components/layout/Sidebar";
-import { submenus } from "@/data/data.header";
+import { categories } from "@/data/data.news";
 
 const NewsSidebar: DCI = () => {
-    const links = submenus["/news"] || [];
 
     return (
         <SidebarContainer>
-            <SidebarSection title="News">
-                {links.map(([label, url]) => (
-                    <SidebarLink key={url} to={url}>
-                        {label}
+            <SidebarSection title="Categories">
+                {categories.map((category) => (
+                    <SidebarLink key={category} to={`/news?category=${encodeURIComponent(category)}`}>
+                        {category}
                     </SidebarLink>
                 ))}
             </SidebarSection>

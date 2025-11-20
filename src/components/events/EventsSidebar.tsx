@@ -1,16 +1,22 @@
 import { DCI } from "@/types/dci";
 import { SidebarContainer, SidebarLink, SidebarSection } from "@/components/layout/Sidebar";
-import { submenus } from "@/data/data.header";
+
+const eventTypes = [
+    "All Events",
+    "Conference",
+    "Chapter Event",
+    "Webinar",
+    "Award",
+    "Workshop"
+];
 
 const EventsSidebar: DCI = () => {
-    const links = submenus["/events"] || [];
-
     return (
         <SidebarContainer>
-            <SidebarSection title="Events">
-                {links.map(([label, url]) => (
-                    <SidebarLink key={url} to={url}>
-                        {label}
+            <SidebarSection title="Event Types">
+                {eventTypes.map((type) => (
+                    <SidebarLink key={type} to={`/events?type=${type.toLowerCase().replace(' ', '-')}`}>
+                        {type}
                     </SidebarLink>
                 ))}
             </SidebarSection>

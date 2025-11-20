@@ -1,75 +1,43 @@
 import { DCI } from "@/types/dci";
 import { SidebarContainer, SidebarLink, SidebarSection } from "@/components/layout/Sidebar";
-import { submenus } from "@/data/data.header";
-import { css, cx } from "@linaria/core";
-import { fontSize } from "@/styles/styling";
-import LofiBox from "@/components/lofi/LofiBox";
-import LofiHeading from "@/components/lofi/LofiHeading";
-import LofiText from "@/components/lofi/LofiText";
-import { LofiButton } from "@/components/lofi/LofiButton";
-import { awardsEvents } from "@/data/data.awards";
 
-const eventButton = css`
-  ${fontSize(1)}
-  text-decoration: none;
-  color: var(--foreground);
-  padding: 8rem 0;
-  border-bottom: 1px solid var(--light-grey);
-  background: none;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  text-align: left;
-  cursor: pointer;
 
-  &:hover {
-    opacity: 0.7;
-    font-weight: bold;
-  }
-`;
-
-const activeEventButton = css`
-  opacity: 0.7;
-  font-weight: bold;
-`;
+import { AwardsEvent } from "@/data/data.awards";
 
 interface AwardsSidebarProps {
-    selectedEventId: number;
-    onSelectEvent: (id: number) => void;
+    selectedEvent: AwardsEvent;
 }
 
-const AwardsSidebar: DCI<AwardsSidebarProps> = ({ selectedEventId, onSelectEvent }) => {
-    const links = submenus["/awards"] || [];
+const AwardsSidebar: DCI<AwardsSidebarProps> = ({ selectedEvent }) => {
+    const hasWinners = selectedEvent.categories.some(c => c.entries.some(e => e.status === "Winner"));
+    const winners = selectedEvent.categories.flatMap(c => c.entries.filter(e => e.status === "Winner"));
 
     return (
         <SidebarContainer>
-            <SidebarSection title="Awards">
-                {links.map(([label, url]) => (
-                    <SidebarLink key={url} to={url}>
-                        {label}
+            <SidebarSection title="Categories">
+                {selectedEvent.categories.map((category) => (
+                    <SidebarLink key={category.id} href={`#${category.id}`}>
+                        {category.title}
                     </SidebarLink>
                 ))}
             </SidebarSection>
 
-            <SidebarSection title="Awards Archive">
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12rem' }}>
-                    {awardsEvents.map((evt) => (
-                        <button
-                            key={evt.id}
-                            onClick={() => onSelectEvent(evt.id)}
-                            className={cx(eventButton, selectedEventId === evt.id && activeEventButton)}
-                        >
-                            {evt.year} Awards
-                        </button>
+            {hasWinners && (
+                <SidebarSection title="Winners">
+                    {winners.map((winner) => (
+                        <SidebarLink key={winner.id} href={`#${winner.id}`}>
+                            {winner.projectName}
+                        </SidebarLink>
                     ))}
-                </div>
-            </SidebarSection>
+                </SidebarSection>
+            )}
 
-            <LofiBox>
-                <LofiHeading level={4}>Enter Awards</LofiHeading>
-                <LofiText lines={2} />
-                <LofiButton variant="secondary">Submit Entry</LofiButton>
-            </LofiBox>
+            {!hasWinners && (
+                <SidebarSection title="Actions">
+                    <SidebarLink to="/awards/enter">Enter Awards</SidebarLink>
+                    <SidebarLink to="/awards/tickets">Buy Tickets</SidebarLink>
+                </SidebarSection>
+            )}
         </SidebarContainer>
     );
 };

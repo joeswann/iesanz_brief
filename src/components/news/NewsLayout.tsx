@@ -2,7 +2,8 @@ import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
 import { LofiButton } from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
-import { newsData, categories } from "@/data/data.news";
+import { newsData } from "@/data/data.news";
+import { chapters } from "@/data/data.chapters";
 import NewsCard from "@/components/news/NewsCard";
 import SidebarLayout from "@/components/layout/SidebarLayout";
 import NewsSidebar from "./NewsSidebar";
@@ -26,9 +27,12 @@ const NewsLayout: DCI = () => {
     <SidebarLayout sidebar={<NewsSidebar />}>
       <div className={content}>
         <div className={filters}>
-          <LofiButton variant="primary">Latest</LofiButton>
-          <LofiButton variant="secondary">Popular</LofiButton>
-          <LofiButton variant="secondary">Archived</LofiButton>
+          <LofiButton variant="primary">All Chapters</LofiButton>
+          {chapters.map((chapter) => (
+            <LofiButton key={chapter.slug} variant="secondary">
+              {chapter.name}
+            </LofiButton>
+          ))}
         </div>
 
         <LofiGrid columns={3}>

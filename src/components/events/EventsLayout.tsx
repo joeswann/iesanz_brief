@@ -5,7 +5,8 @@ import LofiHeading from "@/components/lofi/LofiHeading";
 import LofiText from "@/components/lofi/LofiText";
 import { LofiButton } from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
-import { eventsData, eventTypes } from "@/data/data.events";
+import { eventsData } from "@/data/data.events";
+import { chapters } from "@/data/data.chapters";
 import EventCard from "@/components/events/EventCard";
 import SidebarLayout from "@/components/layout/SidebarLayout";
 import EventsSidebar from "./EventsSidebar";
@@ -62,6 +63,15 @@ const EventsLayout: DCI = () => {
   return (
     <SidebarLayout sidebar={<EventsSidebar />}>
       <div className={layoutContainer}>
+        <div className={filters}>
+          <LofiButton variant="primary">All Chapters</LofiButton>
+          {chapters.map((chapter) => (
+            <LofiButton key={chapter.slug} variant="secondary">
+              {chapter.name}
+            </LofiButton>
+          ))}
+        </div>
+
         {/* Featured Event */}
         <section className={heroSection}>
           <LofiImage ratio={16 / 9} label="Featured Event" />
@@ -82,14 +92,6 @@ const EventsLayout: DCI = () => {
 
         {/* Events List */}
         <section>
-          <div className={filters}>
-            {eventTypes.map((type, i) => (
-              <LofiButton key={type} variant={i === 0 ? "primary" : "secondary"}>
-                {type}
-              </LofiButton>
-            ))}
-          </div>
-
           <div className={eventsGrid}>
             <LofiGrid columns={3}>
               {otherEvents.map((event) => (
