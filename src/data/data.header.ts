@@ -7,8 +7,8 @@ export const links = [
   ["Home", "/"],
   ["News", "/news"],
   ["Events", "/events"],
+  ["Conferences", "/conferences/conf-2026"],
   ["Awards", "/awards"],
-  ["Conferences", "/conferences"],
   ["Chapters", "/chapters"],
   ["Store", "/store"],
   ["Resources", "/resources"],
@@ -39,7 +39,7 @@ export const submenus: Record<string, [string, string][]> = {
       .sort((a, b) => b.year - a.year)
       .map((evt) => [evt.year.toString(), `/awards?year=${evt.year}`] as [string, string]),
   ],
-  "/conferences": [
+  "/conferences/conf-2026": [
     ...conferences
       .filter((c) => c.status === "Upcoming")
       .map((c) => [c.title, `/conferences/${c.id}`] as [string, string]),
