@@ -7,6 +7,7 @@ import { TypeBody } from "@/components/type/TypeBody";
 import { LofiButton } from "@/components/lofi/LofiButton";
 import LofiGrid from "@/components/lofi/LofiGrid";
 import { newsData } from "@/data/data.news";
+import { homeData } from "@/data/data.home";
 import NewsCard from "@/components/news/NewsCard";
 
 
@@ -42,22 +43,23 @@ const HomeLayout: DCI = () => {
 
             {/* Introduction */}
             <section className={introSection}>
-                <LofiHeading level={1}>Illuminating the Future</LofiHeading>
+                <LofiHeading level={1}>{homeData.intro.title}</LofiHeading>
                 <TypeBody variant="large">
-                    The Illuminating Engineering Society of Australia and New Zealand (IESANZ) is a professional organization for lighting designers, engineers, and industry professionals. We are dedicated to promoting the art and science of lighting.
+                    {homeData.intro.description}
                 </TypeBody>
             </section>
 
             {/* Key CTAs */}
             <section className={ctaSection}>
-                <LofiButton variant="primary">Join IESANZ</LofiButton>
-                <LofiButton variant="secondary">Member Login</LofiButton>
-                <LofiButton variant="secondary">Enter Awards</LofiButton>
+                <LofiButton variant="primary">{homeData.cta.primary.label}</LofiButton>
+                {homeData.cta.secondary.map((cta) => (
+                    <LofiButton key={cta.label} variant="secondary">{cta.label}</LofiButton>
+                ))}
             </section>
 
             {/* News / Blog Feed */}
             <section className={contentSection}>
-                <LofiHeading level={2}>Latest News</LofiHeading>
+                <LofiHeading level={2}>{homeData.sections.news.title}</LofiHeading>
                 <LofiGrid columns={3}>
                     {newsData.slice(0, 3).map((item) => (
                         <NewsCard key={item.id} item={item} />
@@ -67,12 +69,11 @@ const HomeLayout: DCI = () => {
 
             {/* Gallery / Showcase */}
             <section className={contentSection}>
-                <LofiHeading level={2}>Awards Showcase</LofiHeading>
+                <LofiHeading level={2}>{homeData.sections.awards.title}</LofiHeading>
                 <LofiGrid columns={4} gap={16}>
-                    <LofiImage ratio={1} label="Award 1" />
-                    <LofiImage ratio={1} label="Award 2" />
-                    <LofiImage ratio={1} label="Award 3" />
-                    <LofiImage ratio={1} label="Award 4" />
+                    {homeData.sections.awards.images.map((img, i) => (
+                        <LofiImage key={i} ratio={img.ratio} label={img.label} />
+                    ))}
                 </LofiGrid>
             </section>
         </div>

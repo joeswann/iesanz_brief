@@ -124,29 +124,29 @@ const ContactsLayout: DCI = () => {
       </div>
 
       <div className={formSection}>
-        <LofiHeading level={2}>Send us a message</LofiHeading>
+        <LofiHeading level={2}>{contactDetails.form.title}</LofiHeading>
 
         <div className={formGroup}>
-          <label className={formLabel}>Name</label>
-          <input type="text" placeholder="Your name" className={formInput} />
+          <label className={formLabel}>{contactDetails.form.fields.name.label}</label>
+          <input type="text" placeholder={contactDetails.form.fields.name.placeholder} className={formInput} />
         </div>
 
         <div className={formGroup}>
-          <label className={formLabel}>Email</label>
-          <input type="email" placeholder="your@email.com" className={formInput} />
+          <label className={formLabel}>{contactDetails.form.fields.email.label}</label>
+          <input type="email" placeholder={contactDetails.form.fields.email.placeholder} className={formInput} />
         </div>
 
         <div className={formGroup}>
-          <label className={formLabel}>Subject</label>
-          <input type="text" placeholder="How can we help?" className={formInput} />
+          <label className={formLabel}>{contactDetails.form.fields.subject.label}</label>
+          <input type="text" placeholder={contactDetails.form.fields.subject.placeholder} className={formInput} />
         </div>
 
         <div className={formGroup}>
-          <label className={formLabel}>Message</label>
-          <textarea placeholder="Write your message here..." className={formTextarea} />
+          <label className={formLabel}>{contactDetails.form.fields.message.label}</label>
+          <textarea placeholder={contactDetails.form.fields.message.placeholder} className={formTextarea} />
         </div>
 
-        <LofiButton variant="primary">Send Message</LofiButton>
+        <LofiButton variant="primary">{contactDetails.form.submit}</LofiButton>
       </div>
     </div>
   );

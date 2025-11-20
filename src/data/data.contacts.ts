@@ -21,5 +21,15 @@ export const contactDetails = {
     chapter: {
         title: "Chapter Contacts",
         description: "For local inquiries, please reach out to your Chapter President."
+    },
+    form: {
+        title: "Send us a message",
+        fields: {
+            name: { label: "Name", placeholder: "Your name" },
+            email: { label: "Email", placeholder: "your@email.com" },
+            subject: { label: "Subject", placeholder: "How can we help?" },
+            message: { label: "Message", placeholder: "Write your message here..." }
+        },
+        submit: "Send Message"
     }
 };

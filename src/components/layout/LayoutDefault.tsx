@@ -5,6 +5,8 @@ import LayoutFooter from "./LayoutFooter";
 import { Outlet, useLocation } from "@tanstack/react-router";
 import AccountHeader from "../account/AccountHeader";
 
+import { submenus } from "@/data/data.header";
+
 const layoutContainer = css`
   min-height: 100svh;
   display: flex;
@@ -14,6 +16,14 @@ const layoutContainer = css`
 const content = css`
   flex-grow: 1;
   padding: 140rem 16rem 32rem;
+  width: 100%;
+  max-width: 1400rem;
+  margin: 0 auto;
+`;
+
+const contentWithSubmenu = css`
+  flex-grow: 1;
+  padding: 190rem 16rem 32rem; /* Extra 50rem for submenu */
   width: 100%;
   max-width: 1400rem;
   margin: 0 auto;
@@ -31,10 +41,16 @@ const LayoutDefault: DCI = ({ children }) => {
     return <Outlet />
   }
 
+  // Check if current path has a submenu
+  const path = location.pathname;
+  const hasSubmenu = Object.keys(submenus).some(key =>
+    path.startsWith(key) && (path === key || path.startsWith(`${key}/`))
+  );
+
   return (
     <div className={layoutContainer}>
       {isAccount ? <AccountHeader /> : <LayoutHeader />}
-      <div className={content}>{children}</div>
+      <div className={hasSubmenu ? contentWithSubmenu : content}>{children}</div>
       <LayoutFooter />
     </div>
   );
