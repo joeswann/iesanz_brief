@@ -1,6 +1,17 @@
 export const chapterContent = {
     "nsw-act": {
         description: "Serving the lighting community in New South Wales and the Australian Capital Territory.",
+        presidentMessage: {
+            title: "Welcome from the President",
+            text: "Welcome to the NSW & ACT Chapter of IESANZ. Our chapter is a vibrant community of lighting professionals dedicated to promoting the art and science of lighting. We host regular technical meetings, site visits, and social events to foster connection and learning. I encourage you to get involved and join us at our next event.",
+            author: "Jane Doe",
+            role: "Chapter President"
+        },
+        meetingInfo: {
+            frequency: "Monthly",
+            time: "2nd Wednesday of the month, 6:00 PM",
+            location: "IESANZ Office, North Sydney or Online via Zoom"
+        },
         news: [
             {
                 id: 1,

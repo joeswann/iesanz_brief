@@ -34,7 +34,7 @@ const ActionButton = styled.button`
 const AdminMembershipsLayout = () => {
     return (
         <LayoutAdmin>
-            <LofiHeading level={1} className={pageTitle}>Memberships & Products</LofiHeading>
+            <LofiHeading level={1} className={pageTitle}>Memberships</LofiHeading>
 
             <LofiBox>
                 <Table>

@@ -9,8 +9,6 @@ import SidebarLayout from "@/components/layout/SidebarLayout";
 
 const container = css`
   padding: ${spacing(4)};
-  max-width: 1200px;
-  margin: 0 auto;
 `;
 
 const header = css`

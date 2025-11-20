@@ -29,8 +29,6 @@ const AdminSidebar: DCI = () => {
                 <SidebarLink to="/admin/submissions">Submissions</SidebarLink>
                 <SidebarLink to="/admin/payments">Payments</SidebarLink>
                 <SidebarLink to="/admin/reports">Reports</SidebarLink>
-                <SidebarLink to="/admin/support">Support</SidebarLink>
-                <SidebarLink to="/admin/settings">Settings</SidebarLink>
             </SidebarSection>
         </SidebarContainer>
     );

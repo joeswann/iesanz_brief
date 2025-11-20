@@ -52,11 +52,7 @@ export const submenus: Record<string, [string, string][]> = {
   "/chapters": [
     ...chapters.map((c) => [c.name, `/chapters/${c.slug}`] as [string, string]),
   ],
-  "/store": [
-    ["Store Home", "/store"],
-    ["Publications", "/store/publications"],
-    ["Merchandise", "/store/merchandise"],
-  ],
+
   "/resources": [
     ["Knowledgebase", "/resources"],
     ["Member Guide", "/resources/member-guide"],

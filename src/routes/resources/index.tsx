@@ -1,6 +1,10 @@
-import { createFileRoute } from '@tanstack/react-router'
-import ResourcesLayout from '@/components/resources/ResourcesLayout'
+import { createFileRoute, redirect } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/resources/')({
-    component: ResourcesLayout,
+    beforeLoad: () => {
+        throw redirect({
+            to: '/resources/$resourceId',
+            params: { resourceId: 'memberships' },
+        })
+    },
 })

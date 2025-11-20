@@ -1,6 +1,5 @@
 import { DCI } from "@/types/dci";
 import { SidebarContainer, SidebarLink, SidebarSection } from "@/components/layout/Sidebar";
-import { submenus } from "@/data/data.header";
 import { productCategories } from "@/data/data.store";
 import { user } from "@/data/data.user";
 import LofiBox from "@/components/lofi/LofiBox";
@@ -13,18 +12,8 @@ interface StoreSidebarProps {
 }
 
 const StoreSidebar: DCI<StoreSidebarProps> = ({ selectedCategory, onSelectCategory }) => {
-    const links = submenus["/store"] || [];
-
     return (
         <SidebarContainer>
-            <SidebarSection title="Store">
-                {links.map(([label, url]) => (
-                    <SidebarLink key={url} to={url}>
-                        {label}
-                    </SidebarLink>
-                ))}
-            </SidebarSection>
-
             <SidebarSection title="Store Categories">
                 {productCategories.map((cat) => (
                     <SidebarLink
