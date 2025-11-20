@@ -11,7 +11,7 @@ export const Route = createFileRoute('/admin/settings')({
 function AdminSettings() {
     return (
         <LayoutAdmin>
-            <LofiHeading level={1}>Settings</LofiHeading>
+            <LofiHeading level={1} style={{ marginBottom: '24rem' }}>Settings</LofiHeading>
             <LofiBox>
                 <p>Global settings placeholder...</p>
                 {/* TODO: Implement settings forms */}

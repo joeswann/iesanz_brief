@@ -10,7 +10,7 @@ export const Route = createFileRoute('/admin/support')({
 function AdminSupport() {
   return (
     <LayoutAdmin>
-      <LofiHeading level={1}>Support Tickets</LofiHeading>
+      <LofiHeading level={1} style={{ marginBottom: '24rem' }}>Support Tickets</LofiHeading>
       <LofiBox>
         <LofiHeading level={3}>Open Tickets</LofiHeading>
         <p>Placeholder for support ticket list.</p>

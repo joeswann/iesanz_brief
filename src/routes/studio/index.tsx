@@ -11,7 +11,7 @@ export const Route = createFileRoute('/studio/')({
 function StudioIndex() {
     return (
         <LayoutStudio>
-            <LofiHeading level={1}>Content Studio</LofiHeading>
+            <LofiHeading level={1} style={{ marginBottom: '24rem' }}>Content Studio</LofiHeading>
             <LofiBox>
                 <LofiHeading level={3}>Manage Content</LofiHeading>
                 <p>

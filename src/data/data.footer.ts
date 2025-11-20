@@ -1,10 +1,9 @@
 
 
 export const links = [
-    ["Contacts", "/contacts"],
+    ["About", "/contacts"],
     ["Privacy Policy", "/pages/privacy-policy"],
     ["Terms & Conditions", "/pages/terms"],
-    ["Calendar", "/calendar"],
 ] as [string, string][];
 
 export const socialLinks = [

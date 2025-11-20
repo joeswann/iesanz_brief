@@ -11,7 +11,7 @@ export const Route = createFileRoute('/admin/reports')({
 function AdminReports() {
     return (
         <LayoutAdmin>
-            <LofiHeading level={1}>Reports</LofiHeading>
+            <LofiHeading level={1} style={{ marginBottom: '24rem' }}>Reports</LofiHeading>
             <LofiBox>
                 <p>Reporting dashboard placeholder...</p>
                 {/* TODO: Implement charts and reports */}

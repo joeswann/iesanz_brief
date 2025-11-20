@@ -12,7 +12,7 @@ export const Route = createFileRoute('/admin/')({
 function AdminDashboard() {
     return (
         <LayoutAdmin>
-            <LofiHeading level={1}>Admin Dashboard</LofiHeading>
+            <LofiHeading level={1} style={{ marginBottom: '24rem' }}>Admin Dashboard</LofiHeading>
             <LofiGrid columns={3}>
                 <LofiBox>
                     <LofiHeading level={3}>Members</LofiHeading>

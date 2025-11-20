@@ -1,6 +1,6 @@
 import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
-import LofiBox from "../lofi/LofiBox";
+
 import HeaderSubmenu from "./HeaderSubmenu";
 import { links } from "@/data/data.header";
 import { user } from "@/data/data.user";
@@ -60,10 +60,24 @@ const mainLink = css`
   }
 `;
 
+const headerContainer = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--foreground);
+  padding: 16rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
+
 const LayoutHeader: DCI = ({ children }) => {
   return (
     <div>
-      <LofiBox>
+      <header className={headerContainer}>
         <a href="/" className={logo} style={{ textDecoration: 'none', color: 'inherit' }}>IESANZ</a>
 
         <div className={accountMenu}>
@@ -82,7 +96,7 @@ const LayoutHeader: DCI = ({ children }) => {
             </div>
           ))}
         </nav>
-      </LofiBox>
+      </header>
       <HeaderSubmenu />
     </div>
   );

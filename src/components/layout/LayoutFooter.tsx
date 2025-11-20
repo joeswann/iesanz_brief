@@ -1,14 +1,11 @@
 import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
-import LofiBox from "../lofi/LofiBox";
+
 import { links, socialLinks } from "@/data/data.footer";
 
 import { fontSize } from "@/styles/styling";
 
-const footerContainer = css`
-  width: 100%;
-  margin-top: 10rem;
-`;
+
 
 const footerContent = css`
   display: flex;
@@ -66,10 +63,17 @@ const copyright = css`
   opacity: 0.5;
 `;
 
+const footerWrapper = css`
+  width: 100%;
+  margin-top: 10rem;
+  border-top: 1px solid var(--foreground);
+  padding: 16rem;
+`;
+
 const LayoutFooter: DCI = ({ children }) => {
   return (
-    <div className={footerContainer}>
-      <LofiBox className={footerContent}>
+    <footer className={footerWrapper}>
+      <div className={footerContent}>
         <nav className={footerMenu}>
           {links.map(([label, url], i) => (
             <div key={url} style={{ display: "contents" }}>
@@ -86,8 +90,8 @@ const LayoutFooter: DCI = ({ children }) => {
             ))}
           </nav>
         </div>
-      </LofiBox>
-    </div>
+      </div>
+    </footer>
   );
 };
 

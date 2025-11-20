@@ -11,7 +11,7 @@ export const Route = createFileRoute('/admin/members')({
 function AdminMembers() {
     return (
         <LayoutAdmin>
-            <LofiHeading level={1}>Member Management</LofiHeading>
+            <LofiHeading level={1} style={{ marginBottom: '24rem' }}>Members</LofiHeading>
             <LofiBox>
                 <p>Member list placeholder...</p>
                 {/* TODO: Implement member table */}

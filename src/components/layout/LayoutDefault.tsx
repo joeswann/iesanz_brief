@@ -13,7 +13,7 @@ const layoutContainer = css`
 
 const content = css`
   flex-grow: 1;
-  padding: var(--content-padding-top) 16rem;
+  padding: 140rem 16rem 32rem;
   width: 100%;
   max-width: 1400rem;
   margin: 0 auto;
