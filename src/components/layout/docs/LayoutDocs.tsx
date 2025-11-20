@@ -119,9 +119,9 @@ export default function LayoutDocs({ children }: { children?: React.ReactNode })
 
   const isAppendix = pathname.includes('/docs/appendix')
   const isAdmin = pathname.includes('/docs/admin')
-  const isServices = pathname.includes('/docs/services')
   const isStudio = pathname.includes('/docs/studio')
-  const isOverview = !isAppendix && !isAdmin && !isServices && !isStudio
+  const isArchitecture = pathname.includes('/docs/architecture')
+  const isOverview = !isAppendix && !isAdmin && !isStudio && !isArchitecture
 
   return (
     <LayoutContainer>
@@ -131,10 +131,10 @@ export default function LayoutDocs({ children }: { children?: React.ReactNode })
           subMenu={
             <SubHeader>
               <SubHeaderLink to="/docs" activeProps={{ className: 'active' }} activeOptions={{ exact: true }}>Overview</SubHeaderLink>
-              <SubHeaderLink to="/docs/services" activeProps={{ className: 'active' }}>Services</SubHeaderLink>
+              <SubHeaderLink to="/docs/architecture" activeProps={{ className: 'active' }}>Architecture</SubHeaderLink>
               <SubHeaderLink to="/docs/admin" activeProps={{ className: 'active' }}>Admin</SubHeaderLink>
-              <SubHeaderLink to="/docs/appendix" activeProps={{ className: 'active' }}>Appendix</SubHeaderLink>
               <SubHeaderLink to="/docs/studio" activeProps={{ className: 'active' }}>Studio</SubHeaderLink>
+              <SubHeaderLink to="/docs/appendix" activeProps={{ className: 'active' }}>Appendix</SubHeaderLink>
             </SubHeader>
           }
         />
@@ -144,31 +144,56 @@ export default function LayoutDocs({ children }: { children?: React.ReactNode })
           {isOverview && (
             <SidebarSection title="Overview">
               <SidebarLink to="/docs">Introduction</SidebarLink>
-              <SidebarLink to="/docs/brief">Reverse Brief</SidebarLink>
-              <SidebarLink to="/docs/architecture">Architecture</SidebarLink>
               <SidebarLink to="/docs/process">Process</SidebarLink>
-              <SidebarLink to="/docs/sitemap">Sitemap</SidebarLink>
             </SidebarSection>
           )}
-          {isServices && (
-            <SidebarSection title="Services">
-              <SidebarLink to="/docs/services">Integrations List</SidebarLink>
-            </SidebarSection>
+          {isArchitecture && (
+            <>
+              <SidebarSection title="Architecture">
+                <SidebarLink to="/docs/architecture">Overview</SidebarLink>
+                <SidebarLink to="/docs/architecture/sitemap">Sitemap</SidebarLink>
+              </SidebarSection>
+              <SidebarSection title="Services">
+                <SidebarLink to="/docs/architecture/services">Overview</SidebarLink>
+                <SidebarLink to="/docs/architecture/services/sanity">Sanity</SidebarLink>
+                <SidebarLink to="/docs/architecture/services/shopify">Shopify</SidebarLink>
+                <SidebarLink to="/docs/architecture/services/auth0">Auth0</SidebarLink>
+                <SidebarLink to="/docs/architecture/services/klaviyo">Klaviyo</SidebarLink>
+                <SidebarLink to="/docs/architecture/services/algolia">Algolia</SidebarLink>
+              </SidebarSection>
+            </>
           )}
           {isAdmin && (
             <SidebarSection title="Admin">
-              <SidebarLink to="/docs/admin">Roles & Permissions</SidebarLink>
+              <SidebarLink to="/docs/admin">Dashboard</SidebarLink>
+              <SidebarLink to="/docs/admin/members">Members</SidebarLink>
+              <SidebarLink to="/docs/admin/content">Content</SidebarLink>
+              <SidebarLink to="/docs/admin/settings">Settings</SidebarLink>
+              <SidebarLink to="/docs/admin/payments">Payments</SidebarLink>
+              <SidebarLink to="/docs/admin/reports">Reports</SidebarLink>
+              <SidebarLink to="/docs/admin/awards">Awards</SidebarLink>
+              <SidebarLink to="/docs/admin/events">Events</SidebarLink>
+              <SidebarLink to="/docs/admin/memberships">Memberships</SidebarLink>
+              <SidebarLink to="/docs/admin/submissions">Submissions</SidebarLink>
+              <SidebarLink to="/docs/admin/support">Support</SidebarLink>
+            </SidebarSection>
+          )}
+          {isStudio && (
+            <SidebarSection title="Studio">
+              <SidebarLink to="/docs/studio">Dashboard</SidebarLink>
+              <SidebarLink to="/docs/studio/news">News</SidebarLink>
+              <SidebarLink to="/docs/studio/events">Events</SidebarLink>
+              <SidebarLink to="/docs/studio/products">Products</SidebarLink>
+              <SidebarLink to="/docs/studio/orders">Orders</SidebarLink>
+              <SidebarLink to="/docs/studio/customers">Customers</SidebarLink>
+              <SidebarLink to="/docs/studio/collections">Collections</SidebarLink>
+              <SidebarLink to="/docs/studio/awards">Awards</SidebarLink>
+              <SidebarLink to="/docs/studio/pages">Pages</SidebarLink>
             </SidebarSection>
           )}
           {isAppendix && (
             <SidebarSection title="Appendix">
               <SidebarLink to="/docs/appendix">Overview</SidebarLink>
-              <SidebarLink to="/docs/appendix/wordpress">Wordpress vs Headless</SidebarLink>
-            </SidebarSection>
-          )}
-          {isStudio && (
-            <SidebarSection title="Studio">
-              <SidebarLink to="/docs/studio">Dashboard Guide</SidebarLink>
             </SidebarSection>
           )}
         </SidebarContainer>

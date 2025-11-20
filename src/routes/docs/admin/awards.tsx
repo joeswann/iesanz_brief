@@ -1,17 +1,16 @@
-
 import { createFileRoute } from '@tanstack/react-router'
 import LayoutDocs from '@/components/layout/docs/LayoutDocs'
 import { DocsContent } from '@/components/docs/DocsContent'
-import { docsOverview } from '@/data/data.docs'
+import { docsAdminAwards } from '@/data/data.docs'
 
-export const Route = createFileRoute('/docs/')({
-    component: DocsOverview,
+export const Route = createFileRoute('/docs/admin/awards')({
+    component: DocsAdminAwards,
 })
 
-function DocsOverview() {
+function DocsAdminAwards() {
     return (
         <LayoutDocs>
-            <DocsContent data={docsOverview} />
+            <DocsContent data={docsAdminAwards} />
         </LayoutDocs>
     )
 }

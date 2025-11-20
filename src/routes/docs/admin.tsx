@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { DocsContent } from '../../components/docs/DocsContent'
 import LayoutDocs from '../../components/layout/docs/LayoutDocs'
-import { docsData } from '../../data/data.docs'
+import { docsAdmin } from '@/data/data.docs'
 
 export const Route = createFileRoute('/docs/admin')({
   component: DocsAdmin,
@@ -10,7 +10,7 @@ export const Route = createFileRoute('/docs/admin')({
 function DocsAdmin() {
   return (
     <LayoutDocs>
-      <DocsContent data={docsData.admin} />
+      <DocsContent data={docsAdmin} />
     </LayoutDocs>
   )
 }

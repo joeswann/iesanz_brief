@@ -1,17 +1,16 @@
-
 import { createFileRoute } from '@tanstack/react-router'
 import LayoutDocs from '@/components/layout/docs/LayoutDocs'
 import { DocsContent } from '@/components/docs/DocsContent'
-import { docsOverview } from '@/data/data.docs'
+import { docsStudioProducts } from '@/data/data.docs'
 
-export const Route = createFileRoute('/docs/')({
-    component: DocsOverview,
+export const Route = createFileRoute('/docs/studio/products')({
+    component: DocsStudioProducts,
 })
 
-function DocsOverview() {
+function DocsStudioProducts() {
     return (
         <LayoutDocs>
-            <DocsContent data={docsOverview} />
+            <DocsContent data={docsStudioProducts} />
         </LayoutDocs>
     )
 }

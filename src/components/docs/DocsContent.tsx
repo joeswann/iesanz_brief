@@ -4,11 +4,11 @@ import { TypeHeading } from '@/components/type/TypeHeading'
 import { TypeBody } from '@/components/type/TypeBody'
 
 const PageTitle = styled.div`
-    margin-bottom: 5rem;
+    margin-bottom: 12rem;
 `
 
 const Section = styled.div`
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
     
     &:last-child {
         margin-bottom: 0;
@@ -16,11 +16,11 @@ const Section = styled.div`
 `
 
 const SectionTitle = styled.div`
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 `
 
 const Block = styled.div`
-    margin-bottom: 3.5rem;
+    margin-bottom: 5rem;
 
     &:last-child {
         margin-bottom: 0;
@@ -28,14 +28,14 @@ const Block = styled.div`
 `
 
 const BlockTitle = styled.div`
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 `
 
 const BlockContent = styled.div`
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     
     p {
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         line-height: 1.6;
         color: var(--color-text-secondary);
         
@@ -46,13 +46,15 @@ const BlockContent = styled.div`
 `
 
 const List = styled.ul`
-    margin: 1rem 0 1rem 1.5rem;
+    margin: 2rem 0 2rem 0;
+    padding-left: 2rem;
     list-style-type: disc;
     color: var(--color-text-secondary);
 
     li {
-        margin-bottom: 0.5rem;
-        line-height: 1.5;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        padding-left: 0.5rem;
         
         &:last-child {
             margin-bottom: 0;
@@ -61,13 +63,15 @@ const List = styled.ul`
 `
 
 const OrderedList = styled.ol`
-    margin: 1rem 0 1rem 1.5rem;
+    margin: 2rem 0 2rem 0;
+    padding-left: 2rem;
     list-style-type: decimal;
     color: var(--color-text-secondary);
 
     li {
-        margin-bottom: 0.5rem;
-        line-height: 1.5;
+        margin-bottom: 1rem;
+        line-height: 1.6;
+        padding-left: 0.5rem;
         
         &:last-child {
             margin-bottom: 0;
