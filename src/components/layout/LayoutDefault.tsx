@@ -2,7 +2,7 @@ import { DCI } from "@/types/dci";
 import { css } from "@linaria/core";
 import LayoutHeader from "./LayoutHeader";
 import LayoutFooter from "./LayoutFooter";
-import { useLocation } from "@tanstack/react-router";
+import { Outlet, useLocation } from "@tanstack/react-router";
 import AccountHeader from "../account/AccountHeader";
 
 const layoutContainer = css`
@@ -21,12 +21,14 @@ const content = css`
 
 const LayoutDefault: DCI = ({ children }) => {
   const location = useLocation();
-  const isAccount = location.pathname.startsWith("/account");
-  const isAdmin = location.pathname.startsWith("/admin");
-  const isStudio = location.pathname.startsWith("/studio");
+  const isAccount = location.pathname.startsWith("/account"); // Kept original isAccount definition
+  // Check if the current path is an admin, studio, or docs route
+  const isAdminRoute = location.pathname.startsWith('/admin')
+  const isStudioRoute = location.pathname.startsWith('/studio')
+  const isDocsRoute = location.pathname.startsWith('/docs')
 
-  if (isAdmin || isStudio) {
-    return <>{children}</>;
+  if (isAdminRoute || isStudioRoute || isDocsRoute) {
+    return <Outlet />
   }
 
   return (

@@ -22,20 +22,31 @@ import { Route as AccountRouteRouteImport } from './routes/account/route'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StudioIndexRouteImport } from './routes/studio/index'
 import { Route as ResourcesIndexRouteImport } from './routes/resources/index'
+import { Route as DocsIndexRouteImport } from './routes/docs/index'
 import { Route as ChaptersIndexRouteImport } from './routes/chapters/index'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AccountIndexRouteImport } from './routes/account/index'
 import { Route as ResourcesResourceIdRouteImport } from './routes/resources/$resourceId'
 import { Route as PagesPageIdRouteImport } from './routes/pages/$pageId'
+import { Route as DocsStudioRouteImport } from './routes/docs/studio'
+import { Route as DocsStructureRouteImport } from './routes/docs/structure'
+import { Route as DocsIntegrationsRouteImport } from './routes/docs/integrations'
+import { Route as DocsFrontendRouteImport } from './routes/docs/frontend'
+import { Route as DocsAppendixRouteImport } from './routes/docs/appendix'
+import { Route as DocsAdminRouteImport } from './routes/docs/admin'
 import { Route as ChaptersNewsRouteImport } from './routes/chapters/news'
 import { Route as ChaptersEventsRouteImport } from './routes/chapters/events'
 import { Route as ChaptersChapterIdRouteImport } from './routes/chapters/$chapterId'
 import { Route as AdminSupportRouteImport } from './routes/admin/support'
+import { Route as AdminSubmissionsRouteImport } from './routes/admin/submissions'
 import { Route as AdminSettingsRouteImport } from './routes/admin/settings'
 import { Route as AdminReportsRouteImport } from './routes/admin/reports'
+import { Route as AdminPaymentsRouteImport } from './routes/admin/payments'
+import { Route as AdminMembershipsRouteImport } from './routes/admin/memberships'
 import { Route as AdminMembersRouteImport } from './routes/admin/members'
-import { Route as AdminFinancialRouteImport } from './routes/admin/financial'
+import { Route as AdminEventsRouteImport } from './routes/admin/events'
 import { Route as AdminContentRouteImport } from './routes/admin/content'
+import { Route as AdminAwardsRouteImport } from './routes/admin/awards'
 import { Route as AccountUpgradeRouteImport } from './routes/account/upgrade'
 import { Route as AccountSubscriptionRouteImport } from './routes/account/subscription'
 import { Route as AccountProfileRouteImport } from './routes/account/profile'
@@ -120,6 +131,11 @@ const ResourcesIndexRoute = ResourcesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => ResourcesRouteRoute,
 } as any)
+const DocsIndexRoute = DocsIndexRouteImport.update({
+  id: '/docs/',
+  path: '/docs/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ChaptersIndexRoute = ChaptersIndexRouteImport.update({
   id: '/chapters/',
   path: '/chapters/',
@@ -145,6 +161,36 @@ const PagesPageIdRoute = PagesPageIdRouteImport.update({
   path: '/pages/$pageId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DocsStudioRoute = DocsStudioRouteImport.update({
+  id: '/docs/studio',
+  path: '/docs/studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsStructureRoute = DocsStructureRouteImport.update({
+  id: '/docs/structure',
+  path: '/docs/structure',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsIntegrationsRoute = DocsIntegrationsRouteImport.update({
+  id: '/docs/integrations',
+  path: '/docs/integrations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsFrontendRoute = DocsFrontendRouteImport.update({
+  id: '/docs/frontend',
+  path: '/docs/frontend',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsAppendixRoute = DocsAppendixRouteImport.update({
+  id: '/docs/appendix',
+  path: '/docs/appendix',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DocsAdminRoute = DocsAdminRouteImport.update({
+  id: '/docs/admin',
+  path: '/docs/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ChaptersNewsRoute = ChaptersNewsRouteImport.update({
   id: '/chapters/news',
   path: '/chapters/news',
@@ -165,6 +211,11 @@ const AdminSupportRoute = AdminSupportRouteImport.update({
   path: '/admin/support',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminSubmissionsRoute = AdminSubmissionsRouteImport.update({
+  id: '/admin/submissions',
+  path: '/admin/submissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminSettingsRoute = AdminSettingsRouteImport.update({
   id: '/admin/settings',
   path: '/admin/settings',
@@ -175,19 +226,34 @@ const AdminReportsRoute = AdminReportsRouteImport.update({
   path: '/admin/reports',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminPaymentsRoute = AdminPaymentsRouteImport.update({
+  id: '/admin/payments',
+  path: '/admin/payments',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminMembershipsRoute = AdminMembershipsRouteImport.update({
+  id: '/admin/memberships',
+  path: '/admin/memberships',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminMembersRoute = AdminMembersRouteImport.update({
   id: '/admin/members',
   path: '/admin/members',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdminFinancialRoute = AdminFinancialRouteImport.update({
-  id: '/admin/financial',
-  path: '/admin/financial',
+const AdminEventsRoute = AdminEventsRouteImport.update({
+  id: '/admin/events',
+  path: '/admin/events',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminContentRoute = AdminContentRouteImport.update({
   id: '/admin/content',
   path: '/admin/content',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAwardsRoute = AdminAwardsRouteImport.update({
+  id: '/admin/awards',
+  path: '/admin/awards',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccountUpgradeRoute = AccountUpgradeRouteImport.update({
@@ -304,20 +370,31 @@ export interface FileRoutesByFullPath {
   '/account/profile': typeof AccountProfileRoute
   '/account/subscription': typeof AccountSubscriptionRoute
   '/account/upgrade': typeof AccountUpgradeRoute
+  '/admin/awards': typeof AdminAwardsRoute
   '/admin/content': typeof AdminContentRoute
-  '/admin/financial': typeof AdminFinancialRoute
+  '/admin/events': typeof AdminEventsRoute
   '/admin/members': typeof AdminMembersRoute
+  '/admin/memberships': typeof AdminMembershipsRoute
+  '/admin/payments': typeof AdminPaymentsRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/settings': typeof AdminSettingsRoute
+  '/admin/submissions': typeof AdminSubmissionsRoute
   '/admin/support': typeof AdminSupportRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdRouteWithChildren
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
+  '/docs/admin': typeof DocsAdminRoute
+  '/docs/appendix': typeof DocsAppendixRoute
+  '/docs/frontend': typeof DocsFrontendRoute
+  '/docs/integrations': typeof DocsIntegrationsRoute
+  '/docs/structure': typeof DocsStructureRoute
+  '/docs/studio': typeof DocsStudioRoute
   '/pages/$pageId': typeof PagesPageIdRoute
   '/resources/$resourceId': typeof ResourcesResourceIdRoute
   '/account/': typeof AccountIndexRoute
   '/admin': typeof AdminIndexRoute
   '/chapters': typeof ChaptersIndexRoute
+  '/docs': typeof DocsIndexRoute
   '/resources/': typeof ResourcesIndexRoute
   '/studio': typeof StudioIndexRoute
   '/account/education/cpd': typeof AccountEducationCpdRoute
@@ -348,19 +425,30 @@ export interface FileRoutesByTo {
   '/account/profile': typeof AccountProfileRoute
   '/account/subscription': typeof AccountSubscriptionRoute
   '/account/upgrade': typeof AccountUpgradeRoute
+  '/admin/awards': typeof AdminAwardsRoute
   '/admin/content': typeof AdminContentRoute
-  '/admin/financial': typeof AdminFinancialRoute
+  '/admin/events': typeof AdminEventsRoute
   '/admin/members': typeof AdminMembersRoute
+  '/admin/memberships': typeof AdminMembershipsRoute
+  '/admin/payments': typeof AdminPaymentsRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/settings': typeof AdminSettingsRoute
+  '/admin/submissions': typeof AdminSubmissionsRoute
   '/admin/support': typeof AdminSupportRoute
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
+  '/docs/admin': typeof DocsAdminRoute
+  '/docs/appendix': typeof DocsAppendixRoute
+  '/docs/frontend': typeof DocsFrontendRoute
+  '/docs/integrations': typeof DocsIntegrationsRoute
+  '/docs/structure': typeof DocsStructureRoute
+  '/docs/studio': typeof DocsStudioRoute
   '/pages/$pageId': typeof PagesPageIdRoute
   '/resources/$resourceId': typeof ResourcesResourceIdRoute
   '/account': typeof AccountIndexRoute
   '/admin': typeof AdminIndexRoute
   '/chapters': typeof ChaptersIndexRoute
+  '/docs': typeof DocsIndexRoute
   '/resources': typeof ResourcesIndexRoute
   '/studio': typeof StudioIndexRoute
   '/account/education/cpd': typeof AccountEducationCpdRoute
@@ -395,20 +483,31 @@ export interface FileRoutesById {
   '/account/profile': typeof AccountProfileRoute
   '/account/subscription': typeof AccountSubscriptionRoute
   '/account/upgrade': typeof AccountUpgradeRoute
+  '/admin/awards': typeof AdminAwardsRoute
   '/admin/content': typeof AdminContentRoute
-  '/admin/financial': typeof AdminFinancialRoute
+  '/admin/events': typeof AdminEventsRoute
   '/admin/members': typeof AdminMembersRoute
+  '/admin/memberships': typeof AdminMembershipsRoute
+  '/admin/payments': typeof AdminPaymentsRoute
   '/admin/reports': typeof AdminReportsRoute
   '/admin/settings': typeof AdminSettingsRoute
+  '/admin/submissions': typeof AdminSubmissionsRoute
   '/admin/support': typeof AdminSupportRoute
   '/chapters/$chapterId': typeof ChaptersChapterIdRouteWithChildren
   '/chapters/events': typeof ChaptersEventsRoute
   '/chapters/news': typeof ChaptersNewsRoute
+  '/docs/admin': typeof DocsAdminRoute
+  '/docs/appendix': typeof DocsAppendixRoute
+  '/docs/frontend': typeof DocsFrontendRoute
+  '/docs/integrations': typeof DocsIntegrationsRoute
+  '/docs/structure': typeof DocsStructureRoute
+  '/docs/studio': typeof DocsStudioRoute
   '/pages/$pageId': typeof PagesPageIdRoute
   '/resources/$resourceId': typeof ResourcesResourceIdRoute
   '/account/': typeof AccountIndexRoute
   '/admin/': typeof AdminIndexRoute
   '/chapters/': typeof ChaptersIndexRoute
+  '/docs/': typeof DocsIndexRoute
   '/resources/': typeof ResourcesIndexRoute
   '/studio/': typeof StudioIndexRoute
   '/account/education/cpd': typeof AccountEducationCpdRoute
@@ -444,20 +543,31 @@ export interface FileRouteTypes {
     | '/account/profile'
     | '/account/subscription'
     | '/account/upgrade'
+    | '/admin/awards'
     | '/admin/content'
-    | '/admin/financial'
+    | '/admin/events'
     | '/admin/members'
+    | '/admin/memberships'
+    | '/admin/payments'
     | '/admin/reports'
     | '/admin/settings'
+    | '/admin/submissions'
     | '/admin/support'
     | '/chapters/$chapterId'
     | '/chapters/events'
     | '/chapters/news'
+    | '/docs/admin'
+    | '/docs/appendix'
+    | '/docs/frontend'
+    | '/docs/integrations'
+    | '/docs/structure'
+    | '/docs/studio'
     | '/pages/$pageId'
     | '/resources/$resourceId'
     | '/account/'
     | '/admin'
     | '/chapters'
+    | '/docs'
     | '/resources/'
     | '/studio'
     | '/account/education/cpd'
@@ -488,19 +598,30 @@ export interface FileRouteTypes {
     | '/account/profile'
     | '/account/subscription'
     | '/account/upgrade'
+    | '/admin/awards'
     | '/admin/content'
-    | '/admin/financial'
+    | '/admin/events'
     | '/admin/members'
+    | '/admin/memberships'
+    | '/admin/payments'
     | '/admin/reports'
     | '/admin/settings'
+    | '/admin/submissions'
     | '/admin/support'
     | '/chapters/events'
     | '/chapters/news'
+    | '/docs/admin'
+    | '/docs/appendix'
+    | '/docs/frontend'
+    | '/docs/integrations'
+    | '/docs/structure'
+    | '/docs/studio'
     | '/pages/$pageId'
     | '/resources/$resourceId'
     | '/account'
     | '/admin'
     | '/chapters'
+    | '/docs'
     | '/resources'
     | '/studio'
     | '/account/education/cpd'
@@ -534,20 +655,31 @@ export interface FileRouteTypes {
     | '/account/profile'
     | '/account/subscription'
     | '/account/upgrade'
+    | '/admin/awards'
     | '/admin/content'
-    | '/admin/financial'
+    | '/admin/events'
     | '/admin/members'
+    | '/admin/memberships'
+    | '/admin/payments'
     | '/admin/reports'
     | '/admin/settings'
+    | '/admin/submissions'
     | '/admin/support'
     | '/chapters/$chapterId'
     | '/chapters/events'
     | '/chapters/news'
+    | '/docs/admin'
+    | '/docs/appendix'
+    | '/docs/frontend'
+    | '/docs/integrations'
+    | '/docs/structure'
+    | '/docs/studio'
     | '/pages/$pageId'
     | '/resources/$resourceId'
     | '/account/'
     | '/admin/'
     | '/chapters/'
+    | '/docs/'
     | '/resources/'
     | '/studio/'
     | '/account/education/cpd'
@@ -574,18 +706,29 @@ export interface RootRouteChildren {
   EventsRoute: typeof EventsRoute
   NewsRoute: typeof NewsRoute
   StoreRoute: typeof StoreRoute
+  AdminAwardsRoute: typeof AdminAwardsRoute
   AdminContentRoute: typeof AdminContentRoute
-  AdminFinancialRoute: typeof AdminFinancialRoute
+  AdminEventsRoute: typeof AdminEventsRoute
   AdminMembersRoute: typeof AdminMembersRoute
+  AdminMembershipsRoute: typeof AdminMembershipsRoute
+  AdminPaymentsRoute: typeof AdminPaymentsRoute
   AdminReportsRoute: typeof AdminReportsRoute
   AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminSubmissionsRoute: typeof AdminSubmissionsRoute
   AdminSupportRoute: typeof AdminSupportRoute
   ChaptersChapterIdRoute: typeof ChaptersChapterIdRouteWithChildren
   ChaptersEventsRoute: typeof ChaptersEventsRoute
   ChaptersNewsRoute: typeof ChaptersNewsRoute
+  DocsAdminRoute: typeof DocsAdminRoute
+  DocsAppendixRoute: typeof DocsAppendixRoute
+  DocsFrontendRoute: typeof DocsFrontendRoute
+  DocsIntegrationsRoute: typeof DocsIntegrationsRoute
+  DocsStructureRoute: typeof DocsStructureRoute
+  DocsStudioRoute: typeof DocsStudioRoute
   PagesPageIdRoute: typeof PagesPageIdRoute
   AdminIndexRoute: typeof AdminIndexRoute
   ChaptersIndexRoute: typeof ChaptersIndexRoute
+  DocsIndexRoute: typeof DocsIndexRoute
   StudioIndexRoute: typeof StudioIndexRoute
   ApiTrpcSplatRoute: typeof ApiTrpcSplatRoute
 }
@@ -683,6 +826,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesIndexRouteImport
       parentRoute: typeof ResourcesRouteRoute
     }
+    '/docs/': {
+      id: '/docs/'
+      path: '/docs'
+      fullPath: '/docs'
+      preLoaderRoute: typeof DocsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/chapters/': {
       id: '/chapters/'
       path: '/chapters'
@@ -718,6 +868,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PagesPageIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/docs/studio': {
+      id: '/docs/studio'
+      path: '/docs/studio'
+      fullPath: '/docs/studio'
+      preLoaderRoute: typeof DocsStudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/structure': {
+      id: '/docs/structure'
+      path: '/docs/structure'
+      fullPath: '/docs/structure'
+      preLoaderRoute: typeof DocsStructureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/integrations': {
+      id: '/docs/integrations'
+      path: '/docs/integrations'
+      fullPath: '/docs/integrations'
+      preLoaderRoute: typeof DocsIntegrationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/frontend': {
+      id: '/docs/frontend'
+      path: '/docs/frontend'
+      fullPath: '/docs/frontend'
+      preLoaderRoute: typeof DocsFrontendRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/appendix': {
+      id: '/docs/appendix'
+      path: '/docs/appendix'
+      fullPath: '/docs/appendix'
+      preLoaderRoute: typeof DocsAppendixRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/docs/admin': {
+      id: '/docs/admin'
+      path: '/docs/admin'
+      fullPath: '/docs/admin'
+      preLoaderRoute: typeof DocsAdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/chapters/news': {
       id: '/chapters/news'
       path: '/chapters/news'
@@ -746,6 +938,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSupportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/submissions': {
+      id: '/admin/submissions'
+      path: '/admin/submissions'
+      fullPath: '/admin/submissions'
+      preLoaderRoute: typeof AdminSubmissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/settings': {
       id: '/admin/settings'
       path: '/admin/settings'
@@ -760,6 +959,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminReportsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/payments': {
+      id: '/admin/payments'
+      path: '/admin/payments'
+      fullPath: '/admin/payments'
+      preLoaderRoute: typeof AdminPaymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/memberships': {
+      id: '/admin/memberships'
+      path: '/admin/memberships'
+      fullPath: '/admin/memberships'
+      preLoaderRoute: typeof AdminMembershipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin/members': {
       id: '/admin/members'
       path: '/admin/members'
@@ -767,11 +980,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminMembersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/financial': {
-      id: '/admin/financial'
-      path: '/admin/financial'
-      fullPath: '/admin/financial'
-      preLoaderRoute: typeof AdminFinancialRouteImport
+    '/admin/events': {
+      id: '/admin/events'
+      path: '/admin/events'
+      fullPath: '/admin/events'
+      preLoaderRoute: typeof AdminEventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/content': {
@@ -779,6 +992,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/content'
       fullPath: '/admin/content'
       preLoaderRoute: typeof AdminContentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/awards': {
+      id: '/admin/awards'
+      path: '/admin/awards'
+      fullPath: '/admin/awards'
+      preLoaderRoute: typeof AdminAwardsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/account/upgrade': {
@@ -1002,18 +1222,29 @@ const rootRouteChildren: RootRouteChildren = {
   EventsRoute: EventsRoute,
   NewsRoute: NewsRoute,
   StoreRoute: StoreRoute,
+  AdminAwardsRoute: AdminAwardsRoute,
   AdminContentRoute: AdminContentRoute,
-  AdminFinancialRoute: AdminFinancialRoute,
+  AdminEventsRoute: AdminEventsRoute,
   AdminMembersRoute: AdminMembersRoute,
+  AdminMembershipsRoute: AdminMembershipsRoute,
+  AdminPaymentsRoute: AdminPaymentsRoute,
   AdminReportsRoute: AdminReportsRoute,
   AdminSettingsRoute: AdminSettingsRoute,
+  AdminSubmissionsRoute: AdminSubmissionsRoute,
   AdminSupportRoute: AdminSupportRoute,
   ChaptersChapterIdRoute: ChaptersChapterIdRouteWithChildren,
   ChaptersEventsRoute: ChaptersEventsRoute,
   ChaptersNewsRoute: ChaptersNewsRoute,
+  DocsAdminRoute: DocsAdminRoute,
+  DocsAppendixRoute: DocsAppendixRoute,
+  DocsFrontendRoute: DocsFrontendRoute,
+  DocsIntegrationsRoute: DocsIntegrationsRoute,
+  DocsStructureRoute: DocsStructureRoute,
+  DocsStudioRoute: DocsStudioRoute,
   PagesPageIdRoute: PagesPageIdRoute,
   AdminIndexRoute: AdminIndexRoute,
   ChaptersIndexRoute: ChaptersIndexRoute,
+  DocsIndexRoute: DocsIndexRoute,
   StudioIndexRoute: StudioIndexRoute,
   ApiTrpcSplatRoute: ApiTrpcSplatRoute,
 }

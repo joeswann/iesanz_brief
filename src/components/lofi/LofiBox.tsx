@@ -9,8 +9,12 @@ const boxBase = css`
   flex-wrap: wrap;
 `;
 
-const LofiBox: DCI = ({ children, className }) => {
-  return <div className={cx(boxBase, className)}>{children}</div>;
+interface LofiBoxProps {
+  style?: React.CSSProperties;
+}
+
+const LofiBox: DCI<LofiBoxProps> = ({ children, className, style }) => {
+  return <div className={cx(boxBase, className)} style={style}>{children}</div>;
 };
 
 export default LofiBox;
