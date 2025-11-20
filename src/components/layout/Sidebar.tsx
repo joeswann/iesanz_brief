@@ -73,9 +73,10 @@ interface SidebarLinkProps {
     isActive?: boolean;
     children: React.ReactNode;
     exact?: boolean;
+    target?: string;
 }
 
-export const SidebarLink: DCI<SidebarLinkProps> = ({ to, href, onClick, isActive, children, exact }) => {
+export const SidebarLink: DCI<SidebarLinkProps> = ({ to, href, onClick, isActive, children, exact, target }) => {
     if (to) {
         return (
             <Link
@@ -83,6 +84,7 @@ export const SidebarLink: DCI<SidebarLinkProps> = ({ to, href, onClick, isActive
                 className={linkStyles}
                 activeProps={{ className: activeLink }}
                 activeOptions={exact ? { exact: true } : undefined}
+                target={target}
             >
                 {children}
             </Link>
@@ -91,7 +93,7 @@ export const SidebarLink: DCI<SidebarLinkProps> = ({ to, href, onClick, isActive
 
     if (href) {
         return (
-            <a href={href} className={cx(linkStyles, isActive && activeLink)}>
+            <a href={href} className={cx(linkStyles, isActive && activeLink)} target={target} rel={target === "_blank" ? "noopener noreferrer" : undefined}>
                 {children}
             </a>
         )

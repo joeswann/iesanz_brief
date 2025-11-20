@@ -22,6 +22,12 @@ const content = css`
 const LayoutDefault: DCI = ({ children }) => {
   const location = useLocation();
   const isAccount = location.pathname.startsWith("/account");
+  const isAdmin = location.pathname.startsWith("/admin");
+  const isStudio = location.pathname.startsWith("/studio");
+
+  if (isAdmin || isStudio) {
+    return <>{children}</>;
+  }
 
   return (
     <div className={layoutContainer}>
