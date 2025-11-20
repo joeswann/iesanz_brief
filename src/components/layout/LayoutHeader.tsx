@@ -61,11 +61,7 @@ const mainLink = css`
 `;
 
 const headerContainer = css`
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  z-index: 100;
   background-color: var(--background);
   border-bottom: 1px solid var(--foreground);
   padding: 16rem;
@@ -74,9 +70,19 @@ const headerContainer = css`
   flex-wrap: wrap;
 `;
 
+const fixedWrapper = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+`;
+
 const LayoutHeader: DCI = ({ children }) => {
   return (
-    <div>
+    <div className={fixedWrapper}>
       <header className={headerContainer}>
         <a href="/" className={logo} style={{ textDecoration: 'none', color: 'inherit' }}>IESANZ</a>
 

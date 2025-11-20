@@ -25,16 +25,11 @@ const SidebarContainer = styled.aside`
   display: flex;
   flex-direction: column;
   gap: ${spacing(2)};
-  position: fixed;
-  top: 80rem;
-  bottom: 0;
-  overflow-y: auto;
 `
 
 const ContentContainer = styled.main`
   flex: 1;
   padding: ${spacing(4)};
-  margin-left: 280rem; /* Width of sidebar */
   max-width: 1200rem;
 `
 
